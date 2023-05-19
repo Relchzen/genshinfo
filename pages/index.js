@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import {Box, Container, background} from "@chakra-ui/react"
 import Navbar from './components/navbar'
+import Parallax from './components/parallax'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Parallax></Parallax>
       <Container className={styles.main}>
         <Navbar></Navbar>
         <Box backgroundColor="red" width={250} height={50} borderRadius={8} textAlign={"center"} pt={3}>Hello</Box>
