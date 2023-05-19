@@ -1,0 +1,36 @@
+.container{
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+    scroll-behavior: smooth;
+}
+
+.header{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform-style:preserve-3d;
+    z-index: -1;
+}
+.liyue{
+    transform:translateZ(-10px) scale(2) ;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+.backgroundBox{
+    transform:translateZ(-4px) scale(1.4) ;
+    margin-top: 100vh;
+    margin-bottom: -100vh;
+    background-color: #F7F5E8;
+    position: absolute;
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
