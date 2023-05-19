@@ -13,9 +13,9 @@ padding: 10px;
 export default function Logo() {
     return (
         <Link href="/">
-                <LogoBox>
-                    Logo
-                </LogoBox>
+            <LogoBox>
+                Logo
+            </LogoBox>
         </Link>
     )
 }

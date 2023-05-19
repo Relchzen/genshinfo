@@ -1,21 +1,29 @@
 import Logo from "./logo";
 import NextLink from "next/link";
 import { Container, Box, Link, Stack, Heading, Flex, Menu, MenuItem, MenuList, MenuButton, IconButton } from "@chakra-ui/react";
+import { forwardRef } from "react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
-function LinkItem({href, path, children}) {
+function LinkItem({href, path, children, target, ...props}) {
     const active = path === href;
     return(
-    <NextLink href={href}>
-        <Link p={2}
+        <Link 
+        as={NextLink}
+        href={href}
+        p={2}
         bg={active ? '#DF7861': undefined} 
         color={active? '#3E7DA6' : '#F7F5E8'}
+        {...props}
+        target={target}
         >
-            {children}</Link>
-    </NextLink>
+            {children}
+        </Link>
     )
 }
 
+const MenuLink = forwardRef((props, ref) => (
+    <Link ref={ref} as={NextLink} {...props} />
+))
 
 export default function Navbar(props) {
     const { path } = props;
@@ -24,8 +32,7 @@ export default function Navbar(props) {
         as="nav"
         w="100%"
         zIndex={1}
-        {...props}
-        >
+        {...props}>
             <Container display="flex" p={2} maxW="container.md" wrap="wrap" align="center" justify="space-between">
                 <Flex align="center" mr={5}>
                     <Heading as="h1" size="lg" letterSpacing={'tighter'}>
@@ -38,8 +45,7 @@ export default function Navbar(props) {
                 width={{base: 'full', md: 'auto'}}
                 alignItems="center"
                 flexGrow={1}
-                mt={{base: 4, md: 0}}
-                >
+                mt={{base: 4, md: 0}}>
                     <LinkItem href="/characters" path={path}>Characters</LinkItem>
                     <LinkItem href="/news" path={path}>News</LinkItem>
                 </Stack>
@@ -49,15 +55,9 @@ export default function Navbar(props) {
                         <Menu>
                             <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label="Options" />
                             <MenuList>
-                                <NextLink href="/" passHref>
-                                    <MenuItem as={Link}>Home</MenuItem>
-                                </NextLink>
-                                <NextLink href="/characters" passHref>
-                                    <MenuItem as={Link}>Characters</MenuItem>
-                                </NextLink>
-                                <NextLink href="/news" passHref>
-                                    <MenuItem as={Link}>News</MenuItem>
-                                </NextLink>
+                                    <MenuItem as={MenuLink} href="/">Home</MenuItem>
+                                    <MenuItem as={MenuLink} href="/characters">Characters</MenuItem>
+                                    <MenuItem as={MenuLink} href="/news">News</MenuItem>
                             </MenuList>
                         </Menu>
                     </Box>
