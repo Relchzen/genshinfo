@@ -8,7 +8,7 @@ function LinkItem({href, path, children}) {
     return(
     <NextLink href={href}>
         <Link p={2}
-        bg={active ? '#DF7861':undefined} 
+        bg={active ? '#DF7861': undefined} 
         color={active? '#3E7DA6' : '#F7F5E8'}
         >
             {children}</Link>
@@ -33,7 +33,7 @@ export default function Navbar(props) {
                     </Heading>
                 </Flex>
 
-                <Stack direction={{base: 'column', md: 'row' }}
+                <Stack direction={{base: 'column', md: 'row'}}
                 display={{base: 'none', md:'flex'}}
                 width={{base: 'full', md: 'auto'}}
                 alignItems="center"
