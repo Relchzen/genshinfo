@@ -5,7 +5,7 @@ import Parallax from './components/parallax'
 export default function Home() {
   return (
       <Container minW="container.md" w={'full'}>
-      {/* <Parallax /> */}
+      <Parallax />
       </Container>
   )
 }
