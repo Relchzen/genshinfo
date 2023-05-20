@@ -13,6 +13,14 @@
 
 }
 
+.liyue {
+  position: absolute;
+  width: 100%;
+}
+
+.backgroundBox {
+}
+
 .main {
   min-height: 100vh;
   flex: 1;
