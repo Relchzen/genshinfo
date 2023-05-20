@@ -1,6 +1,17 @@
 .container {
   padding: 0 0;
+  margin: 0 0;
   /* background-color: #F7F5E8; */
+
+}
+
+.liyue{
+  position: absolute;
+  width: 100%;
+}
+
+.backgroundBox{
+
 }
 
 .main {
@@ -10,6 +21,7 @@
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
+  
 }
 
 .footer {
