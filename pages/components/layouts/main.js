@@ -4,7 +4,7 @@ import Navbar from "../navbar"
 
 export default function Main({children, router }) {
     return (
-        <Box as="main" pb={8}>
+        <Box as="main" pb={8} width="100%">
             <Head>
                 <title>Genshinfo</title>
                 <meta name="description" content="Everything about Genshin Impact" />
@@ -13,9 +13,9 @@ export default function Main({children, router }) {
             </Head>
             <Navbar path={router.asPath} />
 
-            <Container pt={14} maxW={"container.md"}>
+            <Box pt={14} minW={"container.md"}>
                 {children}
-            </Container>
+            </Box>
         </Box>
     )
 }

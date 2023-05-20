@@ -3,6 +3,14 @@
   /* background-color: #F7F5E8; */
 }
 
+.liyue {
+  position: absolute;
+  width: 100%;
+}
+
+.backgroundBox {
+}
+
 .main {
   min-height: 100vh;
   flex: 1;
