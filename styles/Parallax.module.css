@@ -1,5 +1,5 @@
 .container{
-    height: 100vh;
+    height: 200vh;
     overflow-y: auto;
     overflow-x: hidden;
     perspective: 10px;
@@ -9,8 +9,6 @@
 .header{
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100%;
     transform-style:preserve-3d;
     z-index: -1;
