@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import styles from '../styles/Home.module.css';
 import { Box } from "@chakra-ui/react";
+import Parallax from './components/parallax';
 
 export default function Home() {
   useEffect(() => {
     const handleScroll = () => {
       const elements = document.querySelectorAll('.paral');
       const scroll = window.pageYOffset;
-      console.log('hi');
+      console.log('hello its a me mario');
       elements.forEach(element => {
         const speed = parseFloat(element.dataset.speed);
         element.style.transform = `translateY(-${scroll * speed}px)`;
@@ -26,9 +27,9 @@ export default function Home() {
       <div className={styles.banner}>
         <img className={`paral ${styles.liyue}`} data-speed="0.2" src="https://genshin.global/wp-content/uploads/2023/02/hutao-yelan-xiao-lantern-rite-2023-official-wallpaper-genshin.jpg" alt="Liyue"></img>
 
-        <h1 className={`${styles.welcomeTitle} ${styles.paral}`} data-speed="0.3">GENSHINFO</h1>
+        <h1 className={`${styles.welcomeTitle} ${styles.paral}`} data-speed="0.3">Genshinfo</h1>
 
-        <button href='.page1' className={styles.btn} type="button">
+        <button href='#page1' className={styles.btn} type="button">
           <strong className={styles.strong}>Get Started</strong>
           <div className={styles.containerstars}>
             <div className={styles.stars}></div>
@@ -41,9 +42,18 @@ export default function Home() {
         </button>
 
 
-        <div className={`paral ${styles.backgroundBox}`} data-speed="0.4"></div>
+        <div className={`paral ${styles.backgroundBox}`} data-speed="0.5"></div>
+      </div>
 
-        <div className={styles.page1}></div>
+      <div id='page1' className={styles.page1}>
+        <h2>Genshinfo gives the information you need</h2>
+        <div className={styles.carding}>
+        <Parallax></Parallax>
+        <Parallax></Parallax>
+        <Parallax></Parallax>
+        <Parallax></Parallax>
+        <Parallax></Parallax>
+        </div>
       </div>
     </Box>
 

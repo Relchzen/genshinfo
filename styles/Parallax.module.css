@@ -1,34 +1,78 @@
-.container{
-    height: 200vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    perspective: 10px;
-    scroll-behavior: smooth;
-}
-
-.header{
+.container {
     position: relative;
+    font-family: sans-serif;
+  }
+  
+  .container::before, .container::after {
+    content: "";
+    background-color: #4432204c;
+    position: absolute;
+  }
+  
+  .container::before {
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    top: 30%;
+    right: 7%;
+  }
+  
+  .container::after {
+    content: "";
+    position: absolute;
+    height: 3rem;
+    top: 8%;
+    right: 5%;
+    border: 1px solid;
+  }
+  
+  .container .box {
+    width: 11.875em;
+    height: 15.875em;
+    padding: 1rem;
+    background-color: #df786196;
+    border: 1px solid rgba(255, 255, 255, 0.222);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: .7rem;
+    transition: all ease .3s;
+  }
+  
+  .container .box {
     display: flex;
-    height: 100%;
-    transform-style:preserve-3d;
-    z-index: -1;
-}
-.liyue{
-    transform:translateZ(-10px) scale(2) ;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    z-index: -2;
-}
-.backgroundBox{
-    transform:translateZ(-4px) scale(1.4) ;
-    margin-top: 100vh;
-    margin-bottom: -100vh;
-    background-color: #F7F5E8;
-    position: absolute;
-    height: 500px;
-    width: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .container .box .title {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: .1em
+  }
+  
+  .container .box div strong {
+    display: block;
+    margin-bottom: .5rem;
+  }
+  
+  .container .box div p {
+    margin: 0;
+    font-size: .9em;
+    font-weight: 300;
+    letter-spacing: .1em;
+  }
+  
+  .container .box div span {
+    font-size: .7rem;
+    font-weight: 300;
+  }
+  
+  .container .box div span:nth-child(3) {
+    font-weight: 500;
+    margin-right: .2rem;
+  }
+  
+  .container .box:hover {
+    box-shadow: 0px 0px 20px 1px #ffbb763f;
+    border: 1px solid rgba(255, 255, 255, 0.454);
+  }
