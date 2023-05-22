@@ -27,9 +27,9 @@ export default function Home() {
       <div className={styles.banner}>
         <img className={`paral ${styles.liyue}`} data-speed="0.2" src="https://genshin.global/wp-content/uploads/2023/02/hutao-yelan-xiao-lantern-rite-2023-official-wallpaper-genshin.jpg" alt="Liyue"></img>
 
-        <h1 className={`${styles.welcomeTitle} ${styles.paral}`} data-speed="0.3">Genshinfo</h1>
+        <h1 className={`paral ${styles.welcomeTitle}`} data-speed="0.3">Genshinfo</h1>
 
-        <button href='#page1' className={styles.btn} type="button">
+        <button href='#page1' className={`paral ${styles.btn}`} data-speed="0.3" type="button">
           <strong className={styles.strong}>Get Started</strong>
           <div className={styles.containerstars}>
             <div className={styles.stars}></div>
