@@ -22,6 +22,16 @@ export default function Home() {
     };
   }, []);
 
+  const scrollToPage1 = () => {
+    const page1Element = document.getElementById('page1');
+    if (page1Element) {
+      window.scrollTo({
+        top: page1Element.offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <Box className={styles.container} minW="container.md" width="100%">
       <div className={styles.banner}>
@@ -29,7 +39,7 @@ export default function Home() {
 
         <h1 className={`paral ${styles.welcomeTitle}`} data-speed="0.3">Genshinfo</h1>
 
-        <button href='#page1' className={`paral ${styles.btn}`} data-speed="0.3" type="button">
+        <button className={`paral ${styles.btn}`} data-speed="0.3" type="button" onClick={scrollToPage1}>
           <strong className={styles.strong}>Get Started</strong>
           <div className={styles.containerstars}>
             <div className={styles.stars}></div>
@@ -41,21 +51,19 @@ export default function Home() {
           </div>
         </button>
 
-
         <div className={`paral ${styles.backgroundBox}`} data-speed="0.5"></div>
       </div>
 
       <div id='page1' className={styles.page1}>
         <h2>Genshinfo gives the information you need</h2>
         <div className={styles.carding}>
-        <Parallax></Parallax>
-        <Parallax></Parallax>
-        <Parallax></Parallax>
-        <Parallax></Parallax>
-        <Parallax></Parallax>
+          <Parallax></Parallax>
+          <Parallax></Parallax>
+          <Parallax></Parallax>
+          <Parallax></Parallax>
+          <Parallax></Parallax>
         </div>
       </div>
     </Box>
-
   )
 }

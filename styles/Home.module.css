@@ -5,10 +5,10 @@
   padding: 0 0;
   margin: 0 0;
   height: 200vh;
-    overflow-y:hidden;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    background-color:#F7F5E8 ;
+  overflow-y:hidden;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color:#F7F5E8 ;
 }
 
 .banner {
@@ -18,7 +18,7 @@
 }
 
 .page1{
-  margin-top: 30vh;
+  margin-top: 50vh;
 }
 .page1 h2{
   font-size:3rem ;
@@ -191,7 +191,7 @@
   transition: 0.5s;
   animation: gradient_301 5s ease infinite;
   border: double 4px transparent;
-  background-image: linear-gradient(#DF7861, #DF7861),  linear-gradient(137.48deg, #ffdb3b 10%,#FE53BB 45%, #8F51EA 67%, #0044ff 87%);
+  background-image: linear-gradient(#DF7861, #DF7861),  linear-gradient(137.48deg, #F7F5E8 10%,#B68861 45%, #EFEBE2 67%, #B68861 87%);
   background-origin: border-box;
   background-clip: content-box, border-box;
   
