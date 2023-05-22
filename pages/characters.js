@@ -10,7 +10,7 @@ export default function Characters() {
             </Heading>
             <Section>
 
-            <SimpleGrid columns={[2, null, 3, 4]} spacing={"15px"}>
+            <SimpleGrid columns={[2, null, 3, 4]} spacing={"15px"} mt={10}>
                <GridItem /> 
                <GridItem /> 
                <GridItem /> 
