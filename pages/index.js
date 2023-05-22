@@ -64,6 +64,6 @@ export default function Home() {
           <Parallax></Parallax>
         </div>
       </div>
-    </Box>
+     </Box>
   )
 }
