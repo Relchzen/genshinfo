@@ -1,28 +1,38 @@
-import { Container, Box, Heading, SimpleGrid, Divider } from "@chakra-ui/react"
+import { useState, useEffect } from "react";
+import { Container, Box, Heading, SimpleGrid, Divider, Text } from "@chakra-ui/react"
 import Section from "./components/section"
-import GridItem from "./components/grid-item"
+import { CharGridItem } from "./components/grid-item";
+
+function renderCharacter(char) {
+    return (
+        <CharGridItem name={char} />
+    )
+}
 
 export default function Characters() {
+    const [characters, setCharacter] = useState([]);
+
+    const fetchCharacters = () => {
+        fetch("https://api.genshin.dev/characters")
+        .then((response) => response.json())
+        .then((data) =>setCharacter(data));
+    }
+
+    useEffect(() => {
+        fetchCharacters();
+    }, []);
+
+    console.log(characters);
+
     return (
         <Container minW={"container.md"} maxW={"container.xl"}>
             <Heading>
                 Characters
             </Heading>
-            <Section>
 
-            <SimpleGrid columns={[2, null, 3, 4]} spacing={"15px"} mt={10}>
-               <GridItem /> 
-               <GridItem /> 
-               <GridItem /> 
-               <GridItem /> 
-               <GridItem /> 
-               <GridItem /> 
-               <GridItem /> 
-               <GridItem /> 
-               <GridItem /> 
-               <GridItem /> 
+            <SimpleGrid columns={[4, null, 6, 8]} spacing={"5px"} mt={10}>
+                {characters.map(renderCharacter)}
             </SimpleGrid>
-            </Section>
         </Container>
     )
 }
