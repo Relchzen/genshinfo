@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import logo from '../../public/src/logo.png'
 import styled from "@emotion/styled";
 
 const LogoBox = styled.span`
@@ -14,7 +15,7 @@ export default function Logo() {
     return (
         <Link href="/">
             <LogoBox>
-                Logo
+                <Image src={logo} width={120} />
             </LogoBox>
         </Link>
     )

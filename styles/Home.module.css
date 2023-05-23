@@ -17,39 +17,51 @@
   justify-content: center;
 }
 
-.page1{
-  margin-top: 50vh;
-}
-.page1 h2{
-  font-size:3rem ;
-  text-align: center;
-}
-.carding{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
 
 .liyue{
   position: absolute;
   width: 100%;
 }
 
-.backgroundBox {
-  background-color:#F7F5E8 ;
-  
+.backgroundBoxShadow {
   position: absolute;
-  margin-top: 90vh;
+  margin-top: 75vh;
   width: 100%;
-  height: 40vh;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+}
+.backgroundBox {
+  position: absolute;
+  margin-top: 80vh;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
 .welcomeTitle {
   position: absolute;
-  color:#F7F5E8 ;
-  font-size: 5rem;font-weight: 600;
-  margin-top: 40vh;
+  margin-top: 37vh;
+  width: 60vh;
+}
+
+.page1{
+  margin-top: 50vh;
+  width: 100%;
+}
+.page1 h2{
+  font-size:3rem ;
+  text-align: center;
+}
+.page1 h3{
+  font-size: 2rem;
+  margin-left: 10vh;
+}
+.gameUpdate div{
+
+}
+.memeUpdate div{
+
 }
 
 .main {
@@ -178,7 +190,26 @@
   }
 }
 
-/* button */
+
+/* Responsive --------------------------------------------*/
+@media screen and (max-width:1200px) {
+  
+}
+@media screen and (max-width:768px) {
+  
+}
+@media screen and (max-width:575px) {
+  
+}
+@media screen and (max-width:475px) {
+  
+}
+@media screen and (max-width:375px) {
+  
+}
+
+
+/* button keren ------------------------------------------*/
 .btn {
   display: flex;
   justify-content: center;
@@ -212,7 +243,7 @@
 .strong {
   z-index: 2;
   font-family: 'Avalors Personal Use';
-  font-size: 12px;
+  font-size: 1.5rem;
   letter-spacing: 5px;
   color: #FFFFFF;
   text-shadow: 0 0 4px white;

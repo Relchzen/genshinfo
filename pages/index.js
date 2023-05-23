@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react';
 import styles from '../styles/Home.module.css';
 import { Box } from "@chakra-ui/react";
-import Parallax from './components/parallax';
+import Image from 'next/image';
+import logo from '../public/src/logo.png'
+import cloud from '../public/src/cloud.png';
+import bg1 from '../public/src/bg1.jpg';
+import bg2 from '../public/src/bg2.jpg';
 
 export default function Home() {
   useEffect(() => {
@@ -35,9 +39,9 @@ export default function Home() {
   return (
     <Box className={styles.container} minW="container.md" width="100%">
       <div className={styles.banner}>
-        <img className={`paral ${styles.liyue}`} data-speed="0.2" src="https://genshin.global/wp-content/uploads/2023/02/hutao-yelan-xiao-lantern-rite-2023-official-wallpaper-genshin.jpg" alt="Liyue"></img>
+        <Image className={`paral ${styles.liyue}`} data-speed="-0.1" src={bg1} alt=""/>
 
-        <h1 className={`paral ${styles.welcomeTitle}`} data-speed="0.3">Genshinfo</h1>
+        <Image className={`paral ${styles.welcomeTitle}`} src={logo} data-speed="0.4"/>
 
         <button className={`paral ${styles.btn}`} data-speed="0.3" type="button" onClick={scrollToPage1}>
           <strong className={styles.strong}>Get Started</strong>
@@ -51,17 +55,23 @@ export default function Home() {
           </div>
         </button>
 
-        <div className={`paral ${styles.backgroundBox}`} data-speed="0.5"></div>
+        <Image className={`paral ${styles.backgroundBoxShadow}`} src={cloud} data-speed="0.5"/>
+        <Image className={`paral ${styles.backgroundBox}`} src={cloud} data-speed="0.5"/>
       </div>
 
       <div id='page1' className={styles.page1}>
         <h2>Genshinfo gives the information you need</h2>
-        <div className={styles.carding}>
-          <Parallax></Parallax>
-          <Parallax></Parallax>
-          <Parallax></Parallax>
-          <Parallax></Parallax>
-          <Parallax></Parallax>
+        <div className={styles.gameUpdate}>
+          <h3>Game Updates</h3>
+          <div>
+
+          </div>
+        </div>
+        <div className={styles.memeUpdate}>
+          <h3>Teyvat News</h3>
+          <div>
+
+          </div>
         </div>
       </div>
      </Box>
