@@ -32,7 +32,8 @@ export default function Navbar(props) {
         as="nav"
         w="100%"
         zIndex={1}
-            {...props}>
+        backgroundColor="#DF7861"
+        {...props}>
             <Box display="flex" p={2} maxW="container.md" wrap="wrap" align="center" justify="space-between">
                 <Flex align="center" mr={5}>
                     <Heading as="h1" size="lg" letterSpacing={'tighter'}>
