@@ -8,7 +8,7 @@
   overflow-y:hidden;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  background-color:#F7F5E8 ;
+  background-color:#FFFDEF ;
 }
 
 .banner {
@@ -21,15 +21,15 @@
 .liyue{
   position: absolute;
   width: 100%;
+  /* height: 562px; */
 }
 
 .backgroundBoxShadow {
   position: absolute;
-  margin-top: 75vh;
+  margin-top: 85vh;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  mix-blend-mode: multiply;
 }
 .backgroundBox {
   position: absolute;
@@ -41,8 +41,9 @@
 
 .welcomeTitle {
   position: absolute;
-  margin-top: 37vh;
+  margin-top: 25vh;
   width: 60vh;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
 }
 
 .page1{
@@ -190,25 +191,6 @@
   }
 }
 
-
-/* Responsive --------------------------------------------*/
-@media screen and (max-width:1200px) {
-  
-}
-@media screen and (max-width:768px) {
-  
-}
-@media screen and (max-width:575px) {
-  
-}
-@media screen and (max-width:475px) {
-  
-}
-@media screen and (max-width:375px) {
-  
-}
-
-
 /* button keren ------------------------------------------*/
 .btn {
   display: flex;
@@ -225,7 +207,6 @@
   background-image: linear-gradient(#DF7861, #DF7861),  linear-gradient(137.48deg, #F7F5E8 10%,#B68861 45%, #EFEBE2 67%, #B68861 87%);
   background-origin: border-box;
   background-clip: content-box, border-box;
-  
   margin-top: 60vh;
 }
 
@@ -379,3 +360,444 @@
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
 }
+
+
+/* Responsive --------------------------------------------*/
+
+@media screen and (max-width:1300px) {
+  .container {
+    font-family: 'Poppins', sans-serif;
+    padding: 0 0;
+    margin: 0 0;
+    height: 200vh;
+    overflow-y:hidden;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-color:#FFFDEF ;
+  }
+  
+  .banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  .liyue{
+    position: absolute;
+    width: 100%;
+    /* height: 639px; */
+  }
+  
+  .backgroundBoxShadow {
+    position: absolute;
+    margin-top: 75vh;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .backgroundBox {
+    position: absolute;
+    margin-top: 80vh;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .welcomeTitle {
+    position: absolute;
+    margin-top: 32vh;
+    width: 60vh;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+  }
+  
+  .page1{
+    margin-top: 47vh;
+    width: 100%;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16rem;
+    height: 4rem;
+    background-size: 300% 300%;
+    backdrop-filter: blur(1rem);
+    border-radius: 5rem;
+    transition: 0.5s;
+    animation: gradient_301 5s ease infinite;
+    border: double 4px transparent;
+    background-image: linear-gradient(#DF7861, #DF7861),  linear-gradient(137.48deg, #F7F5E8 10%,#B68861 45%, #EFEBE2 67%, #B68861 87%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    margin-top: 50vh;
+  }
+
+  
+}
+@media screen and (max-width:1100px) {
+  .container {
+    font-family: 'Poppins', sans-serif;
+    padding: 0 0;
+    margin: 0 0;
+    height: 200vh;
+    overflow-y:hidden;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-color:#FFFDEF ;
+  }
+  
+  .banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  .liyue{
+    position: absolute;
+    width: 100%;
+    /* height: 639px; */
+  }
+  
+  .backgroundBoxShadow {
+    position: absolute;
+    margin-top: 63vh;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .backgroundBox {
+    position: absolute;
+    margin-top: 80vh;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .welcomeTitle {
+    position: absolute;
+    margin-top: 21vh;
+    width: 60vh;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+  }
+  
+  .page1{
+    margin-top: 54vh;
+    width: 100%;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16rem;
+    height: 4rem;
+    background-size: 300% 300%;
+    backdrop-filter: blur(1rem);
+    border-radius: 5rem;
+    transition: 0.5s;
+    animation: gradient_301 5s ease infinite;
+    border: double 4px transparent;
+    background-image: linear-gradient(#DF7861, #DF7861),  linear-gradient(137.48deg, #F7F5E8 10%,#B68861 45%, #EFEBE2 67%, #B68861 87%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    margin-top: 51vh;
+  }
+
+  
+}
+
+@media screen and (max-width:900px) {
+  .container {
+    font-family: 'Poppins', sans-serif;
+    padding: 0 0;
+    margin: 0 0;
+    height: 200vh;
+    overflow-y:hidden;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-color:#FFFDEF ;
+  }
+  
+  .banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  .liyue{
+    position: absolute;
+    width: 100%;
+    /* height: 639px; */
+  }
+  
+  .backgroundBoxShadow {
+    position: absolute;
+    margin-top: 55vh;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .backgroundBox {
+    position: absolute;
+    margin-top: 80vh;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .welcomeTitle {
+    position: absolute;
+    margin-top: 20vh;
+    width: 60vh;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+  }
+  
+  .page1{
+    margin-top: 58vh;
+    width: 100%;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16rem;
+    height: 3rem;
+    background-size: 300% 300%;
+    backdrop-filter: blur(1rem);
+    border-radius: 5rem;
+    transition: 0.5s;
+    animation: gradient_301 5s ease infinite;
+    border: double 4px transparent;
+    background-image: linear-gradient(#DF7861, #DF7861),  linear-gradient(137.48deg, #F7F5E8 10%,#B68861 45%, #EFEBE2 67%, #B68861 87%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    margin-top: 44vh;
+  }
+
+  .strong {
+    z-index: 2;
+    font-family: 'Avalors Personal Use';
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    color: #FFFFFF;
+    text-shadow: 0 0 4px white;
+  }
+
+  
+}
+@media screen and (max-width:768px) {
+
+  .banner {
+    width: 100%;
+  max-width: 1000px; /* Set a maximum width for the container */
+  height: 0; /* Set initial height to 0 */
+  padding-bottom: 100%; /* Create a square aspect ratio (height will be 100% of the width) */
+  position: relative;
+  overflow: hidden;
+  }
+  .liyue{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    object-fit: cover; /* Crop the image to fill the container */
+    object-position: center bottom; /* Center the image within the container */
+  }
+  .welcomeTitle {
+    position: absolute;
+    margin-top: 9vh;
+    width: 60vh;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+  }
+  .backgroundBox {
+    position: absolute;
+    margin-top: 69vh;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .backgroundBoxShadow {
+    position: absolute;
+    margin-top: 38vh;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+  }
+  .page1{
+    margin-top: -8vh;
+    width: 100%;
+    /* background-color: blue; */
+  }
+
+  .page1 h2 {
+    font-size: 30px;
+  }
+  .page1 h3 {
+    font-size: 20px;
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16rem;
+    height: 3rem;
+    background-size: 300% 300%;
+    backdrop-filter: blur(1rem);
+    border-radius: 5rem;
+    transition: 0.5s;
+    animation: gradient_301 5s ease infinite;
+    border: double 4px transparent;
+    background-image: linear-gradient(#DF7861, #DF7861),  linear-gradient(137.48deg, #F7F5E8 10%,#B68861 45%, #EFEBE2 67%, #B68861 87%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    margin-top: 30vh;
+  }
+
+  .strong {
+    z-index: 2;
+    font-family: 'Avalors Personal Use';
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    color: #FFFFFF;
+    text-shadow: 0 0 4px white;
+  }
+  
+}
+@media screen and (max-width:575px) {
+  .container {
+    font-family: 'Poppins', sans-serif;
+    padding: 0 0;
+    margin: 0 0;
+    height: 300vh;
+    overflow-y:hidden;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-color:#FFFDEF ;
+  }
+    .banner {
+    width: 100%;
+  max-width: 1000px; /* Set a maximum width for the container */
+  height: 0; /* Set initial height to 0 */
+  padding-bottom: 100%; /* Create a square aspect ratio (height will be 100% of the width) */
+  position: relative;
+  overflow: hidden;
+  }
+  .liyue{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1000px;
+    object-fit: cover; /* Crop the image to fill the container */
+    object-position: center bottom; /* Center the image within the container */
+  }
+  .welcomeTitle {
+    position: absolute;
+    margin-top: 29vh;
+    width: 60vh;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+  }
+  .backgroundBox {
+    position: absolute;
+    margin-top: 69vh;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .backgroundBoxShadow {
+    position: absolute;
+    margin-top: 79vh;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+  }
+  .page1{
+    margin-top: 17vh;
+    width: 100%;
+    /* background-color: blue; */
+  }
+
+  .page1 h2 {
+    font-size: 30px;
+  }
+  .page1 h3 {
+    font-size: 20px;
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16rem;
+    height: 3rem;
+    background-size: 300% 300%;
+    backdrop-filter: blur(1rem);
+    border-radius: 5rem;
+    transition: 0.5s;
+    animation: gradient_301 5s ease infinite;
+    border: double 4px transparent;
+    background-image: linear-gradient(#DF7861, #DF7861),  linear-gradient(137.48deg, #F7F5E8 10%,#B68861 45%, #EFEBE2 67%, #B68861 87%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    margin-top: 58vh;
+  }
+
+  .strong {
+    z-index: 2;
+    font-family: 'Avalors Personal Use';
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    color: #FFFFFF;
+    text-shadow: 0 0 4px white;
+  }
+}
+
+@media screen and (max-width:475px) {
+  .banner {
+    width: 100%;
+  max-width: 3000px; /* Set a maximum width for the container */
+  height: 0; /* Set initial height to 0 */
+  padding-bottom: 100%; /* Create a square aspect ratio (height will be 100% of the width) */
+  position: relative;
+  overflow: hidden;
+  }
+  .liyue{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crop the image to fill the container */
+    object-position: center; /* Center the image within the container */
+  }
+  
+}
+@media screen and (max-width:375px) {
+  .banner {
+    width: 100%;
+  max-width: 1000px; /* Set a maximum width for the container */
+  height: 0; /* Set initial height to 0 */
+  padding-bottom: 100%; /* Create a square aspect ratio (height will be 100% of the width) */
+  position: relative;
+  overflow: hidden;
+  }
+  .liyue{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crop the image to fill the container */
+    object-position: center; /* Center the image within the container */
+  }
+  
+}
+
+
