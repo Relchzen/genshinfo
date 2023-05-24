@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import styles from '../styles/Home.module.css';
 import { Box } from "@chakra-ui/react";
 import Image from 'next/image';
-import logo from '../public/src/logo.png'
-import cloud from '../public/src/cloud.png';
+import logo from '../public/src/logoGenshin.png'
+import cloud from '../public/src/cloudFix1.png';//shadow
+// import cloud1 from '../public/src/cloudFix1.png'; 
 import bg1 from '../public/src/bg1.jpg';
 import bg2 from '../public/src/bg2.jpg';
 import { Carousel } from "react-responsive-carousel";
@@ -75,9 +76,8 @@ export default function Home() {
             <div className={styles.circle}></div>
           </div>
         </button>
-
-        <Image className={`paral ${styles.backgroundBoxShadow}`} src={cloud} data-speed="0.5" />
-        <Image className={`paral ${styles.backgroundBox}`} src={cloud} data-speed="0.5" />
+        <Image className={`paral ${styles.backgroundBoxShadow}`} src={cloud} data-speed="0.3"/>
+        {/* <Image className={`paral ${styles.backgroundBox}`} src={cloud1} data-speed="0.5"/> */}
       </div>
 
       <div id='page1' className={styles.page1}>
