@@ -69,9 +69,7 @@ export default function Home() {
         </div>
         <div className={styles.memeUpdate}>
           <h3>Teyvat News</h3>
-          <div>
-
-          </div>
+          <div></div>
         </div>
       </div>
       <Box className={styles.container} minW="container.md" width="100%">
