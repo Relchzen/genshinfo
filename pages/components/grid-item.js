@@ -1,7 +1,8 @@
 import NextLink from "next/link"
 import Image from "next/image"
-import {Box, Text, LinkBox, LinkOverlay } from "@chakra-ui/react"
+import {Box, Text, LinkBox, LinkOverlay, Container } from "@chakra-ui/react"
 import Global from "@emotion/react"
+import { useState, useEffect } from "react"
 
 export function GridStyle() {
     <Global 
@@ -34,27 +35,41 @@ export function GridItem({name, icon, href}) {
 export function CharGridItem({name}) {
     let source = "";
     if(name.includes("traveler")) {
-        source = "https://api.genshin.dev/characters/"+ name +"/icon.jpeg";
+        source = "https://api.genshin.dev/characters/"+ name +"/icon";
     } else {
-        source = "https://api.genshin.dev/characters/"+ name +"/icon-big.jpeg";
+        source = "https://api.genshin.dev/characters/"+ name +"/icon-big";
     }
 
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch(`https://api.genshin.dev/characters/${name}`)
+        .then((res) => res.json())
+        .then((data) => {
+            setData(data);
+        })
+    }, [data])
+
     return(
-        <Box w="100%" align="center">
+        <Box w="auto" align="center" bg={'red.400'} p={2} aspectRatio={1}>
             <LinkBox as={NextLink}
             href={`/characters/${name}`}
             scroll={false} 
             cursor="pointer"
             >
-                <Image src={source} 
-                alt={name}
-                className="character-grid-icon"
-                width={100}
-                height={100}
-                />
-                <LinkOverlay href={`characters/${name}`}>
-                    <Text>
-                        {name}
+                <Box width={"100%"} overflow={"hidden"} aspectRatio={1} bg={"green"}>
+                    <Image src={source} 
+                    className="character-grid-icon"
+                    width={250}
+                    height={250}
+                    alt={`${data.name} icon`}
+                    
+                    priority={true}
+                    />
+                </Box>
+                <LinkOverlay as={"div"} href={`characters/${name}`}>
+                    <Text size={8}>
+                        {data.name}
                     </Text>
                 </LinkOverlay>
             </LinkBox>

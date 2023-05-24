@@ -6,9 +6,9 @@ import {motion} from "framer-motion"
 
 function renderCharacter(char) {
     return (
-        <Section delay={0.1}>
-            <CharGridItem name={char} />
-        </Section>
+        // <Section delay={0.1}>
+            <CharGridItem name={char} key={char} />
+        // </Section>
     )
 }
 
@@ -23,16 +23,19 @@ export default function Characters() {
 
     useEffect(() => {
         fetchCharacters();
-    }, []);
+    }, [characters]);
     
     return (
-        <Container minW={"container.md"} maxW={"container.xl"}>
+        <Container minW={"container.md"} maxW={"container.lg"} p={10}>
+            <Section delay={1}>
+
             <Heading>
                 Characters
             </Heading>
-            <SimpleGrid columns={[4, null, 6, 8]} spacing={"5px"} mt={10}>
+            <SimpleGrid columns={[3, null, 4, 6]} spacing={"10px"} mt={5}>
                 {characters.map(renderCharacter)}
             </SimpleGrid>
+            </Section>
         </Container>
     )
 }

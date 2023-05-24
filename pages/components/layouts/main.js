@@ -14,12 +14,9 @@ export default function Main({children, router }) {
             </Head>
             <Navbar path={router.asPath} />
 
-            <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{delay: 0.5}}>
-
             <Box pt={14} minW={"container.md"}>
                 {children}
             </Box>
-            </motion.div>
         </Box>
     )
 }
