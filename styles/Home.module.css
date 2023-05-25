@@ -4,7 +4,7 @@
   font-family: 'Poppins', sans-serif;
   padding: 0 0;
   margin: 0 0;
-  height: 200vh;
+  height: auto;
   overflow-y:hidden;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -21,174 +21,62 @@
 .liyue{
   position: absolute;
   width: 100%;
-  /* height: 562px; */
+  height: 900px;
+  object-fit: cover;
 }
 
 .backgroundBoxShadow {
   position: absolute;
-  margin-top: 85vh;
+  margin-top: 50vh;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.backgroundBox {
-  position: absolute;
-  margin-top: 80vh;
-  width: 100%;
-  height: 100%;
+  height: 110vh;
   object-fit: cover;
 }
 
 .welcomeTitle {
   position: absolute;
-  margin-top: 25vh;
+  margin-top: 22vh;
   width: 60vh;
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
 }
 
 .page1{
   margin-top: 50vh;
   width: 100%;
+  position: relative;
 }
 .page1 h2{
-  font-size:3rem ;
+  font-size:60px;
   text-align: center;
+  font-weight: 500;
 }
 .page1 h3{
-  font-size: 2rem;
-  margin-left: 10vh;
+  font-size: 40px;
+  margin-left: 5vh;
+  font-weight: 400;
 }
-.gameUpdate div{
-
-}
-.memeUpdate div{
-
-}
-
-.main {
-  min-height: 100vh;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
+.getstarted{
   
 }
-
-.footer {
+.gameUpdate div{
   display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
-
-.footer a {
+.gameUpdate img{
+  width: 250px;
+  border-radius: 12px;
+  border: 4px solid black;
+}
+.memeUpdate div{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
+.memeUpdate img{
+  width: 250px;
+  border-radius: 12px;
+  border: 4px solid black;
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-}
-
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
-  }
-  .code {
-    background: #111;
-  }
-  .logo img {
-    filter: invert(1);
-  }
 }
 
 /* button keren ------------------------------------------*/
@@ -207,7 +95,7 @@
   background-image: linear-gradient(#DF7861, #DF7861),  linear-gradient(137.48deg, #F7F5E8 10%,#B68861 45%, #EFEBE2 67%, #B68861 87%);
   background-origin: border-box;
   background-clip: content-box, border-box;
-  margin-top: 60vh;
+  margin-top: 45vh;
 }
 
 .containerstars {
@@ -364,313 +252,49 @@
 
 /* Responsive --------------------------------------------*/
 
-@media screen and (max-width:1300px) {
-  .container {
-    font-family: 'Poppins', sans-serif;
-    padding: 0 0;
-    margin: 0 0;
-    height: 200vh;
-    overflow-y:hidden;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    background-color:#FFFDEF ;
-  }
-  
-  .banner {
-    position: relative;
-    display: flex;
-    justify-content: center;
-  }
-  
-  
+@media screen and (max-width:768px){
   .liyue{
     position: absolute;
     width: 100%;
-    /* height: 639px; */
+    height: 1000px;
+    object-fit: cover;
   }
   
   .backgroundBoxShadow {
     position: absolute;
-    margin-top: 75vh;
+    margin-top: 59vh;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .backgroundBox {
-    position: absolute;
-    margin-top: 80vh;
-    width: 100%;
-    height: 100%;
+    height: 70vh;
     object-fit: cover;
   }
   
-  .welcomeTitle {
-    position: absolute;
-    margin-top: 32vh;
-    width: 60vh;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
-  }
-  
-  .page1{
-    margin-top: 47vh;
-    width: 100%;
-  }
-
   .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 16rem;
-    height: 4rem;
-    background-size: 300% 300%;
-    backdrop-filter: blur(1rem);
-    border-radius: 5rem;
-    transition: 0.5s;
-    animation: gradient_301 5s ease infinite;
-    border: double 4px transparent;
-    background-image: linear-gradient(#DF7861, #DF7861),  linear-gradient(137.48deg, #F7F5E8 10%,#B68861 45%, #EFEBE2 67%, #B68861 87%);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
+    width: 20rem;
+    height: 6rem;
     margin-top: 50vh;
   }
-
   
-}
-@media screen and (max-width:1100px) {
-  .container {
-    font-family: 'Poppins', sans-serif;
-    padding: 0 0;
-    margin: 0 0;
-    height: 200vh;
-    overflow-y:hidden;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    background-color:#FFFDEF ;
+  .welcomeTitle {
+    position: absolute;
+    margin-top: 25vh;
+    width: 60vh;
   }
-  
-  .banner {
+
+  .page1{
+    margin-top: 40vh;
+    width: 100%;
     position: relative;
-    display: flex;
-    justify-content: center;
   }
-  
-  
-  .liyue{
-    position: absolute;
-    width: 100%;
-    /* height: 639px; */
+  .page1 h2{
+    font-size:35px ;
+    text-align: center;
   }
-  
-  .backgroundBoxShadow {
-    position: absolute;
-    margin-top: 63vh;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .backgroundBox {
-    position: absolute;
-    margin-top: 80vh;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .welcomeTitle {
-    position: absolute;
-    margin-top: 21vh;
-    width: 60vh;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
-  }
-  
-  .page1{
-    margin-top: 54vh;
-    width: 100%;
-  }
-
-  .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 16rem;
-    height: 4rem;
-    background-size: 300% 300%;
-    backdrop-filter: blur(1rem);
-    border-radius: 5rem;
-    transition: 0.5s;
-    animation: gradient_301 5s ease infinite;
-    border: double 4px transparent;
-    background-image: linear-gradient(#DF7861, #DF7861),  linear-gradient(137.48deg, #F7F5E8 10%,#B68861 45%, #EFEBE2 67%, #B68861 87%);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    margin-top: 51vh;
-  }
-
-  
-}
-
-@media screen and (max-width:900px) {
-  .container {
-    font-family: 'Poppins', sans-serif;
-    padding: 0 0;
-    margin: 0 0;
-    height: 200vh;
-    overflow-y:hidden;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    background-color:#FFFDEF ;
-  }
-  
-  .banner {
-    position: relative;
-    display: flex;
-    justify-content: center;
-  }
-  
-  
-  .liyue{
-    position: absolute;
-    width: 100%;
-    /* height: 639px; */
-  }
-  
-  .backgroundBoxShadow {
-    position: absolute;
-    margin-top: 55vh;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .backgroundBox {
-    position: absolute;
-    margin-top: 80vh;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .welcomeTitle {
-    position: absolute;
-    margin-top: 20vh;
-    width: 60vh;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
-  }
-  
-  .page1{
-    margin-top: 58vh;
-    width: 100%;
-  }
-
-  .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 16rem;
-    height: 3rem;
-    background-size: 300% 300%;
-    backdrop-filter: blur(1rem);
-    border-radius: 5rem;
-    transition: 0.5s;
-    animation: gradient_301 5s ease infinite;
-    border: double 4px transparent;
-    background-image: linear-gradient(#DF7861, #DF7861),  linear-gradient(137.48deg, #F7F5E8 10%,#B68861 45%, #EFEBE2 67%, #B68861 87%);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    margin-top: 44vh;
-  }
-
-  .strong {
-    z-index: 2;
-    font-family: 'Avalors Personal Use';
-    font-size: 1.2rem;
-    letter-spacing: 5px;
-    color: #FFFFFF;
-    text-shadow: 0 0 4px white;
-  }
-
-  
-}
-@media screen and (max-width:768px) {
-
-  .banner {
-    width: 100%;
-  max-width: 1000px; /* Set a maximum width for the container */
-  height: 0; /* Set initial height to 0 */
-  padding-bottom: 100%; /* Create a square aspect ratio (height will be 100% of the width) */
-  position: relative;
-  overflow: hidden;
-  }
-  .liyue{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 500px;
-    object-fit: cover; /* Crop the image to fill the container */
-    object-position: center bottom; /* Center the image within the container */
-  }
-  .welcomeTitle {
-    position: absolute;
-    margin-top: 9vh;
-    width: 60vh;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
-  }
-  .backgroundBox {
-    position: absolute;
-    margin-top: 69vh;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-  .backgroundBoxShadow {
-    position: absolute;
-    margin-top: 38vh;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-
-  }
-  .page1{
-    margin-top: -8vh;
-    width: 100%;
-    /* background-color: blue; */
-  }
-
-  .page1 h2 {
+  .page1 h3{
     font-size: 30px;
   }
-  .page1 h3 {
-    font-size: 20px;
-  }
-  .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 16rem;
-    height: 3rem;
-    background-size: 300% 300%;
-    backdrop-filter: blur(1rem);
-    border-radius: 5rem;
-    transition: 0.5s;
-    animation: gradient_301 5s ease infinite;
-    border: double 4px transparent;
-    background-image: linear-gradient(#DF7861, #DF7861),  linear-gradient(137.48deg, #F7F5E8 10%,#B68861 45%, #EFEBE2 67%, #B68861 87%);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    margin-top: 30vh;
-  }
-
-  .strong {
-    z-index: 2;
-    font-family: 'Avalors Personal Use';
-    font-size: 1.2rem;
-    letter-spacing: 5px;
-    color: #FFFFFF;
-    text-shadow: 0 0 4px white;
-  }
-  
 }
-@media screen and (max-width:575px) {
+
+@media screen and (max-width:500px){
   .container {
     font-family: 'Poppins', sans-serif;
     padding: 0 0;
@@ -681,123 +305,45 @@
     scroll-behavior: smooth;
     background-color:#FFFDEF ;
   }
-    .banner {
-    width: 100%;
-  max-width: 1000px; /* Set a maximum width for the container */
-  height: 0; /* Set initial height to 0 */
-  padding-bottom: 100%; /* Create a square aspect ratio (height will be 100% of the width) */
-  position: relative;
-  overflow: hidden;
-  }
+
   .liyue{
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 1000px;
-    object-fit: cover; /* Crop the image to fill the container */
-    object-position: center bottom; /* Center the image within the container */
-  }
-  .welcomeTitle {
-    position: absolute;
-    margin-top: 29vh;
-    width: 60vh;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
-  }
-  .backgroundBox {
-    position: absolute;
-    margin-top: 69vh;
-    width: 100%;
-    height: auto;
+    height: 1350px;
     object-fit: cover;
   }
+  
   .backgroundBoxShadow {
     position: absolute;
-    margin-top: 79vh;
+    margin-top: 110vh;
     width: 100%;
-    height: auto;
+    height: 900px;
     object-fit: cover;
-
   }
+  
+  .welcomeTitle {
+    position: absolute;
+    margin-top: 25vh;
+    width: 60vh;
+  }
+
   .page1{
-    margin-top: 17vh;
+    margin-top: 90vh;
     width: 100%;
-    /* background-color: blue; */
+    position: relative;
   }
 
-  .page1 h2 {
-    font-size: 30px;
-  }
-  .page1 h3 {
-    font-size: 20px;
-  }
   .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 16rem;
-    height: 3rem;
-    background-size: 300% 300%;
-    backdrop-filter: blur(1rem);
-    border-radius: 5rem;
-    transition: 0.5s;
-    animation: gradient_301 5s ease infinite;
-    border: double 4px transparent;
-    background-image: linear-gradient(#DF7861, #DF7861),  linear-gradient(137.48deg, #F7F5E8 10%,#B68861 45%, #EFEBE2 67%, #B68861 87%);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    margin-top: 58vh;
+    width: 20rem;
+    height: 6rem;
+    margin-top: 80vh;
   }
 
-  .strong {
-    z-index: 2;
-    font-family: 'Avalors Personal Use';
-    font-size: 1.2rem;
-    letter-spacing: 5px;
-    color: #FFFFFF;
-    text-shadow: 0 0 4px white;
+  .page1 h2{
+    font-size:35px;
+    text-align: center;
+  }
+  .page1 h3{
+    font-size: 25px;
   }
 }
-
-@media screen and (max-width:475px) {
-  .banner {
-    width: 100%;
-  max-width: 3000px; /* Set a maximum width for the container */
-  height: 0; /* Set initial height to 0 */
-  padding-bottom: 100%; /* Create a square aspect ratio (height will be 100% of the width) */
-  position: relative;
-  overflow: hidden;
-  }
-  .liyue{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Crop the image to fill the container */
-    object-position: center; /* Center the image within the container */
-  }
-  
-}
-@media screen and (max-width:375px) {
-  .banner {
-    width: 100%;
-  max-width: 1000px; /* Set a maximum width for the container */
-  height: 0; /* Set initial height to 0 */
-  padding-bottom: 100%; /* Create a square aspect ratio (height will be 100% of the width) */
-  position: relative;
-  overflow: hidden;
-  }
-  .liyue{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Crop the image to fill the container */
-    object-position: center; /* Center the image within the container */
-  }
-  
-}
-
-
