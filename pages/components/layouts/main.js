@@ -1,10 +1,13 @@
 import Head from "next/head"
 import {Box, Container} from "@chakra-ui/react"
 import Navbar from "../navbar"
+import { motion } from "framer-motion"
+import Footer from '../footer'
 
 export default function Main({children, router }) {
     return (
-        <Box as="main" pb={8} width="100%">
+        <Box as="main" width="100%">
+            
             <Head>
                 <title>Genshinfo</title>
                 <meta name="description" content="Everything about Genshin Impact" />
@@ -16,6 +19,7 @@ export default function Main({children, router }) {
             <Box pt={14} minW={"container.sm"}>
                 {children}
             </Box>
+            <Footer />
         </Box>
     )
 }
