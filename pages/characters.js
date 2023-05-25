@@ -6,9 +6,7 @@ import {motion} from "framer-motion"
 
 function renderCharacter(char) {
     return (
-        // <Section delay={0.1}>
             <CharGridItem name={char} key={char} />
-        // </Section>
     )
 }
 
@@ -23,12 +21,11 @@ export default function Characters() {
 
     useEffect(() => {
         fetchCharacters();
-    }, [characters]);
+    }, []);
     
     return (
-        <Container minW={"container.md"} maxW={"container.lg"} p={10}>
-            <Section delay={1}>
-
+        <Container minW={"container.sm"} maxW={"container.lg"} p={10}>
+            <Section delay={0.8}>
             <Heading>
                 Characters
             </Heading>
