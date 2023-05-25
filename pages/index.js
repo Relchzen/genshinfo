@@ -4,9 +4,8 @@ import { Box } from "@chakra-ui/react";
 import Image from 'next/image';
 import logo from '../public/src/logoGenshin.png'
 import cloud from '../public/src/cloudFix1.png';//shadow
-// import cloud1 from '../public/src/cloudFix1.png'; 
 import bg1 from '../public/src/bg1.jpg';
-import bg2 from '../public/src/bg2.jpg';
+import Footer from './components/footer'
 
 export default function Home() {
   useEffect(() => {
@@ -40,9 +39,9 @@ export default function Home() {
   return (
     <Box className={styles.container} minW="container.md" width="100%">
       <div className={styles.banner}>
-        <Image className={`paral ${styles.liyue}`} data-speed="-0.1" src={bg1} alt=""/>
+        <Image className={`paral ${styles.liyue}`} data-speed="-0.1" src={bg1} alt="" />
 
-        <Image className={`paral ${styles.welcomeTitle}`} src={logo} data-speed="0.4"/>
+        <Image className={`paral ${styles.welcomeTitle}`} src={logo} data-speed="0.4" />
 
         <button className={`paral ${styles.btn}`} data-speed="0.3" type="button" onClick={scrollToPage1}>
           <strong className={styles.strong}>Get Started</strong>
@@ -56,25 +55,29 @@ export default function Home() {
           </div>
         </button>
 
-        <Image className={`paral ${styles.backgroundBoxShadow}`} src={cloud} data-speed="0.3"/>
-        {/* <Image className={`paral ${styles.backgroundBox}`} src={cloud1} data-speed="0.5"/> */}
+        <Image className={`paral ${styles.backgroundBoxShadow}`} src={cloud} data-speed="0.3" />
       </div>
 
       <div id='page1' className={styles.page1}>
         <h2>Genshinfo gives the information you need</h2>
+        <div className={styles.getstarted}>
+          
+        </div>
+        <h3>Game Updates</h3>
         <div className={styles.gameUpdate}>
-          <h3>Game Updates</h3>
           <div>
 
           </div>
         </div>
+        <h3>Teyvat News</h3>
         <div className={styles.memeUpdate}>
-          <h3>Teyvat News</h3>
           <div>
 
           </div>
         </div>
       </div>
-     </Box>
+
+      <Footer></Footer>
+    </Box>
   )
 }
