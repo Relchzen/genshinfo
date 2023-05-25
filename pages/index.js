@@ -49,7 +49,7 @@ export default function Home() {
             <div className={styles.stars}></div>
           </div>
 
-          <div className='glow'>
+          <div className={styles.glow}>
             <div className={styles.circle}></div>
             <div className={styles.circle}></div>
           </div>
