@@ -6,11 +6,10 @@ import { CharGridItem } from "./components/grid-item";
 import { motion } from "framer-motion";
 
 function renderCharacter(char) {
-  return (
-    // <Section delay={0.1}>
-    <CharGridItem name={char} key={char} />
-    // </Section>
-  );
+    return (
+            <CharGridItem name={char} key={char} />
+    )
+
 }
 
 export default function Characters() {
