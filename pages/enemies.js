@@ -3,34 +3,34 @@ import Section from "./components/section"
 import { GridItems } from "./components/grid-item"
 import { useState, useEffect } from "react"
 
-function renderWeapons(weapons) {
+function renderEnemies(monsters) {
     return (
-        <GridItems name={weapons} type={"weapons"} />
+        <GridItems name={monsters} type={"enemies"} />
     )
 }
 
-export default function Weapons() {
-    const [weapons, setWeapon] = useState([]);
+export default function Enemies() {
+    const [monsters, setMonster] = useState([]);
 
-    const fetchWeapons = () => {
-        fetch("https://api.genshin.dev/weapons")
+    const fetchMonsters = () => {
+        fetch("https://api.genshin.dev/enemies")
         .then((response) => response.json())
-        .then((data) => setWeapon(data));
+        .then((data) => setMonster(data));
     }
 
     useEffect(() => {
-        fetchWeapons();
+        fetchMonsters();
     }, []);
     
     return (
         <Container minW={"container.sm"} maxW={"container.lg"} p={10}>
             <Section delay={0.8}>
             <Heading>
-                Weapons
+                Enemies
             </Heading>
 
             <SimpleGrid columns={[3, null, 4, 6]} spacing={"10px"} mt={5}>
-                {weapons.map(renderWeapons)}
+                {monsters.map(renderEnemies)}
             </SimpleGrid>
             </Section>
         </Container>
