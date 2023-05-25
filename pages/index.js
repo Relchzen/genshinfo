@@ -7,28 +7,28 @@ import cloud from '../public/src/cloudFix1.png';//shadow
 // import cloud1 from '../public/src/cloudFix1.png'; 
 import bg1 from '../public/src/bg1.jpg';
 import bg2 from '../public/src/bg2.jpg';
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+// import { Carousel } from "react-responsive-carousel";
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const CarouselComponent = () => {
-  return (
-    <Carousel>
-      <div>
-        <img src={bg1} alt="Carousel Image 1" />
-        <p className="legend">Legend 1</p>
-      </div>
-      <div>
-        <img src={bg1} alt="Carousel Image 2" />
-        <p className="legend">Legend 2</p>
-      </div>
-      <div>
-        <img src={bg1} alt="Carousel Image 3" />
-        <p className="legend">Legend 3</p>
-      </div>
-      {/* Add more carousel items as needed */}
-    </Carousel>
-  );
-};
+// const CarouselComponent = () => {
+//   return (
+//     <Carousel>
+//       <div>
+//         <img src={bg1} alt="Carousel Image 1" />
+//         <p className="legend">Legend 1</p>
+//       </div>
+//       <div>
+//         <img src={bg1} alt="Carousel Image 2" />
+//         <p className="legend">Legend 2</p>
+//       </div>
+//       <div>
+//         <img src={bg1} alt="Carousel Image 3" />
+//         <p className="legend">Legend 3</p>
+//       </div>
+//       {/* Add more carousel items as needed */}
+//     </Carousel>
+//   );
+// };
 export default function Home() {
   useEffect(() => {
     const handleScroll = () => {
@@ -90,12 +90,12 @@ export default function Home() {
         </div>
         <div className={styles.memeUpdate}>
           <h3>Teyvat News</h3>
-          <div>
+          {/* <div>
             <div className={styles.carouselContainer}>
               <h3>Carousel</h3>
               <CarouselComponent />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <Box className={styles.container} minW="container.md" width="100%">

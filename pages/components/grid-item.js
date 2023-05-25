@@ -15,6 +15,51 @@ export function GridStyle() {
     </Global>
 }
 
+export function GridArtifacts({name}) {
+    const [data, setData] = useState([]);
+    const [isLoading, setLoading] = useState(false);
+
+
+    let source = "https://api.genshin.dev/artifacts/" + name + "/flower-of-life"
+    if(name.includes("prayers")) {
+        if(name.includes("prayers-to-the-firmament")) {
+            source = "https://api.genshin.dev/artifacts/" + name + "/flower-of-life"
+        } else {
+            source = "https://api.genshin.dev/artifacts/" + name + "/circlet-of-logos"
+        }
+    } 
+
+    useEffect(() => {
+        setLoading(true);
+        fetch(`https://api.genshin.dev/artifacts/${name}`)
+        .then((res) => res.json())
+        .then((data) => {
+            setData(data);
+            setLoading(false);
+        })
+    }, [])
+
+    return (
+        <Box w="auto" align="center" bg={'red.400'} p={1} aspectRatio={1}>
+            <LinkBox cursor={"pointer"} href={`/artifacts/${name}`} scroll={false}>
+                <Box overflow={"hidden"} aspectRatio={1} bg={"green"} alignItems={"center"} justifyContent={"center"} >
+                    <Image src={source} 
+                    className="character-grid-icon"
+                    width={200}
+                    height={200}
+                    alt={`${data.name} icon not found :(`}
+                    priority={true}
+                    />
+                </Box>
+                <LinkOverlay as={"div"} href={`/artifacts/${name}`} target="_blank">
+                    
+                    <Text>{data.name}</Text>
+                </LinkOverlay>
+            </LinkBox>
+        </Box>
+    )
+}
+
 export function GridItems({name, type}) {
     const [data, setData] = useState([]);
     const [isLoading, setLoading] = useState(false);
