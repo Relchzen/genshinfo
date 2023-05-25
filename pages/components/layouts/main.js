@@ -13,7 +13,7 @@ export default function Main({children, router }) {
             </Head>
             <Navbar path={router.asPath} />
 
-            <Box pt={14} minW={"container.md"}>
+            <Box pt={14} minW={"container.sm"}>
                 {children}
             </Box>
         </Box>
