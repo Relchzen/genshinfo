@@ -45,18 +45,61 @@
   position: relative;
 }
 .page1 h2{
-  font-size:60px;
+  font-size:33px;
+  font-weight: bold;
   text-align: center;
-  font-weight: 500;
+  padding-top: 75px;
 }
 .page1 h3{
   font-size: 40px;
   margin-left: 5vh;
   font-weight: 400;
 }
-.getstarted{
-  
+
+.page1 h4{
+  text-align: center;
+  font-size: 25px;
+  font-weight: 400;
 }
+
+.cardGetStarted{
+  display: flex;
+  justify-content: space-around;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.getstarted {
+  text-align: center;
+  background-color: #EFEBE2;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 200px;
+  height: 300px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  border-color: #DF7861;
+}
+.getstarted p  {
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #212121;
+}
+
+.getstarted:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  background-color: #DF7861;
+  color: #EFEBE2;
+}
+.getstarted:hover p {
+  color: #EFEBE2;
+}
+
+
+
 .gameUpdate div{
   display: flex;
   flex-direction: row;

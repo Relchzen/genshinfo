@@ -5,6 +5,12 @@ import Image from 'next/image';
 import logo from '../public/src/logoGenshin.png'
 import cloud from '../public/src/cloudFix1.png';//shadow
 import bg1 from '../public/src/bg1.jpg';
+import Contacts from './contact';
+import CardHome from './components/CardHome';
+import CardList from './CardList';
+import { useRouter } from 'next/router';
+
+
 
 
 export default function Home() {
@@ -36,6 +42,8 @@ export default function Home() {
     }
   };
 
+
+
   return (
     <Box className={styles.container} minW="container.md" width="100%">
       <div className={styles.banner}>
@@ -59,9 +67,14 @@ export default function Home() {
       </div>
 
       <div id='page1' className={styles.page1}>
-        <h2>Genshinfo gives the information you need</h2>
-        <div className={styles.getstarted}>
-          
+        <h2>GenshInfo gives the information you need</h2>
+        <h4>Choose what you need!</h4>
+        <div className={styles.cardGetStarted}>
+          {CardList.map((kartuName) => (
+              <CardHome
+              cardName = {kartuName.cardName}
+              />
+          ))}
         </div>
         <h3>Game Updates</h3>
         <div className={styles.gameUpdate}>

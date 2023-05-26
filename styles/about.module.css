@@ -1,6 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 
+
+.introAboutUs {
+    display: flex;
+    justify-content: space-around;
+    width: auto;
+    height: 100%;
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 50px;
+}
+
+.introText {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    /* background-color: yellow; */
+    margin-right: 15px;
+    width: 350px;
+}
+.introText h1 {
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.introgmbr {
+    width: 300px;
+    height: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 .about {
     font-family: 'Poppins', sans-serif;
     width: auto;
@@ -20,6 +52,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
+    margin-bottom: 50px;
 }
 .cardAbout {
     background-color: #EFEBE2;
