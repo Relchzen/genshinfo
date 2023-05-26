@@ -28,6 +28,10 @@
     font-size: 36px;
 }
 
+.introText p{
+    text-align: justify;
+}
+
 .introgmbr {
     width: 300px;
     height: auto;
