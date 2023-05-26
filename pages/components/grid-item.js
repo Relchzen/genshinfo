@@ -124,45 +124,45 @@ export function CharGridItem({ name }) {
 
     switch (element) {
         case "pyro":
-            gradiant = "red";
+            gradiant = "linear(#820000, #B9005B, #FF7C7C, #B9005B)";
             break;
         case "anemo":
-            gradiant = "grey";
+            gradiant = "linear(#99A799, #ADC2A9, #D3E4CD, #99A799)";
             break;
         case "cryo":
-            gradiant = "cyan";
+            gradiant = "linear(#1B262C, #0F4C75, #3282B8, #BBE1FA)";
             break;
         case "dendro":
-            gradiant = "green";
+            gradiant = "linear(#425F57, #749F82, #A8E890, #749F82)";
             break;
         case "geo":
-            gradiant = "brown";
+            gradiant = "linear(#8E3200, #A64B2A, #D7A86E, #A64B2A)";
             break;
         case "hydro":
-            gradiant = "blue";
+            gradiant = "linear(#1B262C, #0F4C75, #3282B8, #BBE1FA)";
             break;
         case "electro":
-            gradiant = "violet";
+            gradiant = "linear(#1C0C5B, #3D2C8D, #916BBF, #C996CC)";
             break;
     }
 
     let charBg = new String();
     if (data.rarity === 4) {
-        charBg = 'purple';
+        charBg = 'linear(#1C0C5B, #3D2C8D, #916BBF, #C996CC)';
     } else if (data.rarity === 5) {
-        charBg = 'gold';
+        charBg = 'linear(#4C3D3D, #C07F00, #FFD95A, #F4B183)';
     } else {
         charBg = 'white';
     }
 
     return (
-        <Box w="auto" align="center" bg={gradiant} borderRadius='2xl' p={2} aspectRatio={1} element={data.vision} rarity={data.rarity} weapon={data.weapon}>
+        <Box w="auto" align="center" borderRadius='2xl' p={2} aspectRatio={1} element={data.vision} rarity={data.rarity} weapon={data.weapon}>
             <LinkBox as={NextLink}
                 href={`/characters/${name}`}
                 scroll={false}
                 cursor="pointer"
             >
-                <Box width={"100%"} overflow={"hidden"} aspectRatio={1} bg={charBg} borderRadius='2xl'>
+                <Box width={"100%"} overflow={"hidden"} aspectRatio={1} bgGradient={charBg} borderRadius='2xl'>
                     <Image src={source}
                         className="character-grid-icon"
                         width={'full'}

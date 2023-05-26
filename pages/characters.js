@@ -5,6 +5,7 @@ import Section from "./components/section";
 import { CharGridItem } from "./components/grid-item";
 import { motion } from "framer-motion";
 
+
 function renderCharacter(char) {
     return (
             <CharGridItem name={char} key={char} />
