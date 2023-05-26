@@ -21,6 +21,7 @@ export default function About(){
                         nim = {contact.nim}
                         job = {contact.job}
                         img = {contact.img}
+                        instagram = {contact.instagram}
                     />
                 ))}
             </div>
