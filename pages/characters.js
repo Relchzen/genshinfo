@@ -9,7 +9,6 @@ function renderCharacter(char) {
     return (
             <CharGridItem name={char} key={char} />
     )
-
 }
 
 export default function Characters() {
@@ -61,7 +60,7 @@ export default function Characters() {
             onClick={fetchCharacters}
           />
         </Center>
-        <SimpleGrid columns={[3, null, 4, 6]} spacing={"10px"} mt={5}>
+        <SimpleGrid columns={[4, null, 5, 6]} spacing={"10px"} mt={5}>
           {filteredCharacters.map(renderCharacter)}
         </SimpleGrid>
       </Section>

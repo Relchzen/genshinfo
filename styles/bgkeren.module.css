@@ -1,24 +1,31 @@
 .cardStars {
-    z-index: 2;
+  z-index: 2;
+}
+
+.cardStars .star {
+  position: absolute;
+  top: -10rem;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 30s linear infinite;
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+}
+
+.pyro {
+  background-color: "red";
+}
+
+.cryo {
+  background-color: "cyan";
+}
+
+@keyframes animStarRotate {
+  from {
+    transform: rotate(360deg);
   }
-  
-  .cardStars .star {
-    position: absolute;
-    top: -10rem;
-    width: 100%;
-    height: 100%;
-    animation: animStarRotate 30s linear infinite;
-    background-image: radial-gradient(#ffffff 1px, transparent 1%);
-    background-size: 50px 50px;
+
+  to {
+    transform: rotate(0);
   }
-  
-  @keyframes animStarRotate {
-    from {
-      transform: rotate(360deg);
-    }
-  
-    to {
-      transform: rotate(0);
-    }
-  }
-  
+}
