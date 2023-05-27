@@ -1,110 +1,127 @@
-import { Box, Flex, Container, Center, Input, flexbox } from "@chakra-ui/react";
-import { Button, ButtonGroup } from "@chakra-ui/react";
-import { AiOutlineSearch } from "@chakra-ui/react";
-import React, { useState, useEffect } from 'react';
-
-export default function TierList() {
-    const [inputValue, setInputValue] = useState('');
-    const [randomValues, setRandomValues] = useState([]);
-
-    // Membuat fungsi untuk memfilter tier berdasarkan input
-    const filterTier = (index, letter) => {
-        // Jika input kosong, tampilkan semua tier
-        if (inputValue === '') {
-            return true;
+const Character = [
+{   id: 1,
+    name: "albedo",
+    role: "sub-dps",
+    bestWeapon: [{name: "Cinnabar Spindle",
+                    source: "https://rerollcdn.com/GENSHIN/Weapons/Cinnabar_Spindle.png",
+                api: 'https://api.genshin.dev/weapons/cinnabar -spindle'},
+            {
+                name: "Harbinger of Dawn",
+                source: "https://api.genshin.dev/weapons/harbinger-of-dawn/icon",
+                api: 'https://api.genshin.dev/weapons/harbinger-of-dawn'
+            },
+            {
+                name: "Festering Desire",
+                source: "https://api.genshin.dev/weapons/festering-desire/icon",
+                api: 'https://api.genshin.dev/weapons/festering-desire'
+            }
+            ],
+    bestArtifact: [
+        [{name: "Husk of Opulent Dreams",
+        stack: 4,
+        source: "https://api.genshin.dev/artifacts/husk-of-opulent-dreams/flower-of-life",
+        api:"https://api.genshin.dev/artifacts/husk-of-opulent-dreams"}],
+        [
+            {name: 'Archaic Petra',
+            stack: 2,
+            source: "https://api.genshin.dev/artifacts/archaic-petra/flower-of-life",
+            api: "https://api.genshin.dev/artifacts/archaic-petra"},
+            {name: "Husk of Opulent Dreams",
+            stack: 2,
+            source: "https://api.genshin.dev/artifacts/husk-of-opulent-dreams/flower-of-life",
+            api:"https://api.genshin.dev/artifacts/husk-of-opulent-dreams"}
+        ],
+        [
+            {name: 'Archaic Petra',
+            stack: 2,
+            source: "https://api.genshin.dev/artifacts/archaic-petra/flower-of-life",
+            api: "https://api.genshin.dev/artifacts/archaic-petra"},
+            {name: "Noblesse Oblige",
+            stack: 2,
+        source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
+        api: "https://api.genshin.dev/artifacts/noblesse-oblige"}
+        ]
+    ],
+    artifactStat: [
+        {
+            name: "flower",
+            priority: "HP",
+            sub: "Crit Rate/DMG /DEF%"
+        },
+        {
+            name: "plume",
+            priority: "ATK",
+            sub: "Crit Rate/DMG /DEF%"
+        },
+        {
+            name: "sand",
+            priority: "DEF%",
+            sub: "Crit Rate/DMG /DEF%"
+        },
+        {
+            name: "goblet",
+            priority: "Geo DMG",
+            sub: "Crit Rate/DMG /DEF%"
         }
-        // Jika tier cocok dengan input, tampilkan tier tersebut
-        if (randomValues[index].toLowerCase().includes(inputValue.toLowerCase()) || letter.toLowerCase().includes(inputValue.toLowerCase())) {
-            return true;
-        }
-        return false;
-    };
-
-    // Menghasilkan array berisi huruf dari A hingga Z
-    const alphabetArray = Array.from({ length: 26 }, (_, index) =>
-        String.fromCharCode(65 + index)
-    );
-
-    // Function to get a random value from the array
-    const getRandomValue = () => {
-        const values = ["angin", "petir", "api", "air"];
-        const randomIndex = Math.floor(Math.random() * values.length);
-        return values[randomIndex];
-    };
-
-    // Generate random values for each letter when component mounts
-    useEffect(() => {
-        const generatedValues = alphabetArray.map(() => getRandomValue());
-        setRandomValues(generatedValues);
-    }, []);
-
-    // Handle input change
-    const handleInputChange = (e) => {
-        setInputValue(e.target.value);
-    };
-
-    // Handle button click
-    const handleButtonClick = (value) => {
-        setInputValue(value);
-    };
-
-    return (
-        <Flex
-            direction="column"
-            align="center"
-            justify="center"
-            backgroundColor="#FFFDEF"
-            mt={5}
-            mb={5}
-            width="100%"
-            height="auto"
-            textAlign="center"
-            borderRadius={20}
-            p={10}
-            gap={10}
-        >
-            <Box mt={3} fontSize={40}>
-                Character
-            </Box>
-            <Center>
-                <Input
-                    backgroundColor="#EFEBE2"
-                    placeholder="Character"
-                    width="100%"
-                    display="flex"
-                    borderRadius={50}
-                    value={inputValue}
-                    onChange={handleInputChange}
-                >
-                </Input>
-            </Center>
-            <ButtonGroup mt={3}>
-                <Button onClick={() => handleButtonClick("Angin")}>Angin</Button>
-                <Button onClick={() => handleButtonClick("Api")}>Api</Button>
-                <Button onClick={() => handleButtonClick("Petir")}>Petir</Button>
-                <Button onClick={() => handleButtonClick("Air")}>Air</Button>
-            </ButtonGroup>
-            <Flex direction="row" align="center" justify="center" gap={10} flexWrap="wrap">
-                {alphabetArray.map((letter, index) => (
-                    <Box
-                        key={letter}
-                        display={filterTier(index, letter) ? "flex" : "none"}
-                        backgroundColor="#DF7861"
-                        width={150}
-                        height={120}
-                        borderRadius={20}
-                        style={{ display: filterTier(index, letter) ? 'block' : 'none' }}
-                        _hover={{
-                            width: "170px",
-                            height: "150px",
-                        }}
-                    >
-                        {letter}
-                        -
-                        {randomValues[index]}
-                    </Box>
-                ))}
-            </Flex>
-        </Flex>
-    );
-}
+    ],
+    bestTeam: [
+        ["xiao", "albedo", "jean", "zhongli"],
+        ["xiangling", "xiangqiu", "albedo", "fischl"]
+    ]
+},
+    {name: "aloy"},
+    "amber",
+    "arataki-itto",
+    "ayaka",
+    "ayato",
+    "barbara",
+    "beidou",
+    "bennett",
+    "chongyun",
+    "collei",
+    "diluc",
+    "diona",
+    "eula",
+    "fischl",
+    "ganyu",
+    "gorou",
+    "hu-tao",
+    "jean",
+    "kaeya",
+    "kazuha",
+    "keqing",
+    "klee",
+    "kokomi",
+    "kuki-shinobu",
+    "lisa",
+    "mona",
+    "ningguang",
+    "noelle",
+    "qiqi",
+    "raiden",
+    "razor",
+    "rosaria",
+    "sara",
+    "sayu",
+    "shenhe",
+    "shikanoin-heizou",
+    "sucrose",
+    "tartaglia",
+    "thoma",
+    "tighnari",
+    "traveler-anemo",
+    "traveler-dendro",
+    "traveler-electro",
+    "traveler-geo",
+    "venti",
+    "xiangling",
+    "xiao",
+    "xingqiu",
+    "xinyan",
+    "yae-miko",
+    "yanfei",
+    "yelan",
+    "yoimiya",
+    "yun-jin",
+    "zhongli"
+]
