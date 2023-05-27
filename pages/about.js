@@ -6,9 +6,6 @@ import IntroAboutUs from "./components/IntroAboutUs";
 export default function About(){
     return(
         <div className={styles.about}>
-            <div className={styles.title}>
-                <h1>About Us</h1>
-            </div>
             <div>
                 <IntroAboutUs
                     img = {Contacts[0].img}

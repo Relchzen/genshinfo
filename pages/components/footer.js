@@ -70,7 +70,7 @@ export default function LargeWithNewsletter() {
                 <Logo color={useColorModeValue('gray.700', 'white')} />
               </Box>
               <Text fontSize={'sm'}>
-                © 2022 Genshinfo. All rights reserved
+                © 2023 Genshinfo. All rights reserved
               </Text>
               <Stack direction={'row'} spacing={6}>
                 <SocialButton label={'Twitter'} href={'#'}>
@@ -87,9 +87,9 @@ export default function LargeWithNewsletter() {
             <Spacer />
             <Stack align={'flex-start'}>
               <ListHeader>Company</ListHeader>
-              <Link href={'#'}>About us</Link>
-              <Link href={'#'}>Blog</Link>
-              <Link href={'#'}>Contact us</Link>
+              <Link href={'/about'}>About us</Link>
+              <Link href={'/news'}>Blog</Link>
+              <Link href={'/about'}>Contact us</Link>
             </Stack>
           </SimpleGrid>
         </Container>
