@@ -6,7 +6,7 @@ import Footer from '../footer'
 
 export default function Main({children, router }) {
     return (
-        <Box as="main" width="100%">
+        <Box as="main" width="100%" bgColor={'#FFFDEF'}>
             
             <Head>
                 <title>Genshinfo</title>
