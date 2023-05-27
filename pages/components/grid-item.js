@@ -148,15 +148,15 @@ export function CharGridItem({ name }) {
 
     let charBg = new String();
     if (data.rarity === 4) {
-        charBg = 'linear(#1C0C5B, #3D2C8D, #916BBF, #C996CC)';
+        charBg = 'linear(#3F3B6C, #3D2C8D, #916BBF, #C996CC)';
     } else if (data.rarity === 5) {
-        charBg = 'linear(#4C3D3D, #C07F00, #FFD95A, #F4B183)';
+        charBg = 'linear(#B46060, #C07F00, #FFD95A, #F4B183)';
     } else {
         charBg = 'white';
     }
 
     return (
-        <Box w="auto" align="center" borderRadius='2xl' p={2} aspectRatio={1} element={data.vision} rarity={data.rarity} weapon={data.weapon}>
+        <Box w="auto" align="center" bgGradient={charBg} borderRadius='2xl' p={2} aspectRatio={1} element={data.vision} rarity={data.rarity} weapon={data.weapon}>
             <LinkBox as={NextLink}
                 href={`/characters/${name}`}
                 scroll={false}
@@ -184,7 +184,7 @@ export function CharGridItem({ name }) {
                     priority={true}
                 />
                 <LinkOverlay as={"div"} href={`characters/${name}`}>
-                    <Text size={8}>
+                    <Text fontSize={16}>
                         {data.name}
                     </Text>
                 </LinkOverlay>
