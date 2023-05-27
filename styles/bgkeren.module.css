@@ -5,7 +5,7 @@
 .cardStars .star {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 90%;
   animation: animStarRotate 30s linear infinite;
   background-image: radial-gradient(#ffffff 1.5px, transparent 5%);
   background-size: 50px 50px;
