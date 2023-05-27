@@ -12,14 +12,6 @@
   background-size: 50px 50px;
 }
 
-.pyro {
-  background-color: "red";
-}
-
-.cryo {
-  background-color: "cyan";
-}
-
 @keyframes animStarRotate {
   from {
     transform: rotate(360deg);
