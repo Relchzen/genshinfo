@@ -3,7 +3,6 @@ import NextLink from "next/link";
 import { Container, Box, Link, Stack, Heading, Flex, Menu, MenuItem, MenuList, MenuButton, IconButton } from "@chakra-ui/react";
 import { forwardRef } from "react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-// import About from "../about";
 
 function LinkItem({href, path, children, target, ...props}) {
     const active = path === href;
