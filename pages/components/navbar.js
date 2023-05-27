@@ -50,6 +50,8 @@ export default function Navbar(props) {
                     <LinkItem href="/characters" path={path}>Characters</LinkItem>
                     <LinkItem href="/news" path={path}>News</LinkItem>
                     <LinkItem href="/about" path={path}>About</LinkItem>
+                    <LinkItem href="/weapons" path={path}>Weapons</LinkItem>
+                    <LinkItem href="/enemies" path={path}>Monsters</LinkItem>
                 </Stack>
 
                 <Box flex={1} align="right">
@@ -61,6 +63,8 @@ export default function Navbar(props) {
                                     <MenuItem as={MenuLink} href="/characters">Characters</MenuItem>
                                     <MenuItem as={MenuLink} href="/news">News</MenuItem>
                                     <MenuItem as={MenuLink} href="/about">About Us</MenuItem>
+                                    <MenuItem as={MenuLink} href="/weapons">Weapons</MenuItem>
+                                    <MenuItem as={MenuLink} href="/enemies">Monsters</MenuItem>
                             </MenuList>
                         </Menu>
                     </Box>
