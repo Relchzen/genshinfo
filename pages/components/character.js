@@ -144,8 +144,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Aloy", "Hu Tao", "Venti", "Bennett"],
-            ["Aloy", "Xiangling", "Treveler(Anemo)", "Barbara"]
+            ["aloy", "hu-tao", "venti", "bennett"],
+            ["aloy", "xiangling", "traveler-anemo", "barbara"]
         ]
     },
     {
@@ -216,8 +216,7 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Amber", "Mona", "Jean", "Dehya"],
-            ["Amber", "Rosaria", "Fischl", "Diona"]
+            ["amber", "rosaria", "fischl", "diona"]
         ]
     },
     {
@@ -276,8 +275,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Arataki Itto", "Gorou", "Zhongli", "Raiden Shogun"],
-            ["Arataki Itto", "Xiangling", "Traveler(Geo)", "Noelle"]
+            ["arataki-itto", "gorou", "zhongli", "raiden"],
+            ["arataki-itto", "xiangling", "traveler-geo", "noelle"]
         ]
     },
     {
@@ -342,8 +341,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Ayaka", "Mona", "Kazuha", "Diona"],
-            ["Ayaka", "Xiangling", "Xingqiu", "Diona"]
+            ["ayaka", "mona", "kazuha", "diona"],
+            ["ayaka", "xiangling", "xingqiu", "diona"]
         ]
     },
     {
@@ -408,8 +407,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Ayato", "Nahida", "Kuki Shinobu", "Yun Jin"],
-            ["Ayato", "Xiangling", "Barbara", "Treveler(Dendro)"]
+            ["ayato", "xiangling", "barbara", "traveler-dendro"],
+            ["ayato", "fischl", "bennett", "kazuha"]
         ]
     },
     {
@@ -480,8 +479,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Barbara", "Traveler(Dendro)", "Nahida", "Nilou"],
-            ["Barbara", "Traveler(Dendro)", "Collei", "Lisa"]
+            ["barbara", "traveler-dendro", "collei", "lisa"],
+            ['ayaka', 'shenhe', 'barbara', 'kazuha']
         ]
     },
     {
@@ -552,8 +551,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Beidou", "Nahida", "Yae Miko", "Kokomi"],
-            ["Beidou", "Traveler(dendro)", "Barbara", "Lisa"]
+            ["beidou", "traveler-dendro", "barbara", "lisa"],
+            ['ayato', 'fischl', 'beidou', 'jean']
         ]
     },
     {
@@ -612,8 +611,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Xiao", "Albedo", "Zhongli", "Bennett"],
-            ["Xiangling", "Xingqiu", "Chongyun", "Bennett"]
+            ["xiao", "albedo", "zhongli", "bennett"],
+            ["xiangling", "xingqiu", "chongyun", "bennett"]
         ]
     },
     {
@@ -690,8 +689,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Chongyun", "Ayaka", "Kazuha", "Kokomi"],
-            ["Chongyun", "Xiangling", "Sucrose", "Barbara"]
+            ["chongyun", "ayaka", "kazuha", "kokomi"],
+            ["chongyun", "xiangling", "sucrose", "barbara"]
         ]
     },
     {
@@ -750,8 +749,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Collei", "Yoimiya", "Kokomi", "Yun Jin"],
-            ["Collei", "Fischl", "Lisa", "Barbara"]
+            ["collei", "yoimiya", "kokomi", "yun-jin"],
+            ["collei", "fischl", "lisa", "barbara"]
         ]
     },
     {
@@ -816,8 +815,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Diluc", "Xingqiu", "Bennet", "Kazuha"],
-            ["Diluc", "Xingqiu", "Fischl", "Sucrose"]
+            ["diluc", "xingqiu", "bennett", "kazuha"],
+            ["diluc", "xingqiu", "fischl", "sucrose"]
         ]
     },
     {
@@ -894,8 +893,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Diona", "Diluc", "Venti", "Xingqiu"],
-            ["Diona", "Xiangling", "Amber", "Traveler(Anemo)"]
+            ["diona", "diluc", "venti", "xingqiu"],
+            ["diona", "xiangling", "amber", "traveler-anemo"]
         ]
     },
     {
@@ -960,8 +959,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Eula", "Raiden Shogun", "Diona", "Yun Jin"],
-            ["Eula", "Fischl", "Diona", "Lisa"]
+            ["eula", "raiden", "diona", "yun-jin"],
+            ["eula", "fischl", "diona", "lisa"]
         ]
     },
     {
@@ -1026,8 +1025,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Fischl", "Yoimiya", "Zhongli", "Yelan"],
-            ["Fischl", "Kaeya", "Traveler(Anemo)", "Barbara"]
+            ["fischl", "yoimiya", "zhongli", "yelan"],
+            ["fischl", "kaeya", "traveler-anemo", "barbara"]
         ]
     },
     {
@@ -1092,8 +1091,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Ganyu", "Xiangling", "Bennett", "Zhongli"],
-            ["Ganyu", "Barbara", "Sucrose", "Diona"]
+            ["ganyu", "xiangling", "bennett", "zhongli"],
+            ["ganyu", "barbara", "sucrose", "diona"]
         ]
     },
     {
@@ -1159,8 +1158,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Gorou", "Arataki Itto", "Albedo", "Raiden Shogun"],
-            ["Gorou", "Noelle", "Traveler(Geo)", "Kaeya"]
+            ["gorou", "arataki-itto", "albedo", "raiden"],
+            ["gorou", "noelle", "traveler-geo", "kaeya"]
         ]
     },
     {
@@ -1231,8 +1230,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Hu Tao", "Yelan", "Xingqiu", "Zhongli"],
-            ["Hu Tao", "Xingqiu", "Sucrose", "Diona"]
+            ["hu-tao", "yelan", "xingqiu", "zhongli"],
+            ["hu-tao", "xingqiu", "sucrose", "diona"]
         ]
     },
     {
@@ -1309,7 +1308,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["jean", "rosaria", "xingqiu", "sucrose"]
+            ["jean", "rosaria", "xingqiu", "sucrose"],
+            ['ganyu', 'aloy', 'mona', 'jean']
         ]
     },
     {
@@ -1380,8 +1380,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Kaeya", "Diluc", "Venti", "Bennet"],
-            ["Kaeya", "Bennet", "Xiangling", "Lisa"]
+            ["kaeya", "diluc", "venti", "bennett"],
+            ["kaeya", "bennett", "xiangling", "lisa"]
         ]
     },
     {
@@ -1440,8 +1440,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Kazuha", "Nahida", "Kuki Shonpbu", "Ayato"],
-            ["kazuha", "Xiangling", "Xingqiu", "Bennet"]
+            ["ayaka", "shenhe", "kokomi", "kazuha"],
+            ["hu-tao", "xingqiu", "thoma", "kazuha"]
         ]
     },
     {
@@ -1519,8 +1519,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Keqing", "Nahida", "Kuki Shinobu", "Zhongli"],
-            ["Keqing", "Layla", "Fischl", "Diona"]
+            ["keqing", "fischl", "collei", "kazuha"],
+            ["keqing", "xingqiu", "beidou", "kazuha"]
         ]
     },
     {
@@ -1598,8 +1598,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Klee", "Rosaria", "Kazuha", "Layla"],
-            ["Klee", "Xingqiu", "Sucrose", "Bennet"]
+            ["klee", "xingqiu", "sucrose", "bennett"],
+            ["klee", "xiangling", "bennett", "kazuha"]
         ]
     },
     {
@@ -1665,8 +1665,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Kokomi", "Nilou", "Nahida", "Traveler(Dendro)"],
-            ["Kokomi", "Lisa", "Fischl", "Traveler(Anemo)"]
+            ["kokomi", "lisa", "fischl", "traveler-anemo"],
+            ["ayaka", "shenhe", "kokomi", "kazuha"]
         ]
     },
     {
@@ -1733,8 +1733,7 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Kuki Shinobu", "Childe", "Traveler(Dendro)", "Collei"],
-            ["Kuki Shinobu", "Barbara", "Traveler(Dendro)", "Collei"]
+            ["kuki-shinobu", "barbara", "traveler-dendro", "collei"]
         ]
     },
     {
@@ -1813,8 +1812,7 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Alhaitham", "Fischl", "Lisa", "Yaoyao"],
-            ["Lisa", "Collei", "Sucrose", "Yaoyao"],
+            ["raiden", "lisa", "bennett", "kazuha"]
         ]
     },
     {
@@ -1893,8 +1891,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Mona", "Fischl", "Kuki Shinobu", "Kazuha"],
-            ["Mona", "Layla", "Sucrose", "Diona"]
+            ["mona", "fischl", "kuki-shinobu", "kazuha"],
+            ["ganyu", "mona", "diona", "venti"]
         ]
     },
     {
@@ -1972,8 +1970,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Ningguang", "Zhongli", "Raiden Shogun", "Yelan"],
-            ["Ningguang", "Kaeya", "Xiangling", "Noelle"]
+            ["ningguang", "zhongli", "raiden", "yelan"],
+            ["ningguang", "kaeya", "xiangling", "noelle"]
         ]
     },
     {
@@ -2046,8 +2044,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Noelle", "Albedo", "Gorou", "Zhongli"],
-            ["Noelle", "Nongguang", "Traveler(Geo)", "Gorou"]
+            ["noelle", "albedo", "gorou", "zhongli"],
+            ["noelle", "ningguang", "traveler-geo", "gorou"]
         ]
     },
     {
@@ -2114,8 +2112,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Eula", "Fischl", "Beidou", "Qiqi"],
-            ["Kaeya", "Fischl", "Kuki Shinobu", "Qiqi"]
+            ["eula", "fischl", "beidou", "qiqi"],
+            ["kaeya", "fischl", "kuki-shinobu", "qiqi"]
         ]
     },
     {
@@ -2182,8 +2180,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Raiden Shogun", "Xiangling", "Xingqiu", "Bennet"],
-            ["Raiden Shogun", "Barbara", "Collei", "Traveler(Dendro)"]
+            ["raiden", "xiangling", "xingqiu", "bennett"],
+            ["raiden", "barbara", "collei", "traveler-dendro"]
         ]
     },
     {
@@ -2250,8 +2248,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Razor", "fischl", "Yun jin", "Qiqi"],
-            ["Razor", "fischl", "Rosaria", "Diona"]
+            ["razor", "fischl", "yun-jin", "qiqi"],
+            ["razor", "fischl", "rosaria", "diona"]
         ]
     },
     {
@@ -2318,8 +2316,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Rosaria", "Raiden Shogun", "Yun Jin", "Diona"],
-            ["Rosaria", "Chongyun", "Xiangling", "Bennett"]
+            ["rosaria", "raiden", "yun-jin", "diona"],
+            ["rosaria", "chongyun", "xiangling", "bennett"]
         ]
     },
     {
@@ -2392,8 +2390,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Sara", "Yae Miko", "Kokomi", "Nahida"],
-            ["Sara", "Xiangling", "Barbara", "Lisa"]
+            ['raiden', 'sara', 'bennett', 'kazuha'],
+            ["sara", "xiangling", "barbara", "lisa"]
         ]
     },
     {
@@ -2454,8 +2452,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Sayu", "Ganyu", "Mona", "Layla"],
-            ["Sayu", "Kaeya", "Xiangling", "Amber"]
+            ["xiao", "fischl", "sayu", "zhongli"],
+            ["sayu", "kaeya", "xiangling", "amber"]
         ]
     },
     {
@@ -2522,8 +2520,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Ayaka", "Shenhe", "Sucrose", "Diona"],
-            ["Rosaria", "Fisch;", "Shenhe", "Kuki Shinobu"]
+            ["ayaka", "shenhe", "sucrose", "diona"],
+            ["rosaria", "Fischl", "shenhe", "kuki-shinobu"]
         ]
     },
     {
@@ -2590,8 +2588,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Shikanoin Heizou", "Yelan", "Fischl", "Bennett"],
-            ["Shikanoin Heizou", "Fischl", "Xiangling", "Barbara"]
+            ["Shikanoin Heizou", "yelan", "fischl", "bennett"],
+            ["Shikanoin Heizou", "fischl", "xiangling", "barbara"]
         ]
     },
     //sucrose================
@@ -2668,8 +2666,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["sucrose", "klee", "yelan", "bennet"],
-            ["sucrose", "lisa", "dendro traveler", "barbaras"]
+            ["sucrose", "klee", "yelan", "bennett"],
+            ["sucrose", "lisa", "traveler-dendro", "barbara"]
         ]
     },
     //tartaglia==============
@@ -2747,7 +2745,7 @@ export const Character = [
         ],
         bestTeam: [
             ["tartaglia", "fischl", "beidou", "sucrose"],
-            ["tartaglia", "sucrose", "bennet", "xiangling"]
+            ["tartaglia", "sucrose", "bennett", "xiangling"]
         ]
     },
     //thoma==================
@@ -2819,8 +2817,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["ayato", "nahida", "thoma", "kazuha"],
-            ["xingqiu", "chongyun", "thoma", "xiangling"]
+            ["xingqiu", "chongyun", "thoma", "xiangling"],
+            ["hu-tao", "xingqiu", "thoma", "kazuha"]
         ]
     },
     //tighnari===============
@@ -2974,7 +2972,7 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["traveler-anemo", "klee", "yelan", "bennet"],
+            ["traveler-anemo", "klee", "yelan", "bennett"],
             ["traveler-anemo", "lisa", "xiangling", "barbara"]
         ]
     },
@@ -3036,7 +3034,7 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["traveler-dendro", "yae-miko", "raiden shogun", "kokomi"],
+            ["traveler-dendro", "yae-miko", "raiden", "kokomi"],
             ["traveler-dendro", "fischl", "lisa", "barbara"]
         ]
     },
@@ -3257,8 +3255,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Venti", "ganyu", "mona", "diona"],
-            ["Venti", "collei", "traveler-dendro", "fischl"]
+            ["venti", "ganyu", "mona", "diona"],
+            ["venti", "collei", "traveler-dendro", "fischl"]
         ]
     },
     //xiangling==============
@@ -3338,8 +3336,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Xiangling", "Bennett", "tartaglia", "kazuha"],
-            ["Xiangling", "Xingqiu", "amber", "kaeya"]
+            ["xiangling", "bennett", "tartaglia", "kazuha"],
+            ["xiangling", "xingqiu", "amber", "kaeya"]
         ]
     },
     //xiao===================
@@ -3411,8 +3409,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Xiao", "Zhongli", "Bennett", "Sucrose"],
-            ["Xiao", "xiangling", "Xingqiu", "Diona"]
+            ["xiao", "zhongli", "bennett", "sucrose"],
+            ["xiao", "xiangling", "xingqiu", "diona"]
         ]
     },
     //xingqiu================
@@ -3492,8 +3490,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Xingqiu", "yelan", "hutao", "zhonglis"],
-            ["Xingqiu", "xiangling", "Bennett", "chongyun"]
+            ["xingqiu", "yelan", "hutao", "zhongli"],
+            ["xingqiu", "xiangling", "bennett", "chongyun"]
         ]
     },
     //xinyan=================
@@ -3571,8 +3569,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Xinyan", "eula", "raiden", "Bennett"],
-            ["Xinyan", "Chongyun", "Xingqiu", "Diona"]
+            ["xinyan", "eula", "raiden", "bennett"],
+            ["xinyan", "chongyun", "xingqiu", "diona"]
         ]
     },
     //yae-miko===============
@@ -3653,8 +3651,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Yae Miko", "nahida", "fischl", "jean"],
-            ["Yae Miko", "xingqiu", "fischl", "barbara"]
+            ["yae-miko", "xingqiu", "fischl", "barbara"],
+            ["raiden", "fischl", "bennett", "xiao"]
         ]
     },
     //yanfei=================
@@ -3720,8 +3718,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Yanfei", "Xingqiu", "zhongli", "Bennett"],
-            ["Yanfei", "xianling", "kaeya", "barbara"]
+            ["yanfei", "xingqiu", "zhongli", "bennett"],
+            ["yanfei", "xianling", "kaeya", "barbara"]
         ]
     },
     //yelan==================
@@ -3807,8 +3805,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Yelan", "yoimiya", "kazuha", "diona"],
-            ["Yelan", "beido", "fischl", "bennet"]
+            ["yelan", "yoimiya", "kazuha", "diona"],
+            ["yelan", "beidou", "fischl", "bennett"]
         ]
     },
     //yoimiya================
@@ -3874,8 +3872,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Yoimiya", "raiden", "xingqiu", "yun-jin"],
-            ["Yoimiya", "Fischl", "xingqiu", "bennet"]
+            ["yoimiya", "raiden", "xingqiu", "yun-jin"],
+            ["yoimiya", "fischl", "xingqiu", "bennett"]
         ]
     },
     //yun-jin================
@@ -3942,8 +3940,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Yun Jin", "raiden", "yoimiya", "jean"],
-            ["Yun Jin", "Fischl", "layla", "rosaria"]
+            ["yun-jin", "raiden", "yoimiya", "jean"],
+            ["yoimiya", "yelan", "yun-jin", "zhongli"]
         ]
     },
     //zhongli================
@@ -4016,8 +4014,8 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["Zhongli", "arataki-itto", "gorou", "albedo"],
-            ["Zhongli", "noelle", "traveler-geo", "ninguang"]
+            ["zhongli", "arataki-itto", "gorou", "albedo"],
+            ["zhongli", "noelle", "traveler-geo", "ningguang"]
         ]
     }
 ]
