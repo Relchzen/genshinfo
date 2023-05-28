@@ -4,6 +4,7 @@ import { Image, Box, Text, LinkBox, LinkOverlay, Container, Icon } from "@chakra
 import Global from "@emotion/react"
 import { useState, useEffect } from "react"
 import styles from '../../styles/bgkeren.module.css'
+import GetCharacter from "./getCharacter"
 
 export function GridStyle() {
     <Global
@@ -162,19 +163,10 @@ export function CharGridItem({ name }) {
                 scroll={false}
                 cursor="pointer"
             >
-                <Box width={"100%"} overflow={"hidden"} aspectRatio={1} bgGradient={charBg} borderRadius='2xl'>
-                    <Image src={source}
-                        className="character-grid-icon"
-                        width={'full'}
-                        objectFit={'cover'}
-                        alt={`${data.name} icon`}
-                        priority={true}
-                    />
-
+                <GetCharacter name={name} />
                     <div className={`${styles.containerstars} ${styles.cardStars}`}>
                         <div className={styles.star}></div>
                     </div>
-                </Box>
 
                 <Image src={icon}
                     className="element-grid-icon"

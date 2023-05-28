@@ -1,6 +1,8 @@
-import { Box, Flex, Container, Text, Image, Heading, Wrap, WrapItem } from "@chakra-ui/react"
+import NextLink from 'next/link'
+import { Box, Flex, Container, Text, Image, Heading, Wrap, WrapItem, LinkBox, SimpleGrid } from "@chakra-ui/react"
 import { StarIcon } from "@chakra-ui/icons";
 import { Character } from "./character";
+import GetCharacter from './getCharacter';
 
 export function RarityStar({rarity}) {
 
@@ -72,11 +74,10 @@ export function CharacterRole({name}) {
     return(
         <Box borderRadius={15}
         border={'2px'}
-        px={5} 
-        py={2} 
-        mb={3} 
-        align={'center'} 
-        width={'170px'}>
+        py={1}
+        ml={5}
+        align={'center'}
+        maxW={'150px'} >
             <Heading fontSize={'xl'}>{char.role}</Heading>
         </Box>
     )
@@ -86,7 +87,7 @@ export function PriorityStats({name}) {
     const char = Character.find((character) => character.name === name);
     var source = new String();
     return (
-        <Wrap justify={'center'} border={'2px'} borderRadius={18} p={2} spacing={'10px'}>
+        <SimpleGrid columns={[1, null, 2]} mt={5} justify={'center'} borderRadius={18} p={2} spacing={'5px'}>
             {char.artifactStat.map(function(stat, index, []) {
                 switch (stat.name) {
                     case "flower":
@@ -106,35 +107,41 @@ export function PriorityStats({name}) {
                         break;
                 }
                 return(
-                    <WrapItem border={'2px'} borderRadius={18} key={index}>
-                <Box p={2} mr={2}>
-                    <Image src={source} borderRadius={'full'} width={'60px'} />
-                </Box>
-                <Box p={2}>
-                    <Heading fontSize={'xl'}>Main: {stat.priority}</Heading>
-                    <Heading fontSize={'md'}>Sub: {stat.sub}</Heading>
-                </Box>
-            </WrapItem>
+                    <Flex border={'2px'} borderRadius={18} key={index}>
+                        <Box p={2} mr={2}>
+                            <Image src={source} borderRadius={'full'} width={'60px'} />
+                        </Box>
+                        <Box p={2} maxW={'200px'}>
+                            <Heading fontSize={'xl'}>Main: {stat.priority}</Heading>
+                            <Heading fontSize={'md'}>Sub: {stat.sub}</Heading>
+                        </Box>
+                    </Flex>
                 )
             })}
-        </Wrap>
+        </SimpleGrid>
     )
 }
 
 export function BestTeam({name}) {
     const char = Character.find((character) => character.name === name);
     return (
-        <Box>{char.bestTeam.map(function(team, index, []) {
+        <Flex justify={'center'} flexDirection={{base: 'column', md: 'row'}}>
+            {char.bestTeam.map(function(team, index, []) {
             return(
-                <Box>
+                <Wrap justify={'center'} key={index} border={'2px'} m={2} borderRadius={18}>
                     {team.map(function(teammate, index, []) {
                         return(
-                            <Text>{teammate}</Text>
+                            <WrapItem maxW={'86px'} p={1.5} key={index}>
+                                <LinkBox as={NextLink} scroll={false} cursor={'pointer'} href={`/characters/${teammate}`}>
+                                    <GetCharacter name={teammate} />
+                                </LinkBox>
+                            </WrapItem>
                         )
                     })}
-                </Box>
+                </Wrap>
             )
-        })}</Box>
+        })}
+        </Flex>
     )
 }
 
@@ -250,6 +257,73 @@ export function CharacterItem({name}) {
                     )
                 })}
             </Flex>
+        </Flex>
+    )
+}
+
+export function CharacterPassive({character, passive}) {
+    var source = new String();
+    switch(passive.unlock) {
+        case "Unlocked at Ascension 1":
+            source = `https://api.genshin.dev/characters/${character}/talent-passive-1`;
+            break;
+        case "Unlocked at Ascension 4":
+            source = `https://api.genshin.dev/characters/${character}/talent-passive-2`;
+            break;
+        case "Unlocked Automatically":
+            source = `https://api.genshin.dev/characters/${character}/talent-passive-0`;
+            break;
+    }
+
+    return (
+        <Flex align={'flex-start'} px={5} py={3} key={passive.name}>
+            <Box alignSelf={'center'}>
+                <Image src={source} alt={passive.name} boxSize={'80px'} objectFit={'cover'} borderRadius={'full'} />
+            </Box>
+            <Box width={'80%'} ml={5}>
+                <Heading as={'h4'} size={'md'}>{passive.name}</Heading>
+                <Text fontSize={'sm'}>
+                    {passive.description}
+                </Text>
+            </Box>
+        </Flex>
+    )
+}
+
+export function CharacterConstellation({character, constellation}) {
+    var source = new String();
+    switch(constellation.level) {
+        case 1:
+            source = `https://api.genshin.dev/characters/${character}/constellation-1`;
+            break;
+        case 2:
+            source = `https://api.genshin.dev/characters/${character}/constellation-2`;
+            break;
+        case 3:
+            source = `https://api.genshin.dev/characters/${character}/constellation-3`;
+            break;
+        case 4:
+            source = `https://api.genshin.dev/characters/${character}/constellation-4`;
+            break;
+        case 5:
+            source = `https://api.genshin.dev/characters/${character}/constellation-5`;
+            break;
+        case 6:
+            source = `https://api.genshin.dev/characters/${character}/constellation-6`;
+            break;
+    }
+
+    return (
+        <Flex align={'flex-start'} px={5} py={3} key={constellation.name}>
+            <Box alignSelf={'center'}>
+                <Image src={source} alt={constellation.name} boxSize={'80px'} objectFit={'cover'} borderRadius={'full'} />
+            </Box>
+            <Box width={'80%'} ml={5}>
+                <Heading as={'h4'} size={'md'}>{constellation.name}</Heading>
+                <Text fontSize={'sm'}>
+                    {constellation.description}
+                </Text>
+            </Box>
         </Flex>
     )
 }
