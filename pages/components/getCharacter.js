@@ -25,7 +25,7 @@ export default function GetCharacter({name}) {
     } else if (data.rarity === 5) {
         charBg = 'linear(#B46060, #C07F00, #FFD95A, #F4B183)';
     } else {
-        charBg = 'white';
+        charBg = 'linear(#B46060, #C07F00, #FFD95A, #F4B183)';
     }
 
   return (

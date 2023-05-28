@@ -77,7 +77,7 @@ export function CharacterRole({name}) {
         py={1}
         ml={5}
         align={'center'}
-        maxW={'150px'} >
+        maxW={'200px'} >
             <Heading fontSize={'xl'}>{char.role}</Heading>
         </Box>
     )
@@ -111,7 +111,7 @@ export function PriorityStats({name}) {
                         <Box p={2} mr={2}>
                             <Image src={source} borderRadius={'full'} width={'60px'} />
                         </Box>
-                        <Box p={2} maxW={'200px'}>
+                        <Box p={2} maxW={'300px'}>
                             <Heading fontSize={'xl'}>Main: {stat.priority}</Heading>
                             <Heading fontSize={'md'}>Sub: {stat.sub}</Heading>
                         </Box>
