@@ -1,4 +1,4 @@
-const Character = [
+export const Character = [
 {   id: 1,
     name: "albedo",
     role: "sub-dps",
