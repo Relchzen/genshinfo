@@ -6,7 +6,8 @@ import { CharacterAttack,
   RarityStar, 
   CharacterRole,
   PriorityStats,
-  WeaponType } from "../../components/character-detail";
+  WeaponType, 
+  BestTeam} from "../../components/character-detail";
 import Section from "../../components/section";
 
 export async function getServerSideProps(context) {
@@ -79,9 +80,14 @@ export default function Page({ character }) {
         </Box>
       </Flex>
       <Box mt={5}>
-      <CharacterItem name={router.query.name} />
-
+        <CharacterItem name={router.query.name} />
       </Box>
+      
+      <Box mt={5}>
+        <Heading>Hello</Heading>
+        <BestTeam name={router.query.name} />
+      </Box>
+
       <Box mt={5}>
         <Heading as={'h2'} size={'lg'} mb={3} ml={3}>Talents</Heading>
     {character.skillTalents.map(function(skill, index){
