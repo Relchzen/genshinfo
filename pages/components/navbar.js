@@ -31,7 +31,7 @@ export default function Navbar(props) {
         <Box position="fixed"
         as="nav"
         w="100%"
-        zIndex={1}
+        zIndex={3}
         backgroundColor="#DF7861"
         {...props}>
             <Box display="flex" p={2} maxW="container.md" wrap="wrap" align="center" justify="space-between">
