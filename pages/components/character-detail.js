@@ -1,4 +1,4 @@
-import { Box, Flex, Container, Text, Image, Heading, Grid, GridItem } from "@chakra-ui/react"
+import { Box, Flex, Container, Text, Image, Heading, Wrap, WrapItem } from "@chakra-ui/react"
 import { StarIcon } from "@chakra-ui/icons";
 import { Character } from "./character";
 
@@ -73,20 +73,68 @@ export function CharacterRole({name}) {
         <Box borderRadius={15}
         border={'2px'}
         px={5} 
-        py={3} 
+        py={2} 
         mb={3} 
         align={'center'} 
-        width={'30%'}>
-                <Heading fontSize={'xl'}>{char.role}</Heading>
+        width={'170px'}>
+            <Heading fontSize={'xl'}>{char.role}</Heading>
         </Box>
     )
 }
 
 export function PriorityStats({name}) {
     const char = Character.find((character) => character.name === name);
-
+    var source = new String();
     return (
-        <Box></Box>
+        <Wrap justify={'center'} border={'2px'} borderRadius={18} p={2} spacing={'10px'}>
+            {char.artifactStat.map(function(stat, index, []) {
+                switch (stat.name) {
+                    case "flower":
+                        source = "https://img.gamewith.net/img/9c846f7a43b86f7315ec519a6fa3b15f.jpg";
+                        break;
+                    case "plume":
+                        source = "https://img.gamewith.net/img/e177d3e6e2771f686f797f2084517c00.jpg"
+                        break;
+                    case "sand":
+                        source = "https://img.gamewith.net/img/0c9778585237a814e713006f6bc48034.jpg"
+                        break;
+                    case "goblet":
+                        source = "https://img.gamewith.net/img/6129f569a5633c82ff7cd307ac1c13fd.jpg"
+                        break;
+                    case "headgear":
+                        source = "https://img.gamewith.net/img/2f83e6e3f58c8f4355a2519444e84db3.jpg"
+                        break;
+                }
+                return(
+                    <WrapItem border={'2px'} borderRadius={18} key={index}>
+                <Box p={2} mr={2}>
+                    <Image src={source} borderRadius={'full'} width={'60px'} />
+                </Box>
+                <Box p={2}>
+                    <Heading fontSize={'xl'}>Main: {stat.priority}</Heading>
+                    <Heading fontSize={'md'}>Sub: {stat.sub}</Heading>
+                </Box>
+            </WrapItem>
+                )
+            })}
+        </Wrap>
+    )
+}
+
+export function BestTeam({name}) {
+    const char = Character.find((character) => character.name === name);
+    return (
+        <Box>{char.bestTeam.map(function(team, index, []) {
+            return(
+                <Box>
+                    {team.map(function(teammate, index, []) {
+                        return(
+                            <Text>{teammate}</Text>
+                        )
+                    })}
+                </Box>
+            )
+        })}</Box>
     )
 }
 
@@ -143,7 +191,7 @@ export function CharacterItem({name}) {
                             </Box>
                             <Flex align={'center'}>
                                 <Box m={2} width={'50px'} height={'50px'} minW={'50px'}>
-                                    <Image alt='artifact icon' src={weapon.source} />
+                                    <Image alt='artifact icon' src={weapon.source} width={'50px'} height={'50px'} />
                                 </Box>
                                 <Text ml={2} as={'b'}>
                                     {weapon.name}
