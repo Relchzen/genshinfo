@@ -1,7 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
 .container {
-  font-family: 'Poppins', sans-serif;
   padding: 0 0;
   margin: 0 0;
   height: auto;
@@ -64,6 +61,7 @@
 
 .cardGetStarted{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   margin-left: 200px;
   margin-right: 200px;
@@ -83,6 +81,7 @@
   flex-direction: column-reverse;
   border-color: #DF7861;
 }
+
 .getstarted p  {
   margin-bottom: 30px;
   font-weight: bold;
@@ -96,30 +95,6 @@
 }
 .getstarted:hover p {
   color: #EFEBE2;
-}
-
-
-
-.gameUpdate div{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-.gameUpdate img{
-  width: 250px;
-  border-radius: 12px;
-  border: 4px solid black;
-}
-.memeUpdate div{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-.memeUpdate img{
-  width: 250px;
-  border-radius: 12px;
-  border: 4px solid black;
-
 }
 
 /* button keren ------------------------------------------*/
@@ -335,6 +310,20 @@
   .page1 h3{
     font-size: 30px;
   }
+
+  .getstarted {
+    text-align: center;
+    background-color: #EFEBE2;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 170px;
+    height: 270px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    border-color: #DF7861;
+  }
+  
 }
 
 @media screen and (max-width:500px){
@@ -389,4 +378,18 @@
   .page1 h3{
     font-size: 25px;
   }
+
+  .getstarted {
+    text-align: center;
+    background-color: #EFEBE2;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 150px;
+    height: 250px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    border-color: #DF7861;
+  }
+  
 }

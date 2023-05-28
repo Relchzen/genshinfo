@@ -3,7 +3,6 @@ import NextLink from "next/link";
 import { Container, Box, Link, Stack, Heading, Flex, Menu, MenuItem, MenuList, MenuButton, IconButton } from "@chakra-ui/react";
 import { forwardRef } from "react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-// import About from "../about";
 
 function LinkItem({href, path, children, target, ...props}) {
     const active = path === href;
@@ -51,6 +50,8 @@ export default function Navbar(props) {
                     <LinkItem href="/characters" path={path}>Characters</LinkItem>
                     <LinkItem href="/newsBaru" path={path}>News</LinkItem>
                     <LinkItem href="/about" path={path}>About</LinkItem>
+                    {/* <LinkItem href="/weapons" path={path}>Weapons</LinkItem>
+                    <LinkItem href="/enemies" path={path}>Monsters</LinkItem> */}
                 </Stack>
 
                 <Box flex={1} align="right">
@@ -62,6 +63,7 @@ export default function Navbar(props) {
                                     <MenuItem as={MenuLink} href="/characters">Characters</MenuItem>
                                     <MenuItem as={MenuLink} href="/newsBaru">News</MenuItem>
                                     <MenuItem as={MenuLink} href="/about">About Us</MenuItem>
+
                             </MenuList>
                         </Menu>
                     </Box>

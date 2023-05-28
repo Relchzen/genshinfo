@@ -6,8 +6,7 @@ import Footer from '../footer'
 
 export default function Main({children, router }) {
     return (
-        <Box as="main" width="100%">
-            
+        <Box as="main" width="100%" bgColor={'#FFE6C7'} color={"#000000"}>
             <Head>
                 <title>Genshinfo</title>
                 <meta name="description" content="Everything about Genshin Impact" />
