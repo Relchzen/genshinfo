@@ -48,7 +48,7 @@ export default function Navbar(props) {
                 flexGrow={1}
                 mt={{base: 4, md: 0}}>
                     <LinkItem href="/characters" path={path}>Characters</LinkItem>
-                    <LinkItem href="/news" path={path}>News</LinkItem>
+                    <LinkItem href="/newsBaru" path={path}>News</LinkItem>
                     <LinkItem href="/about" path={path}>About</LinkItem>
                     {/* <LinkItem href="/weapons" path={path}>Weapons</LinkItem>
                     <LinkItem href="/enemies" path={path}>Monsters</LinkItem> */}
@@ -58,13 +58,12 @@ export default function Navbar(props) {
                     <Box ml={2} display={{base: 'inline-block', md:'none'}}>
                         <Menu>
                             <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label="Options" />
-                            <MenuList backgroundColor='#DF7861'>
-                                    <MenuItem backgroundColor='#DF7861' as={MenuLink} href="/">Home</MenuItem>
-                                    <MenuItem backgroundColor='#DF7861' as={MenuLink} href="/characters">Characters</MenuItem>
-                                    <MenuItem backgroundColor='#DF7861' as={MenuLink} href="/news">News</MenuItem>
-                                    <MenuItem backgroundColor='#DF7861' as={MenuLink} href="/about">About Us</MenuItem>
-                                    {/* <MenuItem as={MenuLink} href="/weapons">Weapons</MenuItem>
-                                    <MenuItem as={MenuLink} href="/enemies">Monsters</MenuItem> */}
+                            <MenuList>
+                                    <MenuItem as={MenuLink} href="/">Home</MenuItem>
+                                    <MenuItem as={MenuLink} href="/characters">Characters</MenuItem>
+                                    <MenuItem as={MenuLink} href="/newsBaru">News</MenuItem>
+                                    <MenuItem as={MenuLink} href="/about">About Us</MenuItem>
+
                             </MenuList>
                         </Menu>
                     </Box>
