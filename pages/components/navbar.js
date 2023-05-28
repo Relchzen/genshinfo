@@ -49,7 +49,7 @@ export default function Navbar(props) {
                 flexGrow={1}
                 mt={{base: 4, md: 0}}>
                     <LinkItem href="/characters" path={path}>Characters</LinkItem>
-                    <LinkItem href="/news" path={path}>News</LinkItem>
+                    <LinkItem href="/newsBaru" path={path}>News</LinkItem>
                     <LinkItem href="/about" path={path}>About</LinkItem>
                 </Stack>
 
@@ -60,7 +60,7 @@ export default function Navbar(props) {
                             <MenuList>
                                     <MenuItem as={MenuLink} href="/">Home</MenuItem>
                                     <MenuItem as={MenuLink} href="/characters">Characters</MenuItem>
-                                    <MenuItem as={MenuLink} href="/news">News</MenuItem>
+                                    <MenuItem as={MenuLink} href="/newsBaru">News</MenuItem>
                                     <MenuItem as={MenuLink} href="/about">About Us</MenuItem>
                             </MenuList>
                         </Menu>

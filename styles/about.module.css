@@ -147,9 +147,7 @@
     border-radius: 20px;
   }
 
-  .profileDiv p {
-    
-  }
+
   
   .cardContainer:hover .profileDiv {
     transform: translateX(-25%) translateY(-20%);
