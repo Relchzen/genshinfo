@@ -1,6 +1,13 @@
 import { Image, Text, Spacer, Box, Container, Flex, Heading } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import { CharacterAttack, CharacterDescription, RarityStar, WeaponType } from "../../components/character-detail";
+import { CharacterAttack, 
+  CharacterDescription, 
+  CharacterItem, 
+  RarityStar, 
+  CharacterRole,
+  PriorityStats,
+  WeaponType, 
+  BestTeam} from "../../components/character-detail";
 import Section from "../../components/section";
 
 export async function getServerSideProps(context) {
@@ -60,16 +67,27 @@ export default function Page({ character }) {
             <WeaponType weapon={character.weapon} />
 
             <Box p={3}>
-              <Image src={`https://api.genshin.dev/elements/${element}/icon`} />
+              <Image src={`https://api.genshin.dev/elements/${element}/icon`} height={'80px'} width={'80px'}  />
             </Box>
           </Flex>
 
-          <Flex flexDirection="column" key={'detail'}> {/* Align items to flex-start */}
+          <Flex flexDirection="column" key={'detail'} align={'center'}> {/* Align items to flex-start */}
               <CharacterDescription descriptions={character.description} />
+              <CharacterRole name={router.query.name} />
+              <PriorityStats name={router.query.name} />
           </Flex>
 
         </Box>
       </Flex>
+      <Box mt={5}>
+        <CharacterItem name={router.query.name} />
+      </Box>
+      
+      <Box mt={5}>
+        <Heading>Hello</Heading>
+        <BestTeam name={router.query.name} />
+      </Box>
+
       <Box mt={5}>
         <Heading as={'h2'} size={'lg'} mb={3} ml={3}>Talents</Heading>
     {character.skillTalents.map(function(skill, index){

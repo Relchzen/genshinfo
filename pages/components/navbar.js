@@ -50,21 +50,21 @@ export default function Navbar(props) {
                     <LinkItem href="/characters" path={path}>Characters</LinkItem>
                     <LinkItem href="/news" path={path}>News</LinkItem>
                     <LinkItem href="/about" path={path}>About</LinkItem>
-                    <LinkItem href="/weapons" path={path}>Weapons</LinkItem>
-                    <LinkItem href="/enemies" path={path}>Monsters</LinkItem>
+                    {/* <LinkItem href="/weapons" path={path}>Weapons</LinkItem>
+                    <LinkItem href="/enemies" path={path}>Monsters</LinkItem> */}
                 </Stack>
 
                 <Box flex={1} align="right">
                     <Box ml={2} display={{base: 'inline-block', md:'none'}}>
                         <Menu>
                             <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label="Options" />
-                            <MenuList>
-                                    <MenuItem as={MenuLink} href="/">Home</MenuItem>
-                                    <MenuItem as={MenuLink} href="/characters">Characters</MenuItem>
-                                    <MenuItem as={MenuLink} href="/news">News</MenuItem>
-                                    <MenuItem as={MenuLink} href="/about">About Us</MenuItem>
-                                    <MenuItem as={MenuLink} href="/weapons">Weapons</MenuItem>
-                                    <MenuItem as={MenuLink} href="/enemies">Monsters</MenuItem>
+                            <MenuList backgroundColor='#DF7861'>
+                                    <MenuItem backgroundColor='#DF7861' as={MenuLink} href="/">Home</MenuItem>
+                                    <MenuItem backgroundColor='#DF7861' as={MenuLink} href="/characters">Characters</MenuItem>
+                                    <MenuItem backgroundColor='#DF7861' as={MenuLink} href="/news">News</MenuItem>
+                                    <MenuItem backgroundColor='#DF7861' as={MenuLink} href="/about">About Us</MenuItem>
+                                    {/* <MenuItem as={MenuLink} href="/weapons">Weapons</MenuItem>
+                                    <MenuItem as={MenuLink} href="/enemies">Monsters</MenuItem> */}
                             </MenuList>
                         </Menu>
                     </Box>
