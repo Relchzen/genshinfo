@@ -41,6 +41,7 @@ export default function NewsBaru() {
                                     <div className={styles.date}>{row.created_at}</div>
                                 </div>
                                 <div className={styles.caption}>{row.full_text}</div>
+                                <div className={styles.moreButton}><a href={row.media_url_https} target="_blank">more</a></div>
                             </div>
                         </div>
                     ))}
