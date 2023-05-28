@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 
 
 function renderCharacter(char) {
-    return (
-            <CharGridItem name={char} key={char} />
-    )
+  return (
+    <CharGridItem name={char} key={char} />
+  )
 }
 
 export default function Characters() {
