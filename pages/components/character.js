@@ -79,7 +79,7 @@ export const Character = [
         ],
         bestTeam: [
             ["xiao", "albedo", "jean", "zhongli"],
-            ["xiangling", "xiangqiu", "albedo", "fischl"]
+            ["xiangling", "xingqiu", "albedo", "fischl"]
         ]
     },
     { name: "aloy" },
@@ -1489,7 +1489,7 @@ export const Character = [
                 {
                     name: 'Gilded Dreams',
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/gildet-dreams/flower-of-life",
+                    source: "https://rerollcdn.com/GENSHIN/Gear/viridescent_venerer.png",
                     api: "https://api.genshin.dev/artifacts/gildet-dreams"
                 },
                 {
