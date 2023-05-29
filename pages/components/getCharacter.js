@@ -10,7 +10,7 @@ export default function GetCharacter({name}) {
       .then((data) => {
         setData(data);
       });
-  }, []);
+  }, [name]);
 
     var source = new String();
     if (name.includes("traveler")) {

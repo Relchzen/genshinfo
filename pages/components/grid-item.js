@@ -39,7 +39,7 @@ export function GridArtifacts({name}) {
             setData(data);
             setLoading(false);
         })
-    }, [])
+    }, [name])
 
     return (
         <Box w="auto" align="center" bg={'red.400'} p={1} aspectRatio={1}>
@@ -75,7 +75,7 @@ export function GridItems({name, type}) {
                 setData(data);
                 setLoading(false);
             })
-    }, [])
+    }, [name, type])
     return (
         <Box w="auto" align="center" bg={'red.400'} p={2} aspectRatio={1}>
             <LinkBox cursor={"pointer"} href={`/${type}/${name}`} scroll={false}>
@@ -116,7 +116,7 @@ export function CharGridItem({ name }) {
                 setData(data);
                 setLoading(false);
             })
-    }, [])
+    }, [name])
 
     const string = String(data.vision);
     const element = string.toLowerCase();
