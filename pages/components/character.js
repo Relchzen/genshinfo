@@ -3502,8 +3502,8 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Wolf's Gravestone",
-                source: "https://api.genshin.dev/weapons/wolfs-gravestone/icon",
-                api: "https://api.genshin.dev/weapons/wolfs-gravestone"
+                source: "https://api.genshin.dev/weapons/wolf-s-gravestone/icon",
+                api: "https://api.genshin.dev/weapons/wolf-s-gravestone"
             },
             {
                 name: "Serpent Spine",
@@ -3522,7 +3522,7 @@ export const Character = [
                     name: "Pale Flame",
                     stack: 2,
                     source: "https://api.genshin.dev/artifacts/pale-flame/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/pale-flame/flower-of-life"
+                    api: "https://api.genshin.dev/artifacts/pale-flame/"
                 },
                 {
                     name: "Bloodstained Chivalry",
