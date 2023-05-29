@@ -1,9 +1,10 @@
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import { Box, Flex, Tooltip, Text, Image, Heading, Wrap, WrapItem, LinkBox, SimpleGrid } from "@chakra-ui/react"
+import { Box, Flex, Tooltip, Text, Image, Heading, Wrap, WrapItem, LinkBox, SimpleGrid, Popover, PopoverTrigger, PopoverContent } from "@chakra-ui/react"
 import { StarIcon } from "@chakra-ui/icons";
 import { Character } from "./character";
 import GetCharacter from './getCharacter';
+import { WeaponDetail, ArtifactDetail } from "./item-detail"
 import { useState, useEffect } from "react";
 
 export function RarityStar({rarity}) {
@@ -215,26 +216,34 @@ function CharacterWeapon({weapon, index}) {
     }
     
     return(
-        <Flex p={'1'} m={1} align={'center'} key={index} border={'2px'} borderRadius={15}>
-            <Box 
-            bg={'#FFB84C'}
-            width={'40px'} 
-            height={'40px'} 
-            m={2} 
-            align={'center'} 
-            p={1}
-            borderRadius={13}>
-                <Heading as={'h1'} fontSize={'2xl'}>{index +1}</Heading>
-            </Box>
-            <Flex align={'center'}>
-                <Box m={1} borderRadius={10} bgGradient={weaponBg} width={'60px'} height={'60px'} minW={'60px'}>
-                    <Image alt='weapon icon' src={weapon.source} width={'60px'} height={'60px'} />
+        <Popover placement='auto'>
+            <PopoverTrigger>
+
+            <Flex p={'1'} m={1} align={'center'} key={index} border={'2px'} borderRadius={15}>
+                <Box 
+                bg={'#FFB84C'}
+                width={'40px'} 
+                height={'40px'} 
+                m={2} 
+                align={'center'} 
+                p={1}
+                borderRadius={13}>
+                    <Heading as={'h1'} fontSize={'2xl'}>{index +1}</Heading>
                 </Box>
-                <Text ml={2} as={'b'}>
-                    {weapon.name}
-                </Text>
+                <Flex align={'center'}>
+                    <Box m={1} borderRadius={10} bgGradient={weaponBg} width={'60px'} height={'60px'} minW={'60px'}>
+                        <Image alt='weapon icon' src={weapon.source} width={'60px'} height={'60px'} />
+                    </Box>
+                    <Text ml={2} as={'b'}>
+                        {weapon.name}
+                    </Text>
+                </Flex>
             </Flex>
-        </Flex>
+            </PopoverTrigger>
+            <PopoverContent bg={'#FFEEB3'} width={'420px'} border={'1px'} borderRadius={14}>
+                <WeaponDetail api={weapon.api} source={weapon.source} />
+            </PopoverContent>
+        </Popover>
     )
 }
 
@@ -260,36 +269,43 @@ function CharacterArtifact({artifact, index}) {
     }
 
     return(
-        <Flex
-        flexDirection={{base: 'column' , md: 'row'}} 
-        align={'center'} 
-        minW={'35%'} 
-        key={index}>
-            <Box 
-            bgGradient={artiBg}
-            m={1} 
-            width={'60px'} 
-            height={'60px'} 
-            minW={'60px'}
-            borderRadius={10}
-            >
-                <Image alt='artifact icon' src={artifact.source} />
-                <Box position={'relative'} 
+        <Popover placement='auto'>
+            <PopoverTrigger>
+                <Flex
+                flexDirection={{base: 'column' , md: 'row'}} 
                 align={'center'} 
-                justifyContent={'center'} 
-                width={'20px'} 
-                bottom={"6"} 
-                left={'10'} 
-                aspectRatio={1} 
-                borderRadius={5}
-                bg={'purple.800'}
-                color={'whiteAlpha.800'}
-                >{artifact.stack}</Box>
-            </Box>
-            <Text align={'center'} as={'b'} justifyContent={'center'} ml={2}>
-                {artifact.name}
-            </Text>
-        </Flex>
+                minW={'35%'} 
+                key={index}>
+                    <Box 
+                    bgGradient={artiBg}
+                    m={1} 
+                    width={'60px'} 
+                    height={'60px'} 
+                    minW={'60px'}
+                    borderRadius={10}
+                    >
+                        <Image alt='artifact icon' src={artifact.source} />
+                        <Box position={'relative'} 
+                        align={'center'} 
+                        justifyContent={'center'} 
+                        width={'20px'} 
+                        bottom={"6"} 
+                        left={'10'} 
+                        aspectRatio={1} 
+                        borderRadius={5}
+                        bg={'purple.800'}
+                        color={'whiteAlpha.800'}
+                        >{artifact.stack}</Box>
+                    </Box>
+                    <Text align={'center'} as={'b'} justifyContent={'center'} ml={2}>
+                        {artifact.name}
+                    </Text>
+                </Flex>
+            </PopoverTrigger>
+            <PopoverContent bg={'#FFEEB3'} width={'420px'} border={'1px'} borderRadius={14}>
+                <ArtifactDetail api={artifact.api} source={artifact.source} stack={artifact.stack} />
+            </PopoverContent>
+        </Popover>
     )
 }
 
