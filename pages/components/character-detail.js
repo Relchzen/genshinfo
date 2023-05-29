@@ -71,9 +71,7 @@ export function CharacterDescription({descriptions}) {
     )
 }
 
-export function CharacterRole({name}) {
-    const char = Character.find((character) => character.name === name);
-    var role = String(char.role);
+export function CharacterRole({role}) {
     return(
         <Box borderRadius={15}
         border={'2px'}
