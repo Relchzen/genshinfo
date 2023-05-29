@@ -112,7 +112,7 @@ export function PriorityStats({name}) {
                 return(
                     <Flex border={'2px'} borderRadius={18} key={index}>
                         <Box p={2} mr={2}>
-                            <Image src={source} borderRadius={'full'} width={'60px'} />
+                            <Image src={source} alt={'stats'} borderRadius={'full'} width={'60px'} />
                         </Box>
                         <Box p={2} maxW={'300px'}>
                             <Heading fontSize={'xl'}>Main: {stat.priority}</Heading>
