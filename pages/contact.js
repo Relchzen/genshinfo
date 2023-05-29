@@ -1,4 +1,4 @@
-export const Contacts = [
+const Contacts = [
     {
         name: "Aurelius Abuthan",
         nim: "0000075101",
@@ -30,3 +30,5 @@ export const Contacts = [
         instagram: "https://www.instagram.com/marthinrl/"
     }
 ];
+
+export default Contacts
