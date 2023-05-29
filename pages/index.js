@@ -47,9 +47,9 @@ export default function Home() {
   return (
     <Box className={styles.container} minW="container.md" width="100%">
       <div className={styles.banner}>
-        <Image className={`paral ${styles.liyue}`} data-speed="-0.1" src={bg1} alt="" />
+        <Image className={`paral ${styles.liyue}`} data-speed="-0.1" src={bg1} alt="liyue" />
 
-        <Image className={`paral ${styles.welcomeTitle}`} src={logo} data-speed="0.4" />
+        <Image className={`paral ${styles.welcomeTitle}`} src={logo} data-speed="0.4" alt='welcome' />
 
         <button className={`paral ${styles.btn}`} data-speed="0.3" type="button" onClick={scrollToPage1}>
           <strong className={styles.strong}>Get Started</strong>
@@ -63,15 +63,16 @@ export default function Home() {
           </div>
         </button>
 
-        <Image className={`paral ${styles.backgroundBoxShadow}`} src={cloud} data-speed="0.3" />
+        <Image className={`paral ${styles.backgroundBoxShadow}`} alt='shadow' src={cloud} data-speed="0.3" />
       </div>
 
       <div id='page1' className={styles.page1}>
         <h2>GenshInfo gives the information you need</h2>
         <h4>Choose what you need!</h4>
         <div className={styles.cardGetStarted}>
-          {CardList.map((kartuName) => (
+          {CardList.map((kartuName, index) => (
               <CardHome
+              key={index}
               cardImg = {kartuName.cardImg}
               cardName = {kartuName.cardName}
               img = {kartuName.img}

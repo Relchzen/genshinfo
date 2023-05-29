@@ -12,8 +12,9 @@ export default function About(){
                 />
             </div>
             <div className= {styles.bungkusCard}>
-                {Contacts.map((contact) => (
+                {Contacts.map((contact, index) => (
                     <CardAbout
+                        key={index}
                         name = {contact.name}
                         nim = {contact.nim}
                         job = {contact.job}
