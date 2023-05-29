@@ -368,13 +368,13 @@ export const Character = [
         bestArtifact: [
             [{
                 name: "Shimenawa's Reminiscence",
-                stack: "2",
+                stack: "4",
                 source: "https://api.genshin.dev/artifacts/shimenawa-s-reminiscence/flower-of-life",
                 api: "https://api.genshin.dev/artifacts/shimenawa-s-reminiscence"
             }],
             [{
                 name: "Heart of Depth",
-                stack: "2",
+                stack: "4",
                 source: "https://api.genshin.dev/artifacts/heart-of-depth/flower-of-life",
                 api: "https://api.genshin.dev/artifacts/heart-of-depth"
             }],
@@ -842,7 +842,7 @@ export const Character = [
         bestArtifact: [
             [{
                 name: "Noblesse Oblige",
-                stack: "2",
+                stack: "4",
                 source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
                 api: "https://api.genshin.dev/artifacts/noblesse-Oblige"
             }],
@@ -1113,7 +1113,7 @@ export const Character = [
         bestArtifact: [
             [{
                 name: "The Exile",
-                stack: "2",
+                stack: "4",
                 source: "https://api.genshin.dev/artifacts/the-exile/flower-of-life",
                 api: "https://api.genshin.dev/artifacts/the-exile"
             }],
@@ -1564,7 +1564,7 @@ export const Character = [
             }],
             [{
                 name: "Crimson Witch Of Flames",
-                stack: "4",
+                stack: "2",
                 source: "https://api.genshin.dev/artifacts/crimson-witch-of-flames/flower-of-life",
                 api: "https://api.genshin.dev/artifacts/crimson-witch-of-flames"
             },
@@ -1785,7 +1785,7 @@ export const Character = [
             }],
             [{
                 name: "Emblem Of Severed Fate",
-                stack: "2",
+                stack: "4",
                 source: "https://api.genshin.dev/artifacts/emblem-of-severed-fate/flower-of-life",
                 api: "https://api.genshin.dev/artifacts/emblem-of-severed-fate"
             }]
@@ -2278,7 +2278,7 @@ export const Character = [
         bestArtifact: [
             [{
                 name: "Pale Flame",
-                stack: "2",
+                stack: "4",
                 source: "https://api.genshin.dev/artifacts/pale-flame/flower-of-life",
                 api: "https://api.genshin.dev/artifacts/pale-flame"
             }],
@@ -2352,7 +2352,7 @@ export const Character = [
             }],
             [{
                 name: "Emblem Of Severed Fate",
-                stack: "2",
+                stack: "4",
                 source: "https://api.genshin.dev/artifacts/emblem-of-severed-fate/flower-of-life",
                 api: "https://api.genshin.dev/artifacts/emblem-of-severed-fate"
             }],
@@ -3615,7 +3615,7 @@ export const Character = [
                 },
                 {
                     name: "Thundering Fury",
-                    stack: 4,
+                    stack: 2,
                     source: "https://api.genshin.dev/artifacts/thundering-fury/flower-of-life",
                     api: "https://api.genshin.dev/artifacts/thundering-fury"
                 }
