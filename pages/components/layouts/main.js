@@ -11,7 +11,7 @@ export default function Main({children, router }) {
                 <title>Genshinfo</title>
                 <meta name="description" content="Everything about Genshin Impact" />
                 <meta name="viewport" content="width=device-width" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/icon.ico" />
             </Head>
             <Navbar path={router.asPath} />
 

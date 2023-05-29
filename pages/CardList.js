@@ -1,6 +1,7 @@
-const CardList = [
+export const CardList = [
     {
-        cardName: "Characters"
+        cardName: "Characters",
+        cardAPI: "https://api.genshin.dev/characters/klee/card"
     },
     {
         cardName: "Equipments"
@@ -12,6 +13,3 @@ const CardList = [
         cardName: "Monsters"
     }
 ];
-
-
-export default CardList;

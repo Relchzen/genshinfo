@@ -6,17 +6,6 @@ import { useState, useEffect } from "react"
 import styles from '../../styles/bgkeren.module.css'
 import GetCharacter from "./getCharacter"
 
-export function GridStyle() {
-    <Global
-        styles={`
-        .character-grid-icon {
-            border-radius: 8px;
-        }
-        `}
-    >
-    </Global>
-}
-
 export function GridArtifacts({name}) {
     const [data, setData] = useState([]);
     const [isLoading, setLoading] = useState(false);
@@ -39,7 +28,7 @@ export function GridArtifacts({name}) {
             setData(data);
             setLoading(false);
         })
-    }, [])
+    }, [name])
 
     return (
         <Box w="auto" align="center" bg={'red.400'} p={1} aspectRatio={1}>
@@ -75,7 +64,7 @@ export function GridItems({name, type}) {
                 setData(data);
                 setLoading(false);
             })
-    }, [])
+    }, [name, type])
     return (
         <Box w="auto" align="center" bg={'red.400'} p={2} aspectRatio={1}>
             <LinkBox cursor={"pointer"} href={`/${type}/${name}`} scroll={false}>
@@ -116,7 +105,7 @@ export function CharGridItem({ name }) {
                 setData(data);
                 setLoading(false);
             })
-    }, [])
+    }, [name])
 
     const string = String(data.vision);
     const element = string.toLowerCase();
@@ -148,16 +137,22 @@ export function CharGridItem({ name }) {
     }
 
     let charBg = new String();
-    if (data.rarity === 4) {
-        charBg = 'linear(#3F3B6C, #3D2C8D, #916BBF, #C996CC)';
-    } else if (data.rarity === 5) {
+    var charName = String(data.name);
+    if(charName.includes("Traveler")) {
         charBg = 'linear(#B46060, #C07F00, #FFD95A, #F4B183)';
     } else {
-        charBg = 'white';
+        if (data.rarity === 4) {
+            charBg = 'linear(#3F3B6C, #3D2C8D, #916BBF, #C996CC)';
+        } else if (data.rarity === 5) {
+            charBg = 'linear(#B46060, #C07F00, #FFD95A, #F4B183)';
+        } else {
+            charBg = 'white';
+        }    
     }
 
+    
     return (
-        <Box w="auto" align="center" bgGradient={charBg} borderRadius='2xl' p={2} aspectRatio={1} element={data.vision} rarity={data.rarity} weapon={data.weapon}>
+        <Box w="auto" align="center" borderRadius='2xl' p={2} aspectRatio={1} element={data.vision} rarity={data.rarity} weapon={data.weapon}>
             <LinkBox as={NextLink}
                 href={`/characters/${name}`}
                 scroll={false}
@@ -167,16 +162,8 @@ export function CharGridItem({ name }) {
                     <div className={`${styles.containerstars} ${styles.cardStars}`}>
                         <div className={styles.star}></div>
                     </div>
-
-                <Image src={icon}
-                    className="element-grid-icon"
-                    width={30}
-                    height={30}
-                    alt={`${data.vision} icon`}
-                    priority={true}
-                />
                 <LinkOverlay as={"div"} href={`characters/${name}`}>
-                    <Text fontSize={16}>
+                    <Text fontSize={16} as={'b'}>
                         {data.name}
                     </Text>
                 </LinkOverlay>

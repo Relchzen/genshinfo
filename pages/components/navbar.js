@@ -23,7 +23,9 @@ function LinkItem({href, path, children, target, ...props}) {
 
 const MenuLink = forwardRef((props, ref) => (
     <Link ref={ref} as={NextLink} {...props} />
-))
+));
+
+MenuLink.displayName = 'MenuLink';
 
 export default function Navbar(props) {
     const { path } = props;
@@ -63,7 +65,6 @@ export default function Navbar(props) {
                                     <MenuItem as={MenuLink} href="/characters">Characters</MenuItem>
                                     <MenuItem as={MenuLink} href="/newsBaru">News</MenuItem>
                                     <MenuItem as={MenuLink} href="/about">About Us</MenuItem>
-
                             </MenuList>
                         </Menu>
                     </Box>

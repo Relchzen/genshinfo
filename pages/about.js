@@ -8,12 +8,13 @@ export default function About(){
         <div className={styles.about}>
             <div>
                 <IntroAboutUs
-                    img = {Contacts[0].img}
+                    together = {Contacts[0].together}
                 />
             </div>
             <div className= {styles.bungkusCard}>
-                {Contacts.map((contact) => (
+                {Contacts.map((contact, index) => (
                     <CardAbout
+                        key={index}
                         name = {contact.name}
                         nim = {contact.nim}
                         job = {contact.job}
