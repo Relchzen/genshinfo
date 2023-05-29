@@ -1,7 +1,6 @@
 import styles from '../../styles/Home.module.css';
 import { useRouter } from 'next/router';
-// import Image from 'next/image';
-// import CardCharacters from "../../public/src/cardCharacters.png"
+import Image from 'next/image';
 
 export default function CardHome (props){
 
@@ -12,8 +11,8 @@ export default function CardHome (props){
     }
     return (
         <div onClick={redirectToPage} className={styles.getstarted}>
-            {/* <img src={props.cardAPI} alt="Deskripsi gambar" loading="lazy"></img> */}
-            {/* <Image src={CardCharacters} className={styles.cardHomeImg}/> */}
+            {/* <img src={props.img} alt="Deskripsi gambar" loading="lazy"></img> */}
+            <Image src={props.img} className={styles.cardHomeImg} layout='responsive'/>
             <p>{props.cardName}</p>
         </div>  
     );

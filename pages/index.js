@@ -74,6 +74,7 @@ export default function Home() {
               <CardHome
               cardImg = {kartuName.cardImg}
               cardName = {kartuName.cardName}
+              img = {kartuName.img}
               />
           ))}
         </div>
