@@ -11,29 +11,18 @@ import { CharacterAttack,
   CharacterPassive,
   CharacterConstellation} from "../../components/character-detail";
 import Section from "../../components/section";
-import Error from 'next/error';
 
 export async function getServerSideProps(context) {
   const { name } = context.query;
   const res = await fetch(`https://api.genshin.dev/characters/${name}`);
-  const errorCode = res.ok ? false : res.status;
   const character = await res.json();
 
   return { 
-    props: { character, errorCode } 
+    props: { character} 
   };
 }
 
-function renderSkills(skill, character) {
-  return(
-    <CharacterAttack skill={skill} character={character} />
-  )
-}
-
-export default function Page({ character, errorCode }) {
-  if(errorCode) {
-    return <Error statusCode={errorCode} />
-  }
+export default function Page({ character }) {
   const router = useRouter();
   const src = `https://api.genshin.dev/characters/${router.query.name}/card`
   const srcString = String(src)
