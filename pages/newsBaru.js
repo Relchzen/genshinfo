@@ -34,7 +34,7 @@ export default function NewsBaru() {
         {data.length ? (
                 <div className={styles.newsCard}>
                     {data.map((row, index) => (
-                        <div className={styles.kartuSendiri}>
+                        <div className={styles.kartuSendiri} key={index}>
                             <div className={styles.dalemKartu} key={index}>
                                 <div className={styles.headCard}>
                                     <div className={styles.username}>{row.username}</div>
