@@ -2930,8 +2930,8 @@ export const Character = [
                 {
                     name: 'Gilded Dreams',
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/gildet-dreams/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/gildet-dreams"
+                    source: "https://api.genshin.dev/artifacts/gilded-dreams/flower-of-life",
+                    api: "https://api.genshin.dev/artifacts/gilded-dreams"
                 },
                 {
                     name: "Wanderer's Troupe",
@@ -3490,7 +3490,7 @@ export const Character = [
             }
         ],
         bestTeam: [
-            ["xingqiu", "yelan", "hutao", "zhongli"],
+            ["xingqiu", "yelan", "hu-tao", "zhongli"],
             ["xingqiu", "xiangling", "bennett", "chongyun"]
         ]
     },
