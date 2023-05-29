@@ -180,6 +180,128 @@ export function CharacterAttack({skill, character}) {
     )
 }
 
+function CharacterWeapon({weapon, index}) {
+    var api = String(weapon.api);
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch(api)
+        .then((res) => res.json())
+        .then((data) => {
+            setData(data);
+        });
+    }, [api]);
+
+    var weaponBg = new String();
+    if(data.rarity === 5) {
+        weaponBg = 'linear(#B46060, #C07F00, #FFD95A, #F4B183)';
+    } else if(data.rarity === 4) {
+        weaponBg = 'linear(#3F3B6C, #3D2C8D, #916BBF, #C996CC)';
+    } else if(data.rarity === 3) {
+        weaponBg = 'linear(#088395, #05BFDB, #569DAA, #577D86)'
+    }
+    
+    return(
+        <Flex p={'1'} m={1} align={'center'} key={index} border={'2px'} borderRadius={15}>
+            <Box 
+            bg={'#FFB84C'}
+            width={'40px'} 
+            height={'40px'} 
+            m={2} 
+            align={'center'} 
+            p={1}
+            borderRadius={13}>
+                <Heading as={'h1'} fontSize={'2xl'}>{index +1}</Heading>
+            </Box>
+            <Flex align={'center'}>
+                <Box m={1} borderRadius={10} bgGradient={weaponBg} width={'60px'} height={'60px'} minW={'60px'}>
+                    <Image alt='weapon icon' src={weapon.source} width={'60px'} height={'60px'} />
+                </Box>
+                <Text ml={2} as={'b'}>
+                    {weapon.name}
+                </Text>
+            </Flex>
+        </Flex>
+    )
+}
+
+function CharacterArtifact({artifact, index}) {
+    var api = String(artifact.api);
+    const [data, setData] = useState([[]]);
+
+    useEffect(() => {
+        fetch(api)
+        .then((res) => res.json())
+        .then((data) => {
+            setData(data);
+        });
+    }, [api]);
+
+    var artiBg = new String();
+    if(data.max_rarity === 5) {
+        artiBg = 'linear(#B46060, #C07F00, #FFD95A, #F4B183)';
+    } else if(data.max_rarity === 4) {
+        artiBg = 'linear(#3F3B6C, #3D2C8D, #916BBF, #C996CC)';
+    } else if(data.max_rarity === 3) {
+        artiBg = 'linear(#088395, #05BFDB, #569DAA, #577D86)'
+    }
+
+    return(
+        <Flex
+        flexDirection={{base: 'column' , md: 'row'}} 
+        align={'center'} 
+        minW={'35%'} 
+        key={index}>
+            <Box 
+            bgGradient={artiBg}
+            m={1} 
+            width={'60px'} 
+            height={'60px'} 
+            minW={'60px'}
+            borderRadius={10}
+            >
+                <Image alt='artifact icon' src={artifact.source} />
+                <Box position={'relative'} 
+                align={'center'} 
+                justifyContent={'center'} 
+                width={'20px'} 
+                bottom={"6"} 
+                left={'10'} 
+                aspectRatio={1} 
+                borderRadius={5}
+                bg={'purple.800'}
+                color={'whiteAlpha.800'}
+                >{artifact.stack}</Box>
+            </Box>
+            <Text align={'center'} as={'b'} justifyContent={'center'} ml={2}>
+                {artifact.name}
+            </Text>
+        </Flex>
+    )
+}
+
+function CharacterArtifactSet({artifacts, index}) {
+    return (
+        <Flex p={1} m={1}  align={'center'} key={index} border={'2px'} borderRadius={15}>
+            <Box 
+            bg={'#FFB84C'}
+            width={'40px'} 
+            height={'40px'} 
+            m={2} 
+            align={'center'} 
+            p={1}
+            borderRadius={13}>
+                <Heading as={'h1'} fontSize={'2xl'}>{index +1}</Heading>
+            </Box>
+            {artifacts.map(function(artifact, index, []) {
+                return(
+                    <CharacterArtifact artifact={artifact} index={index} />
+                )
+            })}
+        </Flex>
+    )
+}
+
 export function CharacterItem({name}) {
     const char = Character.find((character) => character.name === name);
 
@@ -188,47 +310,8 @@ export function CharacterItem({name}) {
             <Flex flexDirection={'column'} minW={'48%'} maxW={'100%'}>
             <Heading fontSize={'2xl'} mx={5} my={2}>Best Weapon</Heading>
                 {char.bestWeapon.map(function(weapon, index, []) {
-                    var api = String(weapon.api);
-                    const [data, setData] = useState([]);
-
-                    useEffect(() => {
-                      fetch(api)
-                        .then((res) => res.json())
-                        .then((data) => {
-                          setData(data);
-                        });
-                    }, []);
-
-                    var weaponBg = new String();
-                    if(data.rarity === 5) {
-                        weaponBg = 'linear(#B46060, #C07F00, #FFD95A, #F4B183)';
-                    } else if(data.rarity === 4) {
-                        weaponBg = 'linear(#3F3B6C, #3D2C8D, #916BBF, #C996CC)';
-                    } else if(data.rarity === 3) {
-                        weaponBg = 'linear(#088395, #05BFDB, #569DAA, #577D86)'
-                    }
-                    
-                    return(
-                        <Flex p={'1'} m={1} align={'center'} key={index} border={'2px'} borderRadius={15}>
-                            <Box 
-                            bg={'#FFB84C'}
-                            width={'40px'} 
-                            height={'40px'} 
-                            m={2} 
-                            align={'center'} 
-                            p={1}
-                            borderRadius={13}>
-                                <Heading as={'h1'} fontSize={'2xl'}>{index +1}</Heading>
-                            </Box>
-                            <Flex align={'center'}>
-                                <Box m={1} borderRadius={10} bgGradient={weaponBg} width={'60px'} height={'60px'} minW={'60px'}>
-                                    <Image alt='weapon icon' src={weapon.source} width={'60px'} height={'60px'} />
-                                </Box>
-                                <Text ml={2} as={'b'}>
-                                    {weapon.name}
-                                </Text>
-                            </Flex>
-                        </Flex>
+                    return (
+                        <CharacterWeapon weapon={weapon} index={index} />
                     )
                 })}
             </Flex>
@@ -236,72 +319,7 @@ export function CharacterItem({name}) {
             <Heading fontSize={'2xl'} mx={5} my={2}>Best Artifacts</Heading>
             {char.bestArtifact.map(function(artifacts, index, []) {
                     return(
-                        <Flex p={1} m={1}  align={'center'} key={index} border={'2px'} borderRadius={15}>
-                            <Box 
-                            bg={'#FFB84C'}
-                            width={'40px'} 
-                            height={'40px'} 
-                            m={2} 
-                            align={'center'} 
-                            p={1}
-                            borderRadius={13}>
-                                <Heading as={'h1'} fontSize={'2xl'}>{index +1}</Heading>
-                            </Box>
-                            {artifacts.map(function(artifact, index, []) {
-                                var api = String(artifact.api);
-                                const [data, setData] = useState([[]]);
- 
-                                useEffect(() => {
-                                  fetch(api)
-                                    .then((res) => res.json())
-                                    .then((data) => {
-                                      setData(data);
-                                    });
-                                }, []);
-
-                                var artiBg = new String();
-                                if(data.max_rarity === 5) {
-                                    artiBg = 'linear(#B46060, #C07F00, #FFD95A, #F4B183)';
-                                } else if(data.max_rarity === 4) {
-                                    artiBg = 'linear(#3F3B6C, #3D2C8D, #916BBF, #C996CC)';
-                                } else if(data.max_rarity === 3) {
-                                    artiBg = 'linear(#088395, #05BFDB, #569DAA, #577D86)'
-                                }
-
-                                return(
-                                    <Flex
-                                    flexDirection={{base: 'column' , md: 'row'}} 
-                                    align={'center'} 
-                                    minW={'35%'} 
-                                    key={index}>
-                                        <Box 
-                                        bgGradient={artiBg}
-                                        m={1} 
-                                        width={'60px'} 
-                                        height={'60px'} 
-                                        minW={'60px'}
-                                        borderRadius={10}
-                                        >
-                                            <Image alt='artifact icon' src={artifact.source} />
-                                            <Box position={'relative'} 
-                                            align={'center'} 
-                                            justifyContent={'center'} 
-                                            width={'20px'} 
-                                            bottom={"6"} 
-                                            left={'10'} 
-                                            aspectRatio={1} 
-                                            borderRadius={5}
-                                            bg={'purple.800'}
-                                            color={'whiteAlpha.800'}
-                                            >{artifact.stack}</Box>
-                                        </Box>
-                                        <Text align={'center'} as={'b'} justifyContent={'center'} ml={2}>
-                                            {artifact.name}
-                                        </Text>
-                                    </Flex>
-                                )
-                            })}
-                        </Flex>
+                        <CharacterArtifactSet artifacts={artifacts} index={index} />
                     )
                 })}
             </Flex>
