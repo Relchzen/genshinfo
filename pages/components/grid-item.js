@@ -6,17 +6,6 @@ import { useState, useEffect } from "react"
 import styles from '../../styles/bgkeren.module.css'
 import GetCharacter from "./getCharacter"
 
-export function GridStyle() {
-    <Global
-        styles={`
-        .character-grid-icon {
-            border-radius: 8px;
-        }
-        `}
-    >
-    </Global>
-}
-
 export function GridArtifacts({name}) {
     const [data, setData] = useState([]);
     const [isLoading, setLoading] = useState(false);
