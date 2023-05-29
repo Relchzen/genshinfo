@@ -2855,18 +2855,18 @@ export const Character = [
                 {
                     name: 'Gilded Dreams',
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/gildet-dreams/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/gildet-dreams"
-                },
-            ]
+                    source: "https://api.genshin.dev/artifacts/gilded-dreams/flower-of-life",
+                    api: "https://api.genshin.dev/artifacts/gilded-dreams"
+                }
+            ],
             [
-            {
-                name: "Wanderer's Troupe",
+                {
+                    name: "Wanderer's Troupe",
                 stack: 4,
                 source: "https://api.genshin.dev/artifacts/wanderer-s-troupe/flower-of-life",
                 api: "https://api.genshin.dev/artifacts/wanderer-s-troupe"
-            }
-            ],
+                }
+            ]
         ],
         artifactStat: [
             {
