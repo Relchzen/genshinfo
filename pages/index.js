@@ -75,6 +75,7 @@ export default function Home() {
               key={index}
               cardImg = {kartuName.cardImg}
               cardName = {kartuName.cardName}
+              img = {kartuName.img}
               />
           ))}
         </div>
