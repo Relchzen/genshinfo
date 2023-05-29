@@ -64,7 +64,7 @@ export default function Page({ character }) {
             <WeaponType weapon={character.weapon} />
 
             <Box p={3}>
-              <Image src={`https://api.genshin.dev/elements/${element}/icon`} height={'80px'} width={'80px'}  />
+              <Image src={`https://api.genshin.dev/elements/${element}/icon`} height={'80px'} width={'80px'} alt={"element icon"} />
             </Box>
           </Flex>
           <Flex flexDirection="column" key={'detail'} align={'center'}> {/* Align items to flex-start */}
