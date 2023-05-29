@@ -4,7 +4,6 @@ import { StarIcon } from "@chakra-ui/icons";
 import { Character } from "./character";
 import GetCharacter from './getCharacter';
 import { useState, useEffect } from "react";
-import { WeaponHover, ArtifactHover } from "./item-detail";
 
 export function RarityStar({rarity}) {
 
