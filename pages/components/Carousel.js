@@ -50,16 +50,16 @@ const MyCarousel = () => {
       onChange={handleSlideChange}
     >
       <div>
-        <Image src="/src/bannerfix.jpg" alt="Image 1" layout="responsive" width={600} height={400} />
+        <Image src="/src/new1.png" alt="Image 1" layout="responsive" width={600} height={400} />
       </div>
       <div>
-        <Image src="/src/1.png" alt="Image 2" layout="responsive" width={600} height={400} />
+        <Image src="/src/new2.png" alt="Image 2" layout="responsive" width={600} height={400} />
       </div>
       <div>
-        <Image src="/src/2.png" alt="Image 3" layout="responsive" width={600} height={400} />
+        <Image src="/src/new3.png" alt="Image 3" layout="responsive" width={600} height={400} />
       </div>
       <div>
-        <Image src="/src/3.png" alt="Image 4" layout="responsive" width={600} height={400} />
+        <Image src="/src/new4.png" alt="Image 4" layout="responsive" width={600} height={400} />
       </div>
     </Carousel>
   );
