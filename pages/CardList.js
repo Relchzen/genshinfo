@@ -1,4 +1,4 @@
-export const CardList = [
+const CardList = [
     {
         cardName: "Characters"
     },
@@ -12,3 +12,6 @@ export const CardList = [
         cardName: "Monsters"
     }
 ];
+
+
+export default CardList;

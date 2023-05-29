@@ -1,4 +1,5 @@
-import NextLink from 'next/link'
+import NextLink from 'next/link';
+import { useRouter } from 'next/router';
 import { Box, Flex, Tooltip, Text, Image, Heading, Wrap, WrapItem, LinkBox, SimpleGrid } from "@chakra-ui/react"
 import { StarIcon } from "@chakra-ui/icons";
 import { Character } from "./character";
@@ -70,22 +71,32 @@ export function CharacterDescription({descriptions}) {
     )
 }
 
-export function CharacterRole({role}) {
-    return(
-        <Box borderRadius={15}
-        border={'2px'}
-        py={1}
-        ml={5}
-        align={'center'}
-        maxW={'200px'} >
-            <Heading fontSize={'xl'}>{role}</Heading>
-        </Box>
-    )
+export function CharacterRole() {
+    const router = useRouter();
+    const charName = router.query.name;
+    const char = Character.find((character) => character.name === charName);
+
+    if(char) {
+
+        return(
+            <Box borderRadius={15}
+            border={'2px'}
+            py={1}
+            ml={5}
+            align={'center'}
+            maxW={'200px'} >
+                <Heading fontSize={'xl'}>{char.role}</Heading>
+            </Box>
+        )
+    }
 }
 
 export function PriorityStats({name}) {
     const char = Character.find((character) => character.name === name);
     var source = new String();
+    if(char) {
+
+    
     return (
         <SimpleGrid columns={[1, null, 2]} mt={5} justify={'center'} borderRadius={18} p={2} spacing={'5px'}>
             {char.artifactStat.map(function(stat, index, []) {
@@ -120,12 +131,16 @@ export function PriorityStats({name}) {
             })}
         </SimpleGrid>
     )
+        }
 }
 
 export function BestTeam({name}) {
     const char = Character.find((character) => character.name === name);
-    return (
-        <Flex justify={'center'} flexDirection={{base: 'column', md: 'row'}}>
+
+    if(char) {
+
+        return (
+            <Flex justify={'center'} flexDirection={{base: 'column', md: 'row'}}>
             {char.bestTeam.map(function(team, index, []) {
             return(
                 <Wrap p={4} justify={'center'} key={index} border={'2px'} m={2} borderRadius={18} overflow={'cover'}>
@@ -143,6 +158,7 @@ export function BestTeam({name}) {
         })}
         </Flex>
     )
+}
 }
 
 export function CharacterAttack({skill, character}) {
@@ -302,6 +318,7 @@ function CharacterArtifactSet({artifacts, index}) {
 export function CharacterItem({name}) {
     const char = Character.find((character) => character.name === name);
 
+    if(char) {
     return(
         <Flex flexDirection={{base: 'column' , md: 'row'}}>
             <Flex flexDirection={'column'} minW={'48%'} maxW={'100%'}>
@@ -322,6 +339,7 @@ export function CharacterItem({name}) {
             </Flex>
         </Flex>
     )
+            }
 }
 
 export function CharacterPassive({character, passive}) {

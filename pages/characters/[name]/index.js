@@ -29,7 +29,6 @@ export default function Page({ character }) {
   const src = `https://api.genshin.dev/characters/${Charname}/card`
   const srcString = String(src);
 
-  const chara = character;
   const charelm = character.vision;
   const string = String(charelm);
   const element = string.toLowerCase();
@@ -60,13 +59,13 @@ export default function Page({ character }) {
                 {character.title}
               </Text>
               <RarityStar rarity={character.rarity} />
-              <CharacterRole role={char.role} />
+              <CharacterRole />
               {/* Place your text content here */}
             </Box>
 
             <Spacer />
             <WeaponType weapon={character.weapon} />
-
+            
             <Box p={3}>
               <Image src={`https://api.genshin.dev/elements/${element}/icon`} height={'80px'} width={'80px'} alt={"element icon"} />
             </Box>
