@@ -3,7 +3,7 @@ import Papa from 'papaparse';
 import styles from "../styles/news.module.css"
 import Image from 'next/image';
 import Banner from "../public/src/bannerfix.jpg"
-import MyCarousel from './components/Carousel';
+import MyCarousel from '../components/Carousel';
 
 export default function NewsBaru() {
   const [data, setData] = useState([]);

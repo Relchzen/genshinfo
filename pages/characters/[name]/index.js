@@ -9,9 +9,9 @@ import { CharacterAttack,
   WeaponType, 
   BestTeam,
   CharacterPassive,
-  CharacterConstellation} from "../../components/character-detail";
-import Section from "../../components/section";
-import { Character } from "../../components/character";
+  CharacterConstellation} from "../../../components/character-detail";
+import Section from "../../../components/section";
+import { Character } from "../../../components/character";
 
 export async function getServerSideProps(context) {
   const { name } = context.query;

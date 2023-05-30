@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import logo from '../../public/src/logonew.png'
+import logo from '../public/src/logonew.png'
 import styled from "@emotion/styled";
 
 const LogoBox = styled.span`

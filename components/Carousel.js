@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import styles from "../../styles/news.module.css";
+import styles from "../styles/news.module.css";
 
 const MyCarousel = () => {
   const [initialRender, setInitialRender] = useState(true);
