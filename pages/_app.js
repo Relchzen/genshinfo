@@ -1,8 +1,8 @@
 import '../styles/globals.css'
 import { ChakraProvider } from '@chakra-ui/react'
-import Layout from "./components/layouts/main"
+import Layout from "../components/layouts/main"
 import { AnimatePresence, motion } from 'framer-motion'
-import Fonts from './components/fonts'
+import Fonts from '../components/fonts'
 
 function MyApp({ Component, pageProps, router }) {
   return (

@@ -5,9 +5,9 @@ import Image from 'next/image';
 import logo from '../public/src/logoGenshin.png'
 import cloud from '../public/src/cloudFix1.png';//shadow
 import bg1 from '../public/src/bg1.jpg';
-import Contacts from './contact';
-import CardHome from './components/CardHome';
-import CardList from './CardList';
+import Contacts from '../components/contact';
+import CardHome from '../components/CardHome';
+import CardList from '../components/CardList';
 import { useRouter } from 'next/router';
 
 

@@ -1,6 +1,6 @@
 import { Container, Box, Heading, SimpleGrid, Divider } from "@chakra-ui/react"
-import Section from "./components/section"
-import { GridItems } from "./components/grid-item"
+import Section from "../components/section"
+import { GridItems } from "../components/grid-item"
 import { useState, useEffect } from "react"
 
 function renderEnemies(monsters) {

@@ -3,7 +3,7 @@ import NextLink from "next/link"
 import { Image, Box, Text, LinkBox, LinkOverlay, Container, Icon } from "@chakra-ui/react"
 import Global from "@emotion/react"
 import { useState, useEffect } from "react"
-import styles from '../../styles/bgkeren.module.css'
+import styles from '../styles/bgkeren.module.css'
 import GetCharacter from "./getCharacter"
 
 export function GridArtifacts({name}) {
