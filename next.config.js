@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-    distDir: 'build',
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  distDir: 'build',
   swcMinify: true,
   images: {
     remotePatterns: [
