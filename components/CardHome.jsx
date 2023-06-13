@@ -14,7 +14,7 @@ export default function CardHome (props){
     return (
         <LinkBox as={NextLink} href={`${props.url}`} className={styles.getstarted} cursor={"pointer"} scroll={false}>
             {/* <img src={props.img} alt="Deskripsi gambar" loading="lazy"></img> */}
-            <Image src={props.img} className={styles.cardHomeImg} layout='responsive'/>
+            <Image src={props.img} className={styles.cardHomeImg} layout='responsive' alt="card"/>
             <LinkOverlay as={"div"} href={`${props.url}`}>
                 
             <p>{props.cardName}</p>

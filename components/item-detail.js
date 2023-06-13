@@ -34,13 +34,13 @@ export function WeaponDetail({api, source}) {
                 </Box>
                 <Spacer />
                 <Box borderRadius={'18px'} bgGradient={weaponBg} ml={3}>
-                    <Image src={source} width={'80px'} height={'80px'} borderRadius={'18px'} fallbackSrc={"/src/IconNotFound.jpg"} />
+                    <Image src={source} width={'80px'} height={'80px'} borderRadius={'18px'} fallbackSrc={"/src/IconNotFound.jpg"} alt={"weapon icon"} />
                 </Box>
             </Flex>
             <Container>
                 <Code color={'#374259'} as={'h4'} fontSize={'18px'}>Base Attack: {data.baseAttack}</Code>
                 <Divider />
-                <Code color={'#374259'} as={'h4'} fontSize={'18px'}>Sub Stat: "{data.subStat}"</Code>
+                <Code color={'#374259'} as={'h4'} fontSize={'18px'}>Sub Stat: {data.subStat}</Code>
                 <Heading as={'h3'} fontSize={'21px'} color={'#DF7861'}>{data.passiveName}</Heading>
                 <Text>{data.passiveDesc}</Text>
             </Container>
@@ -89,7 +89,7 @@ export function ArtifactDetail({api, source, stack}) {
                 </Box>
                 <Spacer />
                 <Box borderRadius={'18px'} bgGradient={artiBg} ml={3}>
-                    <Image src={source} width={'80px'} height={'80px'} borderRadius={'18px'} fallbackSrc={"/src/IconNotFound.jpg"}  />
+                    <Image src={source} width={'80px'} height={'80px'} borderRadius={'18px'} fallbackSrc={"/src/IconNotFound.jpg"} alt="artifact icon"  />
                 </Box>
             </Flex>
             <Container>
