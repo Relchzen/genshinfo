@@ -76,6 +76,7 @@ export default function Home() {
               cardImg = {kartuName.cardImg}
               cardName = {kartuName.cardName}
               img = {kartuName.img}
+              url={kartuName.url}
               />
           ))}
         </div>

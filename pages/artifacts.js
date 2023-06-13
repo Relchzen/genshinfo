@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 
 function renderArtifacts(artifacts) {
     return (
-        <GridArtifacts name={artifacts} type={"artifacts"} />
+        <GridArtifacts name={artifacts} />
     )
 }
 

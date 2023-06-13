@@ -8,18 +8,22 @@ const CardList = [
   {
     cardName: "Characters",
     img: qiqiImage,
+    url: "/characters"
   },
   {
-    cardName: "Equipments",
+    cardName: "Weapons",
     img: sayuImage,
+    url: "/weapons"
   },
   {
-    cardName: "Artefacs",
+    cardName: "Artifacts",
     img: cardCharactersImage,
+    url: "/artifacts"
   },
   {
-    cardName: "Monsters",
+    cardName: "News",
     img: dionaImage,
+    url: "/news"
   },
 ];
 
