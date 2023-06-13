@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Container, Box, Heading, SimpleGrid, Divider, Text, Input, Center, IconButton } from "@chakra-ui/react";
+import { Container, Heading, SimpleGrid, Input, Center, IconButton } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import Section from "../components/section";
 import { CharGridItem } from "../components/grid-item";

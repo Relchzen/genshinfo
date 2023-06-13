@@ -30,7 +30,7 @@ export function GridArtifacts({name}) {
             setData(data);
             setLoading(false);
         })
-    })
+    }, [name])
 
     var weaponBg = new String();
     if(data.max_rarity === 5) {
@@ -65,7 +65,6 @@ export function GridArtifacts({name}) {
                     width={200}
                     borderRadius={18}
                     alt={`${data.name} icon not found :(`}
-                    priority={true}
                     fallbackSrc="/src/IconNotFound.jpg"
                     />
                 </Box>
@@ -97,7 +96,7 @@ export function GridItems({name, type}) {
                 setData(data);
                 setLoading(false);
             })
-    }) 
+    }, [name]) 
 
     var weaponBg = new String();
     if(data.rarity === 5) {
@@ -124,14 +123,13 @@ export function GridItems({name, type}) {
           cursor={"pointer"}
           transition={"all .3s ease-in-out;"}
           borderRadius={18}>
-            <LinkBox cursor={"pointer"} href={`/${type}/${name}`} scroll={false}>
+            <LinkBox cursor={"pointer"} href={`/${type}/${name}`}>
                 <Box width={"100%"} overflow={"hidden"} aspectRatio={1} bgGradient={weaponBg} borderRadius={18}>
                     <Image src={source}
                         className="character-grid-icon"
                         width={150}
                         height={150}
                         alt={`${data.name} icon not found :(`}
-                        priority={true}
                         fallbackSrc={"/src/IconNotFound.jpg"}
                         borderRadius={18}
                     />
@@ -226,7 +224,6 @@ export function CharGridItem({ name }) {
           >
             <LinkBox as={NextLink}
                 href={`/characters/${name}`}
-                scroll={false}
                 cursor="pointer"
             >
                 <GetCharacter name={name} />

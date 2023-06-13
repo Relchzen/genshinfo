@@ -1,11 +1,11 @@
-import { Container, Box, Heading, SimpleGrid, Divider } from "@chakra-ui/react"
+import { Container, Heading, SimpleGrid } from "@chakra-ui/react"
 import Section from "../components/section"
 import { GridItems } from "../components/grid-item"
 import { useState, useEffect } from "react"
 
-function renderWeapons(weapons) {
+function renderWeapons(weapons, index) {
     return (
-        <GridItems name={weapons} type={"weapons"} />
+        <GridItems name={weapons} type={"weapons"} key={index} />
     )
 }
 
@@ -28,7 +28,6 @@ export default function Weapons() {
             <Heading>
                 Weapons
             </Heading>
-
             <SimpleGrid columns={[3, null, 4, 6]} spacing={"10px"} mt={5}>
                 {weapons.map(renderWeapons)}
             </SimpleGrid>
