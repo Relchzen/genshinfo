@@ -4,7 +4,6 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  distDir: 'build',
   swcMinify: true,
   images: {
     remotePatterns: [
