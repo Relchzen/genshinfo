@@ -1,10 +1,11 @@
 import NextLink from "next/link"
 // import Image from "next/image";
-import { Image, Box, Text, LinkBox, LinkOverlay, Container, Icon } from "@chakra-ui/react"
+import { Image, Box, Text, LinkBox, LinkOverlay, Container, Icon, Popover, PopoverTrigger, Heading, PopoverContent } from "@chakra-ui/react"
 import Global from "@emotion/react"
 import { useState, useEffect } from "react"
 import styles from '../styles/bgkeren.module.css'
 import GetCharacter from "./getCharacter"
+import { WeaponDetail, ArtifactDetail } from "./item-detail"
 
 export function GridArtifacts({name}) {
     const [data, setData] = useState([]);
@@ -19,35 +20,66 @@ export function GridArtifacts({name}) {
             source = "https://api.genshin.dev/artifacts/" + name + "/circlet-of-logos"
         }
     } 
+    const api = `https://api.genshin.dev/artifacts/${name}`;
 
     useEffect(() => {
         setLoading(true);
-        fetch(`https://api.genshin.dev/artifacts/${name}`)
+        fetch(api)
         .then((res) => res.json())
         .then((data) => {
             setData(data);
             setLoading(false);
         })
-    }, [name])
+    }, [])
+
+    var weaponBg = new String();
+    if(data.max_rarity === 5) {
+        weaponBg = 'linear(#B46060, #C07F00, #FFD95A, #F4B183)';
+    } else if(data.max_rarity === 4) {
+        weaponBg = 'linear(#3F3B6C, #3D2C8D, #916BBF, #C996CC)';
+    } else if(data.max_rarity === 3) {
+        weaponBg = 'linear(#088395, #05BFDB, #569DAA, #577D86)'
+    } else if(data.max_rarity === 2) {
+        weaponBg = 'linear(180deg, rgba(64,173,66,1) 0%, rgba(88,170,85,1) 9%, rgba(121,236,103,1) 82%)'
+    } else if(data.max_rarity === 1) {
+        weaponBg = "linear(180deg, rgba(142,142,142,1) 0%, rgba(152,152,152,1) 50%, rgba(204,204,204,1) 100%)"
+    }
 
     return (
-        <Box w="auto" align="center" bg={'red.400'} p={1} aspectRatio={1}>
+        <Popover placement="auto">
+            <PopoverTrigger>
+
+        <Box w="auto" align="center" p={1} aspectRatio={1} _hover={{
+            color: "#B04759",
+            transform: "scale(1.1)",
+            border: "1px solid",
+            borderColor: "#B04759"
+          }}
+          cursor={"pointer"}
+          transition={"all .3s ease-in-out;"}
+          borderRadius={18}>
             <LinkBox cursor={"pointer"} href={`/artifacts/${name}`} scroll={false}>
-                <Box overflow={"hidden"} aspectRatio={1} bg={"green"} alignItems={"center"} justifyContent={"center"} >
+                <Box overflow={"hidden"} aspectRatio={1} alignItems={"center"} borderRadius={18} justifyContent={"center"}  bgGradient={weaponBg}>
                     <Image src={source} 
                     className="character-grid-icon"
                     width={200}
-                    height={200}
+                    borderRadius={18}
                     alt={`${data.name} icon not found :(`}
                     priority={true}
+                    fallbackSrc="/src/IconNotFound.jpg"
                     />
                 </Box>
                 <LinkOverlay as={"div"} href={`/artifacts/${name}`} target="_blank">
                     
-                    <Text>{data.name}</Text>
+                    <Heading size={"xs"}>{data.name}</Heading>
                 </LinkOverlay>
             </LinkBox>
         </Box>
+            </PopoverTrigger>
+            <PopoverContent>
+            <ArtifactDetail api={api} source={source}  stack={"4"}/>
+        </PopoverContent>
+            </Popover>
     )
 }
 
@@ -55,35 +87,67 @@ export function GridItems({name, type}) {
     const [data, setData] = useState([]);
     const [isLoading, setLoading] = useState(false);
     const source = "https://api.genshin.dev/" + type + "/" + name + "/icon"
+    const api = `https://api.genshin.dev/${type}/${name}`;
 
     useEffect(() => {
         setLoading(true);
-        fetch(`https://api.genshin.dev/${type}/${name}`)
+        fetch(api)
             .then((res) => res.json())
             .then((data) => {
                 setData(data);
                 setLoading(false);
             })
-    }, [name, type])
+    }, []) 
+
+    var weaponBg = new String();
+    if(data.rarity === 5) {
+        weaponBg = 'linear(#B46060, #C07F00, #FFD95A, #F4B183)';
+    } else if(data.rarity === 4) {
+        weaponBg = 'linear(#3F3B6C, #3D2C8D, #916BBF, #C996CC)';
+    } else if(data.rarity === 3) {
+        weaponBg = 'linear(#088395, #05BFDB, #569DAA, #577D86)'
+    } else if(data.rarity === 2) {
+        weaponBg = 'linear(180deg, rgba(64,173,66,1) 0%, rgba(88,170,85,1) 9%, rgba(121,236,103,1) 82%)'
+    } else if(data.rarity === 1) {
+        weaponBg = " linear(180deg, rgba(142,142,142,1) 0%, rgba(152,152,152,1) 50%, rgba(204,204,204,1) 100%)"
+    }
+    
     return (
-        <Box w="auto" align="center" bg={'red.400'} p={2} aspectRatio={1}>
+        <Popover placement="auto">
+            <PopoverTrigger>
+        <Box w="auto" align="center" p={2} aspectRatio={1} _hover={{
+            color: "#B04759",
+            transform: "scale(1.1)",
+            border: "1px solid",
+            borderColor: "#B04759"
+          }}
+          cursor={"pointer"}
+          transition={"all .3s ease-in-out;"}
+          borderRadius={18}>
             <LinkBox cursor={"pointer"} href={`/${type}/${name}`} scroll={false}>
-                <Box width={"100%"} overflow={"hidden"} aspectRatio={1} bg={"green"}>
+                <Box width={"100%"} overflow={"hidden"} aspectRatio={1} bgGradient={weaponBg} borderRadius={18}>
                     <Image src={source}
                         className="character-grid-icon"
                         width={150}
                         height={150}
                         alt={`${data.name} icon not found :(`}
                         priority={true}
+                        fallbackSrc={"/src/IconNotFound.jpg"}
+                        borderRadius={18}
                     />
                 </Box>
                 <LinkOverlay as={"div"} href={`/${type}/${name}`} target="_blank">
-
-                    <Text>{data.name}</Text>
+                    <Heading size={'xs'}>{data.name}</Heading>
                 </LinkOverlay>
             </LinkBox>
         </Box>
-    )
+        </PopoverTrigger>
+        <PopoverContent>
+            <WeaponDetail api={api} source={source} />
+        </PopoverContent>
+        </Popover>
+    )   
+
 }
 
 export function CharGridItem({ name }) {
@@ -152,7 +216,14 @@ export function CharGridItem({ name }) {
 
     
     return (
-        <Box w="auto" align="center" borderRadius='2xl' p={2} aspectRatio={1} element={data.vision} rarity={data.rarity} weapon={data.weapon}>
+        <Box w="auto" align="center" borderRadius='2xl' p={2} aspectRatio={1} element={data.vision} rarity={data.rarity} weapon={data.weapon} _hover={{
+            color: "#B04759",
+            transform: "scale(1.1)",
+            border: "1px solid",
+            borderColor: "#B04759"
+          }}
+          transition={"all .3s ease-in-out;"}
+          >
             <LinkBox as={NextLink}
                 href={`/characters/${name}`}
                 scroll={false}

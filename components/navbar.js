@@ -50,10 +50,10 @@ export default function Navbar(props) {
                 flexGrow={1}
                 mt={{base: 4, md: 0}}>
                     <LinkItem href="/characters" path={path}>Characters</LinkItem>
-                    <LinkItem href="/newsBaru" path={path}>News</LinkItem>
+                    <LinkItem href="/weapons" path={path}>Weapons</LinkItem>
+                    <LinkItem href="/artifacts" path={path}>Artifacts</LinkItem>
+                    <LinkItem href="/news" path={path}>News</LinkItem>
                     <LinkItem href="/about" path={path}>About</LinkItem>
-                    {/* <LinkItem href="/weapons" path={path}>Weapons</LinkItem>
-                    <LinkItem href="/enemies" path={path}>Monsters</LinkItem> */}
                 </Stack>
 
                 <Box flex={1} align="right">
@@ -63,7 +63,9 @@ export default function Navbar(props) {
                             <MenuList>
                                     <MenuItem as={MenuLink} href="/">Home</MenuItem>
                                     <MenuItem as={MenuLink} href="/characters">Characters</MenuItem>
-                                    <MenuItem as={MenuLink} href="/newsBaru">News</MenuItem>
+                                    <MenuItem as={MenuLink} href="/weapons">Weapons</MenuItem>
+                                    <MenuItem as={MenuLink} href="/artifacts">Artifacts</MenuItem>
+                                    <MenuItem as={MenuLink} href="/news">News</MenuItem>
                                     <MenuItem as={MenuLink} href="/about">About Us</MenuItem>
                             </MenuList>
                         </Menu>

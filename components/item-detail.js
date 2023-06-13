@@ -19,10 +19,14 @@ export function WeaponDetail({api, source}) {
         weaponBg = 'linear(#3F3B6C, #3D2C8D, #916BBF, #C996CC)';
     } else if(data.rarity === 3) {
         weaponBg = 'linear(#088395, #05BFDB, #569DAA, #577D86)'
+    } else if(data.rarity === 2) {
+        weaponBg = 'linear(180deg, rgba(64,173,66,1) 0%, rgba(88,170,85,1) 9%, rgba(121,236,103,1) 82%)'
+    } else if(data.rarity == 1) {
+        weaponBg = " linear(180deg, rgba(142,142,142,1) 0%, rgba(152,152,152,1) 50%, rgba(204,204,204,1) 100%)"
     }
 
     return(
-        <Box p={2}>
+        <Box p={2} bg={"#FFE6C7"}>
             <Flex align={'center'}>
                 <Box>
                 <Heading as={'h3'} fontSize={'21px'}>{data.name}</Heading>
@@ -30,7 +34,7 @@ export function WeaponDetail({api, source}) {
                 </Box>
                 <Spacer />
                 <Box borderRadius={'18px'} bgGradient={weaponBg} ml={3}>
-                    <Image src={source} width={'80px'} height={'80px'} borderRadius={'18px'} />
+                    <Image src={source} width={'80px'} height={'80px'} borderRadius={'18px'} fallbackSrc={"/src/IconNotFound.jpg"} />
                 </Box>
             </Flex>
             <Container>
@@ -68,7 +72,7 @@ export function ArtifactDetail({api, source, stack}) {
 
     var fBonus = new String();
     var fColor = new String();
-    if(stack === 4) {
+    if(stack === "4") {
         fBonus = '#1B9C85';
         fColor = '#000000';
     } else {
@@ -77,7 +81,7 @@ export function ArtifactDetail({api, source, stack}) {
     }
 
     return(
-        <Box p={2}>
+        <Box p={2} bg={"#FFE6C7"}>
             <Flex align={'center'}>
                 <Box>
                 <Heading as={'h3'} fontSize={'21px'}>{data.name}</Heading>
@@ -85,7 +89,7 @@ export function ArtifactDetail({api, source, stack}) {
                 </Box>
                 <Spacer />
                 <Box borderRadius={'18px'} bgGradient={artiBg} ml={3}>
-                    <Image src={source} width={'80px'} height={'80px'} borderRadius={'18px'} />
+                    <Image src={source} width={'80px'} height={'80px'} borderRadius={'18px'} fallbackSrc={"/src/IconNotFound.jpg"}  />
                 </Box>
             </Flex>
             <Container>

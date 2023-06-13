@@ -96,8 +96,6 @@ export function PriorityStats({name}) {
     const char = Character.find((character) => character.name === name);
     var source = new String();
     if(char) {
-
-    
     return (
         <SimpleGrid columns={[1, null, 2]} mt={5} justify={'center'} borderRadius={18} p={2} spacing={'5px'}>
             {char.artifactStat.map(function(stat, index, []) {
@@ -119,7 +117,7 @@ export function PriorityStats({name}) {
                         break;
                 }
                 return(
-                    <Flex border={'2px'} borderRadius={18} key={index}>
+                    <Flex bg={"#F2B6A0"} border={'2px'} borderRadius={18} key={index}>
                         <Box p={2} mr={2}>
                             <Image src={source} alt={'stats'} borderRadius={'full'} width={'60px'} />
                         </Box>
@@ -144,7 +142,7 @@ export function BestTeam({name}) {
             <Flex justify={'center'} flexDirection={{base: 'column', md: 'row'}}>
             {char.bestTeam.map(function(team, index, []) {
             return(
-                <Wrap p={4} justify={'center'} key={index} border={'2px'} m={2} borderRadius={18} overflow={'cover'}>
+                <Wrap p={4} bg={"#F2B6A0"} justify={'center'} key={index} border={'2px'} m={2} borderRadius={18} overflow={'cover'}>
                     {team.map(function(teammate, index, []) {
                         return(
                             <WrapItem maxW={'86px'} p={1.5} key={index}>
@@ -219,9 +217,13 @@ function CharacterWeapon({weapon, index}) {
         <Popover placement='auto'>
             <PopoverTrigger>
 
-            <Flex p={'1'} m={1} align={'center'} key={index} border={'2px'} borderRadius={15}>
+            <Flex p={'1'} m={1} bg={"#F2B6A0"} align={'center'} key={index} border={'2px'} borderRadius={15} cursor={"pointer"} _hover={{
+                transform: "scale(1.03)",
+                backgroundColor: "#EA906C"
+            }}
+            transition={"all .1s ease-in-out;"}>
                 <Box 
-                bg={'#FFB84C'}
+                bg={'#E06469'}
                 width={'40px'} 
                 height={'40px'} 
                 m={2} 
@@ -232,7 +234,7 @@ function CharacterWeapon({weapon, index}) {
                 </Box>
                 <Flex align={'center'}>
                     <Box m={1} borderRadius={10} bgGradient={weaponBg} width={'60px'} height={'60px'} minW={'60px'}>
-                        <Image alt='weapon icon' src={weapon.source} width={'60px'} height={'60px'} />
+                        <Image alt='weapon icon' src={weapon.source} width={'60px'} height={'60px'} borderRadius={10}/>
                     </Box>
                     <Text ml={2} as={'b'}>
                         {weapon.name}
@@ -275,7 +277,13 @@ function CharacterArtifact({artifact, index}) {
                 flexDirection={{base: 'column' , md: 'row'}} 
                 align={'center'} 
                 minW={'35%'} 
-                key={index}>
+                cursor={"pointer"}
+                key={index}
+                _hover={{
+                    transform: "scale(1.03)",
+                }}
+                transition={"all .1s ease-in-out;"}
+                >
                     <Box 
                     bgGradient={artiBg}
                     m={1} 
@@ -311,9 +319,13 @@ function CharacterArtifact({artifact, index}) {
 
 function CharacterArtifactSet({artifacts, index}) {
     return (
-        <Flex p={1} m={1}  align={'center'} key={index} border={'2px'} borderRadius={15}>
+        <Flex p={1} m={1} bg={"#F2B6A0"} align={'center'} key={index} border={'2px'} borderRadius={15} _hover={{
+            transform: "scale(1.03)",
+            backgroundColor: "#EA906C"
+        }}
+        transition={"all .1s ease-in-out;"}>
             <Box 
-            bg={'#FFB84C'}
+            bg={'#E06469'}
             width={'40px'} 
             height={'40px'} 
             m={2} 

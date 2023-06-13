@@ -7,6 +7,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+    distDir: 'build',
   swcMinify: true,
   images: {
     remotePatterns: [
