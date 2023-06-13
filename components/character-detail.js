@@ -336,7 +336,7 @@ function CharacterArtifactSet({artifacts, index}) {
             </Box>
             {artifacts.map(function(artifact, index, []) {
                 return(
-                    <CharacterArtifact artifact={artifact} index={index} />
+                    <CharacterArtifact artifact={artifact} index={index} key={index}/>
                 )
             })}
         </Flex>
@@ -353,7 +353,7 @@ export function CharacterItem({name}) {
             <Heading fontSize={'2xl'} mx={5} my={2}>Best Weapon</Heading>
                 {char.bestWeapon.map(function(weapon, index, []) {
                     return (
-                        <CharacterWeapon weapon={weapon} index={index} />
+                        <CharacterWeapon weapon={weapon} index={index} key={index} />
                     )
                 })}
             </Flex>

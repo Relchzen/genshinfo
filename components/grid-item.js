@@ -30,7 +30,7 @@ export function GridArtifacts({name}) {
             setData(data);
             setLoading(false);
         })
-    }, [])
+    })
 
     var weaponBg = new String();
     if(data.max_rarity === 5) {
@@ -97,7 +97,7 @@ export function GridItems({name, type}) {
                 setData(data);
                 setLoading(false);
             })
-    }, []) 
+    }) 
 
     var weaponBg = new String();
     if(data.rarity === 5) {
