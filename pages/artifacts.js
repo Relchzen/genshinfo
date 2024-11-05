@@ -13,7 +13,7 @@ export default function Artifacts() {
     const [artifacts, setMonster] = useState([]);
 
     const fetchArtifacts = () => {
-        fetch("https://api.genshin.dev/artifacts")
+        fetch("https://genshin.jmp.blue/artifacts")
         .then((response) => response.json())
         .then((data) => setMonster(data));
     }

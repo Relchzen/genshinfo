@@ -6,52 +6,52 @@ export const Character = [
         bestWeapon: [{
             name: "Cinnabar Spindle",
             source: "https://rerollcdn.com/GENSHIN/Weapons/Cinnabar_Spindle.png",
-            api: 'https://api.genshin.dev/weapons/cinnabar -spindle'
+            api: 'https://genshin.jmp.blue/weapons/cinnabar -spindle'
         },
         {
             name: "Harbinger of Dawn",
-            source: "https://api.genshin.dev/weapons/harbinger-of-dawn/icon",
-            api: 'https://api.genshin.dev/weapons/harbinger-of-dawn'
+            source: "https://genshin.jmp.blue/weapons/harbinger-of-dawn/icon",
+            api: 'https://genshin.jmp.blue/weapons/harbinger-of-dawn'
         },
         {
             name: "Festering Desire",
-            source: "https://api.genshin.dev/weapons/festering-desire/icon",
-            api: 'https://api.genshin.dev/weapons/festering-desire'
+            source: "https://genshin.jmp.blue/weapons/festering-desire/icon",
+            api: 'https://genshin.jmp.blue/weapons/festering-desire'
         }
         ],
         bestArtifact: [
             [{
                 name: "Husk of Opulent Dreams",
                 stack: 4,
-                source: "https://api.genshin.dev/artifacts/husk-of-opulent-dreams/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/husk-of-opulent-dreams"
+                source: "https://genshin.jmp.blue/artifacts/husk-of-opulent-dreams/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/husk-of-opulent-dreams"
             }],
             [
                 {
                     name: 'Archaic Petra',
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/archaic-petra/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/archaic-petra"
+                    source: "https://genshin.jmp.blue/artifacts/archaic-petra/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/archaic-petra"
                 },
                 {
                     name: "Husk of Opulent Dreams",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/husk-of-opulent-dreams/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/husk-of-opulent-dreams"
+                    source: "https://genshin.jmp.blue/artifacts/husk-of-opulent-dreams/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/husk-of-opulent-dreams"
                 }
             ],
             [
                 {
                     name: 'Archaic Petra',
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/archaic-petra/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/archaic-petra"
+                    source: "https://genshin.jmp.blue/artifacts/archaic-petra/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/archaic-petra"
                 },
                 {
                     name: "Noblesse Oblige",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/noblesse-oblige"
+                    source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/noblesse-oblige"
                 }
             ]
         ],
@@ -88,37 +88,37 @@ export const Character = [
         role: "Sub-DPS",
         bestWeapon: [{
             name: "Thundering Pulse",
-            source: "https://api.genshin.dev/weapons/thundering-pulse/icon",
-            api: 'https://api.genshin.dev/weapons/thundering-pulse'
+            source: "https://genshin.jmp.blue/weapons/thundering-pulse/icon",
+            api: 'https://genshin.jmp.blue/weapons/thundering-pulse'
         },
         {
             name: "Skyward Harp",
-            source: "https://api.genshin.dev/weapons/skyward-harp/icon",
-            api: "https://api.genshin.dev/weapons/skyward-harp"
+            source: "https://genshin.jmp.blue/weapons/skyward-harp/icon",
+            api: "https://genshin.jmp.blue/weapons/skyward-harp"
         },
         {
             name: "Polar Star",
             source: "https://rerollcdn.com/GENSHIN/Weapons/Polar_Star.png",
-            api: 'https://api.genshin.dev/weapons/polar-star'
+            api: 'https://genshin.jmp.blue/weapons/polar-star'
         }],
         bestArtifact: [
             [{
                 name: "Blizzard Strayer",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/blizzard-strayer/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/blizzard-Strayer"
+                source: "https://genshin.jmp.blue/artifacts/blizzard-strayer/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/blizzard-Strayer"
             },
             {
                 name: "Noblesse Oblige",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/noblesse-Oblige"
+                source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/noblesse-Oblige"
             }],
             [{
                 name: "Emblem Of Severed Fate",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/emblem-of-severed-fate/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/emblem-of-severed-fate"
+                source: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate"
             }]
         ],
         artifactStat: [
@@ -155,42 +155,42 @@ export const Character = [
         bestWeapon: [{
             name: "Polar Star",
             source: "https://rerollcdn.com/GENSHIN/Weapons/Polar_Star.png",
-            api: 'https://api.genshin.dev/weapons/polar-star'
+            api: 'https://genshin.jmp.blue/weapons/polar-star'
         },
         {
             name: "Elegy For The End",
-            source: "https://api.genshin.dev/weapons/elegy-for-the-end/icon",
-            api: "https://api.genshin.dev/weapons/elegy-for-the-end"
+            source: "https://genshin.jmp.blue/weapons/elegy-for-the-end/icon",
+            api: "https://genshin.jmp.blue/weapons/elegy-for-the-end"
         },
         {
             name: "Mouun's Moon",
             source: "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/29884_w.png",
-            api: "https://api.genshin.dev/weapons/mouun's-moon"
+            api: "https://genshin.jmp.blue/weapons/mouun's-moon"
         }],
         bestArtifact: [
             [{
                 name: "Emblem Of Severed Fate",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/emblem-of-severed-fate/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/emblem-of-severed-fate"
+                source: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate"
             }],
             [{
                 name: "Crimson Witch Of Flames",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/crimson-witch-of-flames/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/crimson-witch-of-flames"
+                source: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames"
             },
             {
                 name: "Noblesse Oblige",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/noblesse-Oblige"
+                source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/noblesse-Oblige"
             }],
             [{
                 name: "Noblesse Oblige",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/noblesse-Oblige"
+                source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/noblesse-Oblige"
             }]
         ],
         artifactStat: [
@@ -226,30 +226,30 @@ export const Character = [
         bestWeapon: [{
             name: "Redhorn Stonethresher",
             source: "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/30054_w.png",
-            api: "https://api.genshin.dev/weapons/redhorn-stonethresher"
+            api: "https://genshin.jmp.blue/weapons/redhorn-stonethresher"
         },
         {
             name: "Wolf's Gravestone",
-            source: "https://api.genshin.dev/weapons/wolf-s-gravestone/icon",
-            api: "https://api.genshin.dev/weapons/wolf-s-gravestone"
+            source: "https://genshin.jmp.blue/weapons/wolf-s-gravestone/icon",
+            api: "https://genshin.jmp.blue/weapons/wolf-s-gravestone"
         },
         {
             name: "Serpent Spine",
-            source: "https://api.genshin.dev/weapons/serpent-spine/icon",
-            api: "https://api.genshin.dev/weapons/serpent-spine"
+            source: "https://genshin.jmp.blue/weapons/serpent-spine/icon",
+            api: "https://genshin.jmp.blue/weapons/serpent-spine"
         }],
         bestArtifact: [
             [{
                 name: "Husk Of Opulent Dreams",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/husk-of-opulent-dreams/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/husk-of-opulent-dreams"
+                source: "https://genshin.jmp.blue/artifacts/husk-of-opulent-dreams/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/husk-of-opulent-dreams"
             }],
             [{
                 name: "Retracing Bolide",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/retracing-bolide/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/retracing-bolide"
+                source: "https://genshin.jmp.blue/artifacts/retracing-bolide/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/retracing-bolide"
             }]
         ],
         artifactStat: [
@@ -285,37 +285,37 @@ export const Character = [
         role: "DPS",
         bestWeapon: [{
             name: "Mistsplitter Reforged",
-            source: "https://api.genshin.dev/weapons/mistsplitter-reforged/icon",
-            api: "https://api.genshin.dev/weapons/mistsplitter-reforged"
+            source: "https://genshin.jmp.blue/weapons/mistsplitter-reforged/icon",
+            api: "https://genshin.jmp.blue/weapons/mistsplitter-reforged"
         },
         {
             name: "Primordial Jade Cutter",
-            source: "https://api.genshin.dev/weapons/primordial-jade-cutter/icon",
-            api: "https://api.genshin.dev/weapons/primordial-jade-cutter"
+            source: "https://genshin.jmp.blue/weapons/primordial-jade-cutter/icon",
+            api: "https://genshin.jmp.blue/weapons/primordial-jade-cutter"
         },
         {
             name: "Summit Shaper",
-            source: "https://api.genshin.dev/weapons/summit-shaper/icon",
-            api: "https://api.genshin.dev/weapons/summit-shaper"
+            source: "https://genshin.jmp.blue/weapons/summit-shaper/icon",
+            api: "https://genshin.jmp.blue/weapons/summit-shaper"
         }],
         bestArtifact: [
             [{
                 name: "Blizzard Strayer",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/blizzard-strayer/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/blizzard-Strayer"
+                source: "https://genshin.jmp.blue/artifacts/blizzard-strayer/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/blizzard-Strayer"
             }],
             [{
                 name: "Blizzard Strayer",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/blizzard-strayer/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/blizzard-Strayer"
+                source: "https://genshin.jmp.blue/artifacts/blizzard-strayer/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/blizzard-Strayer"
             },
             {
                 name: "Gladiator's Finale",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/gladiator-s-finale/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gladiator-s-finale"
+                source: "https://genshin.jmp.blue/artifacts/gladiator-s-finale/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gladiator-s-finale"
             }]
         ],
         artifactStat: [
@@ -352,36 +352,36 @@ export const Character = [
         bestWeapon: [{
             name: "Haran Geppaku Futsu",
             source: "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/31626_w.png",
-            api: "https://api.genshin.dev/weapons/haran-geppaku-futsu"
+            api: "https://genshin.jmp.blue/weapons/haran-geppaku-futsu"
         },
         {
             name: "Primordial Jade Cutter",
-            source: "https://api.genshin.dev/weapons/primordial-jade-cutter/icon",
-            api: "https://api.genshin.dev/weapons/primordial-jade-cutter"
+            source: "https://genshin.jmp.blue/weapons/primordial-jade-cutter/icon",
+            api: "https://genshin.jmp.blue/weapons/primordial-jade-cutter"
         },
         {
             name: "Mistsplitter Reforged",
-            source: "https://api.genshin.dev/weapons/mistsplitter-reforged/icon",
-            api: "https://api.genshin.dev/weapons/mistsplitter-reforged"
+            source: "https://genshin.jmp.blue/weapons/mistsplitter-reforged/icon",
+            api: "https://genshin.jmp.blue/weapons/mistsplitter-reforged"
         }],
         bestArtifact: [
             [{
                 name: "Shimenawa's Reminiscence",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/shimenawa-s-reminiscence/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/shimenawa-s-reminiscence"
+                source: "https://genshin.jmp.blue/artifacts/shimenawa-s-reminiscence/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/shimenawa-s-reminiscence"
             }],
             [{
                 name: "Heart of Depth",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/heart-of-depth/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/heart-of-depth"
+                source: "https://genshin.jmp.blue/artifacts/heart-of-depth/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/heart-of-depth"
             }],
             [{
                 name: "Gladiator's Finale",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/gladiator-s-finale/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gladiator-s-finale"
+                source: "https://genshin.jmp.blue/artifacts/gladiator-s-finale/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gladiator-s-finale"
             }]
         ],
         artifactStat: [
@@ -417,43 +417,43 @@ export const Character = [
         role: "Healer",
         bestWeapon: [{
             name: "Thrilling Tales Of Dragon Slayers",
-            source: "https://api.genshin.dev/weapons/thrilling-tales-of-dragon-slayers/icon",
-            api: "https://api.genshin.dev/weapons/thrilling-tales-of-dragon-slayers"
+            source: "https://genshin.jmp.blue/weapons/thrilling-tales-of-dragon-slayers/icon",
+            api: "https://genshin.jmp.blue/weapons/thrilling-tales-of-dragon-slayers"
         },
         {
             name: "Everlasting Moonglow",
-            source: "https://api.genshin.dev/weapons/everlasting-moonglow/icon",
-            api: "https://api.genshin.dev/weapons/everlasting-moonglow"
+            source: "https://genshin.jmp.blue/weapons/everlasting-moonglow/icon",
+            api: "https://genshin.jmp.blue/weapons/everlasting-moonglow"
         },
         {
             name: "Favonius Codex ",
-            source: "https://api.genshin.dev/weapons/favonius-codex/icon",
-            api: "https://api.genshin.dev/weapons/favonius-codex"
+            source: "https://genshin.jmp.blue/weapons/favonius-codex/icon",
+            api: "https://genshin.jmp.blue/weapons/favonius-codex"
         }],
         bestArtifact: [
             [{
                 name: "Ocean-Hued Clam",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/ocean-hued-clam/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/ocean-hued-clam"
+                source: "https://genshin.jmp.blue/artifacts/ocean-hued-clam/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/ocean-hued-clam"
             }],
             [{
                 name: "Maiden Beloved",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/maiden-beloved/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/maiden-beloved"
+                source: "https://genshin.jmp.blue/artifacts/maiden-beloved/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/maiden-beloved"
             }],
             [{
                 name: "Ocean-Hued Clam",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/ocean-hued-clam/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/ocean-hued-clam"
+                source: "https://genshin.jmp.blue/artifacts/ocean-hued-clam/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/ocean-hued-clam"
             },
             {
                 name: "Maiden Beloved",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/maiden-beloved/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/maiden-beloved"
+                source: "https://genshin.jmp.blue/artifacts/maiden-beloved/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/maiden-beloved"
             }]
         ],
         artifactStat: [
@@ -489,43 +489,43 @@ export const Character = [
         role: "Support",
         bestWeapon: [{
             name: "Wolf's Gravestone ",
-            source: "https://api.genshin.dev/weapons/wolf-s-gravestone/icon",
-            api: "https://api.genshin.dev/weapons/wolf-s-gravestone"
+            source: "https://genshin.jmp.blue/weapons/wolf-s-gravestone/icon",
+            api: "https://genshin.jmp.blue/weapons/wolf-s-gravestone"
         },
         {
             name: "Skyward Pride ",
-            source: "https://api.genshin.dev/weapons/skyward-pride/icon",
-            api: "https://api.genshin.dev/weapons/skyward-pride"
+            source: "https://genshin.jmp.blue/weapons/skyward-pride/icon",
+            api: "https://genshin.jmp.blue/weapons/skyward-pride"
         },
         {
             name: "Akuoumaru ",
             source: "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/29883_w.png",
-            api: "https://api.genshin.dev/weapons/akuoumaru"
+            api: "https://genshin.jmp.blue/weapons/akuoumaru"
         }],
         bestArtifact: [
             [{
                 name: "Emblem Of Severed Fate",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/emblem-of-severed-fate/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/emblem-Of-Severed-Fate"
+                source: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/emblem-Of-Severed-Fate"
             }],
             [{
                 name: "Gilded Dreams",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/gilded-dreams/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gilded-dreams"
+                source: "https://genshin.jmp.blue/artifacts/gilded-dreams/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gilded-dreams"
             }],
             [{
                 name: "Thundering Fury",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/thundering-fury/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/thundering-fury"
+                source: "https://genshin.jmp.blue/artifacts/thundering-fury/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/thundering-fury"
             },
             {
                 name: "Noblesse Oblige",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/noblesse-Oblige"
+                source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/noblesse-Oblige"
             }]
         ],
         artifactStat: [
@@ -561,31 +561,31 @@ export const Character = [
         role: "Support/Healer",
         bestWeapon: [{
             name: "Aquila Favonia ",
-            source: "https://api.genshin.dev/weapons/aquila-favonia/icon",
-            api: "https://api.genshin.dev/weapons/aquila-favonia"
+            source: "https://genshin.jmp.blue/weapons/aquila-favonia/icon",
+            api: "https://genshin.jmp.blue/weapons/aquila-favonia"
         },
         {
             name: "Skyward Blade ",
-            source: "https://api.genshin.dev/weapons/skyward-blade/icon",
-            api: "https://api.genshin.dev/weapons/skyward-blade"
+            source: "https://genshin.jmp.blue/weapons/skyward-blade/icon",
+            api: "https://genshin.jmp.blue/weapons/skyward-blade"
         },
         {
             name: "The Alley Flash ",
-            source: "https://api.genshin.dev/weapons/the-alley-flash/icon",
-            api: "https://api.genshin.dev/weapons/the-alley-flash"
+            source: "https://genshin.jmp.blue/weapons/the-alley-flash/icon",
+            api: "https://genshin.jmp.blue/weapons/the-alley-flash"
         }],
         bestArtifact: [
             [{
                 name: "Noblesse Oblige",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/noblesse-Oblige"
+                source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/noblesse-Oblige"
             }],
             [{
                 name: "The Exile",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/the-exile/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/the-exile"
+                source: "https://genshin.jmp.blue/artifacts/the-exile/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/the-exile"
             }]
         ],
         artifactStat: [
@@ -621,49 +621,49 @@ export const Character = [
         role: "Sub-DPS",
         bestWeapon: [{
             name: "Wolf's Gravestone ",
-            source: "https://api.genshin.dev/weapons/wolf-s-gravestone/icon",
-            api: "https://api.genshin.dev/weapons/wolf-s-gravestone"
+            source: "https://genshin.jmp.blue/weapons/wolf-s-gravestone/icon",
+            api: "https://genshin.jmp.blue/weapons/wolf-s-gravestone"
         },
         {
             name: "Serpent Spine ",
-            source: "https://api.genshin.dev/weapons/serpent-spine/icon",
-            api: "https://api.genshin.dev/weapons/serpent-spine"
+            source: "https://genshin.jmp.blue/weapons/serpent-spine/icon",
+            api: "https://genshin.jmp.blue/weapons/serpent-spine"
         },
         {
             name: "Skyward Pride ",
-            source: "https://api.genshin.dev/weapons/skyward-pride/icon",
-            api: "https://api.genshin.dev/weapons/skyward-pride"
+            source: "https://genshin.jmp.blue/weapons/skyward-pride/icon",
+            api: "https://genshin.jmp.blue/weapons/skyward-pride"
         }],
         bestArtifact: [
             [{
                 name: "Blizzard Strayer",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/blizzard-strayer/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/blizzard-Strayer"
+                source: "https://genshin.jmp.blue/artifacts/blizzard-strayer/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/blizzard-Strayer"
             },
             {
                 name: "Gladiator's Finale",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/gladiator-s-finale/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gladiator-s-finale"
+                source: "https://genshin.jmp.blue/artifacts/gladiator-s-finale/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gladiator-s-finale"
             }],
             [{
                 name: "Blizzard Strayer",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/blizzard-strayer/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/blizzard-Strayer"
+                source: "https://genshin.jmp.blue/artifacts/blizzard-strayer/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/blizzard-Strayer"
             },
             {
                 name: "Noblesse Oblige",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/noblesse-Oblige"
+                source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/noblesse-Oblige"
             }],
             [{
                 name: "Noblesse Oblige",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/noblesse-Oblige"
+                source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/noblesse-Oblige"
             }]
         ],
         artifactStat: [
@@ -699,31 +699,31 @@ export const Character = [
         role: "Sub-DPS",
         bestWeapon: [{
             name: "Elegy For The End",
-            source: "https://api.genshin.dev/weapons/elegy-for-the-end/icon",
-            api: "https://api.genshin.dev/weapons/elegy-for-the-end"
+            source: "https://genshin.jmp.blue/weapons/elegy-for-the-end/icon",
+            api: "https://genshin.jmp.blue/weapons/elegy-for-the-end"
         },
         {
             name: "Polar Star ",
             source: "https://rerollcdn.com/GENSHIN/Weapons/Polar_Star.png",
-            api: 'https://api.genshin.dev/weapons/polar-star'
+            api: 'https://genshin.jmp.blue/weapons/polar-star'
         },
         {
             name: "The Stringless ",
-            source: "https://api.genshin.dev/weapons/the-stringless/icon",
-            api: "https://api.genshin.dev/weapons/the-stringless/icon"
+            source: "https://genshin.jmp.blue/weapons/the-stringless/icon",
+            api: "https://genshin.jmp.blue/weapons/the-stringless/icon"
         }],
         bestArtifact: [
             [{
                 name: "Deepwood Memories",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/deepwood-memories/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/deepwood-memories"
+                source: "https://genshin.jmp.blue/artifacts/deepwood-memories/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/deepwood-memories"
             }],
             [{
                 name: "Gilded Dreams",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/gilded-dreams/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gilded-dreams"
+                source: "https://genshin.jmp.blue/artifacts/gilded-dreams/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gilded-dreams"
             }]
         ],
         artifactStat: [
@@ -759,37 +759,37 @@ export const Character = [
         role: "DPS",
         bestWeapon: [{
             name: "Wolf's Gravestone ",
-            source: "https://api.genshin.dev/weapons/wolf-s-gravestone/icon",
-            api: "https://api.genshin.dev/weapons/wolf-s-gravestone"
+            source: "https://genshin.jmp.blue/weapons/wolf-s-gravestone/icon",
+            api: "https://genshin.jmp.blue/weapons/wolf-s-gravestone"
         },
         {
             name: "The Unforged ",
-            source: "https://api.genshin.dev/weapons/the-unforged/icon",
-            api: "https://api.genshin.dev/weapons/the-unforged/icon"
+            source: "https://genshin.jmp.blue/weapons/the-unforged/icon",
+            api: "https://genshin.jmp.blue/weapons/the-unforged/icon"
         },
         {
             name: "Serpent Spine ",
-            source: "https://api.genshin.dev/weapons/serpent-spine/icon",
-            api: "https://api.genshin.dev/weapons/serpent-spine"
+            source: "https://genshin.jmp.blue/weapons/serpent-spine/icon",
+            api: "https://genshin.jmp.blue/weapons/serpent-spine"
         }],
         bestArtifact: [
             [{
                 name: "Crimson Witch of Flames",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/crimson-witch-of-flames/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/crimson-witch-of-flames"
+                source: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames"
             }],
             [{
                 name: "Crimson Witch of Flames",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/crimson-witch-of-flames/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/crimson-witch-of-flames"
+                source: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames"
             },
             {
                 name: "Gladiator's Finale",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/gladiator-s-finale/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gladiator-s-finale"
+                source: "https://genshin.jmp.blue/artifacts/gladiator-s-finale/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gladiator-s-finale"
             }]
         ],
         artifactStat: [
@@ -825,49 +825,49 @@ export const Character = [
         role: "Support/Healer",
         bestWeapon: [{
             name: "Sacrificial Bow ",
-            source: "https://api.genshin.dev/weapons/sacrificial-bow/icon",
-            api: "https://api.genshin.dev/weapons/sacrificial-bow"
+            source: "https://genshin.jmp.blue/weapons/sacrificial-bow/icon",
+            api: "https://genshin.jmp.blue/weapons/sacrificial-bow"
         },
         {
             name: "Favonius Warbow ",
-            source: "https://api.genshin.dev/weapons/favonius-warbow/icon",
-            api: "https://api.genshin.dev/weapons/favonius-warbow"
+            source: "https://genshin.jmp.blue/weapons/favonius-warbow/icon",
+            api: "https://genshin.jmp.blue/weapons/favonius-warbow"
         },
         {
             name: "Elegy For The End ",
-            source: "https://api.genshin.dev/weapons/elegy-for-the-end/icon",
-            api: "https://api.genshin.dev/weapons/elegy-for-the-end"
+            source: "https://genshin.jmp.blue/weapons/elegy-for-the-end/icon",
+            api: "https://genshin.jmp.blue/weapons/elegy-for-the-end"
         }],
         bestArtifact: [
             [{
                 name: "Noblesse Oblige",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/noblesse-Oblige"
+                source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/noblesse-Oblige"
             }],
             [{
                 name: "Tenacity Of The Millelith",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith"
+                source: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith"
             },
             {
                 name: "Maiden Beloved",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/maiden-beloved/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/maiden-beloved"
+                source: "https://genshin.jmp.blue/artifacts/maiden-beloved/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/maiden-beloved"
             }],
             [{
                 name: "Tenacity Of The Millelith",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith"
+                source: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith"
             },
             {
                 name: "Emblem Of Severed Fate",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/emblem-of-severed-fate/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/emblem-Of-Severed-Fate"
+                source: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/emblem-Of-Severed-Fate"
             }]
         ],
         artifactStat: [
@@ -903,37 +903,37 @@ export const Character = [
         role: "DPS",
         bestWeapon: [{
             name: "Song Of Broken Pines ",
-            source: "https://api.genshin.dev/weapons/song-of-broken-pines/icon",
-            api: "https://api.genshin.dev/weapons/song-of-broken-pines"
+            source: "https://genshin.jmp.blue/weapons/song-of-broken-pines/icon",
+            api: "https://genshin.jmp.blue/weapons/song-of-broken-pines"
         },
         {
             name: "Wolf's Gravestone ",
-            source: "https://api.genshin.dev/weapons/wolf-s-gravestone/icon",
-            api: "https://api.genshin.dev/weapons/wolf-s-gravestone"
+            source: "https://genshin.jmp.blue/weapons/wolf-s-gravestone/icon",
+            api: "https://genshin.jmp.blue/weapons/wolf-s-gravestone"
         },
         {
             name: "Serpent Spine ",
-            source: "https://api.genshin.dev/weapons/serpent-spine/icon",
-            api: "https://api.genshin.dev/weapons/serpent-spine"
+            source: "https://genshin.jmp.blue/weapons/serpent-spine/icon",
+            api: "https://genshin.jmp.blue/weapons/serpent-spine"
         }],
         bestArtifact: [
             [{
                 name: "Pale Flame",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/pale-flame/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/pale-flame"
+                source: "https://genshin.jmp.blue/artifacts/pale-flame/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/pale-flame"
             }],
             [{
                 name: "Pale Flame",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/pale-flame/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/pale-flame"
+                source: "https://genshin.jmp.blue/artifacts/pale-flame/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/pale-flame"
             },
             {
                 name: "Bloodstained Chivalry",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/bloodstained-chivalry/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/bloodstained-chivalry"
+                source: "https://genshin.jmp.blue/artifacts/bloodstained-chivalry/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/bloodstained-chivalry"
             }]
         ],
         artifactStat: [
@@ -969,37 +969,37 @@ export const Character = [
         role: "Sub-DPS",
         bestWeapon: [{
             name: "Skyward Harp ",
-            source: "https://api.genshin.dev/weapons/skyward-harp/icon",
-            api: "https://api.genshin.dev/weapons/skyward-harp"
+            source: "https://genshin.jmp.blue/weapons/skyward-harp/icon",
+            api: "https://genshin.jmp.blue/weapons/skyward-harp"
         },
         {
             name: "Elegy For The End",
-            source: "https://api.genshin.dev/weapons/elegy-for-the-end/icon",
-            api: "https://api.genshin.dev/weapons/elegy-for-the-end"
+            source: "https://genshin.jmp.blue/weapons/elegy-for-the-end/icon",
+            api: "https://genshin.jmp.blue/weapons/elegy-for-the-end"
         },
         {
             name: "Alley Hunter",
-            source: "https://api.genshin.dev/weapons/alley-hunter/icon",
-            api: "https://api.genshin.dev/weapons/alley-hunter"
+            source: "https://genshin.jmp.blue/weapons/alley-hunter/icon",
+            api: "https://genshin.jmp.blue/weapons/alley-hunter"
         }],
         bestArtifact: [
             [{
                 name: "Thundering Fury",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/thundering-fury/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/thundering-fury"
+                source: "https://genshin.jmp.blue/artifacts/thundering-fury/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/thundering-fury"
             }],
             [{
                 name: "Thundering Fury",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/thundering-fury/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/thundering-fury"
+                source: "https://genshin.jmp.blue/artifacts/thundering-fury/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/thundering-fury"
             },
             {
                 name: "Gladiator's Finale",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/gladiator-s-finale/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gladiator-s-finale"
+                source: "https://genshin.jmp.blue/artifacts/gladiator-s-finale/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gladiator-s-finale"
             }]
         ],
         artifactStat: [
@@ -1036,36 +1036,36 @@ export const Character = [
         bestWeapon: [{
             name: "Polar Star",
             source: "https://rerollcdn.com/GENSHIN/Weapons/Polar_Star.png",
-            api: 'https://api.genshin.dev/weapons/polar-star'
+            api: 'https://genshin.jmp.blue/weapons/polar-star'
         },
         {
             name: "Amos' Bow",
             source: "https://rerollcdn.com/GENSHIN/Weapons/Amos'_Bow.png",
-            api: 'https://api.genshin.dev/weapons/Amos-Bow'
+            api: 'https://genshin.jmp.blue/weapons/Amos-Bow'
         },
         {
             name: "Skyward Harp",
-            source: "https://api.genshin.dev/weapons/skyward-harp/icon",
-            api: "https://api.genshin.dev/weapons/skyward-harp"
+            source: "https://genshin.jmp.blue/weapons/skyward-harp/icon",
+            api: "https://genshin.jmp.blue/weapons/skyward-harp"
         }],
         bestArtifact: [
             [{
                 name: "Blizzard Strayer",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/blizzard-strayer/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/blizzard-Strayer"
+                source: "https://genshin.jmp.blue/artifacts/blizzard-strayer/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/blizzard-Strayer"
             }],
             [{
                 name: "Blizzard Strayer",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/blizzard-strayer/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/blizzard-Strayer"
+                source: "https://genshin.jmp.blue/artifacts/blizzard-strayer/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/blizzard-Strayer"
             },
             {
                 name: "Gladiator's Finale",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/gladiator-s-finale/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gladiator-s-finale"
+                source: "https://genshin.jmp.blue/artifacts/gladiator-s-finale/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gladiator-s-finale"
             }]
         ],
         artifactStat: [
@@ -1101,38 +1101,38 @@ export const Character = [
         role: "Support",
         bestWeapon: [{
             name: "Favonius Warbow",
-            source: "https://api.genshin.dev/weapons/favonius-warbow/icon",
-            api: "https://api.genshin.dev/weapons/favonius-warbow"
+            source: "https://genshin.jmp.blue/weapons/favonius-warbow/icon",
+            api: "https://genshin.jmp.blue/weapons/favonius-warbow"
         },
         {
             name: "Elegy For The End",
-            source: "https://api.genshin.dev/weapons/elegy-for-the-end/icon",
-            api: "https://api.genshin.dev/weapons/elegy-for-the-end"
+            source: "https://genshin.jmp.blue/weapons/elegy-for-the-end/icon",
+            api: "https://genshin.jmp.blue/weapons/elegy-for-the-end"
         }],
         bestArtifact: [
             [{
                 name: "The Exile",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/the-exile/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/the-exile"
+                source: "https://genshin.jmp.blue/artifacts/the-exile/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/the-exile"
             }],
             [{
                 name: "Emblem Of Severed Fate",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/emblem-of-severed-fate/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/emblem-Of-Severed-Fate"
+                source: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/emblem-Of-Severed-Fate"
             },
             {
                 name: "Husk Of Opulent Dreams",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/husk-of-opulent-dreams/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/husk-of-opulent-dreams"
+                source: "https://genshin.jmp.blue/artifacts/husk-of-opulent-dreams/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/husk-of-opulent-dreams"
             }],
             [{
                 name: "Noblesse Oblige",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/noblesse-Oblige"
+                source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/noblesse-Oblige"
             }]
         ],
         artifactStat: [
@@ -1168,43 +1168,43 @@ export const Character = [
         role: "DPS",
         bestWeapon: [{
             name: "Staff of Homa",
-            source: "https://api.genshin.dev/weapons/staff-of-homa/icon",
-            api: "https://api.genshin.dev/weapons/staff-of-homa"
+            source: "https://genshin.jmp.blue/weapons/staff-of-homa/icon",
+            api: "https://genshin.jmp.blue/weapons/staff-of-homa"
         },
         {
             name: "Primordial Jade Winged-Spear",
-            source: "https://api.genshin.dev/weapons/primordial-jade-winged-spear/icon",
-            api: "https://api.genshin.dev/weapons/primordial-jade-winged-spear"
+            source: "https://genshin.jmp.blue/weapons/primordial-jade-winged-spear/icon",
+            api: "https://genshin.jmp.blue/weapons/primordial-jade-winged-spear"
         },
         {
             name: "Deathmatch",
-            source: "https://api.genshin.dev/weapons/deathmatch/icon",
-            api: "https://api.genshin.dev/weapons/deathmatch"
+            source: "https://genshin.jmp.blue/weapons/deathmatch/icon",
+            api: "https://genshin.jmp.blue/weapons/deathmatch"
         }],
         bestArtifact: [
             [{
                 name: "Crimson Witch of Flames",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/crimson-witch-of-flames/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/crimson-witch-of-flames"
+                source: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames"
             },
             {
                 name: "Noblesse Oblige",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/noblesse-Oblige"
+                source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/noblesse-Oblige"
             }],
             [{
                 name: "Tenacity Of The Millelith",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith"
+                source: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith"
             },
             {
                 name: "Noblesse Oblige",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/noblesse-Oblige"
+                source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/noblesse-Oblige"
             }]
         ],
         artifactStat: [
@@ -1240,49 +1240,49 @@ export const Character = [
         role: "Healer",
         bestWeapon: [{
             name: "Amenoma Kageuchi",
-            source: "https://api.genshin.dev/weapons/amenoma-kageuchi/icon",
-            api: "https://api.genshin.dev/weapons/amenoma-kageuchi"
+            source: "https://genshin.jmp.blue/weapons/amenoma-kageuchi/icon",
+            api: "https://genshin.jmp.blue/weapons/amenoma-kageuchi"
         },
         {
             name: "Aquila Favonia",
-            source: "https://api.genshin.dev/weapons/aquila-favonia/icon",
-            api: "https://api.genshin.dev/weapons/aquila-favonia"
+            source: "https://genshin.jmp.blue/weapons/aquila-favonia/icon",
+            api: "https://genshin.jmp.blue/weapons/aquila-favonia"
         },
         {
             name: "Skyward Blade",
-            source: "https://api.genshin.dev/weapons/skyward-blade/icon",
-            api: "https://api.genshin.dev/weapons/skyward-blade"
+            source: "https://genshin.jmp.blue/weapons/skyward-blade/icon",
+            api: "https://genshin.jmp.blue/weapons/skyward-blade"
         }],
         bestArtifact: [
             [{
                 name: "Viridescent Venerer",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/viridescent-venerer/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/Viridescent-Venerer"
+                source: "https://genshin.jmp.blue/artifacts/viridescent-venerer/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/Viridescent-Venerer"
             }],
             [{
                 name: "Gladiator's Finale",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/gladiator-s-finale/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gladiator-s-finale"
+                source: "https://genshin.jmp.blue/artifacts/gladiator-s-finale/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gladiator-s-finale"
             },
             {
                 name: "Maiden Beloved",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/maiden-beloved/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/maiden-beloved"
+                source: "https://genshin.jmp.blue/artifacts/maiden-beloved/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/maiden-beloved"
             }],
             [{
                 name: "Gladiator's Finale",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/gladiator-s-finale/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gladiator-s-finale"
+                source: "https://genshin.jmp.blue/artifacts/gladiator-s-finale/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gladiator-s-finale"
             },
             {
                 name: "Ocean-Hued Clam",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/ocean-hued-clam/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/ocean-hued-clam"
+                source: "https://genshin.jmp.blue/artifacts/ocean-hued-clam/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/ocean-hued-clam"
             }]
         ],
         artifactStat: [
@@ -1318,43 +1318,43 @@ export const Character = [
         role: "Sub-DPS",
         bestWeapon: [{
             name: "Freedom-Sworn",
-            source: "https://api.genshin.dev/weapons/freedom-sworn/icon",
-            api: "https://api.genshin.dev/weapons/freedom-sworn"
+            source: "https://genshin.jmp.blue/weapons/freedom-sworn/icon",
+            api: "https://genshin.jmp.blue/weapons/freedom-sworn"
         },
         {
             name: "Amenoma Kageuchi",
-            source: "https://api.genshin.dev/weapons/amenoma-kageuchi/icon",
-            api: "https://api.genshin.dev/weapons/amenoma-kageuchi"
+            source: "https://genshin.jmp.blue/weapons/amenoma-kageuchi/icon",
+            api: "https://genshin.jmp.blue/weapons/amenoma-kageuchi"
         },
         {
             name: "Skyward Blade",
-            source: "https://api.genshin.dev/weapons/skyward-blade/icon",
-            api: "https://api.genshin.dev/weapons/skyward-blade"
+            source: "https://genshin.jmp.blue/weapons/skyward-blade/icon",
+            api: "https://genshin.jmp.blue/weapons/skyward-blade"
         }],
         bestArtifact: [
             [{
                 name: "Blizzard Strayer",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/blizzard-strayer/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/blizzard-Strayer"
+                source: "https://genshin.jmp.blue/artifacts/blizzard-strayer/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/blizzard-Strayer"
             },
             {
                 name: "Noblesse Oblige",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/noblesse-Oblige"
+                source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/noblesse-Oblige"
             }],
             [{
                 name: "Noblesse Oblige",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/noblesse-Oblige"
+                source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/noblesse-Oblige"
             }],
             [{
                 name: "Emblem Of Severed Fate",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/emblem-of-severed-fate/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/emblem-Of-Severed-Fate"
+                source: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/emblem-Of-Severed-Fate"
             }]
         ],
         artifactStat: [
@@ -1391,31 +1391,31 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Freedom-Sworn",
-                source: "https://api.genshin.dev/weapons/freedom-sworn/icon",
-                api: "https://api.genshin.dev/weapons/freedom-sworn"
+                source: "https://genshin.jmp.blue/weapons/freedom-sworn/icon",
+                api: "https://genshin.jmp.blue/weapons/freedom-sworn"
             },
             {
                 name: "Iron Sting",
-                source: "https://api.genshin.dev/weapons/iron-sting/icon",
-                api: "https://api.genshin.dev/weapons/iron-sting"
+                source: "https://genshin.jmp.blue/weapons/iron-sting/icon",
+                api: "https://genshin.jmp.blue/weapons/iron-sting"
             },
             {
                 name: "Sacrificial Sword",
-                source: "https://api.genshin.dev/weapons/sacrificial-sword/icon",
-                api: "https://api.genshin.dev/weapons/sacrificial-sword"
+                source: "https://genshin.jmp.blue/weapons/sacrificial-sword/icon",
+                api: "https://genshin.jmp.blue/weapons/sacrificial-sword"
             }],
         bestArtifact: [
             [{
                 name: "Viridescent Venerer",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/viridescent-venerer/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/Viridescent-Venerer"
+                source: "https://genshin.jmp.blue/artifacts/viridescent-venerer/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/Viridescent-Venerer"
             }],
             [{
                 name: "Gilded Dreams",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/gilded-dreams/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gilded-dreams"
+                source: "https://genshin.jmp.blue/artifacts/gilded-dreams/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gilded-dreams"
             }]],
         artifactStat: [
             {
@@ -1451,49 +1451,49 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Mistsplitter Reforged",
-                source: "https://api.genshin.dev/weapons/mistsplitter-reforged/icon",
-                api: "https://api.genshin.dev/weapons/mistsplitter-reforged"
+                source: "https://genshin.jmp.blue/weapons/mistsplitter-reforged/icon",
+                api: "https://genshin.jmp.blue/weapons/mistsplitter-reforged"
             },
             {
                 name: "Primordial Jade Cutter",
-                source: "https://api.genshin.dev/weapons/primordial-jade-cutter/icon",
-                api: "https://api.genshin.dev/weapons/primordial-jade-cutter"
+                source: "https://genshin.jmp.blue/weapons/primordial-jade-cutter/icon",
+                api: "https://genshin.jmp.blue/weapons/primordial-jade-cutter"
             },
             {
                 name: "Summit Shaper",
-                source: "https://api.genshin.dev/weapons/summit-shaper/icon",
-                api: "https://api.genshin.dev/weapons/summit-shaper"
+                source: "https://genshin.jmp.blue/weapons/summit-shaper/icon",
+                api: "https://genshin.jmp.blue/weapons/summit-shaper"
             }],
         bestArtifact: [
             [{
                 name: "Thundering Fury",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/thundering-fury/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/thundering-fury"
+                source: "https://genshin.jmp.blue/artifacts/thundering-fury/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/thundering-fury"
             },
             {
                 name: "Gladiator's Finale",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/gladiator-s-finale/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gladiator-s-finale"
+                source: "https://genshin.jmp.blue/artifacts/gladiator-s-finale/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gladiator-s-finale"
             }],
             [{
                 name: "Thundersoother",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/thundersoother/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/thundersoother"
+                source: "https://genshin.jmp.blue/artifacts/thundersoother/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/thundersoother"
             }],
             [{
                 name: "Gladiator's Finale",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/gladiator-s-finale/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gladiator-s-finale"
+                source: "https://genshin.jmp.blue/artifacts/gladiator-s-finale/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gladiator-s-finale"
             },
             {
                 name: "Shimenawa's Reminiscence",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/shimenawa-s-reminiscence/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/shimenawa-s-reminiscence"
+                source: "https://genshin.jmp.blue/artifacts/shimenawa-s-reminiscence/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/shimenawa-s-reminiscence"
             }]
         ],
         artifactStat: [
@@ -1530,49 +1530,49 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Lost Prayer To The Sacred Winds",
-                source: "https://api.genshin.dev/weapons/lost-prayer-to-the-sacred-winds/icon",
-                api: "https://api.genshin.dev/weapons/lost-prayer-to-the-sacred-winds"
+                source: "https://genshin.jmp.blue/weapons/lost-prayer-to-the-sacred-winds/icon",
+                api: "https://genshin.jmp.blue/weapons/lost-prayer-to-the-sacred-winds"
             },
             {
                 name: "Skyward Atlas",
-                source: "https://api.genshin.dev/weapons/skyward-atlas/icon",
-                api: "https://api.genshin.dev/weapons/skyward-atlas"
+                source: "https://genshin.jmp.blue/weapons/skyward-atlas/icon",
+                api: "https://genshin.jmp.blue/weapons/skyward-atlas"
             },
             {
                 name: "The Widsith",
-                source: "https://api.genshin.dev/weapons/the-widsith/icon",
-                api: "https://api.genshin.dev/weapons/the-widsith"
+                source: "https://genshin.jmp.blue/weapons/the-widsith/icon",
+                api: "https://genshin.jmp.blue/weapons/the-widsith"
             }],
         bestArtifact: [
             [{
                 name: "Crimson Witch Of Flames",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/crimson-witch-of-flames/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/crimson-witch-of-flames"
+                source: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames"
             }],
             [{
                 name: "Crimson Witch Of Flames",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/crimson-witch-of-flames/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/crimson-witch-of-flames"
+                source: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames"
             },
             {
                 name: "Gladiator's Finale",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/gladiator-s-finale/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gladiator-s-finale"
+                source: "https://genshin.jmp.blue/artifacts/gladiator-s-finale/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gladiator-s-finale"
             }],
             [{
                 name: "Crimson Witch Of Flames",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/crimson-witch-of-flames/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/crimson-witch-of-flames"
+                source: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames"
             },
             {
                 name: "Noblesse Oblige",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/noblesse-Oblige"
+                source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/noblesse-Oblige"
             }]
         ],
         artifactStat: [
@@ -1609,37 +1609,37 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Everlasting Moonglow",
-                source: "https://api.genshin.dev/weapons/everlasting-moonglow/icon",
-                api: "https://api.genshin.dev/weapons/everlasting-moonglow"
+                source: "https://genshin.jmp.blue/weapons/everlasting-moonglow/icon",
+                api: "https://genshin.jmp.blue/weapons/everlasting-moonglow"
             },
             {
                 name: "Hakushin Ring",
-                source: "https://api.genshin.dev/weapons/hakushin-ring/icon",
-                api: "https://api.genshin.dev/weapons/hakushin-ring"
+                source: "https://genshin.jmp.blue/weapons/hakushin-ring/icon",
+                api: "https://genshin.jmp.blue/weapons/hakushin-ring"
             },
             {
                 name: "Thrilling Tales Of Dragon Slayers",
-                source: "https://api.genshin.dev/weapons/thrilling-tales-of-dragon-slayers/icon",
-                api: "https://api.genshin.dev/weapons/thrilling-tales-of-dragon-slayers"
+                source: "https://genshin.jmp.blue/weapons/thrilling-tales-of-dragon-slayers/icon",
+                api: "https://genshin.jmp.blue/weapons/thrilling-tales-of-dragon-slayers"
             }],
         bestArtifact: [
             [{
                 name: "Ocean-Hued Clam",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/ocean-hued-clam/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/ocean-hued-clam"
+                source: "https://genshin.jmp.blue/artifacts/ocean-hued-clam/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/ocean-hued-clam"
             }],
             [{
                 name: "Ocean-Hued Clam",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/ocean-hued-clam/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/ocean-hued-clam"
+                source: "https://genshin.jmp.blue/artifacts/ocean-hued-clam/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/ocean-hued-clam"
             },
             {
                 name: "Tenacity Of The Millelith",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith"
+                source: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith"
             }]
         ],
         artifactStat: [
@@ -1676,38 +1676,38 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Freedom-Sworn",
-                source: "https://api.genshin.dev/weapons/freedom-sworn/icon",
-                api: "https://api.genshin.dev/weapons/freedom-sworn"
+                source: "https://genshin.jmp.blue/weapons/freedom-sworn/icon",
+                api: "https://genshin.jmp.blue/weapons/freedom-sworn"
             },
             {
                 name: "Primordial Jade Cutter",
-                source: "https://api.genshin.dev/weapons/primordial-jade-cutter/icon",
-                api: "https://api.genshin.dev/weapons/primordial-jade-cutter"
+                source: "https://genshin.jmp.blue/weapons/primordial-jade-cutter/icon",
+                api: "https://genshin.jmp.blue/weapons/primordial-jade-cutter"
             },
             {
                 name: "Iron Sting",
-                source: "https://api.genshin.dev/weapons/iron-sting/icon",
-                api: "https://api.genshin.dev/weapons/iron-sting"
+                source: "https://genshin.jmp.blue/weapons/iron-sting/icon",
+                api: "https://genshin.jmp.blue/weapons/iron-sting"
             }
         ],
         bestArtifact: [
             [{
                 name: "Tenacity Of The Millelith",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith"
+                source: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith"
             }],
             [{
                 name: "Wanderer's Troupe",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/wanderer-s-troupe/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/wanderer-s-troupe"
+                source: "https://genshin.jmp.blue/artifacts/wanderer-s-troupe/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/wanderer-s-troupe"
             },
             {
                 name: "Tenacity Of The Millelith",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith"
+                source: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith"
             }]
         ],
         artifactStat: [
@@ -1744,49 +1744,49 @@ export const Character = [
             {
                 name: "Kagura's Verity",
                 source: "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/30998_w.png",
-                api: "https://api.genshin.dev/weapons/kagura's-verity"
+                api: "https://genshin.jmp.blue/weapons/kagura's-verity"
             },
             {
                 name: "Lost Prayer To The Sacred Winds",
-                source: "https://api.genshin.dev/weapons/lost-prayer-to-the-sacred-winds/icon",
-                api: "https://api.genshin.dev/weapons/lost-prayer-to-the-sacred-winds"
+                source: "https://genshin.jmp.blue/weapons/lost-prayer-to-the-sacred-winds/icon",
+                api: "https://genshin.jmp.blue/weapons/lost-prayer-to-the-sacred-winds"
             },
             {
                 name: "The Widsith",
-                source: "https://api.genshin.dev/weapons/the-widsith/icon",
-                api: "https://api.genshin.dev/weapons/the-widsith"
+                source: "https://genshin.jmp.blue/weapons/the-widsith/icon",
+                api: "https://genshin.jmp.blue/weapons/the-widsith"
             }
         ],
         bestArtifact: [
             [{
                 name: "Thundering Fury",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/thundering-fury/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/thundering-fury"
+                source: "https://genshin.jmp.blue/artifacts/thundering-fury/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/thundering-fury"
             },
             {
                 name: "Gladiator's Finale",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/gladiator-s-finale/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gladiator-s-finale"
+                source: "https://genshin.jmp.blue/artifacts/gladiator-s-finale/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gladiator-s-finale"
             }],
             [{
                 name: "Thundering Fury",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/thundering-fury/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/thundering-fury"
+                source: "https://genshin.jmp.blue/artifacts/thundering-fury/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/thundering-fury"
             },
             {
                 name: "Noblesse Oblige",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/noblesse-oblige"
+                source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/noblesse-oblige"
             }],
             [{
                 name: "Emblem Of Severed Fate",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/emblem-of-severed-fate/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/emblem-of-severed-fate"
+                source: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate"
             }]
         ],
         artifactStat: [
@@ -1822,50 +1822,50 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Skyward Atlas",
-                source: "https://api.genshin.dev/weapons/skyward-atlas/icon",
-                api: "https://api.genshin.dev/weapons/skyward-atlas"
+                source: "https://genshin.jmp.blue/weapons/skyward-atlas/icon",
+                api: "https://genshin.jmp.blue/weapons/skyward-atlas"
             },
             {
                 name: "Lost Prayer To The Sacred Winds",
-                source: "https://api.genshin.dev/weapons/lost-prayer-to-the-sacred-winds/icon",
-                api: "https://api.genshin.dev/weapons/lost-prayer-to-the-sacred-winds"
+                source: "https://genshin.jmp.blue/weapons/lost-prayer-to-the-sacred-winds/icon",
+                api: "https://genshin.jmp.blue/weapons/lost-prayer-to-the-sacred-winds"
             },
             {
                 name: "Oathsworn Eye",
                 source: "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/30900_w.png",
-                api: "https://api.genshin.dev/weapons/oathsworn-eye"
+                api: "https://genshin.jmp.blue/weapons/oathsworn-eye"
             }
         ],
         bestArtifact: [
             [{
                 name: "Emblem Of Severed Fate",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/emblem-of-severed-fate/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/emblem-of-severed-fate"
+                source: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate"
             }],
             [{
                 name: "Emblem Of Severed Fate",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/emblem-of-severed-fate/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/emblem-of-severed-fate"
+                source: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate"
             },
             {
                 name: "Noblesse Oblige",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/noblesse-oblige"
+                source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/noblesse-oblige"
             }],
             [{
                 name: "Heart Of Depth",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/heart-of-depth/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/heart-of-depth"
+                source: "https://genshin.jmp.blue/artifacts/heart-of-depth/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/heart-of-depth"
             },
             {
                 name: "Noblesse Oblige",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/noblesse-oblige"
+                source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/noblesse-oblige"
             }]
         ],
         artifactStat: [
@@ -1902,50 +1902,50 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Lost Prayer To The Sacred Winds",
-                source: "https://api.genshin.dev/weapons/lost-prayer-to-the-sacred-winds/icon",
-                api: "https://api.genshin.dev/weapons/lost-prayer-to-the-sacred-winds"
+                source: "https://genshin.jmp.blue/weapons/lost-prayer-to-the-sacred-winds/icon",
+                api: "https://genshin.jmp.blue/weapons/lost-prayer-to-the-sacred-winds"
             },
             {
                 name: "Memory Of Dust",
-                source: "https://api.genshin.dev/weapons/memory-of-dust/icon",
-                api: "https://api.genshin.dev/weapons/memory-of-dust"
+                source: "https://genshin.jmp.blue/weapons/memory-of-dust/icon",
+                api: "https://genshin.jmp.blue/weapons/memory-of-dust"
             },
             {
                 name: "Kagura's Verity",
                 source: "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/30998_w.png",
-                api: "https://api.genshin.dev/weapons/kagura's-verity"
+                api: "https://genshin.jmp.blue/weapons/kagura's-verity"
             }
         ],
         bestArtifact: [
             [{
                 name: "Archaic Petra",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/archaic-petra/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/archaic-petra"
+                source: "https://genshin.jmp.blue/artifacts/archaic-petra/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/archaic-petra"
             },
             {
                 name: "Gladiator's Finale",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/gladiator-s-finale/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gladiator-s-finale"
+                source: "https://genshin.jmp.blue/artifacts/gladiator-s-finale/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gladiator-s-finale"
             }],
             [{
                 name: "Shimenawa's Reminiscence",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/shimenawa-s-reminiscence/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/shimenawa-s-reminiscence"
+                source: "https://genshin.jmp.blue/artifacts/shimenawa-s-reminiscence/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/shimenawa-s-reminiscence"
             },
             {
                 name: "Gladiator's Finale",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/gladiator-s-finale/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gladiator-s-finale"
+                source: "https://genshin.jmp.blue/artifacts/gladiator-s-finale/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gladiator-s-finale"
             }],
             [{
                 name: "Retracing Bolide",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/retracing-bolide/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/retracing-bolide"
+                source: "https://genshin.jmp.blue/artifacts/retracing-bolide/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/retracing-bolide"
             }]],
         artifactStat: [
             {
@@ -1982,43 +1982,43 @@ export const Character = [
             {
                 name: "Redhorn Stonethresher",
                 source: "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/30054_w.png",
-                api: "https://api.genshin.dev/weapons/redhorn-stonethresher"
+                api: "https://genshin.jmp.blue/weapons/redhorn-stonethresher"
             },
             {
                 name: "Skyward Pride",
-                source: "https://api.genshin.dev/weapons/skyward-pride/icon",
-                api: "https://api.genshin.dev/weapons/skyward-pride"
+                source: "https://genshin.jmp.blue/weapons/skyward-pride/icon",
+                api: "https://genshin.jmp.blue/weapons/skyward-pride"
             },
             {
                 name: "Serpent Spine",
-                source: "https://api.genshin.dev/weapons/serpent-spine/icon",
-                api: "https://api.genshin.dev/weapons/serpent-spine"
+                source: "https://genshin.jmp.blue/weapons/serpent-spine/icon",
+                api: "https://genshin.jmp.blue/weapons/serpent-spine"
             }
         ],
         bestArtifact: [
             [{
                 name: "Husk Of Opulent Dreams",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/husk-of-opulent-dreams/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/husk-of-opulent-dreams"
+                source: "https://genshin.jmp.blue/artifacts/husk-of-opulent-dreams/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/husk-of-opulent-dreams"
             }],
             [{
                 name: "Husk Of Opulent Dreams",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/husk-of-opulent-dreams/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/husk-of-opulent-dreams"
+                source: "https://genshin.jmp.blue/artifacts/husk-of-opulent-dreams/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/husk-of-opulent-dreams"
             },
             {
                 name: "Archaic Petra",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/archaic-petra/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/archaic-petra"
+                source: "https://genshin.jmp.blue/artifacts/archaic-petra/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/archaic-petra"
             }],
             [{
                 name: "Retracing Bolide",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/retracing-bolide/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/retracing-bolide"
+                source: "https://genshin.jmp.blue/artifacts/retracing-bolide/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/retracing-bolide"
             }]
         ],
         artifactStat: [
@@ -2055,38 +2055,38 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Sacrificial Sword",
-                source: "https://api.genshin.dev/weapons/sacrificial-sword/icon",
-                api: "https://api.genshin.dev/weapons/sacrificial-sword"
+                source: "https://genshin.jmp.blue/weapons/sacrificial-sword/icon",
+                api: "https://genshin.jmp.blue/weapons/sacrificial-sword"
             },
             {
                 name: "Aquila Favonia",
-                source: "https://api.genshin.dev/weapons/aquila-favonia/icon",
-                api: "https://api.genshin.dev/weapons/aquila-favonia"
+                source: "https://genshin.jmp.blue/weapons/aquila-favonia/icon",
+                api: "https://genshin.jmp.blue/weapons/aquila-favonia"
             },
             {
                 name: "Summit Shaper",
-                source: "https://api.genshin.dev/weapons/summit-shaper/icon",
-                api: "https://api.genshin.dev/weapons/summit-shaper"
+                source: "https://genshin.jmp.blue/weapons/summit-shaper/icon",
+                api: "https://genshin.jmp.blue/weapons/summit-shaper"
             }
         ],
         bestArtifact: [
             [{
                 name: "Ocean-Hued Clam",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/ocean-hued-clam/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/ocean-hued-clam"
+                source: "https://genshin.jmp.blue/artifacts/ocean-hued-clam/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/ocean-hued-clam"
             }],
             [{
                 name: "Maiden Beloved",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/maiden-beloved/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/maiden-beloved"
+                source: "https://genshin.jmp.blue/artifacts/maiden-beloved/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/maiden-beloved"
             },
             {
                 name: "Gladiator's Finale",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/gladiator-s-finale/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gladiator-s-finale"
+                source: "https://genshin.jmp.blue/artifacts/gladiator-s-finale/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gladiator-s-finale"
             }]
         ],
         artifactStat: [
@@ -2123,38 +2123,38 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Engulfing Lightning",
-                source: "https://api.genshin.dev/weapons/engulfing-lightning/icon",
-                api: "https://api.genshin.dev/weapons/engulfing-lightning"
+                source: "https://genshin.jmp.blue/weapons/engulfing-lightning/icon",
+                api: "https://genshin.jmp.blue/weapons/engulfing-lightning"
             },
             {
                 name: "Skyward Spiner",
-                source: "https://api.genshin.dev/weapons/skyward-spine/icon",
-                api: "https://api.genshin.dev/weapons/skyward-spine"
+                source: "https://genshin.jmp.blue/weapons/skyward-spine/icon",
+                api: "https://genshin.jmp.blue/weapons/skyward-spine"
             },
             {
                 name: "The Catch",
-                source: "https://api.genshin.dev/weapons/the-catch/icon",
-                api: "https://api.genshin.dev/weapons/the-catch"
+                source: "https://genshin.jmp.blue/weapons/the-catch/icon",
+                api: "https://genshin.jmp.blue/weapons/the-catch"
             }
         ],
         bestArtifact: [
             [{
                 name: "Emblem Of Severed Fate",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/emblem-of-severed-fate/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/emblem-of-severed-fate"
+                source: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate"
             }],
             [{
                 name: "Emblem Of Severed Fate",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/emblem-of-severed-fate/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/emblem-of-severed-fate"
+                source: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate"
             },
             {
                 name: "Thundering Fury",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/thundering-fury/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/thundering-fury"
+                source: "https://genshin.jmp.blue/artifacts/thundering-fury/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/thundering-fury"
             }]
         ],
         artifactStat: [
@@ -2191,38 +2191,38 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Song Of Broken Pines",
-                source: "https://api.genshin.dev/weapons/song-of-broken-pines/icon",
-                api: "https://api.genshin.dev/weapons/song-of-broken-pines"
+                source: "https://genshin.jmp.blue/weapons/song-of-broken-pines/icon",
+                api: "https://genshin.jmp.blue/weapons/song-of-broken-pines"
             },
             {
                 name: "Wolf's Gravestone",
-                source: "https://api.genshin.dev/weapons/wolf-s-gravestone/icon",
-                api: "https://api.genshin.dev/weapons/wolf-s-gravestone"
+                source: "https://genshin.jmp.blue/weapons/wolf-s-gravestone/icon",
+                api: "https://genshin.jmp.blue/weapons/wolf-s-gravestone"
             },
             {
                 name: "Serpent Spine",
-                source: "https://api.genshin.dev/weapons/serpent-spine/icon",
-                api: "https://api.genshin.dev/weapons/serpent-spine"
+                source: "https://genshin.jmp.blue/weapons/serpent-spine/icon",
+                api: "https://genshin.jmp.blue/weapons/serpent-spine"
             }
         ],
         bestArtifact: [
             [{
                 name: "Pale Flame",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/pale-flame/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/pale-flame"
+                source: "https://genshin.jmp.blue/artifacts/pale-flame/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/pale-flame"
             }],
             [{
                 name: "Pale Flame",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/pale-flame/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/pale-flame"
+                source: "https://genshin.jmp.blue/artifacts/pale-flame/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/pale-flame"
             },
             {
                 name: "Bloodstained Chivalry",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/bloodstained-chivalry/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/bloodstained-chivalry"
+                source: "https://genshin.jmp.blue/artifacts/bloodstained-chivalry/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/bloodstained-chivalry"
             }]
         ],
         artifactStat: [
@@ -2259,38 +2259,38 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Primordial Jade Winged-Spear",
-                source: "https://api.genshin.dev/weapons/primordial-jade-winged-spear/icon",
-                api: "https://api.genshin.dev/weapons/primordial-jade-winged-spear"
+                source: "https://genshin.jmp.blue/weapons/primordial-jade-winged-spear/icon",
+                api: "https://genshin.jmp.blue/weapons/primordial-jade-winged-spear"
             },
             {
                 name: "Staff of Homa",
-                source: "https://api.genshin.dev/weapons/staff-of-homa/icon",
-                api: "https://api.genshin.dev/weapons/staff-of-homa"
+                source: "https://genshin.jmp.blue/weapons/staff-of-homa/icon",
+                api: "https://genshin.jmp.blue/weapons/staff-of-homa"
             },
             {
                 name: "Deathmatch",
-                source: "https://api.genshin.dev/weapons/deathmatch/icon",
-                api: "https://api.genshin.dev/weapons/deathmatch"
+                source: "https://genshin.jmp.blue/weapons/deathmatch/icon",
+                api: "https://genshin.jmp.blue/weapons/deathmatch"
             }
         ],
         bestArtifact: [
             [{
                 name: "Pale Flame",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/pale-flame/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/pale-flame"
+                source: "https://genshin.jmp.blue/artifacts/pale-flame/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/pale-flame"
             }],
             [{
                 name: "Pale Flame",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/pale-flame/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/pale-flame"
+                source: "https://genshin.jmp.blue/artifacts/pale-flame/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/pale-flame"
             },
             {
                 name: "Bloodstained Chivalry",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/bloodstained-chivalry/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/bloodstained-chivalry"
+                source: "https://genshin.jmp.blue/artifacts/bloodstained-chivalry/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/bloodstained-chivalry"
             }]
         ],
         artifactStat: [
@@ -2327,44 +2327,44 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Skyward Harp",
-                source: "https://api.genshin.dev/weapons/skyward-harp/icon",
-                api: "https://api.genshin.dev/weapons/skyward-harp"
+                source: "https://genshin.jmp.blue/weapons/skyward-harp/icon",
+                api: "https://genshin.jmp.blue/weapons/skyward-harp"
             },
             {
                 name: "Elegy For The End",
-                source: "https://api.genshin.dev/weapons/elegy-for-the-end/icon",
-                api: "https://api.genshin.dev/weapons/elegy-for-the-end"
+                source: "https://genshin.jmp.blue/weapons/elegy-for-the-end/icon",
+                api: "https://genshin.jmp.blue/weapons/elegy-for-the-end"
             },
             {
                 name: "Sacrificial Bow",
-                source: "https://api.genshin.dev/weapons/sacrificial-bow/icon",
-                api: "https://api.genshin.dev/weapons/sacrificial-bow"
+                source: "https://genshin.jmp.blue/weapons/sacrificial-bow/icon",
+                api: "https://genshin.jmp.blue/weapons/sacrificial-bow"
             }
         ],
         bestArtifact: [
             [{
                 name: "Noblesse Oblige",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/noblesse-oblige"
+                source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/noblesse-oblige"
             }],
             [{
                 name: "Emblem Of Severed Fate",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/emblem-of-severed-fate/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/emblem-of-severed-fate"
+                source: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate"
             }],
             [{
                 name: "Noblesse Oblige",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/noblesse-oblige"
+                source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/noblesse-oblige"
             },
             {
                 name: "Thundering Fury",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/thundering-fury/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/thundering-fury"
+                source: "https://genshin.jmp.blue/artifacts/thundering-fury/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/thundering-fury"
             }]
         ],
         artifactStat: [
@@ -2401,32 +2401,32 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Favonius Greatsword",
-                source: "https://api.genshin.dev/weapons/favonius-greatsword/icon",
-                api: "https://api.genshin.dev/weapons/favonius-greatsword"
+                source: "https://genshin.jmp.blue/weapons/favonius-greatsword/icon",
+                api: "https://genshin.jmp.blue/weapons/favonius-greatsword"
             },
             {
                 name: "Skyward Pride",
-                source: "https://api.genshin.dev/weapons/skyward-pride/icon",
-                api: "https://api.genshin.dev/weapons/skyward-pride"
+                source: "https://genshin.jmp.blue/weapons/skyward-pride/icon",
+                api: "https://genshin.jmp.blue/weapons/skyward-pride"
             },
             {
                 name: "Katsuragikiri Nagamasa",
-                source: "https://api.genshin.dev/weapons/katsuragikiri-nagamasa/icon",
-                api: "https://api.genshin.dev/weapons/katsuragikiri-nagamasa"
+                source: "https://genshin.jmp.blue/weapons/katsuragikiri-nagamasa/icon",
+                api: "https://genshin.jmp.blue/weapons/katsuragikiri-nagamasa"
             }
         ],
         bestArtifact: [
             [{
                 name: "Viridescent Venerer",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/viridescent-venerer/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/Viridescent-Venerer"
+                source: "https://genshin.jmp.blue/artifacts/viridescent-venerer/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/Viridescent-Venerer"
             }],
             [{
                 name: "Gilded Dreams",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/gilded-dreams/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gilded-dreams"
+                source: "https://genshin.jmp.blue/artifacts/gilded-dreams/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gilded-dreams"
             }]
         ],
         artifactStat: [
@@ -2464,37 +2464,37 @@ export const Character = [
             {
                 name: "Calamity Queller",
                 source: "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/30574_w.png",
-                api: "https://api.genshin.dev/weapons/calamity-queller"
+                api: "https://genshin.jmp.blue/weapons/calamity-queller"
             },
             {
                 name: "Engulfing Lightning",
-                source: "https://api.genshin.dev/weapons/engulfing-lightning/icon",
-                api: "https://api.genshin.dev/weapons/engulfing-lightning"
+                source: "https://genshin.jmp.blue/weapons/engulfing-lightning/icon",
+                api: "https://genshin.jmp.blue/weapons/engulfing-lightning"
             },
             {
                 name: "Skyward Spine",
-                source: "https://api.genshin.dev/weapons/skyward-spine/icon",
-                api: "https://api.genshin.dev/weapons/skyward-spine"
+                source: "https://genshin.jmp.blue/weapons/skyward-spine/icon",
+                api: "https://genshin.jmp.blue/weapons/skyward-spine"
             }
         ],
         bestArtifact: [
             [{
                 name: "Noblesse Oblige",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/noblesse-oblige"
+                source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/noblesse-oblige"
             }],
             [{
                 name: "Shimenawa's Reminiscence",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/shimenawa-s-reminiscence/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/shimenawa-s-reminiscence"
+                source: "https://genshin.jmp.blue/artifacts/shimenawa-s-reminiscence/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/shimenawa-s-reminiscence"
             },
             {
                 name: "Gladiator's Finale",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/gladiator-s-finale/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gladiator-s-finale"
+                source: "https://genshin.jmp.blue/artifacts/gladiator-s-finale/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gladiator-s-finale"
             }]
         ],
         artifactStat: [
@@ -2531,38 +2531,38 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Skyward Atlas",
-                source: "https://api.genshin.dev/weapons/skyward-atlas/icon",
-                api: "https://api.genshin.dev/weapons/skyward-atlas"
+                source: "https://genshin.jmp.blue/weapons/skyward-atlas/icon",
+                api: "https://genshin.jmp.blue/weapons/skyward-atlas"
             },
             {
                 name: "Kagura's Verity",
                 source: "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/30998_w.png",
-                api: "https://api.genshin.dev/weapons/kagura's-verity"
+                api: "https://genshin.jmp.blue/weapons/kagura's-verity"
             },
             {
                 name: "The Widsith",
-                source: "https://api.genshin.dev/weapons/the-widsith/icon",
-                api: "https://api.genshin.dev/weapons/the-widsith"
+                source: "https://genshin.jmp.blue/weapons/the-widsith/icon",
+                api: "https://genshin.jmp.blue/weapons/the-widsith"
             }
         ],
         bestArtifact: [
             [{
                 name: "Viridescent Venerer",
                 stack: "4",
-                source: "https://api.genshin.dev/artifacts/viridescent-venerer/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/Viridescent-Venerer"
+                source: "https://genshin.jmp.blue/artifacts/viridescent-venerer/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/Viridescent-Venerer"
             }],
             [{
                 name: "Viridescent Venerer",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/viridescent-venerer/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/Viridescent-Venerer"
+                source: "https://genshin.jmp.blue/artifacts/viridescent-venerer/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/Viridescent-Venerer"
             },
             {
                 name: "Gladiator's Finale",
                 stack: "2",
-                source: "https://api.genshin.dev/artifacts/gladiator-s-finale/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/gladiator-s-finale"
+                source: "https://genshin.jmp.blue/artifacts/gladiator-s-finale/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/gladiator-s-finale"
             }]
         ],
         artifactStat: [
@@ -2599,47 +2599,47 @@ export const Character = [
         role: "support",
         bestWeapon: [{
             name: "Sacrificial Fragments",
-            source: "https://api.genshin.dev/weapons/sacrificial-fragments/icon",
-            api: 'https://api.genshin.dev/weapons/sacrificial-fragments'
+            source: "https://genshin.jmp.blue/weapons/sacrificial-fragments/icon",
+            api: 'https://genshin.jmp.blue/weapons/sacrificial-fragments'
         },
         {
             name: "Favonius Codex",
-            source: "https://api.genshin.dev/weapons/favonius-codex/icon",
-            api: 'https://api.genshin.dev/weapons/favonius-codex'
+            source: "https://genshin.jmp.blue/weapons/favonius-codex/icon",
+            api: 'https://genshin.jmp.blue/weapons/favonius-codex'
         },
         {
             name: "Thrilling Tales Of Dragon Slayers ",
-            source: "https://api.genshin.dev/weapons/thrilling-tales-of-dragon-slayers/icon",
-            api: 'https://api.genshin.dev/weapons/thrilling-tales-of-dragon-slayers'
+            source: "https://genshin.jmp.blue/weapons/thrilling-tales-of-dragon-slayers/icon",
+            api: 'https://genshin.jmp.blue/weapons/thrilling-tales-of-dragon-slayers'
         }
         ],
         bestArtifact: [
             [{
                 name: "Viridescent Venerer",
                 stack: 4,
-                source: "https://api.genshin.dev/artifacts/viridescent-venerer/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/viridescent-venerer"
+                source: "https://genshin.jmp.blue/artifacts/viridescent-venerer/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/viridescent-venerer"
             }],
             [
                 {
                     name: 'Gilded Dreams',
                     stack: 2,
                     source: "https://rerollcdn.com/GENSHIN/Gear/viridescent_venerer.png",
-                    api: "https://api.genshin.dev/artifacts/gildet-dreams"
+                    api: "https://genshin.jmp.blue/artifacts/gildet-dreams"
                 },
                 {
                     name: "Wanderer's Troupe",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/wanderer-s-troupe/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/wanderer-s-troupe"
+                    source: "https://genshin.jmp.blue/artifacts/wanderer-s-troupe/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/wanderer-s-troupe"
                 }
             ],
             [
                 {
                     name: 'Instructor',
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/instructor/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/instructor"
+                    source: "https://genshin.jmp.blue/artifacts/instructor/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/instructor"
                 }
             ]
         ],
@@ -2678,17 +2678,17 @@ export const Character = [
         bestWeapon: [{
             name: "Polar Star",
             source: "https://rerollcdn.com/GENSHIN/Weapons/Polar_Star.png",
-            api: 'https://api.genshin.dev/weapons/polar-star'
+            api: 'https://genshin.jmp.blue/weapons/polar-star'
         },
         {
             name: "Skyward Harp",
             source: "https://rerollcdn.com/GENSHIN/Weapons/Skyward_Harp.png",
-            api: 'https://api.genshin.dev/weapons/skyward-harp'
+            api: 'https://genshin.jmp.blue/weapons/skyward-harp'
         },
         {
             name: "Thundering Pulse",
-            source: "https://api.genshin.dev/weapons/thundering-pulse/icon",
-            api: 'https://api.genshin.dev/weapons/thundering-pulse'
+            source: "https://genshin.jmp.blue/weapons/thundering-pulse/icon",
+            api: 'https://genshin.jmp.blue/weapons/thundering-pulse'
         }
         ],
         bestArtifact: [
@@ -2696,28 +2696,28 @@ export const Character = [
                 {
                     name: "Noblesse Oblige",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/noblesse-oblige"
+                    source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/noblesse-oblige"
                 },
                 {
                     name: "Wanderer's Troupe",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/wanderer-s-troupe/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/wanderer-s-troupe"
+                    source: "https://genshin.jmp.blue/artifacts/wanderer-s-troupe/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/wanderer-s-troupe"
                 }
             ],
             [
                 {
                     name: 'Heart of Depth',
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/heart-of-depth/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/heart-of-depth"
+                    source: "https://genshin.jmp.blue/artifacts/heart-of-depth/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/heart-of-depth"
                 },
                 {
                     name: "Noblesse Oblige",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/noblesse-oblige"
+                    source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/noblesse-oblige"
                 },
             ],
         ],
@@ -2755,13 +2755,13 @@ export const Character = [
         role: "support",
         bestWeapon: [{
             name: "Favonius Lance",
-            source: "https://api.genshin.dev/weapons/favonius-lance/icon",
-            api: 'https://api.genshin.dev/weapons/favonius-lance'
+            source: "https://genshin.jmp.blue/weapons/favonius-lance/icon",
+            api: 'https://genshin.jmp.blue/weapons/favonius-lance'
         },
         {
             name: "Black Tassel",
-            source: "https://api.genshin.dev/weapons/black-tassel/icon",
-            api: 'https://api.genshin.dev/weapons/black-tassel'
+            source: "https://genshin.jmp.blue/weapons/black-tassel/icon",
+            api: 'https://genshin.jmp.blue/weapons/black-tassel'
         }
         ],
         bestArtifact: [
@@ -2769,28 +2769,28 @@ export const Character = [
                 {
                     name: "Tenacity of the Millelith",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith"
+                    source: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith"
                 },
                 {
                     name: "Emblem of Severed Fate",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/emblem-of-severed-fate/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/emblem-of-severed-fate"
+                    source: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate"
                 }
             ],
             [
                 {
                     name: 'Tenacity of the Millelith',
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith"
+                    source: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith"
                 },
                 {
                     name: "Retracing Bolide",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/retracing-bolide/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/retracing-bolide"
+                    source: "https://genshin.jmp.blue/artifacts/retracing-bolide/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/retracing-bolide"
                 },
             ],
         ],
@@ -2829,17 +2829,17 @@ export const Character = [
         bestWeapon: [{
             name: "Skyward Harp",
             source: "https://rerollcdn.com/GENSHIN/Weapons/Skyward_Harp.png",
-            api: 'https://api.genshin.dev/weapons/skyward-harp'
+            api: 'https://genshin.jmp.blue/weapons/skyward-harp'
         },
         {
             name: "Amos' Bow",
             source: "https://rerollcdn.com/GENSHIN/Weapons/Amos'_Bow.png",
-            api: 'https://api.genshin.dev/weapons/Amos-Bow'
+            api: 'https://genshin.jmp.blue/weapons/Amos-Bow'
         },
         {
             name: "Prototype Crescent",
-            source: "https://api.genshin.dev/weapons/prototype-crescent/icon",
-            api: 'https://api.genshin.dev/weapons/prototype-crescent'
+            source: "https://genshin.jmp.blue/weapons/prototype-crescent/icon",
+            api: 'https://genshin.jmp.blue/weapons/prototype-crescent'
         }
         ],
         bestArtifact: [
@@ -2847,24 +2847,24 @@ export const Character = [
                 {
                     name: "Deepwood Memories",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/deepwood-memories/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/deepwood-memories"
+                    source: "https://genshin.jmp.blue/artifacts/deepwood-memories/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/deepwood-memories"
                 }
             ],
             [
                 {
                     name: 'Gilded Dreams',
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/gilded-dreams/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/gilded-dreams"
+                    source: "https://genshin.jmp.blue/artifacts/gilded-dreams/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/gilded-dreams"
                 }
             ],
             [
                 {
                     name: "Wanderer's Troupe",
                 stack: 4,
-                source: "https://api.genshin.dev/artifacts/wanderer-s-troupe/flower-of-life",
-                api: "https://api.genshin.dev/artifacts/wanderer-s-troupe"
+                source: "https://genshin.jmp.blue/artifacts/wanderer-s-troupe/flower-of-life",
+                api: "https://genshin.jmp.blue/artifacts/wanderer-s-troupe"
                 }
             ]
         ],
@@ -2903,18 +2903,18 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Freedom-Sworn",
-                source: "https://api.genshin.dev/weapons/freedom-sworn/icon",
-                api: "https://api.genshin.dev/weapons/freedom-sworn"
+                source: "https://genshin.jmp.blue/weapons/freedom-sworn/icon",
+                api: "https://genshin.jmp.blue/weapons/freedom-sworn"
             },
             {
                 name: "Iron Sting",
-                source: "https://api.genshin.dev/weapons/iron-sting/icon",
-                api: "https://api.genshin.dev/weapons/iron-sting"
+                source: "https://genshin.jmp.blue/weapons/iron-sting/icon",
+                api: "https://genshin.jmp.blue/weapons/iron-sting"
             },
             {
                 name: "Sacrificial Sword",
-                source: "https://api.genshin.dev/weapons/sacrificial-sword/icon",
-                api: "https://api.genshin.dev/weapons/sacrificial-sword"
+                source: "https://genshin.jmp.blue/weapons/sacrificial-sword/icon",
+                api: "https://genshin.jmp.blue/weapons/sacrificial-sword"
             }
         ],
         bestArtifact: [
@@ -2922,30 +2922,30 @@ export const Character = [
                 {
                     name: "Viridescent Venerer",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/viridescent-venerer/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/viridescent-venerer"
+                    source: "https://genshin.jmp.blue/artifacts/viridescent-venerer/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/viridescent-venerer"
                 }
             ],
             [
                 {
                     name: 'Gilded Dreams',
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/gilded-dreams/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/gilded-dreams"
+                    source: "https://genshin.jmp.blue/artifacts/gilded-dreams/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/gilded-dreams"
                 },
                 {
                     name: "Wanderer's Troupe",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/wanderer-s-troupe/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/wanderer-s-troupe"
+                    source: "https://genshin.jmp.blue/artifacts/wanderer-s-troupe/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/wanderer-s-troupe"
                 }
             ],
             [
                 {
                     name: 'Instructor',
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/instructor/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/instructor"
+                    source: "https://genshin.jmp.blue/artifacts/instructor/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/instructor"
                 }
             ]
         ],
@@ -2984,13 +2984,13 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Freedom-Sworn",
-                source: "https://api.genshin.dev/weapons/freedom-sworn/icon",
-                api: "https://api.genshin.dev/weapons/freedom-sworn"
+                source: "https://genshin.jmp.blue/weapons/freedom-sworn/icon",
+                api: "https://genshin.jmp.blue/weapons/freedom-sworn"
             },
             {
                 name: "Iron Sting",
-                source: "https://api.genshin.dev/weapons/iron-sting/icon",
-                api: "https://api.genshin.dev/weapons/iron-sting"
+                source: "https://genshin.jmp.blue/weapons/iron-sting/icon",
+                api: "https://genshin.jmp.blue/weapons/iron-sting"
             },
         ],
         bestArtifact: [
@@ -2998,16 +2998,16 @@ export const Character = [
                 {
                     name: "Emblem of Severed Fate",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/deepwood-memories/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/deepwood-memories"
+                    source: "https://genshin.jmp.blue/artifacts/deepwood-memories/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/deepwood-memories"
                 }
             ],
             [
                 {
                     name: 'Gilded Dreams',
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/gildet-dreams/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/gildet-dreams"
+                    source: "https://genshin.jmp.blue/artifacts/gildet-dreams/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/gildet-dreams"
                 },
             ]
         ],
@@ -3046,18 +3046,18 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Primordial Jade Cutter",
-                source: "https://api.genshin.dev/weapons/primordial-jade-cutter/icon",
-                api: "https://api.genshin.dev/weapons/primordial-jade-cutter"
+                source: "https://genshin.jmp.blue/weapons/primordial-jade-cutter/icon",
+                api: "https://genshin.jmp.blue/weapons/primordial-jade-cutter"
             },
             {
                 name: "Summit Shaper",
-                source: "https://api.genshin.dev/weapons/summit-shaper/icon",
-                api: "https://api.genshin.dev/weapons/summit-shaper"
+                source: "https://genshin.jmp.blue/weapons/summit-shaper/icon",
+                api: "https://genshin.jmp.blue/weapons/summit-shaper"
             },
             {
                 name: "The Black Sword",
-                source: "https://api.genshin.dev/weapons/the-black-sword/icon",
-                api: "https://api.genshin.dev/weapons/the-black-sword"
+                source: "https://genshin.jmp.blue/weapons/the-black-sword/icon",
+                api: "https://genshin.jmp.blue/weapons/the-black-sword"
             }
         ],
         bestArtifact: [
@@ -3065,30 +3065,30 @@ export const Character = [
                 {
                     name: "Archaic Petra",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/archaic-petra/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/archaic-petra"
+                    source: "https://genshin.jmp.blue/artifacts/archaic-petra/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/archaic-petra"
                 },
                 {
                     name: "Noblesse Oblige",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/noblesse-oblige"
+                    source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/noblesse-oblige"
                 }
             ],
             [
                 {
                     name: "Emblem Of Severed Fate",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/emblem-of-severed-fate/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/emblem-of-severed-fate"
+                    source: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate"
                 }
             ],
             [
                 {
                     name: "Noblesse Oblige",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/noblesse-oblige"
+                    source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/noblesse-oblige"
                 }
             ]
         ],
@@ -3127,18 +3127,18 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Sacrificial Sword",
-                source: "https://api.genshin.dev/weapons/sacrificial-sword/icon",
-                api: "https://api.genshin.dev/weapons/sacrificial-sword"
+                source: "https://genshin.jmp.blue/weapons/sacrificial-sword/icon",
+                api: "https://genshin.jmp.blue/weapons/sacrificial-sword"
             },
             {
                 name: "Freedom-Sworn",
-                source: "https://api.genshin.dev/weapons/freedom-sworn/icon",
-                api: "https://api.genshin.dev/weapons/freedom-sworn"
+                source: "https://genshin.jmp.blue/weapons/freedom-sworn/icon",
+                api: "https://genshin.jmp.blue/weapons/freedom-sworn"
             },
             {
                 name: "Favonius Sword",
-                source: "https://api.genshin.dev/weapons/favonius-sword/icon",
-                api: "https://api.genshin.dev/weapons/favonius-sword"
+                source: "https://genshin.jmp.blue/weapons/favonius-sword/icon",
+                api: "https://genshin.jmp.blue/weapons/favonius-sword"
             }
         ],
         bestArtifact: [
@@ -3146,16 +3146,16 @@ export const Character = [
                 {
                     name: "Emblem Of Severed Fate",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/emblem-of-severed-fate/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/emblem-of-severed-fate"
+                    source: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate"
                 }
             ],
             [
                 {
                     name: "Noblesse Oblige",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/noblesse-oblige"
+                    source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/noblesse-oblige"
                 }
             ],
         ],
@@ -3194,18 +3194,18 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Elegy for the End",
-                source: "https://api.genshin.dev/weapons/elegy-for-the-end/icon",
-                api: "https://api.genshin.dev/weapons/elegy-for-the-end"
+                source: "https://genshin.jmp.blue/weapons/elegy-for-the-end/icon",
+                api: "https://genshin.jmp.blue/weapons/elegy-for-the-end"
             },
             {
                 name: "Skyward Harp",
-                source: "https://api.genshin.dev/weapons/skyward-harp/icon",
-                api: "https://api.genshin.dev/weapons/skyward-harp"
+                source: "https://genshin.jmp.blue/weapons/skyward-harp/icon",
+                api: "https://genshin.jmp.blue/weapons/skyward-harp"
             },
             {
                 name: "The Stringless",
-                source: "https://api.genshin.dev/weapons/the-stringless/icon",
-                api: "https://api.genshin.dev/weapons/the-stringless/icon"
+                source: "https://genshin.jmp.blue/weapons/the-stringless/icon",
+                api: "https://genshin.jmp.blue/weapons/the-stringless/icon"
             }
         ],
         bestArtifact: [
@@ -3213,22 +3213,22 @@ export const Character = [
                 {
                     name: "Viridescent Venerer",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/viridescent-venerer/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/viridescent-venerer"
+                    source: "https://genshin.jmp.blue/artifacts/viridescent-venerer/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/viridescent-venerer"
                 }
             ],
             [
                 {
                     name: "Wanderer's Troupe",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/wanderer-s-troupe/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/wanderer-s-troupe"
+                    source: "https://genshin.jmp.blue/artifacts/wanderer-s-troupe/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/wanderer-s-troupe"
                 },
                 {
                     name: 'Gilded Dreams',
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/gildet-dreams/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/gildet-dreams"
+                    source: "https://genshin.jmp.blue/artifacts/gildet-dreams/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/gildet-dreams"
                 }
             ],
         ],
@@ -3267,18 +3267,18 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Staff Of Homa",
-                source: "https://api.genshin.dev/weapons/staff-of-homa/icon",
-                api: "https://api.genshin.dev/weapons/staff-of-homa"
+                source: "https://genshin.jmp.blue/weapons/staff-of-homa/icon",
+                api: "https://genshin.jmp.blue/weapons/staff-of-homa"
             },
             {
                 name: "The Catch",
-                source: "https://api.genshin.dev/weapons/the-catch/icon",
-                api: "https://api.genshin.dev/weapons/the-catch/icon"
+                source: "https://genshin.jmp.blue/weapons/the-catch/icon",
+                api: "https://genshin.jmp.blue/weapons/the-catch/icon"
             },
             {
                 name: "Dragon's Bane",
-                source: "https://api.genshin.dev/weapons/dragon-s-bane/icon",
-                api: "https://api.genshin.dev/weapons/dragon-s-bane"
+                source: "https://genshin.jmp.blue/weapons/dragon-s-bane/icon",
+                api: "https://genshin.jmp.blue/weapons/dragon-s-bane"
             }
         ],
         bestArtifact: [
@@ -3286,30 +3286,30 @@ export const Character = [
                 {
                     name: "Emblem of Severed Fate",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/deepwood-memories/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/deepwood-memories"
+                    source: "https://genshin.jmp.blue/artifacts/deepwood-memories/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/deepwood-memories"
                 }
             ],
             [
                 {
                     name: "Crimson Witch of Flames",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/crimson-witch-of-flames/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/crimson-witch-of-flames"
+                    source: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames"
                 }
             ],
             [
                 {
                     name: "Crimson Witch of Flames",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/crimson-witch-of-flames/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/crimson-witch-of-flames"
+                    source: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames"
                 },
                 {
                     name: "Gladiator's Finale",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/gladiator-s-finale/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/gladiator-s-finale"
+                    source: "https://genshin.jmp.blue/artifacts/gladiator-s-finale/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/gladiator-s-finale"
                 }
             ]
         ],
@@ -3348,18 +3348,18 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Primordial Jade Cutter",
-                source: "https://api.genshin.dev/weapons/primordial-jade-cutter/icon",
-                api: "https://api.genshin.dev/weapons/primordial-jade-cutter"
+                source: "https://genshin.jmp.blue/weapons/primordial-jade-cutter/icon",
+                api: "https://genshin.jmp.blue/weapons/primordial-jade-cutter"
             },
             {
                 name: "Staff Of Homa",
-                source: "https://api.genshin.dev/weapons/staff-of-homa/icon",
-                api: "https://api.genshin.dev/weapons/staff-of-homa"
+                source: "https://genshin.jmp.blue/weapons/staff-of-homa/icon",
+                api: "https://genshin.jmp.blue/weapons/staff-of-homa"
             },
             {
                 name: "Blackcliff Pole",
-                source: "https://api.genshin.dev/weapons/blackcliff-pole/icon",
-                api: "https://api.genshin.dev/weapons/blackcliff-pole"
+                source: "https://genshin.jmp.blue/weapons/blackcliff-pole/icon",
+                api: "https://genshin.jmp.blue/weapons/blackcliff-pole"
             }
         ],
         bestArtifact: [
@@ -3367,22 +3367,22 @@ export const Character = [
                 {
                     name: "Viridescent Venerer",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/viridescent-venerer/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/viridescent-venerer"
+                    source: "https://genshin.jmp.blue/artifacts/viridescent-venerer/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/viridescent-venerer"
                 }
             ],
             [
                 {
                     name: "Gladiator's Finale",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/gladiator-s-finale/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/gladiator-s-finale"
+                    source: "https://genshin.jmp.blue/artifacts/gladiator-s-finale/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/gladiator-s-finale"
                 },
                 {
                     name: "Viridescent Venerer",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/viridescent-venerer/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/viridescent-venerer"
+                    source: "https://genshin.jmp.blue/artifacts/viridescent-venerer/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/viridescent-venerer"
                 }
             ]
         ],
@@ -3421,18 +3421,18 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Sacrificial Sword",
-                source: "https://api.genshin.dev/weapons/sacrificial-sword/icon",
-                api: "https://api.genshin.dev/weapons/sacrificial-sword"
+                source: "https://genshin.jmp.blue/weapons/sacrificial-sword/icon",
+                api: "https://genshin.jmp.blue/weapons/sacrificial-sword"
             },
             {
                 name: "Freedom-Sworn",
-                source: "https://api.genshin.dev/weapons/freedom-sworn/icon",
-                api: "https://api.genshin.dev/weapons/freedom-sworn"
+                source: "https://genshin.jmp.blue/weapons/freedom-sworn/icon",
+                api: "https://genshin.jmp.blue/weapons/freedom-sworn"
             },
             {
                 name: "Skyward Blade",
-                source: "https://api.genshin.dev/weapons/primordial-jade-cutter/icon",
-                api: "https://api.genshin.dev/weapons/primordial-jade-cutter"
+                source: "https://genshin.jmp.blue/weapons/primordial-jade-cutter/icon",
+                api: "https://genshin.jmp.blue/weapons/primordial-jade-cutter"
             }
         ],
         bestArtifact: [
@@ -3440,30 +3440,30 @@ export const Character = [
                 {
                     name: "Emblem Of Severed Fate",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/emblem-of-severed-fate/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/emblem-of-severed-fate"
+                    source: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate"
                 }
             ],
             [
                 {
                     name: "Noblesse Oblige",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/noblesse-oblige"
+                    source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/noblesse-oblige"
                 }
             ],
             [
                 {
                     name: "Noblesse Oblige",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/noblesse-oblige"
+                    source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/noblesse-oblige"
                 },
                 {
                     name: "Heart of Depth",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/heart-of-depth/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/heart-of-depth"
+                    source: "https://genshin.jmp.blue/artifacts/heart-of-depth/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/heart-of-depth"
                 }
             ]
         ],
@@ -3502,18 +3502,18 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Wolf's Gravestone",
-                source: "https://api.genshin.dev/weapons/wolf-s-gravestone/icon",
-                api: "https://api.genshin.dev/weapons/wolf-s-gravestone"
+                source: "https://genshin.jmp.blue/weapons/wolf-s-gravestone/icon",
+                api: "https://genshin.jmp.blue/weapons/wolf-s-gravestone"
             },
             {
                 name: "Serpent Spine",
-                source: "https://api.genshin.dev/weapons/serpent-spine/icon",
-                api: "https://api.genshin.dev/weapons/serpent-spine"
+                source: "https://genshin.jmp.blue/weapons/serpent-spine/icon",
+                api: "https://genshin.jmp.blue/weapons/serpent-spine"
             },
             {
                 name: "Rainslasher",
-                source: "https://api.genshin.dev/weapons/snow-tombed-starsilver/icon",
-                api: "https://api.genshin.dev/weapons/snow-tombed-starsilver"
+                source: "https://genshin.jmp.blue/weapons/snow-tombed-starsilver/icon",
+                api: "https://genshin.jmp.blue/weapons/snow-tombed-starsilver"
             }
         ],
         bestArtifact: [
@@ -3521,28 +3521,28 @@ export const Character = [
                 {
                     name: "Pale Flame",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/pale-flame/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/pale-flame/"
+                    source: "https://genshin.jmp.blue/artifacts/pale-flame/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/pale-flame/"
                 },
                 {
                     name: "Bloodstained Chivalry",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/bloodstained-chivalry/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/bloodstained-chivalry"
+                    source: "https://genshin.jmp.blue/artifacts/bloodstained-chivalry/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/bloodstained-chivalry"
                 }
             ],
             [
                 {
                     name: "Noblesse Oblige",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/noblesse-oblige"
+                    source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/noblesse-oblige"
                 },
                 {
                     name: "Bloodstained Chivalry",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/bloodstained-chivalry/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/bloodstained-chivalry"
+                    source: "https://genshin.jmp.blue/artifacts/bloodstained-chivalry/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/bloodstained-chivalry"
                 }
             ]
         ],
@@ -3582,17 +3582,17 @@ export const Character = [
             {
                 name: "Kagura's Verity",
                 source: "https://rerollcdn.com/GENSHIN/Weapons/Kagura's_Verity.png",
-                api: "https://api.genshin.dev/weapons/kagura's-verity"
+                api: "https://genshin.jmp.blue/weapons/kagura's-verity"
             },
             {
                 name: "Skyward Atlas",
-                source: "https://api.genshin.dev/weapons/skyward-atlas/icon",
-                api: "https://api.genshin.dev/weapons/skyward-atlas"
+                source: "https://genshin.jmp.blue/weapons/skyward-atlas/icon",
+                api: "https://genshin.jmp.blue/weapons/skyward-atlas"
             },
             {
                 name: "The Widsith",
-                source: "https://api.genshin.dev/weapons/the-widsith/icon",
-                api: "https://api.genshin.dev/weapons/the-widsith"
+                source: "https://genshin.jmp.blue/weapons/the-widsith/icon",
+                api: "https://genshin.jmp.blue/weapons/the-widsith"
             }
         ],
         bestArtifact: [
@@ -3600,22 +3600,22 @@ export const Character = [
                 {
                     name: "Thundering Fury",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/thundering-fury/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/thundering-fury"
+                    source: "https://genshin.jmp.blue/artifacts/thundering-fury/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/thundering-fury"
                 }
             ],
             [
                 {
                     name: "Gladiator's Finale",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/gladiator-s-finale/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/gladiator-s-finale"
+                    source: "https://genshin.jmp.blue/artifacts/gladiator-s-finale/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/gladiator-s-finale"
                 },
                 {
                     name: "Thundering Fury",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/thundering-fury/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/thundering-fury"
+                    source: "https://genshin.jmp.blue/artifacts/thundering-fury/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/thundering-fury"
                 }
 
             ],
@@ -3623,8 +3623,8 @@ export const Character = [
                 {
                     name: "Emblem Of Severed Fate",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/emblem-of-severed-fate/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/emblem-of-severed-fate"
+                    source: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate"
                 }
             ]
         ],
@@ -3663,18 +3663,18 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Lost Prayer to the Sacred Winds",
-                source: "https://api.genshin.dev/weapons/lost-prayer-to-the-sacred-winds/icon",
-                api: "https://api.genshin.dev/weapons/lost-prayer-to-the-sacred-winds"
+                source: "https://genshin.jmp.blue/weapons/lost-prayer-to-the-sacred-winds/icon",
+                api: "https://genshin.jmp.blue/weapons/lost-prayer-to-the-sacred-winds"
             },
             {
                 name: "Solar Pearl",
-                source: "https://api.genshin.dev/weapons/solar-pearl/icon",
-                api: "https://api.genshin.dev/weapons/solar-pearl"
+                source: "https://genshin.jmp.blue/weapons/solar-pearl/icon",
+                api: "https://genshin.jmp.blue/weapons/solar-pearl"
             },
             {
                 name: "Dodoco Tales",
-                source: "https://api.genshin.dev/weapons/dodoco-tales/icon",
-                api: "https://api.genshin.dev/weapons/dodoco-tales"
+                source: "https://genshin.jmp.blue/weapons/dodoco-tales/icon",
+                api: "https://genshin.jmp.blue/weapons/dodoco-tales"
             }
         ],
         bestArtifact: [
@@ -3682,16 +3682,16 @@ export const Character = [
                 {
                     name: "Crimson Witch of Flames",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/crimson-witch-of-flames/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/crimson-witch-of-flames"
+                    source: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames"
                 }
             ],
             [
                 {
                     name: "Wanderer's Troupe",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/wanderer-s-troupe/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/wanderer-s-troupe"
+                    source: "https://genshin.jmp.blue/artifacts/wanderer-s-troupe/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/wanderer-s-troupe"
                 }
             ],
         ],
@@ -3730,18 +3730,18 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Elegy For The End",
-                source: "https://api.genshin.dev/weapons/elegy-for-the-end/icon",
-                api: "https://api.genshin.dev/weapons/elegy-for-the-end"
+                source: "https://genshin.jmp.blue/weapons/elegy-for-the-end/icon",
+                api: "https://genshin.jmp.blue/weapons/elegy-for-the-end"
             },
             {
                 name: "The Stringless",
-                source: "https://api.genshin.dev/weapons/the-stringless/icon",
-                api: "https://api.genshin.dev/weapons/the-stringless/icon"
+                source: "https://genshin.jmp.blue/weapons/the-stringless/icon",
+                api: "https://genshin.jmp.blue/weapons/the-stringless/icon"
             },
             {
                 name: "Sacrificial Bow",
-                source: "https://api.genshin.dev/weapons/sacrificial-bow/icon",
-                api: "https://api.genshin.dev/weapons/sacrificial-bow"
+                source: "https://genshin.jmp.blue/weapons/sacrificial-bow/icon",
+                api: "https://genshin.jmp.blue/weapons/sacrificial-bow"
             }
         ],
         bestArtifact: [
@@ -3749,36 +3749,36 @@ export const Character = [
                 {
                     name: "Noblesse Oblige",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/noblesse-oblige/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/noblesse-oblige"
+                    source: "https://genshin.jmp.blue/artifacts/noblesse-oblige/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/noblesse-oblige"
                 },
                 {
                     name: "Tenacity Of The Millelith",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith"
+                    source: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith"
                 }
             ],
             [
                 {
                     name: "Heart Of Depth",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/heart-of-depth/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/heart-of-depth"
+                    source: "https://genshin.jmp.blue/artifacts/heart-of-depth/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/heart-of-depth"
                 },
                 {
                     name: "Tenacity Of The Millelith",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith"
+                    source: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith"
                 }
             ],
             [
                 {
                     name: "Emblem of Severed Fate",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/deepwood-memories/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/deepwood-memories"
+                    source: "https://genshin.jmp.blue/artifacts/deepwood-memories/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/deepwood-memories"
                 }
             ],
         ],
@@ -3817,18 +3817,18 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Thundering Pulse",
-                source: "https://api.genshin.dev/weapons/thundering-pulse/icon",
-                api: 'https://api.genshin.dev/weapons/thundering-pulse'
+                source: "https://genshin.jmp.blue/weapons/thundering-pulse/icon",
+                api: 'https://genshin.jmp.blue/weapons/thundering-pulse'
             },
             {
                 name: "Skyward Harp",
                 source: "https://rerollcdn.com/GENSHIN/Weapons/Skyward_Harp.png",
-                api: 'https://api.genshin.dev/weapons/skyward-harp'
+                api: 'https://genshin.jmp.blue/weapons/skyward-harp'
             },
             {
                 name: "Polar Star",
                 source: "https://rerollcdn.com/GENSHIN/Weapons/Polar_Star.png",
-                api: 'https://api.genshin.dev/weapons/polar-star'
+                api: 'https://genshin.jmp.blue/weapons/polar-star'
             }
         ],
         bestArtifact: [
@@ -3836,16 +3836,16 @@ export const Character = [
                 {
                     name: "Shimenawa's Reminiscence",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/shimenawa-s-reminiscence/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/shimenawa-s-reminiscence"
+                    source: "https://genshin.jmp.blue/artifacts/shimenawa-s-reminiscence/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/shimenawa-s-reminiscence"
                 },
             ],
             [
                 {
                     name: "Crimson Witch of Flames",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/crimson-witch-of-flames/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/crimson-witch-of-flames"
+                    source: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/crimson-witch-of-flames"
                 }
             ]
         ],
@@ -3884,13 +3884,13 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Favonius Lance",
-                source: "https://api.genshin.dev/weapons/favonius-lance/icon",
-                api: "https://api.genshin.dev/weapons/favonius-lance"
+                source: "https://genshin.jmp.blue/weapons/favonius-lance/icon",
+                api: "https://genshin.jmp.blue/weapons/favonius-lance"
             },
             {
                 name: "Skyward Spine",
-                source: "https://api.genshin.dev/weapons/skyward-spine/icon",
-                api: "https://api.genshin.dev/weapons/skyward-spine/icon"
+                source: "https://genshin.jmp.blue/weapons/skyward-spine/icon",
+                api: "https://genshin.jmp.blue/weapons/skyward-spine/icon"
             }
         ],
         bestArtifact: [
@@ -3898,22 +3898,22 @@ export const Character = [
                 {
                     name: "Pale Flame",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/husk-of-opulent-dreamsflower-of-life",
-                    api: "https://api.genshin.dev/artifacts/husk-of-opulent-dreams"
+                    source: "https://genshin.jmp.blue/artifacts/husk-of-opulent-dreamsflower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/husk-of-opulent-dreams"
                 }
             ],
             [
                 {
                     name: "Pale Flame",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/husk-of-opulent-dreamsflower-of-life",
-                    api: "https://api.genshin.dev/artifacts/husk-of-opulent-dreams"
+                    source: "https://genshin.jmp.blue/artifacts/husk-of-opulent-dreamsflower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/husk-of-opulent-dreams"
                 },
                 {
                     name: "Bloodstained Chivalry",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/emblem-of-severed-fate/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/emblem-of-severed-fate"
+                    source: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/emblem-of-severed-fate"
                 }
             ]
         ],
@@ -3952,18 +3952,18 @@ export const Character = [
         bestWeapon: [
             {
                 name: "Vortex Vanquisher",
-                source: "https://api.genshin.dev/weapons/vortex-vanquisher/icon",
-                api: "https://api.genshin.dev/weapons/vortex-vanquisher"
+                source: "https://genshin.jmp.blue/weapons/vortex-vanquisher/icon",
+                api: "https://genshin.jmp.blue/weapons/vortex-vanquisher"
             },
             {
                 name: "Staff of Homa",
-                source: "https://api.genshin.dev/weapons/staff-of-homa/icon",
-                api: "https://api.genshin.dev/weapons/staff-of-homa"
+                source: "https://genshin.jmp.blue/weapons/staff-of-homa/icon",
+                api: "https://genshin.jmp.blue/weapons/staff-of-homa"
             },
             {
                 name: "Black Tassel",
-                source: "https://api.genshin.dev/weapons/black-tassel/icon",
-                api: "https://api.genshin.dev/weapons/black-tassel/icon"
+                source: "https://genshin.jmp.blue/weapons/black-tassel/icon",
+                api: "https://genshin.jmp.blue/weapons/black-tassel/icon"
             }
         ],
         bestArtifact: [
@@ -3971,22 +3971,22 @@ export const Character = [
                 {
                     name: "Tenacity Of The Millelith",
                     stack: 4,
-                    source: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith"
+                    source: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith"
                 },
             ],
             [
                 {
                     name: "Tenacity Of The Millelith",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/tenacity-of-the-millelith"
+                    source: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/tenacity-of-the-millelith"
                 },
                 {
                     name: "Archaic Petra",
                     stack: 2,
-                    source: "https://api.genshin.dev/artifacts/archaic-petra/flower-of-life",
-                    api: "https://api.genshin.dev/artifacts/archaic-petra"
+                    source: "https://genshin.jmp.blue/artifacts/archaic-petra/flower-of-life",
+                    api: "https://genshin.jmp.blue/artifacts/archaic-petra"
                 }
 
             ]

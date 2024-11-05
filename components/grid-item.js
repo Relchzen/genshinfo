@@ -12,15 +12,15 @@ export function GridArtifacts({name}) {
     const [isLoading, setLoading] = useState(false);
 
 
-    let source = "https://api.genshin.dev/artifacts/" + name + "/flower-of-life"
+    let source = "https://genshin.jmp.blue/artifacts/" + name + "/flower-of-life"
     if(name.includes("prayers")) {
         if(name.includes("prayers-to-the-firmament")) {
-            source = "https://api.genshin.dev/artifacts/" + name + "/flower-of-life"
+            source = "https://genshin.jmp.blue/artifacts/" + name + "/flower-of-life"
         } else {
-            source = "https://api.genshin.dev/artifacts/" + name + "/circlet-of-logos"
+            source = "https://genshin.jmp.blue/artifacts/" + name + "/circlet-of-logos"
         }
     } 
-    const api = `https://api.genshin.dev/artifacts/${name}`;
+    const api = `https://genshin.jmp.blue/artifacts/${name}`;
 
     useEffect(() => {
         setLoading(true);
@@ -85,8 +85,8 @@ export function GridArtifacts({name}) {
 export function GridItems({name, type}) {
     const [data, setData] = useState([]);
     const [isLoading, setLoading] = useState(false);
-    const source = "https://api.genshin.dev/" + type + "/" + name + "/icon"
-    const api = `https://api.genshin.dev/${type}/${name}`;
+    const source = "https://genshin.jmp.blue/" + type + "/" + name + "/icon"
+    const api = `https://genshin.jmp.blue/${type}/${name}`;
 
     useEffect(() => {
         setLoading(true);
@@ -151,9 +151,9 @@ export function GridItems({name, type}) {
 export function CharGridItem({ name }) {
     let source = "";
     if (name.includes("traveler")) {
-        source = "https://api.genshin.dev/characters/" + name + "/icon";
+        source = "https://genshin.jmp.blue/characters/" + name + "/icon";
     } else {
-        source = "https://api.genshin.dev/characters/" + name + "/icon-big";
+        source = "https://genshin.jmp.blue/characters/" + name + "/icon-big";
     }
 
     const [data, setData] = useState([]);
@@ -161,7 +161,7 @@ export function CharGridItem({ name }) {
 
     useEffect(() => {
         setLoading(true);
-        fetch(`https://api.genshin.dev/characters/${name}`)
+        fetch(`https://genshin.jmp.blue/characters/${name}`)
             .then((res) => res.json())
             .then((data) => {
                 setData(data);
@@ -171,7 +171,7 @@ export function CharGridItem({ name }) {
 
     const string = String(data.vision);
     const element = string.toLowerCase();
-    const icon = "https://api.genshin.dev/elements/" + element + "/icon";
+    const icon = "https://genshin.jmp.blue/elements/" + element + "/icon";
     let gradiant = new String();
 
     switch (element) {

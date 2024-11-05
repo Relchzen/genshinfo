@@ -13,7 +13,7 @@ export default function Weapons() {
     const [weapons, setWeapon] = useState([]);
 
     const fetchWeapons = () => {
-        fetch("https://api.genshin.dev/weapons")
+        fetch("https://genshin.jmp.blue/weapons")
         .then((response) => response.json())
         .then((data) => setWeapon(data));
     }

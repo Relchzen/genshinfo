@@ -41,19 +41,19 @@ export function WeaponType({weapon}) {
     var sourceImg = new String();
     switch(weapon) {
         case 'Claymore':
-            sourceImg = "https://api.genshin.dev/weapons/waster-greatsword/icon"
+            sourceImg = "https://genshin.jmp.blue/weapons/waster-greatsword/icon"
             break;
         case 'Sword':
-            sourceImg = "https://api.genshin.dev/weapons/dull-blade/icon"
+            sourceImg = "https://genshin.jmp.blue/weapons/dull-blade/icon"
             break;
         case 'Polearm':
-            sourceImg = "https://api.genshin.dev/weapons/beginner-s-protector/icon"
+            sourceImg = "https://genshin.jmp.blue/weapons/beginner-s-protector/icon"
             break;
         case 'Bow':
-            sourceImg = "https://api.genshin.dev/weapons/ebony-bow/icon"
+            sourceImg = "https://genshin.jmp.blue/weapons/ebony-bow/icon"
             break;
         case 'Catalyst':
-            sourceImg = "https://api.genshin.dev/weapons/apprentice-s-notes/icon"
+            sourceImg = "https://genshin.jmp.blue/weapons/apprentice-s-notes/icon"
             break;
     }
 
@@ -164,13 +164,13 @@ export function CharacterAttack({skill, character}) {
     var source = new String();
     switch(skill.type) {
         case "NORMAL_ATTACK":
-        source = `https://api.genshin.dev/characters/${character}/talent-na/`;
+        source = `https://genshin.jmp.blue/characters/${character}/talent-na/`;
         break;
         case "ELEMENTAL_BURST":
-            source = `https://api.genshin.dev/characters/${character}/talent-burst`;
+            source = `https://genshin.jmp.blue/characters/${character}/talent-burst`;
             break;
         case "ELEMENTAL_SKILL":
-            source = `https://api.genshin.dev/characters/${character}/talent-skill`;
+            source = `https://genshin.jmp.blue/characters/${character}/talent-skill`;
             break;
     }
 
@@ -374,13 +374,13 @@ export function CharacterPassive({character, passive}) {
     var source = new String();
     switch(passive.unlock) {
         case "Unlocked at Ascension 1":
-            source = `https://api.genshin.dev/characters/${character}/talent-passive-1`;
+            source = `https://genshin.jmp.blue/characters/${character}/talent-passive-1`;
             break;
         case "Unlocked at Ascension 4":
-            source = `https://api.genshin.dev/characters/${character}/talent-passive-2`;
+            source = `https://genshin.jmp.blue/characters/${character}/talent-passive-2`;
             break;
         case "Unlocked Automatically":
-            source = `https://api.genshin.dev/characters/${character}/talent-passive-0`;
+            source = `https://genshin.jmp.blue/characters/${character}/talent-passive-0`;
             break;
     }
 
@@ -403,22 +403,22 @@ export function CharacterConstellation({character, constellation}) {
     var source = new String();
     switch(constellation.level) {
         case 1:
-            source = `https://api.genshin.dev/characters/${character}/constellation-1`;
+            source = `https://genshin.jmp.blue/characters/${character}/constellation-1`;
             break;
         case 2:
-            source = `https://api.genshin.dev/characters/${character}/constellation-2`;
+            source = `https://genshin.jmp.blue/characters/${character}/constellation-2`;
             break;
         case 3:
-            source = `https://api.genshin.dev/characters/${character}/constellation-3`;
+            source = `https://genshin.jmp.blue/characters/${character}/constellation-3`;
             break;
         case 4:
-            source = `https://api.genshin.dev/characters/${character}/constellation-4`;
+            source = `https://genshin.jmp.blue/characters/${character}/constellation-4`;
             break;
         case 5:
-            source = `https://api.genshin.dev/characters/${character}/constellation-5`;
+            source = `https://genshin.jmp.blue/characters/${character}/constellation-5`;
             break;
         case 6:
-            source = `https://api.genshin.dev/characters/${character}/constellation-6`;
+            source = `https://genshin.jmp.blue/characters/${character}/constellation-6`;
             break;
     }
 
