@@ -9,7 +9,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'api.genshin.dev'
+        hostname: 'genshin.jmp.blue'
       }
     ]
   }

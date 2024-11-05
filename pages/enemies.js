@@ -13,7 +13,7 @@ export default function Enemies() {
     const [monsters, setMonster] = useState([]);
 
     const fetchMonsters = () => {
-        fetch("https://api.genshin.dev/enemies")
+        fetch("https://genshin.jmp.blue/enemies")
         .then((response) => response.json())
         .then((data) => setMonster(data));
     }

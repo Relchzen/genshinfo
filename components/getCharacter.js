@@ -5,7 +5,7 @@ export default function GetCharacter({name}) {
     const [data, setData] = useState([]);
  
   useEffect(() => {
-    fetch(`https://api.genshin.dev/characters/${name}`)
+    fetch(`https://genshin.jmp.blue/characters/${name}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -14,14 +14,14 @@ export default function GetCharacter({name}) {
 
     var source = new String();
     if (name.includes("traveler")) {
-        source = "https://api.genshin.dev/characters/" + name + "/icon";
+        source = "https://genshin.jmp.blue/characters/" + name + "/icon";
     } else {
-        source = "https://api.genshin.dev/characters/" + name + "/icon-big";
+        source = "https://genshin.jmp.blue/characters/" + name + "/icon-big";
     }
 
     var vision = String(data.vision);
     var element = vision.toLowerCase();
-    var elmSource = `https://api.genshin.dev/elements/${element}/icon`
+    var elmSource = `https://genshin.jmp.blue/elements/${element}/icon`
 
     let charBg = new String();
     var charName = String(data.name);

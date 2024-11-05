@@ -17,7 +17,7 @@ export default function Characters() {
   const [inputValue, setInputValue] = useState("");
 
   const fetchCharacters = () => {
-    fetch("https://api.genshin.dev/characters")
+    fetch("https://genshin.jmp.blue/characters")
       .then((response) => response.json())
       .then((data) => setCharacters(data));
   };

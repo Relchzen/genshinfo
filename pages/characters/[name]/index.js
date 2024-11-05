@@ -15,7 +15,7 @@ import { Character } from "../../../components/character";
 
 export async function getServerSideProps(context) {
   const { name } = context.query;
-  const res = await fetch(`https://api.genshin.dev/characters/${name}`);
+  const res = await fetch(`https://genshin.jmp.blue/characters/${name}`);
   const character = await res.json();
 
   return { 
@@ -26,7 +26,7 @@ export async function getServerSideProps(context) {
 export default function Page({ character }) {
   const router = useRouter();
   const Charname = router.query.name;
-  const src = `https://api.genshin.dev/characters/${Charname}/card`
+  const src = `https://genshin.jmp.blue/characters/${Charname}/card`
   const srcString = String(src);
 
   const charelm = character.vision;
@@ -67,7 +67,7 @@ export default function Page({ character }) {
             <WeaponType weapon={character.weapon} />
             
             <Box p={3}>
-              <Image src={`https://api.genshin.dev/elements/${element}/icon`} height={'80px'} width={'80px'} alt={"element icon"} />
+              <Image src={`https://genshin.jmp.blue/elements/${element}/icon`} height={'80px'} width={'80px'} alt={"element icon"} />
             </Box>
           </Flex>
           <Flex flexDirection="column" key={'detail'} align={'center'}> {/* Align items to flex-start */}
