@@ -14,8 +14,8 @@ function buatAcak(seed: number) {
   return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296);
 }
 
-// Generator tekstur lingkaran lembut antialiased (menghilangkan tampilan kotak)
-function buatTeksturPartikel(tipe: "bintang" | "asap" | "debu" = "bintang") {
+// Generator tekstur lingkaran lembut antialiased untuk bintang & debu luar angkasa
+function buatTeksturBulat() {
   if (typeof document === "undefined") return null;
   const canvas = document.createElement("canvas");
   canvas.width = 128;
@@ -24,23 +24,10 @@ function buatTeksturPartikel(tipe: "bintang" | "asap" | "debu" = "bintang") {
   if (!ctx) return null;
 
   const grad = ctx.createRadialGradient(64, 64, 0, 64, 64, 64);
-  if (tipe === "bintang") {
-    grad.addColorStop(0.0, "rgba(255, 255, 255, 1.0)");
-    grad.addColorStop(0.25, "rgba(255, 255, 255, 0.7)");
-    grad.addColorStop(0.6, "rgba(255, 255, 255, 0.15)");
-    grad.addColorStop(1.0, "rgba(255, 255, 255, 0.0)");
-  } else if (tipe === "asap") {
-    grad.addColorStop(0.0, "rgba(255, 255, 255, 0.45)");
-    grad.addColorStop(0.35, "rgba(255, 255, 255, 0.18)");
-    grad.addColorStop(0.7, "rgba(255, 255, 255, 0.04)");
-    grad.addColorStop(1.0, "rgba(255, 255, 255, 0.0)");
-  } else {
-    // Debu angkasa halus
-    grad.addColorStop(0.0, "rgba(255, 255, 255, 0.85)");
-    grad.addColorStop(0.3, "rgba(255, 255, 255, 0.4)");
-    grad.addColorStop(0.75, "rgba(255, 255, 255, 0.08)");
-    grad.addColorStop(1.0, "rgba(255, 255, 255, 0.0)");
-  }
+  grad.addColorStop(0.0, "rgba(255, 255, 255, 1.0)");
+  grad.addColorStop(0.25, "rgba(255, 255, 255, 0.7)");
+  grad.addColorStop(0.6, "rgba(255, 255, 255, 0.15)");
+  grad.addColorStop(1.0, "rgba(255, 255, 255, 0.0)");
 
   ctx.fillStyle = grad;
   ctx.fillRect(0, 0, 128, 128);
@@ -52,7 +39,7 @@ function buatTeksturPartikel(tipe: "bintang" | "asap" | "debu" = "bintang") {
 
 // 1. Ladang Bintang Semesta (Cosmic Starfield)
 function CosmicStarfield({ count = 500 }: { count?: number }) {
-  const tex = useMemo(() => buatTeksturPartikel("bintang"), []);
+  const tex = useMemo(() => buatTeksturBulat(), []);
 
   const { positions, colors } = useMemo(() => {
     const acak = buatAcak(777);
@@ -107,11 +94,11 @@ function CosmicStarfield({ count = 500 }: { count?: number }) {
   );
 }
 
-// 2. Warp Speed Dust (Partikel debu kecepatan di sekeliling kita yang memanjang jadi garis saat kamera meluncur)
+// 2. Warp Speed Dust di sekeliling kamera
 function WarpSpeedDust({ count = 550 }: { count?: number }) {
   const ref = useRef<THREE.Group>(null);
   const { camera } = useThree();
-  const tex = useMemo(() => buatTeksturPartikel("debu"), []);
+  const tex = useMemo(() => buatTeksturBulat(), []);
 
   const positions = useMemo(() => {
     const acak = buatAcak(333);
@@ -220,24 +207,25 @@ function WarpSpeedDust({ count = 550 }: { count?: number }) {
   );
 }
 
-// 3. Jejak Asap Halus Ringkas di Belakang Primogem (Minimalis & Elegan, tidak menutupi primogem)
-function SubtleSmokeTrail({
+// 3. Spiral Stardust Trail Primogem Asli (Partikel kotak tajam alami ala kristal dengan formasi pusaran spiral)
+function PrimogemSpiralTrail({
   primoPos,
   tZoom,
 }: {
   primoPos: THREE.Vector3;
   tZoom: number;
 }) {
-  const count = 24; // Sangat hemat dan minimalis agar Primogem tetap jernih
+  const count = 120;
   const meshRef = useRef<THREE.Points>(null);
-  const tex = useMemo(() => buatTeksturPartikel("asap"), []);
 
-  const smokeData = useMemo(() => {
+  const spiralData = useMemo(() => {
     const acak = buatAcak(999);
     const pos = new Float32Array(count * 3);
     const col = new Float32Array(count * 3);
-    const offsets = new Float32Array(count * 3);
-    const turbSpeeds = new Float32Array(count);
+    const spiralAngles = new Float32Array(count);
+    const spiralRadii = new Float32Array(count);
+    const zOffsets = new Float32Array(count);
+    const speeds = new Float32Array(count);
 
     const cCyan = new THREE.Color("#38bdf8");
     const cGold = new THREE.Color("#fbbf24");
@@ -245,39 +233,36 @@ function SubtleSmokeTrail({
 
     for (let i = 0; i < count; i++) {
       const progress = i / count;
-      offsets[i * 3] = (acak() - 0.5) * 0.2;
-      offsets[i * 3 + 1] = (acak() - 0.5) * 0.2;
-      offsets[i * 3 + 2] = progress * 4.5;
+      spiralAngles[i] = progress * Math.PI * 8.0 + acak() * 0.5; // Pusaran spiral 4 putaran
+      spiralRadii[i] = 0.15 + Math.pow(progress, 0.7) * 0.85; // Mengembang spiral ke belakang
+      zOffsets[i] = progress * 8.0;
+      speeds[i] = 1.2 + acak() * 1.5;
 
-      turbSpeeds[i] = 0.5 + acak() * 1.0;
-
-      c.lerpColors(cCyan, cGold, progress);
+      // Gradasi warna dari cyan di kepala ke emas di ekor
+      c.lerpColors(cCyan, cGold, Math.pow(progress, 0.8));
       col[i * 3] = c.r;
       col[i * 3 + 1] = c.g;
       col[i * 3 + 2] = c.b;
     }
-    return { pos, col, offsets, turbSpeeds };
+    return { pos, col, spiralAngles, spiralRadii, zOffsets, speeds };
   }, [count]);
 
   useFrame((state) => {
     if (!meshRef.current) return;
     const time = state.clock.elapsedTime;
-    const { pos, offsets, turbSpeeds } = smokeData;
+    const { pos, spiralAngles, spiralRadii, zOffsets, speeds } = spiralData;
     const attr = meshRef.current.geometry.attributes.position as THREE.BufferAttribute;
 
-    const stretch = 0.5 + tZoom * 4.2;
+    const stretch = 1.0 + tZoom * 5.0;
 
     for (let i = 0; i < count; i++) {
-      const zNorm = offsets[i * 3 + 2] / 4.5;
-      const currentZDist = zNorm * stretch;
-      const expansion = 1.0 + zNorm * 1.2;
+      const angle = spiralAngles[i] + time * speeds[i] * 0.4;
+      const r = spiralRadii[i] * (1.0 + tZoom * 0.5);
+      const zDist = (zOffsets[i] / 8.0) * stretch * 8.0;
 
-      const swirlX = Math.sin(time * turbSpeeds[i] + i) * (0.03 + zNorm * 0.08);
-      const swirlY = Math.cos(time * turbSpeeds[i] * 0.8 + i) * (0.03 + zNorm * 0.08);
-
-      pos[i * 3] = primoPos.x + offsets[i * 3] * expansion + swirlX;
-      pos[i * 3 + 1] = primoPos.y + offsets[i * 3] * expansion + swirlY;
-      pos[i * 3 + 2] = primoPos.z + currentZDist + 0.15;
+      pos[i * 3] = primoPos.x + Math.cos(angle) * r;
+      pos[i * 3 + 1] = primoPos.y + Math.sin(angle) * r;
+      pos[i * 3 + 2] = primoPos.z + zDist + 0.15;
     }
     attr.array.set(pos);
     attr.needsUpdate = true;
@@ -286,15 +271,15 @@ function SubtleSmokeTrail({
   return (
     <points ref={meshRef} frustumCulled={false}>
       <bufferGeometry>
-        <bufferAttribute attach="attributes-position" args={[smokeData.pos, 3]} />
-        <bufferAttribute attach="attributes-color" args={[smokeData.col, 3]} />
+        <bufferAttribute attach="attributes-position" args={[spiralData.pos, 3]} />
+        <bufferAttribute attach="attributes-color" args={[spiralData.col, 3]} />
       </bufferGeometry>
+      {/* Tanpa map tekstur: partikel kotak tajam asli bergaya kristal Teyvat */}
       <pointsMaterial
-        map={tex ?? undefined}
-        size={0.24}
+        size={0.065}
         vertexColors
         transparent
-        opacity={0.12 + tZoom * 0.25}
+        opacity={0.35 + tZoom * 0.6}
         sizeAttenuation
         depthWrite={false}
         blending={THREE.AdditiveBlending}
@@ -402,7 +387,7 @@ function ImmersiveRig({ progres, children }: { progres: Progres; children: React
         <Primogem3D ref={primoModelRef} />
         <pointLight ref={lightRef} color="#38bdf8" distance={20} decay={2} intensity={18} />
       </group>
-      <SubtleSmokeTrail primoPos={primoPosState.current} tZoom={tZoomState.current} />
+      <PrimogemSpiralTrail primoPos={primoPosState.current} tZoom={tZoomState.current} />
       {children}
     </group>
   );
