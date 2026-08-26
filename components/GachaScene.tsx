@@ -14,8 +14,48 @@ function buatAcak(seed: number) {
   return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296);
 }
 
-// 1. Ladang Bintang Semesta (Cosmic Starfield)
+// Generator tekstur lingkaran lembut & partikel asap tanpa tepi kotak (antialiased radial falloff)
+function buatTeksturPartikel(tipe: "bintang" | "asap" | "debu" = "bintang") {
+  if (typeof document === "undefined") return null;
+  const canvas = document.createElement("canvas");
+  canvas.width = 128;
+  canvas.height = 128;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return null;
+
+  const grad = ctx.createRadialGradient(64, 64, 0, 64, 64, 64);
+  if (tipe === "bintang") {
+    // Inti tajam bercahaya untuk bintang
+    grad.addColorStop(0.0, "rgba(255, 255, 255, 1.0)");
+    grad.addColorStop(0.18, "rgba(255, 255, 255, 0.85)");
+    grad.addColorStop(0.45, "rgba(255, 255, 255, 0.25)");
+    grad.addColorStop(1.0, "rgba(255, 255, 255, 0.0)");
+  } else if (tipe === "asap") {
+    // Pendaran awan asap halus (soft cloudy puff)
+    grad.addColorStop(0.0, "rgba(255, 255, 255, 0.65)");
+    grad.addColorStop(0.3, "rgba(255, 255, 255, 0.4)");
+    grad.addColorStop(0.65, "rgba(255, 255, 255, 0.12)");
+    grad.addColorStop(1.0, "rgba(255, 255, 255, 0.0)");
+  } else {
+    // Debu angkasa lembut
+    grad.addColorStop(0.0, "rgba(255, 255, 255, 0.9)");
+    grad.addColorStop(0.35, "rgba(255, 255, 255, 0.45)");
+    grad.addColorStop(0.8, "rgba(255, 255, 255, 0.08)");
+    grad.addColorStop(1.0, "rgba(255, 255, 255, 0.0)");
+  }
+
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, 128, 128);
+
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.needsUpdate = true;
+  return tex;
+}
+
+// 1. Ladang Bintang Semesta (Cosmic Starfield) dengan titik bulat sempurna
 function CosmicStarfield({ count = 1000 }: { count?: number }) {
+  const tex = useMemo(() => buatTeksturPartikel("bintang"), []);
+
   const { positions, colors } = useMemo(() => {
     const acak = buatAcak(777);
     const pos = new Float32Array(count * 3);
@@ -56,10 +96,11 @@ function CosmicStarfield({ count = 1000 }: { count?: number }) {
         <bufferAttribute attach="attributes-color" args={[colors, 3]} />
       </bufferGeometry>
       <pointsMaterial
-        size={0.14}
+        map={tex ?? undefined}
+        size={0.22}
         vertexColors
         transparent
-        opacity={0.85}
+        opacity={0.88}
         sizeAttenuation
         depthWrite={false}
         blending={THREE.AdditiveBlending}
@@ -72,6 +113,7 @@ function CosmicStarfield({ count = 1000 }: { count?: number }) {
 function WarpSpeedDust({ count = 650 }: { count?: number }) {
   const ref = useRef<THREE.Group>(null);
   const { camera } = useThree();
+  const tex = useMemo(() => buatTeksturPartikel("debu"), []);
 
   const positions = useMemo(() => {
     const acak = buatAcak(333);
@@ -119,7 +161,7 @@ function WarpSpeedDust({ count = 650 }: { count?: number }) {
     const lineMesh = ref.current?.children?.[1] as THREE.LineSegments | undefined;
     const mat = lineMesh?.material as THREE.LineBasicMaterial | undefined;
     if (mat) {
-      mat.opacity = Math.min(0.7, v * 0.08);
+      mat.opacity = Math.min(0.65, v * 0.07);
     }
 
     const mag = Math.hypot(dx, dy, dz) || 1;
@@ -154,10 +196,11 @@ function WarpSpeedDust({ count = 650 }: { count?: number }) {
           <bufferAttribute attach="attributes-position" args={[positions, 3]} />
         </bufferGeometry>
         <pointsMaterial
-          size={0.065}
+          map={tex ?? undefined}
+          size={0.11}
           color="#9ee7ff"
           transparent
-          opacity={0.65}
+          opacity={0.7}
           sizeAttenuation
           depthWrite={false}
           blending={THREE.AdditiveBlending}
@@ -179,60 +222,81 @@ function WarpSpeedDust({ count = 650 }: { count?: number }) {
   );
 }
 
-// 3. Trail Emas & Cyan yang Ditinggalkan oleh Primogem Saat Meluncur Menjauh
-function PrimogemTrail({
+// 3. Jejak Asap Halus (Ethereal Stardust Smoke / Celestial Mist Trail)
+// Partikel lembut bertransformasi dari cyan ke emas, mengembang halus seperti kabut/asap di angkasa
+function CelestialSmokeTrail({
   primoPos,
   tZoom,
 }: {
   primoPos: THREE.Vector3;
   tZoom: number;
 }) {
-  const count = 180;
+  const count = 320;
   const meshRef = useRef<THREE.Points>(null);
+  const tex = useMemo(() => buatTeksturPartikel("asap"), []);
 
-  // History posisi partikel di dalam trail
-  const trailData = useMemo(() => {
-    const acak = buatAcak(888);
+  // Data partikel kabut/asap
+  const smokeData = useMemo(() => {
+    const acak = buatAcak(999);
     const pos = new Float32Array(count * 3);
     const col = new Float32Array(count * 3);
     const offsets = new Float32Array(count * 3);
-    const speeds = new Float32Array(count);
+    const turbSpeeds = new Float32Array(count);
+    const radii = new Float32Array(count);
 
     const cCyan = new THREE.Color("#38bdf8");
     const cGold = new THREE.Color("#fbbf24");
+    const cWhite = new THREE.Color("#e0f2fe");
     const c = new THREE.Color();
 
     for (let i = 0; i < count; i++) {
-      offsets[i * 3] = (acak() - 0.5) * 0.45;
-      offsets[i * 3 + 1] = (acak() - 0.5) * 0.45;
-      offsets[i * 3 + 2] = acak() * 6.5; // membentang di belakang primogem
-      speeds[i] = 0.5 + acak() * 1.5;
+      // Jarak Z di belakang primogem: tersebar sepanjang lintasan ekor
+      const progress = i / count;
+      offsets[i * 3] = (acak() - 0.5) * 0.35;
+      offsets[i * 3 + 1] = (acak() - 0.5) * 0.35;
+      offsets[i * 3 + 2] = progress * 10.0; // Panjang ekor hingga 10 unit
 
-      c.lerpColors(cCyan, cGold, acak());
+      turbSpeeds[i] = 0.8 + acak() * 1.8;
+      radii[i] = 0.2 + acak() * 0.8;
+
+      // Warna transisi bergradasi dari cyan terang ke emas berkilau
+      const mixRatio = progress * 0.75 + acak() * 0.25;
+      if (mixRatio < 0.4) {
+        c.lerpColors(cWhite, cCyan, mixRatio / 0.4);
+      } else {
+        c.lerpColors(cCyan, cGold, (mixRatio - 0.4) / 0.6);
+      }
+
       col[i * 3] = c.r;
       col[i * 3 + 1] = c.g;
       col[i * 3 + 2] = c.b;
     }
-    return { pos, col, offsets, speeds };
+    return { pos, col, offsets, turbSpeeds, radii };
   }, [count]);
 
   useFrame((state) => {
     if (!meshRef.current) return;
     const time = state.clock.elapsedTime;
-    const { pos, offsets, speeds } = trailData;
+    const { pos, offsets, turbSpeeds, radii } = smokeData;
     const attr = meshRef.current.geometry.attributes.position as THREE.BufferAttribute;
 
-    // Trail aktif dan memanjang ke belakang saat scroll berlangsung
-    const trailLength = 1.0 + tZoom * 8.0;
+    // Ekor asap memanjang dan mengembang dinamis saat primogem meluncur
+    const stretch = 1.2 + tZoom * 7.5;
 
     for (let i = 0; i < count; i++) {
-      const spread = (offsets[i * 3 + 2] / 6.5) * trailLength;
-      const swirlX = Math.sin(time * speeds[i] + i) * (0.08 + spread * 0.05);
-      const swirlY = Math.cos(time * speeds[i] + i) * (0.08 + spread * 0.05);
+      const zOffsetNorm = offsets[i * 3 + 2] / 10.0; // 0 (dekat primogem) s.d 1 (ujung belakang)
+      const currentZDist = zOffsetNorm * stretch;
 
-      pos[i * 3] = primoPos.x + offsets[i * 3] + swirlX;
-      pos[i * 3 + 1] = primoPos.y + offsets[i * 3 + 1] + swirlY;
-      pos[i * 3 + 2] = primoPos.z + spread + 0.2;
+      // Efek asap: mengembang (difusi) semakin jauh dari primogem
+      const expansion = 1.0 + zOffsetNorm * (1.8 + tZoom * 2.2);
+
+      // Turbulensi lembut ala gelombang asap di udara
+      const swirlX = Math.sin(time * turbSpeeds[i] + i * 0.35) * (0.06 + zOffsetNorm * 0.25);
+      const swirlY = Math.cos(time * (turbSpeeds[i] * 0.8) + i * 0.25) * (0.06 + zOffsetNorm * 0.22);
+
+      pos[i * 3] = primoPos.x + (offsets[i * 3] * expansion * radii[i]) + swirlX;
+      pos[i * 3 + 1] = primoPos.y + (offsets[i * 3 + 1] * expansion * radii[i]) + swirlY;
+      pos[i * 3 + 2] = primoPos.z + currentZDist + 0.15;
     }
     attr.array.set(pos);
     attr.needsUpdate = true;
@@ -241,14 +305,15 @@ function PrimogemTrail({
   return (
     <points ref={meshRef} frustumCulled={false}>
       <bufferGeometry>
-        <bufferAttribute attach="attributes-position" args={[trailData.pos, 3]} />
-        <bufferAttribute attach="attributes-color" args={[trailData.col, 3]} />
+        <bufferAttribute attach="attributes-position" args={[smokeData.pos, 3]} />
+        <bufferAttribute attach="attributes-color" args={[smokeData.col, 3]} />
       </bufferGeometry>
       <pointsMaterial
-        size={0.08}
+        map={tex ?? undefined}
+        size={0.65}
         vertexColors
         transparent
-        opacity={0.4 + tZoom * 0.55}
+        opacity={0.35 + tZoom * 0.5}
         sizeAttenuation
         depthWrite={false}
         blending={THREE.AdditiveBlending}
@@ -257,7 +322,7 @@ function PrimogemTrail({
   );
 }
 
-// 4. Halo Bersinar di sekitar Primogem (beralih ke pendaran emas saat scroll)
+// 4. Halo Bersinar Halus di Sekitar Primogem
 function PrimogemHalo({ tZoom }: { tZoom: number }) {
   const ref = useRef<THREE.Mesh>(null);
   const matRef = useRef<THREE.MeshBasicMaterial>(null);
@@ -328,9 +393,7 @@ function ImmersiveRig({ progres, children }: { progres: Progres; children: React
       primoModelRef.current.setTransition(tZoom);
     }
 
-    // Gerakan:
-    // Primogem meluncur menjauh ke kedalaman Z (dari Z=0 ke Z=-18)
-    // Primogem menghadap ke depan secara konsisten (TIDAK DIPUTAR)
+    // Primogem meluncur menjauh ke kedalaman Z (dari Z=0 ke Z=-18) tanpa rotasi
     const startPrimoZ = 0;
     const endPrimoZ = -18.0;
     const primoZ = startPrimoZ + (endPrimoZ - startPrimoZ) * tZoom;
@@ -340,15 +403,12 @@ function ImmersiveRig({ progres, children }: { progres: Progres; children: React
 
     if (primoGroup.current) {
       primoGroup.current.position.set(0, primoY, primoZ);
-      // Tanpa rotasi: selalu tegak menghadap kamera
       primoGroup.current.rotation.set(0, 0, 0);
     }
 
-    // Kamera mengejar / mengikuti Primogem yang meluncur menjauh
-    // Pada awal: Cam di Z=9.5 (jarak ~9.5 unit dari Primogem)
-    // Saat scroll: Cam meluncur ke Z=-9.5 (mengikuti di belakang Primogem dengan jarak dinamis)
+    // Kamera mengikuti di belakang Primogem
     const startCamZ = 9.5;
-    const endCamZ = primoZ + 8.5; // Kamera tetap mengikuti di belakangnya
+    const endCamZ = primoZ + 8.5;
 
     const desiredCamPos = {
       x: mouse.current.x * 0.35,
@@ -395,7 +455,7 @@ function ImmersiveRig({ progres, children }: { progres: Progres; children: React
         <PrimogemHalo tZoom={tZoomState.current} />
         <pointLight ref={lightRef} color="#45d0ff" distance={25} decay={2} intensity={22} />
       </group>
-      <PrimogemTrail primoPos={primoPosState.current} tZoom={tZoomState.current} />
+      <CelestialSmokeTrail primoPos={primoPosState.current} tZoom={tZoomState.current} />
       {children}
     </group>
   );
