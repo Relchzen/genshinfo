@@ -26,36 +26,36 @@ function bintang(n?: unknown): string {
 }
 
 function IkonItem({ kind, slug }: { kind: Kind; slug: string }) {
-  if (kind === "senjata") {
+  // Rantai sumber gambar; kalau semua 404, tampilkan monogram elegan.
+  const sumber: string[] =
+    kind === "senjata"
+      ? [urlIkonSenjata(slug)]
+      : kind === "artefak"
+        ? [
+            `${API_BASE}/artifacts/${slug}/flower-of-life`,
+            `${API_BASE}/artifacts/${slug}/plume-of-death`,
+          ]
+        : [`${API_BASE}/enemies/${slug}/icon`];
+  const [idx, setIdx] = useState(0);
+
+  if (idx >= sumber.length) {
     return (
-      <Image
-        src={urlIkonSenjata(slug)}
-        alt=""
-        width={96}
-        height={96}
-        className="h-24 w-24 object-contain"
-      />
+      <div className="flex h-24 w-24 items-center justify-center rounded-xl border garis bg-raised">
+        <span className="judul-display text-xl text-mute/70">
+          {slug.charAt(0).toUpperCase()}
+        </span>
+      </div>
     );
   }
-  if (kind === "artefak") {
-    // Setiap set tampil lewat piece bunga-bungaannya
-    return (
-      <Image
-        src={`${API_BASE}/artifacts/${slug}/flower-of-life`}
-        alt=""
-        width={96}
-        height={96}
-        className="h-24 w-24 object-contain"
-      />
-    );
-  }
+
   return (
     <Image
-      src={`${API_BASE}/enemies/${slug}/icon`}
+      src={sumber[idx]}
       alt=""
       width={96}
       height={96}
-      className="h-24 w-24 rounded-xl object-cover"
+      className={`h-24 w-24 ${kind === "musuh" ? "rounded-xl object-cover" : "object-contain"}`}
+      onError={() => setIdx((n) => n + 1)}
     />
   );
 }

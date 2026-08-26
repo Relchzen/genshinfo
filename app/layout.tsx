@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Hanken_Grotesk } from "next/font/google";
+import { Hanken_Grotesk, Cinzel } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,6 +7,14 @@ import Footer from "@/components/Footer";
 const hanken = Hanken_Grotesk({
   subsets: ["latin"],
   variable: "--font-hanken",
+  display: "swap",
+});
+
+// Display serif berkarakter fantasi untuk judul besar
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  variable: "--font-cinzel",
+  weight: ["600", "700", "800"],
   display: "swap",
 });
 
@@ -23,7 +31,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="id" className={hanken.variable}>
+    <html lang="id" className={`${hanken.variable} ${cinzel.variable}`}>
       <body className="flex min-h-screen flex-col antialiased">
         <Navbar />
         <main className="flex-1">{children}</main>

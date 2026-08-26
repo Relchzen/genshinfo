@@ -26,14 +26,21 @@ Warna elemental (dipakai semantik per konten): Anemo `#74C2A8`, Geo `#F0B632`,
 Electro `#AF8EC1`, Dendro `#A5C83B`, Hydro `#4CC2F1`, Pyro `#EF7938`, Cryo `#9FD6E3`.
 
 ### Tipografi
-- Display/judul: **Hanken Grotesk** (700/800), tracking rapat, dipakai besar.
-- Body: Hanken Grotesk (400/500).
-- Angka & label kecil: uppercase, letter-spacing lebar (`0.12em`), ukuran 11–12px.
+- Display/judul: **Cinzel** (600/700/800) serif fantasi bernuansa Teyvat, dipakai di judul besar dan heading kategori.
+- Body: **Hanken Grotesk** (400/500).
+- Angka & label kecil: uppercase, letter-spacing lebar (`0.12em`–`0.14em`), ukuran 11–12px.
 
 ### Spasi & Bentuk
 - Skala spasi 4pt; section padding desktop 96px, mobile 48px.
-- Radius: kartu 20px, pill 999px, panel detail 28px.
-- Border 1px `--line`; bayangan lembut hitam, tanpa glow berlebihan.
+- Radius: kartu 20px, panel detail 28px. Tombol CTA memakai geometri **sudut-potong
+  45°** (clip-path dua penjuru) sebagai identitas, bukan pill generik.
+- Border 1px `--line`; bayangan lembut hitam; glow hanya untuk cahaya emas cakrawala hero.
+
+### Hero
+- Latar festival malam terlihat jelas (opacity 0.9), bukan gelap total.
+- Cahaya emas radial dari tengah cakrawala + ladang bintang dua lapis berkedip.
+- Empat kartu splash art (Hu Tao, Ayaka, Raiden, Zhongli) melayang di empat sudut,
+  animasi naik-turun pelan; hanya tampil di layar ≥ lg agar judul tetap lega di mobile.
 
 ### Motion
 - Parallax scroll: 3 kedalaman (jauh 0.15x, tengah 0.35x, dekat 0.6x), via transform saja.
