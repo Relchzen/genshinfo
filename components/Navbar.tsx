@@ -36,11 +36,8 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <Link href="/" className="flex items-center gap-2.5">
-          <Logo ukuran={24} />
-          <span className="text-lg font-extrabold tracking-tight">
-            GenshInfo
-          </span>
+        <Link href="/" className="flex items-center" aria-label="Genshinfo Home">
+          <Logo width={140} height={38} />
         </Link>
 
         <div className="hidden items-center gap-1 md:flex">
@@ -52,7 +49,7 @@ export default function Navbar() {
                 href={l.href}
                 className={`rounded-full px-4 py-1.5 text-sm transition-colors ${
                   aktif
-                    ? "bg-raised text-gold"
+                    ? "bg-raised text-gold font-medium"
                     : "text-mute hover:bg-raised hover:text-ink"
                 }`}
               >
@@ -91,7 +88,7 @@ export default function Navbar() {
                 key={l.href}
                 href={l.href}
                 className={`block rounded-lg px-3 py-2.5 text-sm ${
-                  aktif ? "text-gold" : "text-mute"
+                  aktif ? "text-gold font-medium" : "text-mute"
                 }`}
               >
                 {l.label}

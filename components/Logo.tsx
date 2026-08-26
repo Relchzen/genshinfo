@@ -1,26 +1,29 @@
-export default function Logo({ ukuran = 26 }: { ukuran?: number }) {
+import Image from "next/image";
+
+export default function Logo({
+  width = 135,
+  height = 36,
+  ukuran,
+  className = "",
+}: {
+  width?: number;
+  height?: number;
+  ukuran?: number;
+  className?: string;
+}) {
+  const finalWidth = ukuran ? ukuran * 3.6 : width;
+  const finalHeight = ukuran ?? height;
+
   return (
-    <svg
-      width={ukuran}
-      height={ukuran}
-      viewBox="0 0 32 32"
-      fill="none"
-      aria-hidden="true"
-    >
-      {/* Berlian primogem: identitas kecil yang mengikat semua halaman */}
-      <path
-        d="M16 2 L27 12 L16 30 L5 12 Z"
-        stroke="var(--gold)"
-        strokeWidth="2"
-        strokeLinejoin="round"
-        fill="rgba(233, 196, 106, 0.12)"
+    <div className={`relative inline-flex items-center ${className}`}>
+      <Image
+        src="/logonew.png"
+        alt="Genshinfo Logo"
+        width={finalWidth}
+        height={finalHeight}
+        className="h-auto max-h-9 w-auto object-contain"
+        priority
       />
-      <path
-        d="M16 4.5 V29 M7 12 H25"
-        stroke="var(--gold)"
-        strokeWidth="1"
-        opacity="0.45"
-      />
-    </svg>
+    </div>
   );
 }

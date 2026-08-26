@@ -7,8 +7,7 @@ export default function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 md:flex-row md:items-start md:justify-between">
         <div className="max-w-sm">
           <div className="mb-3 flex items-center gap-2.5">
-            <Logo ukuran={20} />
-            <span className="font-bold tracking-tight">GenshInfo</span>
+            <Logo width={130} height={34} />
           </div>
           <p className="text-sm leading-relaxed text-mute">
             Dibangun ulang pada 2026 dari project kuliah 2023. Wajah baru,
