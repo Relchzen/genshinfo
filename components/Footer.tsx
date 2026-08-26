@@ -10,14 +10,14 @@ export default function Footer() {
             <Logo width={130} height={34} />
           </div>
           <p className="text-sm leading-relaxed text-mute">
-            Dibangun ulang pada 2026 dari project kuliah 2023. Wajah baru,
-            jiwa yang sama: parallax scrolling tetap jadi identitasnya.
+            Rebuilt in 2026 from a 2023 college project. New face, same spirit:
+            immersive parallax scrolling remains at its heart.
           </p>
         </div>
 
         <div className="flex gap-14">
           <div>
-            <p className="label-kecil mb-3">Jelajah</p>
+            <p className="label-kecil mb-3">Explore</p>
             <ul className="space-y-2 text-sm text-mute">
               <li><Link className="transition-colors hover:text-ink" href="/characters">Characters</Link></li>
               <li><Link className="transition-colors hover:text-ink" href="/weapons">Weapons</Link></li>
@@ -26,9 +26,9 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <p className="label-kecil mb-3">Proyek</p>
+            <p className="label-kecil mb-3">Project</p>
             <ul className="space-y-2 text-sm text-mute">
-              <li><Link className="transition-colors hover:text-ink" href="/about">Tim</Link></li>
+              <li><Link className="transition-colors hover:text-ink" href="/about">Team</Link></li>
               <li>
                 <a
                   className="transition-colors hover:text-ink"
@@ -46,9 +46,9 @@ export default function Footer() {
 
       <div className="mx-auto max-w-6xl px-5 pb-8">
         <p className="text-xs leading-relaxed text-mute/70">
-          Data dan gambar bersumber dari genshin.jmp.blue. Genshin Impact adalah
-          merek dagang HoYoverse; proyek ini tidak berafiliasi dan murni karya
-          penggemar untuk tujuan pendidikan.
+          Data and assets sourced from genshin.jmp.blue. Genshin Impact is a
+          trademark of HoYoverse; this project is an unaffiliated, non-commercial fan
+          tribute for educational purposes.
         </p>
       </div>
     </footer>

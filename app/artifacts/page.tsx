@@ -16,7 +16,7 @@ export default async function ArtifactsPage() {
 
   return (
     <>
-      <PageHeader kicker="Relik" judul="Artifacts" jumlah={meta.length} />
+      <PageHeader kicker="Relics" judul="Artifacts" jumlah={meta.length} />
       <ListExplorer kind="artefak" items={meta} />
     </>
   );

@@ -35,9 +35,9 @@ export default async function EnemyDetailPage({
     notFound();
   }
 
-  const fakta = [
+  const facts = [
     { label: "Region", nilai: e.region },
-    { label: "Tipe", nilai: e.type },
+    { label: "Type", nilai: e.type },
     { label: "Family", nilai: e.family },
     { label: "Faction", nilai: e.faction },
   ].filter((f) => f.nilai);
@@ -68,16 +68,16 @@ export default async function EnemyDetailPage({
           </h1>
           {e.elements && e.elements.length > 0 && (
             <p className="mt-2 text-sm font-semibold capitalize text-mute">
-              Elemen: {e.elements.join(", ").toLowerCase()}
+              Elements: {e.elements.join(", ").toLowerCase()}
             </p>
           )}
         </Reveal>
       </div>
 
-      {fakta.length > 0 && (
+      {facts.length > 0 && (
         <Reveal delay={0.08}>
           <dl className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {fakta.map((f) => (
+            {facts.map((f) => (
               <div key={f.label} className="rounded-2xl border garis bg-raised/40 p-4">
                 <dt className="label-kecil mb-1">{f.label}</dt>
                 <dd className="text-sm font-semibold">{f.nilai}</dd>

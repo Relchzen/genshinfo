@@ -1,6 +1,6 @@
 import Reveal from "./Reveal";
 
-// Header seragam untuk halaman daftar.
+// Uniform header for list pages.
 export default function PageHeader({
   kicker,
   judul,
@@ -14,7 +14,7 @@ export default function PageHeader({
     <header className="mx-auto max-w-6xl px-5 pb-8 pt-28 md:pt-36">
       <Reveal>
         <p className="label-kecil mb-2">
-          {kicker} · {jumlah} entri
+          {kicker} · {jumlah} entries
         </p>
         <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl">
           {judul}

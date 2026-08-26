@@ -2,7 +2,7 @@ import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
 
-const TIM = [
+const TEAM = [
   {
     nama: "Aurelius Abuthan",
     peran: "Project Manager",
@@ -17,7 +17,7 @@ const TIM = [
   },
   {
     nama: "Fidel Brian Dava",
-    peran: "Mandor",
+    peran: "Lead Developer",
     foto: "/Fidel.jpg",
     ig: "f.blayen",
   },
@@ -36,47 +36,47 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageHeader kicker="Empat orang, satu tugas akhir" judul="About" jumlah={TIM.length} />
+      <PageHeader kicker="Four people, one final project" judul="About" jumlah={TEAM.length} />
 
-      {/* Foto kebersamaan era v1 sebagai pembuka */}
+      {/* Original v1 team photo */}
       <section className="mx-auto max-w-4xl px-5">
         <Reveal>
           <div className="relative aspect-[16/9] overflow-hidden rounded-3xl border garis">
             <Image
               src="/tim.jpg"
-              alt="Foto kebersamaan tim saat mengerjakan versi pertama"
+              alt="The team working on the first version"
               fill
               sizes="(max-width: 896px) 100vw, 896px"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent" />
             <p className="absolute bottom-4 left-5 right-5 text-sm text-mute">
-              Tim asli GenshInfo, jauh sebelum versi ini ada.
+              The original GenshInfo team, long before this version existed.
             </p>
           </div>
         </Reveal>
 
         <Reveal delay={0.08}>
           <p className="mx-auto mt-10 max-w-2xl text-center text-base leading-relaxed text-mute">
-            GenshInfo lahir sebagai tugas kuliah: situs ensiklopedia Genshin
-            Impact yang dibangun larut malam sambil belajar Next.js dari nol.
-            Tahun 2026 kode lamanya diarsipkan utuh di folder{" "}
+            GenshInfo was born as a college assignment: a Genshin Impact encyclopedia
+            built during late nights while learning Next.js from scratch.
+            In 2026 the legacy code was archived in the{" "}
             <code className="rounded bg-raised px-1.5 py-0.5 text-xs">genshinfo_old</code>{" "}
-            dan versi ini ditulis ulang dengan standar yang sama tingginya
-            dengan ambisinya dulu.
+            folder and this version was rewritten with standards as high as
+            the original ambition.
           </p>
         </Reveal>
       </section>
 
-      {/* Kartu anggota */}
+      {/* Team cards */}
       <section className="mx-auto max-w-4xl px-5 py-16">
         <div className="grid gap-4 sm:grid-cols-2">
-          {TIM.map((t, i) => (
+          {TEAM.map((t, i) => (
             <Reveal key={t.nama} delay={i * 0.06}>
               <div className="flex items-center gap-4 rounded-2xl border garis bg-raised/50 p-4">
                 <Image
                   src={t.foto}
-                  alt={`Foto ${t.nama}`}
+                  alt={`Photo of ${t.nama}`}
                   width={64}
                   height={64}
                   className="h-16 w-16 rounded-full border border-white/10 object-cover"
@@ -100,9 +100,9 @@ export default function AboutPage() {
 
         <Reveal delay={0.1}>
           <p className="mt-12 text-center text-xs leading-relaxed text-mute/70">
-            Versi lama tayang dengan Next.js 13 dan Chakra UI; versi ini dengan
-            Next.js App Router, TypeScript, dan Tailwind CSS. Data bersumber
-            dari genshin.jmp.blue.
+            The legacy version ran on Next.js 13 and Chakra UI; this version uses
+            Next.js App Router, TypeScript, and Tailwind CSS. Data sourced
+            from genshin.jmp.blue.
           </p>
         </Reveal>
       </section>

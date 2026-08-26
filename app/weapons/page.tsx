@@ -16,7 +16,7 @@ export default async function WeaponsPage() {
 
   return (
     <>
-      <PageHeader kicker="Persediaan" judul="Weapons" jumlah={meta.length} />
+      <PageHeader kicker="Arsenal" judul="Weapons" jumlah={meta.length} />
       <ListExplorer
         kind="senjata"
         items={meta}

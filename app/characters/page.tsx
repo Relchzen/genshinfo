@@ -6,7 +6,6 @@ import CharacterExplorer from "@/components/CharacterExplorer";
 export const revalidate = 86400;
 
 export default async function CharactersPage() {
-  // Validasi silang: hanya slug yang benar-benar ada di API yang ditampilkan
   let daftar: string[] = [];
   try {
     daftar = await getDaftarKarakter();
@@ -18,7 +17,7 @@ export default async function CharactersPage() {
   return (
     <>
       <PageHeader
-        kicker="Ensiklopedia"
+        kicker="Encyclopedia"
         judul="Characters"
         jumlah={meta.length}
       />

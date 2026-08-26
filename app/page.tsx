@@ -9,28 +9,28 @@ const KATEGORI = [
   {
     href: "/characters",
     judul: "Characters",
-    ket: "92 penghuni Teyvat",
+    ket: "92 playable inhabitants of Teyvat",
     latar: `${API_BASE}/characters/albedo/gacha-splash`,
     posisi: "object-top",
   },
   {
     href: "/weapons",
     judul: "Weapons",
-    ket: "189 senjata, dull blade hingga 5 bintang",
+    ket: "189 weapons, from Dull Blade to 5-star signatures",
     latar: `${API_BASE}/weapons/wolf-s-gravestone/icon`,
     posisi: "object-contain",
   },
   {
     href: "/artifacts",
     judul: "Artifacts",
-    ket: "53 set lengkap dengan bonusnya",
+    ket: "53 artifact sets with complete set bonuses",
     latar: `${API_BASE}/artifacts/brave-heart/circlet-of-logos`,
     posisi: "object-contain",
   },
   {
     href: "/enemies",
     judul: "Enemies",
-    ket: "43 musuh yang menghadang di jalan",
+    ket: "43 monsters & bosses across the realms",
     latar: `${API_BASE}/enemies/hilichurl/icon`,
     posisi: "object-contain",
   },
@@ -64,7 +64,7 @@ function KartuKategori({ href, judul, ket, latar, posisi }: Kategori) {
         <h2 className="judul-display text-lg">{judul}</h2>
         <p className="mt-1 text-sm leading-snug text-mute">{ket}</p>
         <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-gold">
-          Buka
+          Explore
           <span
             aria-hidden
             className="transition-transform duration-200 group-hover:translate-x-0.5"
@@ -80,15 +80,15 @@ function KartuKategori({ href, judul, ket, latar, posisi }: Kategori) {
 export default function Home() {
   return (
     <>
-      {/* ===== Intro gacha: logo sebagai bintang jatuh ===== */}
+      {/* ===== Hero Gacha Intro ===== */}
       <HeroGacha />
 
-      {/* ===== Strip elemen ===== */}
+      {/* ===== Elements Strip ===== */}
       <section className="mx-auto max-w-6xl px-5 py-20 md:py-24">
         <Reveal>
-          <p className="label-kecil mb-3">Tujuh elemen Teyvat</p>
+          <p className="label-kecil mb-3">The Seven Elements of Teyvat</p>
           <h2 className="judul-display max-w-xl text-3xl leading-tight md:text-4xl">
-            Setiap elemen punya nyala sendiri.
+            Every element carries its own flame.
           </h2>
         </Reveal>
         <div className="mt-10 grid grid-cols-4 gap-3 md:grid-cols-7">
@@ -112,12 +112,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== Kategori ===== */}
-      <section id="kategori" className="mx-auto max-w-6xl px-5 pb-28">
+      {/* ===== Categories ===== */}
+      <section id="categories" className="mx-auto max-w-6xl px-5 pb-28">
         <Reveal>
-          <p className="label-kecil mb-3">Pilih jalurmu</p>
+          <p className="label-kecil mb-3">Choose Your Path</p>
           <h2 className="judul-display max-w-xl text-3xl leading-tight md:text-4xl">
-            Empat pintu masuk.
+            Four gateways to explore.
           </h2>
         </Reveal>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

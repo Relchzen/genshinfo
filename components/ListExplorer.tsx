@@ -26,7 +26,6 @@ function bintang(n?: unknown): string {
 }
 
 function IkonItem({ kind, slug }: { kind: Kind; slug: string }) {
-  // Rantai sumber gambar; kalau semua 404, tampilkan monogram elegan.
   const sumber: string[] =
     kind === "senjata"
       ? [urlIkonSenjata(slug)]
@@ -60,7 +59,7 @@ function IkonItem({ kind, slug }: { kind: Kind; slug: string }) {
   );
 }
 
-function InfoTambahan({ kind, item }: { kind: Kind; item: ItemMeta }) {
+function ExtraInfo({ kind, item }: { kind: Kind; item: ItemMeta }) {
   if (kind === "senjata") {
     return (
       <span
@@ -77,7 +76,7 @@ function InfoTambahan({ kind, item }: { kind: Kind; item: ItemMeta }) {
         className="text-xs font-semibold tracking-wide"
         style={{ color: warnaRarityItem(item.max_rarity) }}
       >
-        {bintang(item.max_rarity)} maksimum
+        {bintang(item.max_rarity)} max
       </span>
     );
   }
@@ -88,7 +87,7 @@ function InfoTambahan({ kind, item }: { kind: Kind; item: ItemMeta }) {
   );
 }
 
-// Explorer generik untuk weapons/artifacts/enemies: pencarian instan.
+// Generic explorer for weapons/artifacts/enemies: instant search.
 export default function ListExplorer({
   kind,
   items,
@@ -112,13 +111,13 @@ export default function ListExplorer({
         type="search"
         value={q}
         onChange={(e) => setQ(e.target.value)}
-        placeholder="Cari…"
+        placeholder="Search…"
         className="mb-8 w-full max-w-md rounded-full border garis bg-raised px-4 py-2.5 text-sm outline-none transition-colors placeholder:text-mute/60 focus:border-gold/50"
       />
 
       {hasil.length === 0 ? (
         <p className="py-20 text-center text-sm text-mute">
-          Tidak ada yang cocok dengan pencarian ini.
+          No results match your search.
         </p>
       ) : (
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
@@ -134,7 +133,7 @@ export default function ListExplorer({
                     {item.slug.replace(/-/g, " ")}
                   </p>
                   <div className="mt-1">
-                    <InfoTambahan kind={kind} item={item} />
+                    <ExtraInfo kind={kind} item={item} />
                   </div>
                 </div>
               </Link>

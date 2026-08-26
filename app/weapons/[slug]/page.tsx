@@ -20,7 +20,7 @@ export async function generateMetadata({
   return { title: decodeURIComponent(slug).replace(/-/g, " ") };
 }
 
-function Bintang({ n }: { n: number }) {
+function Stars({ n }: { n: number }) {
   return (
     <span
       className="text-lg font-bold"
@@ -44,12 +44,12 @@ export default async function WeaponDetailPage({
     notFound();
   }
 
-  const spesifikasi = [
-    { label: "Tipe", nilai: w.type },
+  const specs = [
+    { label: "Type", nilai: w.type },
     { label: "Base ATK", nilai: String(w.baseAttack) },
     { label: "Sub Stat", nilai: w.subStat },
-    { label: "Lokasi", nilai: w.location },
-    { label: "Material Ascension", nilai: w.ascensionMaterial },
+    { label: "Location", nilai: w.location },
+    { label: "Ascension Material", nilai: w.ascensionMaterial },
   ].filter((s) => s.nilai && s.nilai !== "-");
 
   return (
@@ -79,14 +79,14 @@ export default async function WeaponDetailPage({
             {w.name}
           </h1>
           <div className="mt-2">
-            <Bintang n={w.rarity} />
+            <Stars n={w.rarity} />
           </div>
         </Reveal>
       </div>
 
       <Reveal delay={0.08}>
         <dl className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
-          {spesifikasi.map((s) => (
+          {specs.map((s) => (
             <div key={s.label} className="rounded-2xl border garis bg-raised/40 p-4">
               <dt className="label-kecil mb-1">{s.label}</dt>
               <dd className="text-sm font-semibold capitalize">{s.nilai}</dd>

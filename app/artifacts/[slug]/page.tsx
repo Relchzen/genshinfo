@@ -51,7 +51,6 @@ export default async function ArtifactDetailPage({
 
       <div className="flex flex-col items-center gap-6 text-center">
         <Reveal>
-          {/* Piece utama set: flower */}
           <Image
             src={`https://genshin.jmp.blue/artifacts/${slug}/flower-of-life`}
             alt={a.name}
@@ -70,12 +69,12 @@ export default async function ArtifactDetailPage({
             className="mt-2 font-bold"
             style={{ color: a.max_rarity >= 5 ? "#E9C46A" : "#A78BFA" }}
           >
-            {"★".repeat(Math.max(1, Math.min(5, a.max_rarity)))} maksimum
+            {"★".repeat(Math.max(1, Math.min(5, a.max_rarity)))} max
           </p>
         </Reveal>
       </div>
 
-      {/* Bonus set */}
+      {/* Set bonuses */}
       <Reveal delay={0.08}>
         <div className="mx-auto mt-10 max-w-2xl rounded-3xl border garis bg-gradient-to-b from-raised/80 to-bg p-6 md:p-8">
           <div className="flex gap-4 border-b garis pb-4">
@@ -91,11 +90,11 @@ export default async function ArtifactDetailPage({
         </div>
       </Reveal>
 
-      {/* Galeri piece */}
+      {/* Piece gallery */}
       <section className="mx-auto mt-12 max-w-3xl pb-10">
         <Reveal delay={0.1}>
           <h2 className="mb-5 text-center text-xl font-bold tracking-tight">
-            Piece set
+            Set Pieces
           </h2>
         </Reveal>
         <div className="grid grid-cols-5 gap-3">

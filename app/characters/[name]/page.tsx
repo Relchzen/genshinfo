@@ -13,7 +13,6 @@ import Reveal from "@/components/Reveal";
 import BuildPicks from "@/components/BuildPicks";
 import type { Metadata } from "next";
 
-// Hanya slug yang dikenal yang dirender; sisanya 404
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -69,7 +68,7 @@ function TalentCard({
       {upgrades && upgrades.length > 0 && (
         <details className="group mt-3">
           <summary className="cursor-pointer text-xs font-semibold text-gold select-none">
-            Lihat rasio peningkatan
+            View scaling ratios
           </summary>
           <dl className="mt-3 grid gap-x-6 gap-y-1 sm:grid-cols-2">
             {upgrades.map((u) => (
@@ -117,7 +116,7 @@ export default async function CharacterDetailPage({
         </nav>
 
         <div className="grid items-start gap-8 md:grid-cols-[300px_1fr]">
-          {/* Kartu karakter dengan aksen elemen */}
+          {/* Character card with element accent */}
           <Reveal>
             <div
               className="relative aspect-[280/400] overflow-hidden rounded-3xl border"
@@ -128,7 +127,7 @@ export default async function CharacterDetailPage({
             >
               <Image
                 src={urlKartuKarakter(slug)}
-                alt={`Kartu ${kar.name}`}
+                alt={`${kar.name} card`}
                 fill
                 priority
                 sizes="300px"
@@ -137,7 +136,7 @@ export default async function CharacterDetailPage({
             </div>
           </Reveal>
 
-          {/* Identitas */}
+          {/* Identity */}
           <Reveal delay={0.06}>
             <p className="label-kecil mb-2">{kar.title}</p>
             <h1 className="text-4xl font-extrabold tracking-tight md:text-6xl">
@@ -164,7 +163,7 @@ export default async function CharacterDetailPage({
 
             {kurasi?.role && (
               <p className="label-kecil mt-4">
-                Peran kurasi tim: <span className="text-gold">{kurasi.role}</span>
+                Curated team role: <span className="text-gold">{kurasi.role}</span>
               </p>
             )}
 
@@ -181,13 +180,13 @@ export default async function CharacterDetailPage({
               )}
               {kar.affiliation && (
                 <div>
-                  <dt className="label-kecil mb-1">Afiliasi</dt>
+                  <dt className="label-kecil mb-1">Affiliation</dt>
                   <dd className="font-semibold">{kar.affiliation}</dd>
                 </div>
               )}
               {kar.release && (
                 <div>
-                  <dt className="label-kecil mb-1">Rilis</dt>
+                  <dt className="label-kecil mb-1">Release</dt>
                   <dd className="font-semibold">{kar.release}</dd>
                 </div>
               )}
@@ -196,7 +195,7 @@ export default async function CharacterDetailPage({
         </div>
       </section>
 
-      {/* ===== Build picks (dataset kurasi v1) ===== */}
+      {/* ===== Build picks (curated dataset v1) ===== */}
       {kurasi && (
         <section className="mx-auto max-w-6xl px-5 pb-4">
           <BuildPicks kurasi={kurasi} />

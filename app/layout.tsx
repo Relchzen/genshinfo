@@ -10,7 +10,6 @@ const hanken = Hanken_Grotesk({
   display: "swap",
 });
 
-// Display serif berkarakter fantasi untuk judul besar
 const cinzel = Cinzel({
   subsets: ["latin"],
   variable: "--font-cinzel",
@@ -20,18 +19,18 @@ const cinzel = Cinzel({
 
 export const metadata: Metadata = {
   title: {
-    default: "GenshInfo — Ensiklopedia Teyvat",
+    default: "GenshInfo — Teyvat Encyclopedia",
     template: "%s · GenshInfo",
   },
   description:
-    "Referensi cepat karakter, senjata, artefak, dan musuh Genshin Impact. Dibangun ulang dari project kuliah 2023.",
+    "Quick reference for Genshin Impact characters, weapons, artifacts, and enemies. Reimagined from a 2023 college project.",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="id" className={`${hanken.variable} ${cinzel.variable}`}>
+    <html lang="en" className={`${hanken.variable} ${cinzel.variable}`}>
       <body className="flex min-h-screen flex-col antialiased">
         <Navbar />
         <main className="flex-1">{children}</main>

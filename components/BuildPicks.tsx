@@ -3,22 +3,22 @@ import Link from "next/link";
 import type { Curated } from "@/lib/types";
 import Reveal from "./Reveal";
 
-// Panel kurasi hasil migrasi dataset manual v1:
-// role, senjata terbaik, kombinasi artefak, stat priority, dan tim rekomendasi.
+// Curated build panel migrated from v1 manual dataset:
+// role, best weapons, artifact combos, stat priority, and recommended teams.
 export default function BuildPicks({ kurasi }: { kurasi: Curated }) {
   return (
     <Reveal>
       <div className="overflow-hidden rounded-3xl border garis bg-gradient-to-b from-raised/80 to-bg">
         <div className="border-b garis px-6 py-4">
-          <p className="label-kecil">Kurasi tim GenshInfo · era 2023</p>
+          <p className="label-kecil">Curated by GenshInfo team · 2023 era</p>
           <h2 className="mt-1 text-xl font-bold tracking-tight">Build Picks</h2>
         </div>
 
         <div className="grid gap-x-10 gap-y-8 px-6 py-7 md:grid-cols-2">
-          {/* Senjata terbaik */}
+          {/* Best weapons */}
           {kurasi.bestWeapon.length > 0 && (
             <div>
-              <h3 className="label-kecil mb-3">Senjata terbaik</h3>
+              <h3 className="label-kecil mb-3">Best Weapons</h3>
               <ul className="space-y-2.5">
                 {kurasi.bestWeapon.map((w, i) => (
                   <li key={`${w.name}-${i}`} className="flex items-center gap-3">
@@ -36,10 +36,10 @@ export default function BuildPicks({ kurasi }: { kurasi: Curated }) {
             </div>
           )}
 
-          {/* Kombinasi artefak */}
+          {/* Artifact combos */}
           {kurasi.bestArtifact.length > 0 && (
             <div>
-              <h3 className="label-kecil mb-3">Artefak</h3>
+              <h3 className="label-kecil mb-3">Artifacts</h3>
               <ul className="space-y-3">
                 {kurasi.bestArtifact.map((set, gi) => (
                   <li key={gi} className="flex flex-wrap items-center gap-x-2 gap-y-1.5">
@@ -66,7 +66,7 @@ export default function BuildPicks({ kurasi }: { kurasi: Curated }) {
           {/* Stat priority */}
           {kurasi.artifactStat.length > 0 && (
             <div>
-              <h3 className="label-kecil mb-3">Stat priority</h3>
+              <h3 className="label-kecil mb-3">Stat Priority</h3>
               <dl className="space-y-1.5">
                 {kurasi.artifactStat.map((s) => (
                   <div key={s.name} className="flex items-baseline justify-between gap-4 border-b garis pb-1.5">
@@ -85,14 +85,14 @@ export default function BuildPicks({ kurasi }: { kurasi: Curated }) {
             </div>
           )}
 
-          {/* Tim terbaik */}
+          {/* Best teams */}
           {kurasi.bestTeam.length > 0 && (
             <div>
-              <h3 className="label-kecil mb-3">Tim terbaik</h3>
+              <h3 className="label-kecil mb-3">Best Teams</h3>
               <ul className="space-y-3">
                 {kurasi.bestTeam.map((tim, ti) => (
                   <li key={ti}>
-                    <p className="mb-1.5 text-xs text-mute">Opsi {ti + 1}</p>
+                    <p className="mb-1.5 text-xs text-mute">Option {ti + 1}</p>
                     <div className="flex flex-wrap gap-2">
                       {tim.map((slugTs) => (
                         <Link

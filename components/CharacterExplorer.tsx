@@ -10,8 +10,8 @@ interface Meta {
   weapon: string | null;
 }
 
-const PILIHAN_RARITY = ["Semua", "5", "4"];
-const PILIHAN_SENJATA = ["Semua", "Sword", "Claymore", "Polearm", "Bow", "Catalyst"];
+const RARITY_OPTIONS = ["All", "5", "4"];
+const WEAPON_OPTIONS = ["All", "Sword", "Claymore", "Polearm", "Bow", "Catalyst"];
 
 function PillFilter({
   opsi,
@@ -42,48 +42,48 @@ function PillFilter({
   );
 }
 
-// Explorer: pencarian + filter elemen/rarity/senjata, semua instan di klien.
+// Explorer: search + element/rarity/weapon filters, all instant on client.
 export default function CharacterExplorer({ meta }: { meta: Meta[] }) {
   const [q, setQ] = useState("");
-  const [elemen, setElemen] = useState("Semua");
-  const [rarity, setRarity] = useState("Semua");
-  const [senjata, setSenjata] = useState("Semua");
+  const [elemen, setElemen] = useState("All");
+  const [rarity, setRarity] = useState("All");
+  const [senjata, setSenjata] = useState("All");
 
   const daftarElemen = useMemo(() => {
     const s = Array.from(new Set(meta.map((m) => m.vision).filter(Boolean)));
-    return ["Semua", ...(s as string[]).sort()];
+    return ["All", ...(s as string[]).sort()];
   }, [meta]);
 
   const hasil = useMemo(() => {
     const needle = q.trim().toLowerCase();
     return meta.filter((m) => {
       if (needle && !m.slug.includes(needle)) return false;
-      if (elemen !== "Semua" && m.vision?.toLowerCase() !== elemen.toLowerCase())
+      if (elemen !== "All" && m.vision?.toLowerCase() !== elemen.toLowerCase())
         return false;
       if (
-        senjata !== "Semua" &&
+        senjata !== "All" &&
         m.weapon?.toLowerCase() !== senjata.toLowerCase()
       )
         return false;
-      if (rarity !== "Semua" && String(m.rarity ?? "") !== rarity) return false;
+      if (rarity !== "All" && String(m.rarity ?? "") !== rarity) return false;
       return true;
     });
   }, [meta, q, elemen, rarity, senjata]);
 
   return (
     <section className="mx-auto max-w-6xl px-5 pb-24">
-      {/* Toolbar filter */}
+      {/* Filter toolbar */}
       <div className="sticky top-16 z-30 -mx-2 mb-8 rounded-2xl border garis bg-bg/90 p-4 backdrop-blur-md">
         <input
           type="search"
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="Cari karakter…"
+          placeholder="Search characters…"
           className="w-full rounded-full border garis bg-raised px-4 py-2.5 text-sm outline-none transition-colors placeholder:text-mute/60 focus:border-gold/50"
         />
         <div className="mt-3 space-y-2">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
-            <span className="label-kecil w-14">Elemen</span>
+            <span className="label-kecil w-14">Element</span>
             <PillFilter
               opsi={daftarElemen}
               nilai={elemen}
@@ -92,12 +92,12 @@ export default function CharacterExplorer({ meta }: { meta: Meta[] }) {
           </div>
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
             <span className="label-kecil w-14">Rarity</span>
-            <PillFilter opsi={PILIHAN_RARITY} nilai={rarity} ganti={setRarity} />
+            <PillFilter opsi={RARITY_OPTIONS} nilai={rarity} ganti={setRarity} />
           </div>
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
-            <span className="label-kecil w-14">Senjata</span>
+            <span className="label-kecil w-14">Weapon</span>
             <PillFilter
-              opsi={PILIHAN_SENJATA}
+              opsi={WEAPON_OPTIONS}
               nilai={senjata}
               ganti={setSenjata}
             />
@@ -105,10 +105,10 @@ export default function CharacterExplorer({ meta }: { meta: Meta[] }) {
         </div>
       </div>
 
-      {/* Grid hasil */}
+      {/* Results grid */}
       {hasil.length === 0 ? (
         <p className="py-20 text-center text-sm text-mute">
-          Tidak ada karakter yang cocok dengan filter ini.
+          No characters match these filters.
         </p>
       ) : (
         <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7">
