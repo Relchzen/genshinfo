@@ -7,30 +7,29 @@ export function Primogem3D(props: any) {
     "/models/primogemmorastardust_from_genshin_impact_free.glb"
   ) as any;
 
-  // Custom physical material untuk Primogem agar berkilau kristal mewah seperti di Genshin Impact
+  // Material kristal fisik untuk Primogem dengan faset tajam dan kilauan khas Teyvat
   const customMaterial = useMemo(() => {
     return new THREE.MeshPhysicalMaterial({
-      color: new THREE.Color("#4ac7ff"),
-      emissive: new THREE.Color("#185a9d"),
-      emissiveIntensity: 0.6,
-      roughness: 0.1,
-      metalness: 0.25,
-      clearcoat: 1.0,
+      color: new THREE.Color("#38bdf8"),
+      emissive: new THREE.Color("#0284c7"),
+      emissiveIntensity: 0.45,
+      roughness: 0.12,
+      metalness: 0.15,
+      clearcoat: 0.9,
       clearcoatRoughness: 0.1,
       flatShading: true,
       side: THREE.DoubleSide,
     });
   }, []);
 
-  // Geometry Primogem di dalam file GLB memiliki dimensi sekitar ~400 unit (bounding box radius ~200)
-  // Kita scale ke ukuran unit Three.js yang pas (misal ~0.005 untuk ukuran ~2 unit)
+  // Skala dasar yang proporsional dan elegan (tidak memenuhi seluruh layar)
   return (
     <group {...props} dispose={null}>
       {nodes?.Primogem_2_Primo_0 ? (
         <mesh
           geometry={nodes.Primogem_2_Primo_0.geometry}
           material={customMaterial}
-          scale={[0.0075, 0.0075, 0.0075]}
+          scale={[0.0034, 0.0034, 0.0034]}
         />
       ) : null}
     </group>

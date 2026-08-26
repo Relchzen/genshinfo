@@ -15,7 +15,7 @@ function buatAcak(seed: number) {
 }
 
 // 1. Ladang Bintang Semesta (Cosmic Starfield) di sekeliling dunia 3D
-function CosmicStarfield({ count = 1200 }: { count?: number }) {
+function CosmicStarfield({ count = 1000 }: { count?: number }) {
   const { positions, colors } = useMemo(() => {
     const acak = buatAcak(777);
     const pos = new Float32Array(count * 3);
@@ -23,10 +23,9 @@ function CosmicStarfield({ count = 1200 }: { count?: number }) {
     const c = new THREE.Color();
 
     for (let i = 0; i < count; i++) {
-      // Distribusi bola luas
       const theta = acak() * Math.PI * 2;
       const phi = Math.acos(2 * acak() - 1);
-      const r = 20 + acak() * 90;
+      const r = 25 + acak() * 95;
 
       pos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
       pos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
@@ -34,7 +33,7 @@ function CosmicStarfield({ count = 1200 }: { count?: number }) {
 
       const palet = acak();
       if (palet < 0.45) {
-        c.set("#72dbf8"); // Cyan / Anemo / Primogem blue
+        c.set("#72dbf8"); // Cyan / Primogem blue
       } else if (palet < 0.75) {
         c.set("#e9c46a"); // Emas bintang
       } else if (palet < 0.9) {
@@ -57,7 +56,7 @@ function CosmicStarfield({ count = 1200 }: { count?: number }) {
         <bufferAttribute attach="attributes-color" args={[colors, 3]} />
       </bufferGeometry>
       <pointsMaterial
-        size={0.15}
+        size={0.14}
         vertexColors
         transparent
         opacity={0.85}
@@ -69,30 +68,27 @@ function CosmicStarfield({ count = 1200 }: { count?: number }) {
   );
 }
 
-// 2. Debu Kecepatan & Partikel Bintang yang Mengelilingi Kita (seperti portofolio)
-// Saat kamera meluncur maju (zoom in), partikel memanjang searah gerak (warp streak effect)
-function WarpSpeedDust({ count = 650 }: { count?: number }) {
+// 2. Debu Kecepatan & Partikel Bintang di Sekeliling Kamera (Warp Speed Dust)
+function WarpSpeedDust({ count = 600 }: { count?: number }) {
   const ref = useRef<THREE.Group>(null);
   const { camera } = useThree();
 
-  // Partikel tersebar di sepanjang lorong sumbu Z dari depan kamera hingga melampaui Primogem
   const positions = useMemo(() => {
     const acak = buatAcak(333);
     const arr = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
-      // Menyebar di silinder koridor di sekitar sumbu Z
-      const radius = 0.8 + Math.sqrt(acak()) * 7.5;
+      const radius = 0.8 + Math.sqrt(acak()) * 7.0;
       const angle = acak() * Math.PI * 2;
       arr[i * 3] = Math.cos(angle) * radius;
       arr[i * 3 + 1] = Math.sin(angle) * radius;
-      arr[i * 3 + 2] = 12 - acak() * 38; // dari Z=12 sampai Z=-26
+      arr[i * 3 + 2] = 12 - acak() * 40;
     }
     return arr;
   }, [count]);
 
   const tailScale = useMemo(() => {
     const acak = buatAcak(555);
-    return Float32Array.from({ length: count }, () => 0.6 + acak() * 1.0);
+    return Float32Array.from({ length: count }, () => 0.5 + acak() * 0.9);
   }, [count]);
 
   const linePositions = useMemo(() => new Float32Array(count * 2 * 3), [count]);
@@ -104,7 +100,7 @@ function WarpSpeedDust({ count = 650 }: { count?: number }) {
   useFrame((state, rawDelta) => {
     const delta = Math.min(rawDelta, 0.05);
     if (ref.current) {
-      ref.current.rotation.z = Math.sin(state.clock.elapsedTime * 0.1) * 0.04;
+      ref.current.rotation.z = Math.sin(state.clock.elapsedTime * 0.08) * 0.03;
     }
 
     const s = sim.current;
@@ -118,16 +114,14 @@ function WarpSpeedDust({ count = 650 }: { count?: number }) {
     s.prev.copy(p);
     s.vel += (inst - s.vel) * Math.min(1, dt * 8);
 
-    // Kecepatan di atas ambang batas memicu ekor streak (warp effect)
     const v = Math.max(0, s.vel - 0.2);
-    const len = Math.min(3.2, v * 0.18);
+    const len = Math.min(2.8, v * 0.15);
     const lineMesh = ref.current?.children?.[1] as THREE.LineSegments | undefined;
     const mat = lineMesh?.material as THREE.LineBasicMaterial | undefined;
     if (mat) {
-      mat.opacity = Math.min(0.75, v * 0.08);
+      mat.opacity = Math.min(0.65, v * 0.07);
     }
 
-    // Arah pergerakan garis
     const mag = Math.hypot(dx, dy, dz) || 1;
     const ux = -dx / mag;
     const uy = -dy / mag;
@@ -160,10 +154,10 @@ function WarpSpeedDust({ count = 650 }: { count?: number }) {
           <bufferAttribute attach="attributes-position" args={[positions, 3]} />
         </bufferGeometry>
         <pointsMaterial
-          size={0.065}
+          size={0.06}
           color="#9ee7ff"
           transparent
-          opacity={0.7}
+          opacity={0.65}
           sizeAttenuation
           depthWrite={false}
           blending={THREE.AdditiveBlending}
@@ -185,23 +179,23 @@ function WarpSpeedDust({ count = 650 }: { count?: number }) {
   );
 }
 
-// 3. Inti Nebula & Halo Bersinar di sekitar Primogem
+// 3. Inti Halo Bersinar di sekitar Primogem
 function PrimogemHalo() {
   const ref = useRef<THREE.Mesh>(null);
   useFrame((state) => {
     if (!ref.current) return;
     const t = state.clock.elapsedTime;
-    const s = 1.0 + Math.sin(t * 2.0) * 0.08;
+    const s = 0.85 + Math.sin(t * 2.0) * 0.05;
     ref.current.scale.set(s, s, s);
   });
 
   return (
     <mesh ref={ref}>
-      <sphereGeometry args={[1.1, 32, 32]} />
+      <sphereGeometry args={[0.9, 32, 32]} />
       <meshBasicMaterial
-        color="#00e5ff"
+        color="#00d2ff"
         transparent
-        opacity={0.12}
+        opacity={0.08}
         blending={THREE.AdditiveBlending}
         side={THREE.BackSide}
       />
@@ -216,8 +210,8 @@ function ImmersiveRig({ progres, children }: { progres: Progres; children: React
   const lightRef = useRef<THREE.PointLight>(null);
   const mouse = useRef(new THREE.Vector2());
   const cur = useRef({
-    pos: new THREE.Vector3(0, 0, 8.5),
-    tgt: new THREE.Vector3(0, 0, 0),
+    pos: new THREE.Vector3(0, 0.4, 9.5),
+    tgt: new THREE.Vector3(0, 0.4, 0),
   });
   const { camera } = useThree();
 
@@ -234,48 +228,43 @@ function ImmersiveRig({ progres, children }: { progres: Progres; children: React
 
   useFrame((state, delta) => {
     const rawProgress = progres.current; // ~ 0 to 2.2
-    // Normalisasi progres scroll (0 sampai 1 pada zoom penuh)
     const tZoom = smoothstep(Math.min(1, Math.max(0, rawProgress / 1.35)));
 
-    // Stasiun Kamera:
-    // Awal (p=0): Kamera di [0, 0.4, 8.5], melihat ke Primogem di [0, 0, 0]
-    // Zoom In (p=1+): Kamera meluncur masuk menembus awan bintang hingga mendekati [0, 0.1, -5.5],
-    // Primogem sendiri meluncur perlahan ke Z=-8 dan membesar megah
-    const primoZ = -8 * tZoom;
-    const primoScale = 1.0 + tZoom * 1.6;
+    // Primogem diposisikan sedikit di atas tengah (Y=0.55) agar proporsional dan tidak menutupi teks CTA di bawah
+    const primoY = 0.55 + tZoom * 0.35;
+    const primoZ = -6.5 * tZoom;
+    const primoScale = 1.0 + tZoom * 0.85;
 
     if (primoGroup.current) {
-      primoGroup.current.position.set(0, 0, primoZ);
+      primoGroup.current.position.set(0, primoY, primoZ);
       primoGroup.current.scale.set(primoScale, primoScale, primoScale);
 
-      // Rotasi lembut Primogem
       const waktu = state.clock.elapsedTime;
-      primoGroup.current.rotation.y = waktu * 0.45;
-      primoGroup.current.rotation.x = Math.sin(waktu * 0.3) * 0.15;
-      primoGroup.current.rotation.z = Math.cos(waktu * 0.2) * 0.08;
+      primoGroup.current.rotation.y = waktu * 0.4;
+      primoGroup.current.rotation.x = Math.sin(waktu * 0.3) * 0.12;
+      primoGroup.current.rotation.z = Math.cos(waktu * 0.2) * 0.06;
     }
 
     if (lightRef.current) {
-      lightRef.current.intensity = 25 + tZoom * 55;
+      lightRef.current.intensity = 18 + tZoom * 35;
     }
 
-    // Kamera mengikuti jalur zoom in tepat ke arah Primogem
-    const startCam = { x: 0, y: 0.3, z: 8.5 };
-    const endCam = { x: 0, y: 0.0, z: -4.8 };
+    // Kamera meluncur masuk mengikuti Primogem
+    const startCam = { x: 0, y: 0.55, z: 9.5 };
+    const endCam = { x: 0, y: primoY, z: -3.5 };
 
     const desiredCamPos = {
-      x: startCam.x + (endCam.x - startCam.x) * tZoom + mouse.current.x * 0.45,
-      y: startCam.y + (endCam.y - startCam.y) * tZoom + mouse.current.y * 0.3 + Math.sin(state.clock.elapsedTime * 0.6) * 0.04,
+      x: startCam.x + (endCam.x - startCam.x) * tZoom + mouse.current.x * 0.4,
+      y: startCam.y + (endCam.y - startCam.y) * tZoom + mouse.current.y * 0.25 + Math.sin(state.clock.elapsedTime * 0.5) * 0.03,
       z: startCam.z + (endCam.z - startCam.z) * tZoom,
     };
 
     const desiredTarget = {
-      x: mouse.current.x * 0.15,
-      y: mouse.current.y * 0.1,
+      x: mouse.current.x * 0.12,
+      y: primoY,
       z: primoZ,
     };
 
-    // Exponential smoothing (damping) seperti di portofolio
     const k = 1 - Math.exp(-4.2 * delta);
     const c = cur.current;
 
@@ -300,7 +289,7 @@ function ImmersiveRig({ progres, children }: { progres: Progres; children: React
       <group ref={primoGroup}>
         <Primogem3D />
         <PrimogemHalo />
-        <pointLight ref={lightRef} color="#45d0ff" distance={30} decay={2} intensity={35} />
+        <pointLight ref={lightRef} color="#45d0ff" distance={25} decay={2} intensity={22} />
       </group>
       {children}
     </group>
@@ -310,7 +299,7 @@ function ImmersiveRig({ progres, children }: { progres: Progres; children: React
 export default function GachaScene({ progres }: { progres: Progres }) {
   return (
     <Canvas
-      camera={{ position: [0, 0.3, 8.5], fov: 46, near: 0.1, far: 180 }}
+      camera={{ position: [0, 0.55, 9.5], fov: 45, near: 0.1, far: 180 }}
       dpr={[1, 2]}
       gl={{ antialias: true, alpha: true }}
       style={{
@@ -323,12 +312,12 @@ export default function GachaScene({ progres }: { progres: Progres }) {
         zIndex: 10,
       }}
     >
-      <ambientLight intensity={0.8} />
-      <directionalLight position={[8, 12, 10]} intensity={2.2} color="#e6f7ff" />
-      <directionalLight position={[-8, -8, -10]} intensity={1.5} color="#0088ff" />
+      <ambientLight intensity={0.75} />
+      <directionalLight position={[8, 12, 10]} intensity={2.0} color="#e6f7ff" />
+      <directionalLight position={[-8, -8, -10]} intensity={1.2} color="#0088ff" />
       <CosmicStarfield />
       <ImmersiveRig progres={progres}>
-        <WarpSpeedDust count={750} />
+        <WarpSpeedDust count={650} />
       </ImmersiveRig>
     </Canvas>
   );
