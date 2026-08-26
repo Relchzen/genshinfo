@@ -25,8 +25,8 @@ function buatTeksturBulat() {
 
   const grad = ctx.createRadialGradient(64, 64, 0, 64, 64, 64);
   grad.addColorStop(0.0, "rgba(255, 255, 255, 1.0)");
-  grad.addColorStop(0.25, "rgba(255, 255, 255, 0.7)");
-  grad.addColorStop(0.6, "rgba(255, 255, 255, 0.15)");
+  grad.addColorStop(0.28, "rgba(255, 255, 255, 0.75)");
+  grad.addColorStop(0.65, "rgba(255, 255, 255, 0.18)");
   grad.addColorStop(1.0, "rgba(255, 255, 255, 0.0)");
 
   ctx.fillStyle = grad;
@@ -207,16 +207,136 @@ function WarpSpeedDust({ count = 550 }: { count?: number }) {
   );
 }
 
-// 3. Spiral Stardust Trail Primogem Asli (Partikel kotak tajam alami ala kristal dengan formasi pusaran spiral)
-function PrimogemSpiralTrail({
+// 3. Efek Halo Berlapis & Pulse Rings (Cincin kosmik melingkari Primogem dengan denyut gelombang keluar)
+function LayeredHaloAndPulse({ tZoom }: { tZoom: number }) {
+  const pulse1 = useRef<THREE.Mesh>(null);
+  const pulse2 = useRef<THREE.Mesh>(null);
+  const ringInner = useRef<THREE.Mesh>(null);
+  const ringOuter = useRef<THREE.Mesh>(null);
+
+  const matPulse1 = useRef<THREE.MeshBasicMaterial>(null);
+  const matPulse2 = useRef<THREE.MeshBasicMaterial>(null);
+  const matInner = useRef<THREE.MeshBasicMaterial>(null);
+  const matOuter = useRef<THREE.MeshBasicMaterial>(null);
+
+  const cCyan = useMemo(() => new THREE.Color("#38bdf8"), []);
+  const cGold = useMemo(() => new THREE.Color("#fbbf24"), []);
+
+  useFrame((state) => {
+    const time = state.clock.elapsedTime;
+
+    // Warna bertransisi dari cyan ke emas sesuai scroll
+    const curColor = new THREE.Color().lerpColors(cCyan, cGold, tZoom);
+
+    // Rotasi cincin halo konsentris
+    if (ringInner.current) {
+      ringInner.current.rotation.z = time * 0.35;
+      const s = 1.0 + Math.sin(time * 2.0) * 0.03;
+      ringInner.current.scale.set(s, s, s);
+    }
+    if (ringOuter.current) {
+      ringOuter.current.rotation.z = -time * 0.22;
+      const s = 1.0 + Math.cos(time * 1.6) * 0.04;
+      ringOuter.current.scale.set(s, s, s);
+    }
+
+    if (matInner.current) {
+      matInner.current.color.copy(curColor);
+      matInner.current.opacity = 0.25 + tZoom * 0.45;
+    }
+    if (matOuter.current) {
+      matOuter.current.color.copy(curColor);
+      matOuter.current.opacity = 0.15 + tZoom * 0.35;
+    }
+
+    // Pulse Wave 1 (menyebar keluar)
+    const phase1 = (time * 0.75) % 1.0;
+    if (pulse1.current && matPulse1.current) {
+      const s = 0.7 + phase1 * 1.6;
+      pulse1.current.scale.set(s, s, s);
+      matPulse1.current.color.copy(curColor);
+      matPulse1.current.opacity = Math.pow(1 - phase1, 1.8) * (0.2 + tZoom * 0.55);
+    }
+
+    // Pulse Wave 2 (terfase 0.5 di belakang)
+    const phase2 = (time * 0.75 + 0.5) % 1.0;
+    if (pulse2.current && matPulse2.current) {
+      const s = 0.7 + phase2 * 1.6;
+      pulse2.current.scale.set(s, s, s);
+      matPulse2.current.color.copy(curColor);
+      matPulse2.current.opacity = Math.pow(1 - phase2, 1.8) * (0.2 + tZoom * 0.55);
+    }
+  });
+
+  return (
+    <group>
+      {/* Cincin Halo Dalam */}
+      <mesh ref={ringInner}>
+        <ringGeometry args={[0.95, 0.98, 64]} />
+        <meshBasicMaterial
+          ref={matInner}
+          color={cCyan}
+          transparent
+          opacity={0.25}
+          side={THREE.DoubleSide}
+          blending={THREE.AdditiveBlending}
+        />
+      </mesh>
+
+      {/* Cincin Halo Luar Berpendar */}
+      <mesh ref={ringOuter}>
+        <ringGeometry args={[1.25, 1.29, 64]} />
+        <meshBasicMaterial
+          ref={matOuter}
+          color={cCyan}
+          transparent
+          opacity={0.15}
+          side={THREE.DoubleSide}
+          blending={THREE.AdditiveBlending}
+        />
+      </mesh>
+
+      {/* Gelombang Pulsa 1 */}
+      <mesh ref={pulse1}>
+        <ringGeometry args={[0.9, 0.96, 64]} />
+        <meshBasicMaterial
+          ref={matPulse1}
+          color={cCyan}
+          transparent
+          opacity={0.3}
+          side={THREE.DoubleSide}
+          blending={THREE.AdditiveBlending}
+        />
+      </mesh>
+
+      {/* Gelombang Pulsa 2 */}
+      <mesh ref={pulse2}>
+        <ringGeometry args={[0.9, 0.96, 64]} />
+        <meshBasicMaterial
+          ref={matPulse2}
+          color={cCyan}
+          transparent
+          opacity={0.3}
+          side={THREE.DoubleSide}
+          blending={THREE.AdditiveBlending}
+        />
+      </mesh>
+    </group>
+  );
+}
+
+// 4. Spiral Dot Trail Primogem Emas (HANYA MUNCUL SAAT SCROLL DAN SUDAH BERUBAH MENJADI EMAS)
+function PrimogemGoldenDotSpiral({
   primoPos,
   tZoom,
 }: {
   primoPos: THREE.Vector3;
   tZoom: number;
 }) {
-  const count = 120;
+  const count = 140;
   const meshRef = useRef<THREE.Points>(null);
+  const matRef = useRef<THREE.PointsMaterial>(null);
+  const tex = useMemo(() => buatTeksturBulat(), []);
 
   const spiralData = useMemo(() => {
     const acak = buatAcak(999);
@@ -227,19 +347,18 @@ function PrimogemSpiralTrail({
     const zOffsets = new Float32Array(count);
     const speeds = new Float32Array(count);
 
-    const cCyan = new THREE.Color("#38bdf8");
-    const cGold = new THREE.Color("#fbbf24");
+    const cGoldLight = new THREE.Color("#fef08a");
+    const cGoldAmber = new THREE.Color("#f59e0b");
     const c = new THREE.Color();
 
     for (let i = 0; i < count; i++) {
       const progress = i / count;
-      spiralAngles[i] = progress * Math.PI * 8.0 + acak() * 0.5; // Pusaran spiral 4 putaran
-      spiralRadii[i] = 0.15 + Math.pow(progress, 0.7) * 0.85; // Mengembang spiral ke belakang
-      zOffsets[i] = progress * 8.0;
-      speeds[i] = 1.2 + acak() * 1.5;
+      spiralAngles[i] = progress * Math.PI * 7.5 + acak() * 0.4;
+      spiralRadii[i] = 0.12 + Math.pow(progress, 0.7) * 0.85;
+      zOffsets[i] = progress * 7.5;
+      speeds[i] = 1.3 + acak() * 1.5;
 
-      // Gradasi warna dari cyan di kepala ke emas di ekor
-      c.lerpColors(cCyan, cGold, Math.pow(progress, 0.8));
+      c.lerpColors(cGoldLight, cGoldAmber, Math.pow(progress, 0.75));
       col[i * 3] = c.r;
       col[i * 3 + 1] = c.g;
       col[i * 3 + 2] = c.b;
@@ -248,7 +367,23 @@ function PrimogemSpiralTrail({
   }, [count]);
 
   useFrame((state) => {
-    if (!meshRef.current) return;
+    if (!meshRef.current || !matRef.current) return;
+
+    // KETENTUAN: Spiral dot HANYA muncul saat scroll ketika Primogem sudah berubah emas (tZoom > 0.25)
+    // Saat masih biru (tZoom < 0.25), spiral tersembunyi total (opacity 0)
+    let goldenVisibility = 0;
+    if (tZoom > 0.25) {
+      goldenVisibility = smoothstep((tZoom - 0.25) / 0.75);
+    }
+
+    matRef.current.opacity = goldenVisibility * 0.85;
+
+    if (goldenVisibility <= 0.001) {
+      meshRef.current.visible = false;
+      return;
+    }
+    meshRef.current.visible = true;
+
     const time = state.clock.elapsedTime;
     const { pos, spiralAngles, spiralRadii, zOffsets, speeds } = spiralData;
     const attr = meshRef.current.geometry.attributes.position as THREE.BufferAttribute;
@@ -256,30 +391,31 @@ function PrimogemSpiralTrail({
     const stretch = 1.0 + tZoom * 5.0;
 
     for (let i = 0; i < count; i++) {
-      const angle = spiralAngles[i] + time * speeds[i] * 0.4;
-      const r = spiralRadii[i] * (1.0 + tZoom * 0.5);
-      const zDist = (zOffsets[i] / 8.0) * stretch * 8.0;
+      const angle = spiralAngles[i] + time * speeds[i] * 0.45;
+      const r = spiralRadii[i] * (1.0 + tZoom * 0.4);
+      const zDist = (zOffsets[i] / 7.5) * stretch * 7.5;
 
       pos[i * 3] = primoPos.x + Math.cos(angle) * r;
       pos[i * 3 + 1] = primoPos.y + Math.sin(angle) * r;
-      pos[i * 3 + 2] = primoPos.z + zDist + 0.15;
+      pos[i * 3 + 2] = primoPos.z + zDist + 0.12;
     }
     attr.array.set(pos);
     attr.needsUpdate = true;
   });
 
   return (
-    <points ref={meshRef} frustumCulled={false}>
+    <points ref={meshRef} frustumCulled={false} visible={false}>
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[spiralData.pos, 3]} />
         <bufferAttribute attach="attributes-color" args={[spiralData.col, 3]} />
       </bufferGeometry>
-      {/* Tanpa map tekstur: partikel kotak tajam asli bergaya kristal Teyvat */}
       <pointsMaterial
-        size={0.065}
+        ref={matRef}
+        map={tex ?? undefined}
+        size={0.08}
         vertexColors
         transparent
-        opacity={0.35 + tZoom * 0.6}
+        opacity={0}
         sizeAttenuation
         depthWrite={false}
         blending={THREE.AdditiveBlending}
@@ -288,7 +424,7 @@ function PrimogemSpiralTrail({
   );
 }
 
-// 4. Rig Kamera & Primogem
+// 5. Rig Kamera & Primogem
 function ImmersiveRig({ progres, children }: { progres: Progres; children: React.ReactNode }) {
   const group = useRef<THREE.Group>(null);
   const primoGroup = useRef<THREE.Group>(null);
@@ -359,7 +495,7 @@ function ImmersiveRig({ progres, children }: { progres: Progres; children: React
       const cCyan = new THREE.Color("#38bdf8");
       const cGold = new THREE.Color("#f59e0b");
       lightRef.current.color.lerpColors(cCyan, cGold, tZoom);
-      lightRef.current.intensity = 18 + tZoom * 30;
+      lightRef.current.intensity = 18 + tZoom * 32;
     }
 
     const k = 1 - Math.exp(-4.2 * delta);
@@ -385,9 +521,10 @@ function ImmersiveRig({ progres, children }: { progres: Progres; children: React
     <group ref={group}>
       <group ref={primoGroup}>
         <Primogem3D ref={primoModelRef} />
-        <pointLight ref={lightRef} color="#38bdf8" distance={20} decay={2} intensity={18} />
+        <LayeredHaloAndPulse tZoom={tZoomState.current} />
+        <pointLight ref={lightRef} color="#38bdf8" distance={22} decay={2} intensity={18} />
       </group>
-      <PrimogemSpiralTrail primoPos={primoPosState.current} tZoom={tZoomState.current} />
+      <PrimogemGoldenDotSpiral primoPos={primoPosState.current} tZoom={tZoomState.current} />
       {children}
     </group>
   );
