@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Primogem3D } from "./PrimogemModel";
+import { Primogem3D, PrimogemRef } from "./PrimogemModel";
 
 type Progres = { current: number };
 
@@ -14,7 +14,7 @@ function buatAcak(seed: number) {
   return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296);
 }
 
-// 1. Ladang Bintang Semesta (Cosmic Starfield) di sekeliling dunia 3D
+// 1. Ladang Bintang Semesta (Cosmic Starfield)
 function CosmicStarfield({ count = 1000 }: { count?: number }) {
   const { positions, colors } = useMemo(() => {
     const acak = buatAcak(777);
@@ -25,7 +25,7 @@ function CosmicStarfield({ count = 1000 }: { count?: number }) {
     for (let i = 0; i < count; i++) {
       const theta = acak() * Math.PI * 2;
       const phi = Math.acos(2 * acak() - 1);
-      const r = 25 + acak() * 95;
+      const r = 25 + acak() * 110;
 
       pos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
       pos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
@@ -33,13 +33,13 @@ function CosmicStarfield({ count = 1000 }: { count?: number }) {
 
       const palet = acak();
       if (palet < 0.45) {
-        c.set("#72dbf8"); // Cyan / Primogem blue
+        c.set("#72dbf8"); // Cyan
       } else if (palet < 0.75) {
-        c.set("#e9c46a"); // Emas bintang
+        c.set("#f59e0b"); // Emas
       } else if (palet < 0.9) {
-        c.set("#c084fc"); // Ungu wish 4-star
+        c.set("#c084fc"); // Ungu
       } else {
-        c.set("#ffffff"); // Putih murni
+        c.set("#ffffff"); // Putih
       }
 
       col[i * 3] = c.r;
@@ -68,8 +68,8 @@ function CosmicStarfield({ count = 1000 }: { count?: number }) {
   );
 }
 
-// 2. Debu Kecepatan & Partikel Bintang di Sekeliling Kamera (Warp Speed Dust)
-function WarpSpeedDust({ count = 600 }: { count?: number }) {
+// 2. Debu Kecepatan & Partikel Bintang (Warp Speed Dust) di sekeliling kamera
+function WarpSpeedDust({ count = 650 }: { count?: number }) {
   const ref = useRef<THREE.Group>(null);
   const { camera } = useThree();
 
@@ -77,11 +77,11 @@ function WarpSpeedDust({ count = 600 }: { count?: number }) {
     const acak = buatAcak(333);
     const arr = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
-      const radius = 0.8 + Math.sqrt(acak()) * 7.0;
+      const radius = 0.8 + Math.sqrt(acak()) * 7.5;
       const angle = acak() * Math.PI * 2;
       arr[i * 3] = Math.cos(angle) * radius;
       arr[i * 3 + 1] = Math.sin(angle) * radius;
-      arr[i * 3 + 2] = 12 - acak() * 40;
+      arr[i * 3 + 2] = 12 - acak() * 50;
     }
     return arr;
   }, [count]);
@@ -100,7 +100,7 @@ function WarpSpeedDust({ count = 600 }: { count?: number }) {
   useFrame((state, rawDelta) => {
     const delta = Math.min(rawDelta, 0.05);
     if (ref.current) {
-      ref.current.rotation.z = Math.sin(state.clock.elapsedTime * 0.08) * 0.03;
+      ref.current.rotation.z = Math.sin(state.clock.elapsedTime * 0.08) * 0.02;
     }
 
     const s = sim.current;
@@ -115,11 +115,11 @@ function WarpSpeedDust({ count = 600 }: { count?: number }) {
     s.vel += (inst - s.vel) * Math.min(1, dt * 8);
 
     const v = Math.max(0, s.vel - 0.2);
-    const len = Math.min(2.8, v * 0.15);
+    const len = Math.min(3.2, v * 0.16);
     const lineMesh = ref.current?.children?.[1] as THREE.LineSegments | undefined;
     const mat = lineMesh?.material as THREE.LineBasicMaterial | undefined;
     if (mat) {
-      mat.opacity = Math.min(0.65, v * 0.07);
+      mat.opacity = Math.min(0.7, v * 0.08);
     }
 
     const mag = Math.hypot(dx, dy, dz) || 1;
@@ -154,7 +154,7 @@ function WarpSpeedDust({ count = 600 }: { count?: number }) {
           <bufferAttribute attach="attributes-position" args={[positions, 3]} />
         </bufferGeometry>
         <pointsMaterial
-          size={0.06}
+          size={0.065}
           color="#9ee7ff"
           transparent
           opacity={0.65}
@@ -179,21 +179,108 @@ function WarpSpeedDust({ count = 600 }: { count?: number }) {
   );
 }
 
-// 3. Inti Halo Bersinar di sekitar Primogem
-function PrimogemHalo() {
-  const ref = useRef<THREE.Mesh>(null);
+// 3. Trail Emas & Cyan yang Ditinggalkan oleh Primogem Saat Meluncur Menjauh
+function PrimogemTrail({
+  primoPos,
+  tZoom,
+}: {
+  primoPos: THREE.Vector3;
+  tZoom: number;
+}) {
+  const count = 180;
+  const meshRef = useRef<THREE.Points>(null);
+
+  // History posisi partikel di dalam trail
+  const trailData = useMemo(() => {
+    const acak = buatAcak(888);
+    const pos = new Float32Array(count * 3);
+    const col = new Float32Array(count * 3);
+    const offsets = new Float32Array(count * 3);
+    const speeds = new Float32Array(count);
+
+    const cCyan = new THREE.Color("#38bdf8");
+    const cGold = new THREE.Color("#fbbf24");
+    const c = new THREE.Color();
+
+    for (let i = 0; i < count; i++) {
+      offsets[i * 3] = (acak() - 0.5) * 0.45;
+      offsets[i * 3 + 1] = (acak() - 0.5) * 0.45;
+      offsets[i * 3 + 2] = acak() * 6.5; // membentang di belakang primogem
+      speeds[i] = 0.5 + acak() * 1.5;
+
+      c.lerpColors(cCyan, cGold, acak());
+      col[i * 3] = c.r;
+      col[i * 3 + 1] = c.g;
+      col[i * 3 + 2] = c.b;
+    }
+    return { pos, col, offsets, speeds };
+  }, [count]);
+
   useFrame((state) => {
-    if (!ref.current) return;
+    if (!meshRef.current) return;
+    const time = state.clock.elapsedTime;
+    const { pos, offsets, speeds } = trailData;
+    const attr = meshRef.current.geometry.attributes.position as THREE.BufferAttribute;
+
+    // Trail aktif dan memanjang ke belakang saat scroll berlangsung
+    const trailLength = 1.0 + tZoom * 8.0;
+
+    for (let i = 0; i < count; i++) {
+      const spread = (offsets[i * 3 + 2] / 6.5) * trailLength;
+      const swirlX = Math.sin(time * speeds[i] + i) * (0.08 + spread * 0.05);
+      const swirlY = Math.cos(time * speeds[i] + i) * (0.08 + spread * 0.05);
+
+      pos[i * 3] = primoPos.x + offsets[i * 3] + swirlX;
+      pos[i * 3 + 1] = primoPos.y + offsets[i * 3 + 1] + swirlY;
+      pos[i * 3 + 2] = primoPos.z + spread + 0.2;
+    }
+    attr.array.set(pos);
+    attr.needsUpdate = true;
+  });
+
+  return (
+    <points ref={meshRef} frustumCulled={false}>
+      <bufferGeometry>
+        <bufferAttribute attach="attributes-position" args={[trailData.pos, 3]} />
+        <bufferAttribute attach="attributes-color" args={[trailData.col, 3]} />
+      </bufferGeometry>
+      <pointsMaterial
+        size={0.08}
+        vertexColors
+        transparent
+        opacity={0.4 + tZoom * 0.55}
+        sizeAttenuation
+        depthWrite={false}
+        blending={THREE.AdditiveBlending}
+      />
+    </points>
+  );
+}
+
+// 4. Halo Bersinar di sekitar Primogem (beralih ke pendaran emas saat scroll)
+function PrimogemHalo({ tZoom }: { tZoom: number }) {
+  const ref = useRef<THREE.Mesh>(null);
+  const matRef = useRef<THREE.MeshBasicMaterial>(null);
+
+  const cCyan = useMemo(() => new THREE.Color("#00d2ff"), []);
+  const cGold = useMemo(() => new THREE.Color("#f59e0b"), []);
+
+  useFrame((state) => {
+    if (!ref.current || !matRef.current) return;
     const t = state.clock.elapsedTime;
-    const s = 0.85 + Math.sin(t * 2.0) * 0.05;
+    const s = 0.85 + Math.sin(t * 2.0) * 0.05 + tZoom * 0.25;
     ref.current.scale.set(s, s, s);
+
+    matRef.current.color.lerpColors(cCyan, cGold, tZoom);
+    matRef.current.opacity = 0.08 + tZoom * 0.12;
   });
 
   return (
     <mesh ref={ref}>
       <sphereGeometry args={[0.9, 32, 32]} />
       <meshBasicMaterial
-        color="#00d2ff"
+        ref={matRef}
+        color={cCyan}
         transparent
         opacity={0.08}
         blending={THREE.AdditiveBlending}
@@ -203,15 +290,18 @@ function PrimogemHalo() {
   );
 }
 
-// 4. Rig Kamera & Primogem dengan Zoom-In Imersif ala Portofolio
+// 5. Rig Kamera & Primogem: Primogem Meluncur Menjauh, Kamera Mengikutinya, Tanpa Rotasi
 function ImmersiveRig({ progres, children }: { progres: Progres; children: React.ReactNode }) {
   const group = useRef<THREE.Group>(null);
   const primoGroup = useRef<THREE.Group>(null);
+  const primoModelRef = useRef<PrimogemRef>(null);
   const lightRef = useRef<THREE.PointLight>(null);
   const mouse = useRef(new THREE.Vector2());
+
+  const primoPosState = useRef(new THREE.Vector3(0, 0.55, 0));
   const cur = useRef({
-    pos: new THREE.Vector3(0, 0.4, 9.5),
-    tgt: new THREE.Vector3(0, 0.4, 0),
+    pos: new THREE.Vector3(0, 0.55, 9.5),
+    tgt: new THREE.Vector3(0, 0.55, 0),
   });
   const { camera } = useThree();
 
@@ -226,44 +316,58 @@ function ImmersiveRig({ progres, children }: { progres: Progres; children: React
     return () => window.removeEventListener("mousemove", onMove);
   }, []);
 
-  useFrame((state, delta) => {
+  const [tZoomState, setTZoomState] = useStateRef(0);
+
+  useFrame((_state, delta) => {
     const rawProgress = progres.current; // ~ 0 to 2.2
     const tZoom = smoothstep(Math.min(1, Math.max(0, rawProgress / 1.35)));
+    setTZoomState(tZoom);
 
-    // Primogem diposisikan sedikit di atas tengah (Y=0.55) agar proporsional dan tidak menutupi teks CTA di bawah
-    const primoY = 0.55 + tZoom * 0.35;
-    const primoZ = -6.5 * tZoom;
-    const primoScale = 1.0 + tZoom * 0.85;
+    // Kirim transisi warna (Cyan -> Gold) ke model Primogem
+    if (primoModelRef.current) {
+      primoModelRef.current.setTransition(tZoom);
+    }
+
+    // Gerakan:
+    // Primogem meluncur menjauh ke kedalaman Z (dari Z=0 ke Z=-18)
+    // Primogem menghadap ke depan secara konsisten (TIDAK DIPUTAR)
+    const startPrimoZ = 0;
+    const endPrimoZ = -18.0;
+    const primoZ = startPrimoZ + (endPrimoZ - startPrimoZ) * tZoom;
+    const primoY = 0.55 + tZoom * 0.4;
+
+    primoPosState.current.set(0, primoY, primoZ);
 
     if (primoGroup.current) {
       primoGroup.current.position.set(0, primoY, primoZ);
-      primoGroup.current.scale.set(primoScale, primoScale, primoScale);
-
-      const waktu = state.clock.elapsedTime;
-      primoGroup.current.rotation.y = waktu * 0.4;
-      primoGroup.current.rotation.x = Math.sin(waktu * 0.3) * 0.12;
-      primoGroup.current.rotation.z = Math.cos(waktu * 0.2) * 0.06;
+      // Tanpa rotasi: selalu tegak menghadap kamera
+      primoGroup.current.rotation.set(0, 0, 0);
     }
 
-    if (lightRef.current) {
-      lightRef.current.intensity = 18 + tZoom * 35;
-    }
-
-    // Kamera meluncur masuk mengikuti Primogem
-    const startCam = { x: 0, y: 0.55, z: 9.5 };
-    const endCam = { x: 0, y: primoY, z: -3.5 };
+    // Kamera mengejar / mengikuti Primogem yang meluncur menjauh
+    // Pada awal: Cam di Z=9.5 (jarak ~9.5 unit dari Primogem)
+    // Saat scroll: Cam meluncur ke Z=-9.5 (mengikuti di belakang Primogem dengan jarak dinamis)
+    const startCamZ = 9.5;
+    const endCamZ = primoZ + 8.5; // Kamera tetap mengikuti di belakangnya
 
     const desiredCamPos = {
-      x: startCam.x + (endCam.x - startCam.x) * tZoom + mouse.current.x * 0.4,
-      y: startCam.y + (endCam.y - startCam.y) * tZoom + mouse.current.y * 0.25 + Math.sin(state.clock.elapsedTime * 0.5) * 0.03,
-      z: startCam.z + (endCam.z - startCam.z) * tZoom,
+      x: mouse.current.x * 0.35,
+      y: primoY + mouse.current.y * 0.2,
+      z: startCamZ + (endCamZ - startCamZ) * tZoom,
     };
 
     const desiredTarget = {
-      x: mouse.current.x * 0.12,
+      x: mouse.current.x * 0.1,
       y: primoY,
       z: primoZ,
     };
+
+    if (lightRef.current) {
+      const cCyan = new THREE.Color("#38bdf8");
+      const cGold = new THREE.Color("#f59e0b");
+      lightRef.current.color.lerpColors(cCyan, cGold, tZoom);
+      lightRef.current.intensity = 20 + tZoom * 40;
+    }
 
     const k = 1 - Math.exp(-4.2 * delta);
     const c = cur.current;
@@ -287,19 +391,28 @@ function ImmersiveRig({ progres, children }: { progres: Progres; children: React
   return (
     <group ref={group}>
       <group ref={primoGroup}>
-        <Primogem3D />
-        <PrimogemHalo />
+        <Primogem3D ref={primoModelRef} />
+        <PrimogemHalo tZoom={tZoomState.current} />
         <pointLight ref={lightRef} color="#45d0ff" distance={25} decay={2} intensity={22} />
       </group>
+      <PrimogemTrail primoPos={primoPosState.current} tZoom={tZoomState.current} />
       {children}
     </group>
   );
 }
 
+function useStateRef(initial: number) {
+  const ref = useRef(initial);
+  const set = (val: number) => {
+    ref.current = val;
+  };
+  return [ref, set] as const;
+}
+
 export default function GachaScene({ progres }: { progres: Progres }) {
   return (
     <Canvas
-      camera={{ position: [0, 0.55, 9.5], fov: 45, near: 0.1, far: 180 }}
+      camera={{ position: [0, 0.55, 9.5], fov: 45, near: 0.1, far: 200 }}
       dpr={[1, 2]}
       gl={{ antialias: true, alpha: true }}
       style={{
