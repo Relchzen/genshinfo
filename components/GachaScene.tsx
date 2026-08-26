@@ -14,8 +14,8 @@ function buatAcak(seed: number) {
   return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296);
 }
 
-// Generator tekstur lingkaran lembut & partikel asap tanpa tepi kotak (antialiased radial falloff)
-function buatTeksturPartikel(tipe: "bintang" | "asap" = "bintang") {
+// Generator tekstur lingkaran lembut antialiased (menghilangkan tampilan kotak)
+function buatTeksturPartikel(tipe: "bintang" | "asap" | "debu" = "bintang") {
   if (typeof document === "undefined") return null;
   const canvas = document.createElement("canvas");
   canvas.width = 128;
@@ -29,11 +29,16 @@ function buatTeksturPartikel(tipe: "bintang" | "asap" = "bintang") {
     grad.addColorStop(0.25, "rgba(255, 255, 255, 0.7)");
     grad.addColorStop(0.6, "rgba(255, 255, 255, 0.15)");
     grad.addColorStop(1.0, "rgba(255, 255, 255, 0.0)");
-  } else {
-    // Pendaran awan asap sangat lembut & transparan
+  } else if (tipe === "asap") {
     grad.addColorStop(0.0, "rgba(255, 255, 255, 0.45)");
-    grad.addColorStop(0.35, "rgba(255, 255, 255, 0.2)");
-    grad.addColorStop(0.7, "rgba(255, 255, 255, 0.05)");
+    grad.addColorStop(0.35, "rgba(255, 255, 255, 0.18)");
+    grad.addColorStop(0.7, "rgba(255, 255, 255, 0.04)");
+    grad.addColorStop(1.0, "rgba(255, 255, 255, 0.0)");
+  } else {
+    // Debu angkasa halus
+    grad.addColorStop(0.0, "rgba(255, 255, 255, 0.85)");
+    grad.addColorStop(0.3, "rgba(255, 255, 255, 0.4)");
+    grad.addColorStop(0.75, "rgba(255, 255, 255, 0.08)");
     grad.addColorStop(1.0, "rgba(255, 255, 255, 0.0)");
   }
 
@@ -45,8 +50,8 @@ function buatTeksturPartikel(tipe: "bintang" | "asap" = "bintang") {
   return tex;
 }
 
-// 1. Ladang Bintang Jauh (Cosmic Starfield) yang bersih dan tidak mengganggu
-function CosmicStarfield({ count = 280 }: { count?: number }) {
+// 1. Ladang Bintang Semesta (Cosmic Starfield)
+function CosmicStarfield({ count = 500 }: { count?: number }) {
   const tex = useMemo(() => buatTeksturPartikel("bintang"), []);
 
   const { positions, colors } = useMemo(() => {
@@ -58,18 +63,19 @@ function CosmicStarfield({ count = 280 }: { count?: number }) {
     for (let i = 0; i < count; i++) {
       const theta = acak() * Math.PI * 2;
       const phi = Math.acos(2 * acak() - 1);
-      // Letakkan bintang di kejauhan agar tidak melintas tepat di depan mata
-      const r = 35 + acak() * 90;
+      const r = 25 + acak() * 110;
 
       pos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
       pos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
       pos[i * 3 + 2] = r * Math.cos(phi);
 
       const palet = acak();
-      if (palet < 0.5) {
+      if (palet < 0.45) {
         c.set("#72dbf8"); // Cyan
-      } else if (palet < 0.8) {
+      } else if (palet < 0.75) {
         c.set("#f59e0b"); // Emas
+      } else if (palet < 0.9) {
+        c.set("#c084fc"); // Ungu
       } else {
         c.set("#ffffff"); // Putih
       }
@@ -89,10 +95,10 @@ function CosmicStarfield({ count = 280 }: { count?: number }) {
       </bufferGeometry>
       <pointsMaterial
         map={tex ?? undefined}
-        size={0.12}
+        size={0.16}
         vertexColors
         transparent
-        opacity={0.65}
+        opacity={0.8}
         sizeAttenuation
         depthWrite={false}
         blending={THREE.AdditiveBlending}
@@ -101,52 +107,128 @@ function CosmicStarfield({ count = 280 }: { count?: number }) {
   );
 }
 
-// 2. Partikel Debu Udara Halus (Subtle Stardust Depth)
-function SubtleStardust({ count = 80 }: { count?: number }) {
-  const tex = useMemo(() => buatTeksturPartikel("bintang"), []);
+// 2. Warp Speed Dust (Partikel debu kecepatan di sekeliling kita yang memanjang jadi garis saat kamera meluncur)
+function WarpSpeedDust({ count = 550 }: { count?: number }) {
+  const ref = useRef<THREE.Group>(null);
+  const { camera } = useThree();
+  const tex = useMemo(() => buatTeksturPartikel("debu"), []);
 
   const positions = useMemo(() => {
     const acak = buatAcak(333);
     const arr = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
-      const radius = 2.5 + Math.sqrt(acak()) * 6.5;
+      const radius = 1.0 + Math.sqrt(acak()) * 7.5;
       const angle = acak() * Math.PI * 2;
       arr[i * 3] = Math.cos(angle) * radius;
       arr[i * 3 + 1] = Math.sin(angle) * radius;
-      arr[i * 3 + 2] = 8 - acak() * 32;
+      arr[i * 3 + 2] = 12 - acak() * 52;
     }
     return arr;
   }, [count]);
 
+  const tailScale = useMemo(() => {
+    const acak = buatAcak(555);
+    return Float32Array.from({ length: count }, () => 0.5 + acak() * 0.9);
+  }, [count]);
+
+  const linePositions = useMemo(() => new Float32Array(count * 2 * 3), [count]);
+  const sim = useRef<{ prev: THREE.Vector3 | null; vel: number }>({
+    prev: null,
+    vel: 0,
+  });
+
+  useFrame((state, rawDelta) => {
+    const delta = Math.min(rawDelta, 0.05);
+    if (ref.current) {
+      ref.current.rotation.z = Math.sin(state.clock.elapsedTime * 0.08) * 0.02;
+    }
+
+    const s = sim.current;
+    const p = camera.position;
+    if (!s.prev) s.prev = p.clone();
+    const dt = Math.max(delta, 1e-4);
+    const dx = p.x - s.prev.x;
+    const dy = p.y - s.prev.y;
+    const dz = p.z - s.prev.z;
+    const inst = Math.hypot(dx / dt, dy / dt, dz / dt);
+    s.prev.copy(p);
+    s.vel += (inst - s.vel) * Math.min(1, dt * 8);
+
+    const v = Math.max(0, s.vel - 0.2);
+    const len = Math.min(3.2, v * 0.16);
+    const lineMesh = ref.current?.children?.[1] as THREE.LineSegments | undefined;
+    const mat = lineMesh?.material as THREE.LineBasicMaterial | undefined;
+    if (mat) {
+      mat.opacity = Math.min(0.65, v * 0.07);
+    }
+
+    const mag = Math.hypot(dx, dy, dz) || 1;
+    const ux = -dx / mag;
+    const uy = -dy / mag;
+    const uz = -dz / mag;
+
+    const attr = lineMesh?.geometry?.attributes?.position as THREE.BufferAttribute | undefined;
+    if (attr) {
+      for (let i = 0; i < count; i++) {
+        const x = positions[i * 3];
+        const y = positions[i * 3 + 1];
+        const z = positions[i * 3 + 2];
+        const l = len * tailScale[i];
+
+        linePositions[i * 6] = x;
+        linePositions[i * 6 + 1] = y;
+        linePositions[i * 6 + 2] = z;
+        linePositions[i * 6 + 3] = x + ux * l;
+        linePositions[i * 6 + 4] = y + uy * l;
+        linePositions[i * 6 + 5] = z + uz * l;
+      }
+      attr.array.set(linePositions);
+      attr.needsUpdate = true;
+    }
+  });
+
   return (
-    <points frustumCulled={false}>
-      <bufferGeometry>
-        <bufferAttribute attach="attributes-position" args={[positions, 3]} />
-      </bufferGeometry>
-      <pointsMaterial
-        map={tex ?? undefined}
-        size={0.06}
-        color="#bae6fd"
-        transparent
-        opacity={0.35}
-        sizeAttenuation
-        depthWrite={false}
-        blending={THREE.AdditiveBlending}
-      />
-    </points>
+    <group ref={ref}>
+      <points frustumCulled={false}>
+        <bufferGeometry>
+          <bufferAttribute attach="attributes-position" args={[positions, 3]} />
+        </bufferGeometry>
+        <pointsMaterial
+          map={tex ?? undefined}
+          size={0.085}
+          color="#9ee7ff"
+          transparent
+          opacity={0.65}
+          sizeAttenuation
+          depthWrite={false}
+          blending={THREE.AdditiveBlending}
+        />
+      </points>
+      <lineSegments frustumCulled={false}>
+        <bufferGeometry>
+          <bufferAttribute attach="attributes-position" args={[linePositions, 3]} />
+        </bufferGeometry>
+        <lineBasicMaterial
+          color="#64d8ff"
+          transparent
+          opacity={0}
+          blending={THREE.AdditiveBlending}
+          depthWrite={false}
+        />
+      </lineSegments>
+    </group>
   );
 }
 
-// 3. Jejak Asap Halus Ethereal (Wispy Celestial Smoke Trail)
-// Partikel lembut ringkas (hanya 45 partikel) yang tertinggal di belakang Primogem
-function CelestialSmokeTrail({
+// 3. Jejak Asap Halus Ringkas di Belakang Primogem (Minimalis & Elegan, tidak menutupi primogem)
+function SubtleSmokeTrail({
   primoPos,
   tZoom,
 }: {
   primoPos: THREE.Vector3;
   tZoom: number;
 }) {
-  const count = 45;
+  const count = 24; // Sangat hemat dan minimalis agar Primogem tetap jernih
   const meshRef = useRef<THREE.Points>(null);
   const tex = useMemo(() => buatTeksturPartikel("asap"), []);
 
@@ -163,11 +245,11 @@ function CelestialSmokeTrail({
 
     for (let i = 0; i < count; i++) {
       const progress = i / count;
-      offsets[i * 3] = (acak() - 0.5) * 0.25;
-      offsets[i * 3 + 1] = (acak() - 0.5) * 0.25;
-      offsets[i * 3 + 2] = progress * 6.5;
+      offsets[i * 3] = (acak() - 0.5) * 0.2;
+      offsets[i * 3 + 1] = (acak() - 0.5) * 0.2;
+      offsets[i * 3 + 2] = progress * 4.5;
 
-      turbSpeeds[i] = 0.6 + acak() * 1.2;
+      turbSpeeds[i] = 0.5 + acak() * 1.0;
 
       c.lerpColors(cCyan, cGold, progress);
       col[i * 3] = c.r;
@@ -183,15 +265,15 @@ function CelestialSmokeTrail({
     const { pos, offsets, turbSpeeds } = smokeData;
     const attr = meshRef.current.geometry.attributes.position as THREE.BufferAttribute;
 
-    const stretch = 0.8 + tZoom * 5.5;
+    const stretch = 0.5 + tZoom * 4.2;
 
     for (let i = 0; i < count; i++) {
-      const zNorm = offsets[i * 3 + 2] / 6.5;
+      const zNorm = offsets[i * 3 + 2] / 4.5;
       const currentZDist = zNorm * stretch;
-      const expansion = 1.0 + zNorm * 1.4;
+      const expansion = 1.0 + zNorm * 1.2;
 
-      const swirlX = Math.sin(time * turbSpeeds[i] + i) * (0.04 + zNorm * 0.12);
-      const swirlY = Math.cos(time * turbSpeeds[i] * 0.8 + i) * (0.04 + zNorm * 0.1);
+      const swirlX = Math.sin(time * turbSpeeds[i] + i) * (0.03 + zNorm * 0.08);
+      const swirlY = Math.cos(time * turbSpeeds[i] * 0.8 + i) * (0.03 + zNorm * 0.08);
 
       pos[i * 3] = primoPos.x + offsets[i * 3] * expansion + swirlX;
       pos[i * 3 + 1] = primoPos.y + offsets[i * 3] * expansion + swirlY;
@@ -209,10 +291,10 @@ function CelestialSmokeTrail({
       </bufferGeometry>
       <pointsMaterial
         map={tex ?? undefined}
-        size={0.32}
+        size={0.24}
         vertexColors
         transparent
-        opacity={0.15 + tZoom * 0.35}
+        opacity={0.12 + tZoom * 0.25}
         sizeAttenuation
         depthWrite={false}
         blending={THREE.AdditiveBlending}
@@ -292,7 +374,7 @@ function ImmersiveRig({ progres, children }: { progres: Progres; children: React
       const cCyan = new THREE.Color("#38bdf8");
       const cGold = new THREE.Color("#f59e0b");
       lightRef.current.color.lerpColors(cCyan, cGold, tZoom);
-      lightRef.current.intensity = 16 + tZoom * 28;
+      lightRef.current.intensity = 18 + tZoom * 30;
     }
 
     const k = 1 - Math.exp(-4.2 * delta);
@@ -320,7 +402,7 @@ function ImmersiveRig({ progres, children }: { progres: Progres; children: React
         <Primogem3D ref={primoModelRef} />
         <pointLight ref={lightRef} color="#38bdf8" distance={20} decay={2} intensity={18} />
       </group>
-      <CelestialSmokeTrail primoPos={primoPosState.current} tZoom={tZoomState.current} />
+      <SubtleSmokeTrail primoPos={primoPosState.current} tZoom={tZoomState.current} />
       {children}
     </group>
   );
@@ -355,7 +437,7 @@ export default function GachaScene({ progres }: { progres: Progres }) {
       <directionalLight position={[-8, -8, -10]} intensity={1.0} color="#0088ff" />
       <CosmicStarfield />
       <ImmersiveRig progres={progres}>
-        <SubtleStardust count={80} />
+        <WarpSpeedDust count={550} />
       </ImmersiveRig>
     </Canvas>
   );
