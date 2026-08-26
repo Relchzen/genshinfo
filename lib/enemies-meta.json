@@ -1,0 +1,423 @@
+[
+  {
+    "slug": "abyss-herald",
+    "type": "Elite Enemies",
+    "family": "The Abyss",
+    "elements": [
+      "Hydro",
+      "Cryo"
+    ]
+  },
+  {
+    "slug": "abyss-lector",
+    "type": "Elite Enemies",
+    "family": "The Abyss",
+    "elements": [
+      "Pyro",
+      "Electro"
+    ]
+  },
+  {
+    "slug": "abyss-mage",
+    "type": "Elite Enemies",
+    "family": "The Abyss",
+    "elements": [
+      "Hydro",
+      "Pyro",
+      "Cryo",
+      "Electro"
+    ]
+  },
+  {
+    "slug": "bathysmal-vishap",
+    "type": "Elite Enemies",
+    "family": "Mystical Beasts",
+    "elements": [
+      "Hydro"
+    ]
+  },
+  {
+    "slug": "bathysmal-vishap-hatchling",
+    "type": "Elite Enemies",
+    "family": "Mystical Beasts",
+    "elements": [
+      "Cryo",
+      "Electro",
+      "Hydro"
+    ]
+  },
+  {
+    "slug": "cicin",
+    "type": "Common Enemies",
+    "family": "Mystical Beasts",
+    "elements": [
+      "Cryo",
+      "Electro",
+      "Hydro"
+    ]
+  },
+  {
+    "slug": "consecrated-beast",
+    "type": "Elite Enemies",
+    "family": "Mystical Beasts",
+    "elements": [
+      "Anemo",
+      "Pyro",
+      "Electro"
+    ]
+  },
+  {
+    "slug": "defense-mechanism",
+    "type": "Unique Enemies",
+    "family": "Unknown",
+    "elements": [
+      "Pyro",
+      "Cryo",
+      "Hydro",
+      "Electro"
+    ]
+  },
+  {
+    "slug": "eye-of-the-storm",
+    "type": "Elite Enemies",
+    "family": "Elemental Lifeforms",
+    "elements": [
+      "Hydro",
+      "Pyro",
+      "Cryo"
+    ]
+  },
+  {
+    "slug": "fatui-agent",
+    "type": "Elite Enemies",
+    "family": "Fatui",
+    "elements": [
+      "Pyro"
+    ]
+  },
+  {
+    "slug": "fatui-cicin-mage",
+    "type": "Elite Enemies",
+    "family": "Fatui",
+    "elements": null
+  },
+  {
+    "slug": "fatui-skirmisher",
+    "type": "Common Enemies",
+    "family": "Fatui",
+    "elements": [
+      "Geo",
+      "Pyro",
+      "Cryo",
+      "Hydro",
+      "Anemo",
+      "Electro"
+    ]
+  },
+  {
+    "slug": "floating-fungus",
+    "type": "Common Enemies",
+    "family": "Mystical Beasts",
+    "elements": [
+      "Anemo",
+      "Dendro",
+      "Hydro"
+    ]
+  },
+  {
+    "slug": "geovishap",
+    "type": "Elite Enemies",
+    "family": "Mythical Beasts",
+    "elements": [
+      "Geo"
+    ]
+  },
+  {
+    "slug": "geovishap-hatchling",
+    "type": "Elite Enemies",
+    "family": "Mythical Beasts",
+    "elements": [
+      "Geo"
+    ]
+  },
+  {
+    "slug": "grounded-shroom",
+    "type": "Common Enemies",
+    "family": "Mystical Beasts",
+    "elements": [
+      "Geo",
+      "Hydro"
+    ]
+  },
+  {
+    "slug": "hilichurl",
+    "type": "Common Enemies",
+    "family": "Hilichurls",
+    "elements": [
+      "Pyro",
+      "Cryo",
+      "Electro",
+      "Dendro"
+    ]
+  },
+  {
+    "slug": "hilichurl-shooter",
+    "type": "Common Enemies",
+    "family": "Hilichurls",
+    "elements": [
+      "Electro",
+      "Pyro",
+      "Cryo"
+    ]
+  },
+  {
+    "slug": "kairagi",
+    "type": "Common Enemies",
+    "family": "Other Human Factions",
+    "elements": [
+      "Electro",
+      "Pyro"
+    ]
+  },
+  {
+    "slug": "large-slime",
+    "type": "Common Enemies",
+    "family": "Slime",
+    "elements": [
+      "Anemo",
+      "Geo",
+      "Dendro",
+      "Hydro",
+      "Cyro",
+      "Mutant",
+      "Pyro",
+      "Electro"
+    ]
+  },
+  {
+    "slug": "lawachurl",
+    "type": "Elite Enemies",
+    "family": "Hilichurls",
+    "elements": [
+      "Cryo",
+      "Geo"
+    ]
+  },
+  {
+    "slug": "mirror-maiden",
+    "type": "Elite Enemies",
+    "family": "Fatui",
+    "elements": [
+      "Hydro"
+    ]
+  },
+  {
+    "slug": "mitachurl",
+    "type": "Elite Enemies",
+    "family": "Hilichurls",
+    "elements": [
+      "Pyro"
+    ]
+  },
+  {
+    "slug": "nobushi",
+    "type": "Common Enemies",
+    "family": "Other Human Factions",
+    "elements": [
+      "Electro",
+      "Pyro"
+    ]
+  },
+  {
+    "slug": "praetorian-golem",
+    "type": "Elite Enemies",
+    "family": "Mystical Beasts",
+    "elements": [
+      "Geo",
+      "Pyro"
+    ]
+  },
+  {
+    "slug": "primal-construct",
+    "type": "Elite Enemies",
+    "family": "Automatons",
+    "elements": [
+      "Dendro"
+    ]
+  },
+  {
+    "slug": "rifthound",
+    "type": "Elite Enemies",
+    "family": "The Abyss",
+    "elements": [
+      "Geo",
+      "Electro"
+    ]
+  },
+  {
+    "slug": "ruin-drake",
+    "type": "Elite Enemies",
+    "family": "Automatons",
+    "elements": [
+      "Anemo",
+      "Cryo",
+      "Dendro",
+      "Electro",
+      "Geo",
+      "Hydro",
+      "Pyro"
+    ]
+  },
+  {
+    "slug": "ruin-grader",
+    "type": "Elite Enemies",
+    "family": "Automatons",
+    "elements": [
+      "Pyro"
+    ]
+  },
+  {
+    "slug": "ruin-guard",
+    "type": "Elite Enemies",
+    "family": "Automatons",
+    "elements": [
+      "Pyro"
+    ]
+  },
+  {
+    "slug": "ruin-hunter",
+    "type": "Elite Enemies",
+    "family": "Automatons",
+    "elements": [
+      "Pyro"
+    ]
+  },
+  {
+    "slug": "ruin-sentinel",
+    "type": "Elite Enemies",
+    "family": "Automatons",
+    "elements": [
+      "N/A"
+    ]
+  },
+  {
+    "slug": "samachurl",
+    "type": "Common Enemies",
+    "family": "Hilichurls",
+    "elements": [
+      "Anemo",
+      "Geo",
+      "Dendro",
+      "Hydro",
+      "Cydro"
+    ]
+  },
+  {
+    "slug": "slime",
+    "type": "Common Enemies",
+    "family": "Slime",
+    "elements": [
+      "Anemo",
+      "Geo",
+      "Dendro",
+      "Hydro",
+      "Cydro"
+    ]
+  },
+  {
+    "slug": "specter",
+    "type": "Common Enemies",
+    "family": "Elemental Lifeforms",
+    "elements": [
+      "Anemo",
+      "Geo",
+      "Dendro",
+      "Hydro",
+      "Cyro",
+      "Pyro",
+      "Electro"
+    ]
+  },
+  {
+    "slug": "stretchy-fungus",
+    "type": "Common Enemies",
+    "family": "Mystical Beasts",
+    "elements": [
+      "Anemo",
+      "Electro",
+      "Geo",
+      "Pyro"
+    ]
+  },
+  {
+    "slug": "the-black-serpent",
+    "type": "Elite Enemies",
+    "family": "The Abyss",
+    "elements": [
+      "Cryo",
+      "Hydro",
+      "Pyro",
+      "Anemo",
+      "Geo"
+    ]
+  },
+  {
+    "slug": "the-eremite",
+    "type": "Common Enemies",
+    "family": "Other Human Factions",
+    "elements": [
+      "Electro",
+      "Pyro",
+      "Cryo",
+      "Hydro",
+      "Geo",
+      "Anemo",
+      "Dendro"
+    ]
+  },
+  {
+    "slug": "the-great-snowboar-king",
+    "type": "Elite Enemies",
+    "family": "Unique Enemies",
+    "elements": []
+  },
+  {
+    "slug": "treasure-hoarder",
+    "type": "Common Enemies",
+    "family": "Treasure Hoarders",
+    "elements": [
+      "Cryo",
+      "Electro",
+      "Hydro",
+      "Pyro"
+    ]
+  },
+  {
+    "slug": "whirling-fungus",
+    "type": "Common Enemies",
+    "family": "Mystical Beasts",
+    "elements": [
+      "Cryo",
+      "Electro",
+      "Pyro"
+    ]
+  },
+  {
+    "slug": "whopperflower",
+    "type": "Common Enemies",
+    "family": "Mystical Beasts",
+    "elements": [
+      "Cryo",
+      "Pyro"
+    ]
+  },
+  {
+    "slug": "winged-shroom",
+    "type": "Common Enemies",
+    "family": "Mystical Beasts",
+    "elements": [
+      "Cryo",
+      "Dendro"
+    ]
+  }
+]

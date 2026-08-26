@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+/* ===== Design tokens — "Malam di atas Teyvat" (design.md) ===== */
+:root {
+  --bg: #0a0e1a;
+  --bg-raised: #111827;
+  --ink: #f1f5f9;
+  --muted: #94a3b8;
+  --gold: #e9c46a;
+  --purple4: #a78bfa;
+
+  /* Warna elemental */
+  --el-pyro: #ef7938;
+  --el-hydro: #4cc2f1;
+  --el-anemo: #74c2a8;
+  --el-electro: #af8ec1;
+  --el-dendro: #a5c83b;
+  --el-geo: #f0b632;
+  --el-cryo: #9fd6e3;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-raised: var(--bg-raised);
+  --color-ink: var(--ink);
+  --color-mute: var(--muted);
+  --color-gold: var(--gold);
+  --color-r4: var(--purple4);
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--gold);
+  color: #0a0e1a;
+}
+
+/* Label kecil khas: uppercase, renggang */
+.label-kecil {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Garis pembatas halus */
+.garis {
+  border-color: rgba(241, 245, 249, 0.08);
+}
+
+/* Scrollbar tipis senada */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 999px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

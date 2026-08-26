@@ -1,0 +1,554 @@
+[
+  {
+    "slug": "albedo",
+    "vision": "Geo",
+    "rarity": 5,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "alhaitham",
+    "vision": "Dendro",
+    "rarity": 5,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "aloy",
+    "vision": "Cryo",
+    "rarity": 5,
+    "weapon": "Bow"
+  },
+  {
+    "slug": "amber",
+    "vision": "Pyro",
+    "rarity": 4,
+    "weapon": "Bow"
+  },
+  {
+    "slug": "arataki-itto",
+    "vision": "Geo",
+    "rarity": 5,
+    "weapon": "Claymore"
+  },
+  {
+    "slug": "arlecchino",
+    "vision": "Pyro",
+    "rarity": 5,
+    "weapon": "Polearm"
+  },
+  {
+    "slug": "ayaka",
+    "vision": "Cryo",
+    "rarity": 5,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "ayato",
+    "vision": "Hydro",
+    "rarity": 5,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "baizhu",
+    "vision": "Dendro",
+    "rarity": 5,
+    "weapon": "Catalyst"
+  },
+  {
+    "slug": "barbara",
+    "vision": "Hydro",
+    "rarity": 4,
+    "weapon": "Catalyst"
+  },
+  {
+    "slug": "beidou",
+    "vision": "Electro",
+    "rarity": 4,
+    "weapon": "Claymore"
+  },
+  {
+    "slug": "bennett",
+    "vision": "Pyro",
+    "rarity": 4,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "candace",
+    "vision": "Hydro",
+    "rarity": 4,
+    "weapon": "Polearm"
+  },
+  {
+    "slug": "charlotte",
+    "vision": "Cryo",
+    "rarity": 4,
+    "weapon": "Catalyst"
+  },
+  {
+    "slug": "chevreuse",
+    "vision": "Pyro",
+    "rarity": 4,
+    "weapon": "Polearm"
+  },
+  {
+    "slug": "chiori",
+    "vision": "Geo",
+    "rarity": 5,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "chongyun",
+    "vision": "Cryo",
+    "rarity": 4,
+    "weapon": "Claymore"
+  },
+  {
+    "slug": "clorinde",
+    "vision": "Electro",
+    "rarity": 5,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "collei",
+    "vision": "Dendro",
+    "rarity": 4,
+    "weapon": "Bow"
+  },
+  {
+    "slug": "cyno",
+    "vision": "Electro",
+    "rarity": 5,
+    "weapon": "Polearm"
+  },
+  {
+    "slug": "dehya",
+    "vision": "Pyro",
+    "rarity": 5,
+    "weapon": "Claymore"
+  },
+  {
+    "slug": "diluc",
+    "vision": "Pyro",
+    "rarity": 5,
+    "weapon": "Claymore"
+  },
+  {
+    "slug": "diona",
+    "vision": "Cryo",
+    "rarity": 4,
+    "weapon": "Bow"
+  },
+  {
+    "slug": "dori",
+    "vision": "Electro",
+    "rarity": 4,
+    "weapon": "Claymore"
+  },
+  {
+    "slug": "emilie",
+    "vision": "Dendro",
+    "rarity": 5,
+    "weapon": "Polearm"
+  },
+  {
+    "slug": "eula",
+    "vision": "Cryo",
+    "rarity": 5,
+    "weapon": "Claymore"
+  },
+  {
+    "slug": "faruzan",
+    "vision": "Anemo",
+    "rarity": 4,
+    "weapon": "Bow"
+  },
+  {
+    "slug": "fischl",
+    "vision": "Electro",
+    "rarity": 4,
+    "weapon": "Bow"
+  },
+  {
+    "slug": "freminet",
+    "vision": "Cryo",
+    "rarity": 4,
+    "weapon": "Claymore"
+  },
+  {
+    "slug": "furina",
+    "vision": "Hydro",
+    "rarity": 5,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "gaming",
+    "vision": "Pyro",
+    "rarity": 4,
+    "weapon": "Claymore"
+  },
+  {
+    "slug": "ganyu",
+    "vision": "Cryo",
+    "rarity": 5,
+    "weapon": "Bow"
+  },
+  {
+    "slug": "gorou",
+    "vision": "Geo",
+    "rarity": 4,
+    "weapon": "Bow"
+  },
+  {
+    "slug": "hu-tao",
+    "vision": "Pyro",
+    "rarity": 5,
+    "weapon": "Polearm"
+  },
+  {
+    "slug": "jean",
+    "vision": "Anemo",
+    "rarity": 5,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "kachina",
+    "vision": "Geo",
+    "rarity": 4,
+    "weapon": "Polearm"
+  },
+  {
+    "slug": "kaeya",
+    "vision": "Cryo",
+    "rarity": 4,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "kaveh",
+    "vision": "Dendro",
+    "rarity": 4,
+    "weapon": "Claymore"
+  },
+  {
+    "slug": "kazuha",
+    "vision": "Anemo",
+    "rarity": 5,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "keqing",
+    "vision": "Electro",
+    "rarity": 5,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "kinich",
+    "vision": "Dendro",
+    "rarity": 5,
+    "weapon": "Claymore"
+  },
+  {
+    "slug": "kirara",
+    "vision": "Dendro",
+    "rarity": 4,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "klee",
+    "vision": "Pyro",
+    "rarity": 5,
+    "weapon": "Catalyst"
+  },
+  {
+    "slug": "kokomi",
+    "vision": "Hydro",
+    "rarity": 5,
+    "weapon": "Catalyst"
+  },
+  {
+    "slug": "kuki-shinobu",
+    "vision": "Electro",
+    "rarity": 4,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "layla",
+    "vision": "Cryo",
+    "rarity": 4,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "lisa",
+    "vision": "Electro",
+    "rarity": 4,
+    "weapon": "Catalyst"
+  },
+  {
+    "slug": "lynette",
+    "vision": "Anemo",
+    "rarity": 4,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "lyney",
+    "vision": "Pyro",
+    "rarity": 5,
+    "weapon": "Bow"
+  },
+  {
+    "slug": "mika",
+    "vision": "Cryo",
+    "rarity": 4,
+    "weapon": "Polearm"
+  },
+  {
+    "slug": "mona",
+    "vision": "Hydro",
+    "rarity": 5,
+    "weapon": "Catalyst"
+  },
+  {
+    "slug": "mualani",
+    "vision": "Hydro",
+    "rarity": 5,
+    "weapon": "Catalyst"
+  },
+  {
+    "slug": "nahida",
+    "vision": "Dendro",
+    "rarity": 5,
+    "weapon": "Catalyst"
+  },
+  {
+    "slug": "navia",
+    "vision": "Geo",
+    "rarity": 5,
+    "weapon": "Claymore"
+  },
+  {
+    "slug": "neuvillette",
+    "vision": "Hydro",
+    "rarity": 5,
+    "weapon": "Catalyst"
+  },
+  {
+    "slug": "nilou",
+    "vision": "Hydro",
+    "rarity": 5,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "ningguang",
+    "vision": "Geo",
+    "rarity": 4,
+    "weapon": "Catalyst"
+  },
+  {
+    "slug": "noelle",
+    "vision": "Geo",
+    "rarity": 4,
+    "weapon": "Claymore"
+  },
+  {
+    "slug": "qiqi",
+    "vision": "Cryo",
+    "rarity": 5,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "raiden",
+    "vision": "Electro",
+    "rarity": 5,
+    "weapon": "Polearm"
+  },
+  {
+    "slug": "razor",
+    "vision": "Electro",
+    "rarity": 4,
+    "weapon": "Claymore"
+  },
+  {
+    "slug": "rosaria",
+    "vision": "Cryo",
+    "rarity": 4,
+    "weapon": "Polearm"
+  },
+  {
+    "slug": "sara",
+    "vision": "Electro",
+    "rarity": 4,
+    "weapon": "Bow"
+  },
+  {
+    "slug": "sayu",
+    "vision": "Anemo",
+    "rarity": 4,
+    "weapon": "Claymore"
+  },
+  {
+    "slug": "sethos",
+    "vision": "Electro",
+    "rarity": 4,
+    "weapon": "Bow"
+  },
+  {
+    "slug": "shenhe",
+    "vision": "Cryo",
+    "rarity": 5,
+    "weapon": "Polearm"
+  },
+  {
+    "slug": "shikanoin-heizou",
+    "vision": "Anemo",
+    "rarity": 4,
+    "weapon": "Catalyst"
+  },
+  {
+    "slug": "sigewinne",
+    "vision": "Hydro",
+    "rarity": 5,
+    "weapon": "Bow"
+  },
+  {
+    "slug": "sucrose",
+    "vision": "Anemo",
+    "rarity": 4,
+    "weapon": "Catalyst"
+  },
+  {
+    "slug": "tartaglia",
+    "vision": "Hydro",
+    "rarity": 5,
+    "weapon": "Bow"
+  },
+  {
+    "slug": "thoma",
+    "vision": "Pyro",
+    "rarity": 4,
+    "weapon": "Polearm"
+  },
+  {
+    "slug": "tighnari",
+    "vision": "Dendro",
+    "rarity": 5,
+    "weapon": "Bow"
+  },
+  {
+    "slug": "traveler-anemo",
+    "vision": "Anemo",
+    "rarity": 5,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "traveler-dendro",
+    "vision": "Dendro",
+    "rarity": 5,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "traveler-electro",
+    "vision": "Electro",
+    "rarity": 5,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "traveler-geo",
+    "vision": "Geo",
+    "rarity": 5,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "traveler-hydro",
+    "vision": "Hydro",
+    "rarity": 5,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "venti",
+    "vision": "Anemo",
+    "rarity": 5,
+    "weapon": "Bow"
+  },
+  {
+    "slug": "wanderer",
+    "vision": "Anemo",
+    "rarity": 5,
+    "weapon": "Catalyst"
+  },
+  {
+    "slug": "wriothesley",
+    "vision": "Cryo",
+    "rarity": 5,
+    "weapon": "Catalyst"
+  },
+  {
+    "slug": "xiangling",
+    "vision": "Pyro",
+    "rarity": 4,
+    "weapon": "Polearm"
+  },
+  {
+    "slug": "xianyun",
+    "vision": "Anemo",
+    "rarity": 5,
+    "weapon": "Catalyst"
+  },
+  {
+    "slug": "xiao",
+    "vision": "Anemo",
+    "rarity": 5,
+    "weapon": "Polearm"
+  },
+  {
+    "slug": "xingqiu",
+    "vision": "Hydro",
+    "rarity": 4,
+    "weapon": "Sword"
+  },
+  {
+    "slug": "xinyan",
+    "vision": "Pyro",
+    "rarity": 4,
+    "weapon": "Claymore"
+  },
+  {
+    "slug": "yae-miko",
+    "vision": "Electro",
+    "rarity": 5,
+    "weapon": "Catalyst"
+  },
+  {
+    "slug": "yanfei",
+    "vision": "Pyro",
+    "rarity": 4,
+    "weapon": "Catalyst"
+  },
+  {
+    "slug": "yaoyao",
+    "vision": "Dendro",
+    "rarity": 4,
+    "weapon": "Polearm"
+  },
+  {
+    "slug": "yelan",
+    "vision": "Hydro",
+    "rarity": 5,
+    "weapon": "Bow"
+  },
+  {
+    "slug": "yoimiya",
+    "vision": "Pyro",
+    "rarity": 5,
+    "weapon": "Bow"
+  },
+  {
+    "slug": "yun-jin",
+    "vision": "Geo",
+    "rarity": 4,
+    "weapon": "Polearm"
+  },
+  {
+    "slug": "zhongli",
+    "vision": "Geo",
+    "rarity": 5,
+    "weapon": "Polearm"
+  }
+]

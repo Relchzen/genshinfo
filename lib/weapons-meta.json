@@ -1,0 +1,947 @@
+[
+  {
+    "slug": "a-thousand-floating-dreams",
+    "rarity": 5,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "akuoumaru",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "alley-hunter",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "amber-catalyst",
+    "rarity": 3,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "amenoma-kageuchi",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "amos-bow",
+    "rarity": 5,
+    "type": "Bow"
+  },
+  {
+    "slug": "apprentice-s-notes",
+    "rarity": 1,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "aqua-simulacra",
+    "rarity": 5,
+    "type": "Bow"
+  },
+  {
+    "slug": "aquila-favonia",
+    "rarity": 5,
+    "type": "Sword"
+  },
+  {
+    "slug": "ballad-of-the-boundless-blue",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "ballad-of-the-fjords",
+    "rarity": 4,
+    "type": "Polearm"
+  },
+  {
+    "slug": "beacon-of-the-reed-sea",
+    "rarity": 5,
+    "type": "Claymore"
+  },
+  {
+    "slug": "beginner-s-protector",
+    "rarity": 1,
+    "type": "Polearm"
+  },
+  {
+    "slug": "black-tassel",
+    "rarity": 3,
+    "type": "Polearm"
+  },
+  {
+    "slug": "blackcliff-agate",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "blackcliff-amulet",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "blackcliff-longsword",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "blackcliff-pole",
+    "rarity": 4,
+    "type": "Polearm"
+  },
+  {
+    "slug": "blackcliff-slasher",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "blackcliff-warbow",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "bloodtainted-greatsword",
+    "rarity": 3,
+    "type": "Claymore"
+  },
+  {
+    "slug": "calamity-queller",
+    "rarity": 5,
+    "type": "Polearm"
+  },
+  {
+    "slug": "cashflow-supervision",
+    "rarity": 5,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "cinnabar-spindle",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "compound-bow",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "cool-steel",
+    "rarity": 3,
+    "type": "Sword"
+  },
+  {
+    "slug": "crane-s-echoing-call",
+    "rarity": 5,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "crescent-pike",
+    "rarity": 4,
+    "type": "Polearm"
+  },
+  {
+    "slug": "crimson-moon-s-semblance",
+    "rarity": 5,
+    "type": "Polearm"
+  },
+  {
+    "slug": "dark-iron-sword",
+    "rarity": 3,
+    "type": "Sword"
+  },
+  {
+    "slug": "deathmatch",
+    "rarity": 4,
+    "type": "Polearm"
+  },
+  {
+    "slug": "debate-club",
+    "rarity": 3,
+    "type": "Claymore"
+  },
+  {
+    "slug": "dialogues-of-the-desert-sages",
+    "rarity": 4,
+    "type": "Polearm"
+  },
+  {
+    "slug": "dodoco-tales",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "dragon-s-bane",
+    "rarity": 4,
+    "type": "Polearm"
+  },
+  {
+    "slug": "dragonspine-spear",
+    "rarity": 4,
+    "type": "Polearm"
+  },
+  {
+    "slug": "dull-blade",
+    "rarity": 1,
+    "type": "Sword"
+  },
+  {
+    "slug": "ebony-bow",
+    "rarity": 3,
+    "type": "Bow"
+  },
+  {
+    "slug": "elegy-for-the-end",
+    "rarity": 5,
+    "type": "Bow"
+  },
+  {
+    "slug": "emerald-orb",
+    "rarity": 3,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "end-of-the-line",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "engulfing-lightning",
+    "rarity": 5,
+    "type": "Polearm"
+  },
+  {
+    "slug": "everlasting-moonglow",
+    "rarity": 5,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "eye-of-perception",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "fading-twilight",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "favonius-codex",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "favonius-greatsword",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "favonius-lance",
+    "rarity": 4,
+    "type": "Polearm"
+  },
+  {
+    "slug": "favonius-sword",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "favonius-warbow",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "ferrous-shadow",
+    "rarity": 3,
+    "type": "Claymore"
+  },
+  {
+    "slug": "festering-desire",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "fillet-blade",
+    "rarity": 3,
+    "type": "Sword"
+  },
+  {
+    "slug": "finale-of-the-deep",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "fleuve-cendre-ferryman",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "flowing-purity",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "forest-regalia",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "freedom-sworn",
+    "rarity": 5,
+    "type": "Sword"
+  },
+  {
+    "slug": "frostbearer",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "fruit-of-fulfillment",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "hakushin-ring",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "halberd",
+    "rarity": 3,
+    "type": "Polearm"
+  },
+  {
+    "slug": "hamayumi",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "haran-geppaku-futsu",
+    "rarity": 5,
+    "type": "Sword"
+  },
+  {
+    "slug": "harbinger-of-dawn",
+    "rarity": 3,
+    "type": "Sword"
+  },
+  {
+    "slug": "hunter-s-bow",
+    "rarity": 1,
+    "type": "Bow"
+  },
+  {
+    "slug": "hunter-s-path",
+    "rarity": 5,
+    "type": "Bow"
+  },
+  {
+    "slug": "ibis-piercer",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "iron-point",
+    "rarity": 2,
+    "type": "Polearm"
+  },
+  {
+    "slug": "iron-sting",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "jadefall-s-splendor",
+    "rarity": 5,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "kagotsurube-isshin",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "kagura-s-verity",
+    "rarity": 5,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "katsuragikiri-nagamasa",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "key-of-khaj-nisut",
+    "rarity": 5,
+    "type": "Sword"
+  },
+  {
+    "slug": "king-s-squire",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "kitain-cross-spear",
+    "rarity": 4,
+    "type": "Polearm"
+  },
+  {
+    "slug": "light-of-foliar-incision",
+    "rarity": 5,
+    "type": "Sword"
+  },
+  {
+    "slug": "lion-s-roar",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "lithic-blade",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "lithic-spear",
+    "rarity": 4,
+    "type": "Polearm"
+  },
+  {
+    "slug": "lost-prayer-to-the-sacred-winds",
+    "rarity": 5,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "lumidouce-elegy",
+    "rarity": 5,
+    "type": "Polearm"
+  },
+  {
+    "slug": "luxurious-sea-lord",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "magic-guide",
+    "rarity": 3,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "mailed-flower",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "makhaira-aquamarine",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "mappa-mare",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "memory-of-dust",
+    "rarity": 5,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "messenger",
+    "rarity": 3,
+    "type": "Bow"
+  },
+  {
+    "slug": "missive-windspear",
+    "rarity": 4,
+    "type": "Polearm"
+  },
+  {
+    "slug": "mistsplitter-reforged",
+    "rarity": 5,
+    "type": "Sword"
+  },
+  {
+    "slug": "mitternachts-waltz",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "moonpiercer",
+    "rarity": 4,
+    "type": "Polearm"
+  },
+  {
+    "slug": "mouun-s-moon",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "oathsworn-eye",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "old-merc-s-pal",
+    "rarity": 2,
+    "type": "Claymore"
+  },
+  {
+    "slug": "otherworldly-story",
+    "rarity": 3,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "pocket-grimoire",
+    "rarity": 2,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "polar-star",
+    "rarity": 5,
+    "type": "Bow"
+  },
+  {
+    "slug": "portable-power-saw",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "predator",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "primordial-jade-cutter",
+    "rarity": 5,
+    "type": "Sword"
+  },
+  {
+    "slug": "primordial-jade-winged-spear",
+    "rarity": 5,
+    "type": "Polearm"
+  },
+  {
+    "slug": "prospectors-drill",
+    "rarity": 4,
+    "type": "Polearm"
+  },
+  {
+    "slug": "prototype-amber",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "prototype-archaic",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "prototype-crescent",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "prototype-grudge",
+    "rarity": 4,
+    "type": "Polearm"
+  },
+  {
+    "slug": "prototype-malice",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "prototype-rancour",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "prototype-starglitter",
+    "rarity": 4,
+    "type": "Polearm"
+  },
+  {
+    "slug": "quartz",
+    "rarity": 3,
+    "type": "Claymore"
+  },
+  {
+    "slug": "rainslasher",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "range-gauge",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "raven-bow",
+    "rarity": 3,
+    "type": "Bow"
+  },
+  {
+    "slug": "recurve-bow",
+    "rarity": 3,
+    "type": "Bow"
+  },
+  {
+    "slug": "redhorn-stonethresher",
+    "rarity": 5,
+    "type": "Claymore"
+  },
+  {
+    "slug": "rightful-reward",
+    "rarity": 4,
+    "type": "Polearm"
+  },
+  {
+    "slug": "royal-bow",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "royal-greatsword",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "royal-grimoire",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "royal-longsword",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "royal-spear",
+    "rarity": 4,
+    "type": "Polearm"
+  },
+  {
+    "slug": "rust",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "sacrificial-bow",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "sacrificial-fragments",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "sacrificial-greatsword",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "sacrificial-jade",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "sacrificial-sword",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "sapwood-blade",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "scion-of-the-blazing-sun",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "seasoned-hunter-s-bow",
+    "rarity": 2,
+    "type": "Bow"
+  },
+  {
+    "slug": "serpent-spine",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "sharpshooter-s-oath",
+    "rarity": 3,
+    "type": "Bow"
+  },
+  {
+    "slug": "silver-sword",
+    "rarity": 2,
+    "type": "Sword"
+  },
+  {
+    "slug": "skyrider-greatsword",
+    "rarity": 3,
+    "type": "Claymore"
+  },
+  {
+    "slug": "skyrider-sword",
+    "rarity": 3,
+    "type": "Sword"
+  },
+  {
+    "slug": "skyward-atlas",
+    "rarity": 5,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "skyward-blade",
+    "rarity": 5,
+    "type": "Sword"
+  },
+  {
+    "slug": "skyward-harp",
+    "rarity": 5,
+    "type": "Bow"
+  },
+  {
+    "slug": "skyward-pride",
+    "rarity": 5,
+    "type": "Claymore"
+  },
+  {
+    "slug": "skyward-spine",
+    "rarity": 5,
+    "type": "Polearm"
+  },
+  {
+    "slug": "slingshot",
+    "rarity": 3,
+    "type": "Bow"
+  },
+  {
+    "slug": "snow-tombed-starsilver",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "solar-pearl",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "song-of-broken-pines",
+    "rarity": 5,
+    "type": "Claymore"
+  },
+  {
+    "slug": "song-of-stillness",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "splendor-of-tranquil-waters",
+    "rarity": 5,
+    "type": "Sword"
+  },
+  {
+    "slug": "staff-of-homa",
+    "rarity": 5,
+    "type": "Polearm"
+  },
+  {
+    "slug": "staff-of-the-scarlet-sands",
+    "rarity": 5,
+    "type": "Polearm"
+  },
+  {
+    "slug": "summit-shaper",
+    "rarity": 5,
+    "type": "Sword"
+  },
+  {
+    "slug": "sword-of-descension",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "sword-of-narzissenkreuz",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "talking-stick",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "the-alley-flash",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "the-bell",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "the-black-sword",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "the-catch",
+    "rarity": 4,
+    "type": "Polearm"
+  },
+  {
+    "slug": "the-dockhands-assistant",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "the-first-great-magic",
+    "rarity": 5,
+    "type": "Bow"
+  },
+  {
+    "slug": "the-flute",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "the-stringless",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "the-unforged",
+    "rarity": 5,
+    "type": "Claymore"
+  },
+  {
+    "slug": "the-viridescent-hunt",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "the-widsith",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "thrilling-tales-of-dragon-slayers",
+    "rarity": 3,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "thundering-pulse",
+    "rarity": 5,
+    "type": "Bow"
+  },
+  {
+    "slug": "tidal-shadow",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "tome-of-the-eternal",
+    "rarity": 5,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "toukabou-shigure",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "traveler-s-handy-sword",
+    "rarity": 3,
+    "type": "Sword"
+  },
+  {
+    "slug": "tulaytullah-s-remembrance",
+    "rarity": 5,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "twin-nephrite",
+    "rarity": 3,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "ultimate-overlord-s-mega-magic-sword",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "uraku-misugiri",
+    "rarity": 5,
+    "type": "Sword"
+  },
+  {
+    "slug": "verdict",
+    "rarity": 5,
+    "type": "Claymore"
+  },
+  {
+    "slug": "vortex-vanquisher",
+    "rarity": 5,
+    "type": "Polearm"
+  },
+  {
+    "slug": "wandering-evenstar",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "waster-greatsword",
+    "rarity": 1,
+    "type": "Claymore"
+  },
+  {
+    "slug": "wavebreaker-s-fin",
+    "rarity": 4,
+    "type": "Polearm"
+  },
+  {
+    "slug": "white-iron-greatsword",
+    "rarity": 3,
+    "type": "Claymore"
+  },
+  {
+    "slug": "white-tassel",
+    "rarity": 3,
+    "type": "Polearm"
+  },
+  {
+    "slug": "whiteblind",
+    "rarity": 4,
+    "type": "Claymore"
+  },
+  {
+    "slug": "windblume-ode",
+    "rarity": 4,
+    "type": "Bow"
+  },
+  {
+    "slug": "wine-and-song",
+    "rarity": 4,
+    "type": "Catalyst"
+  },
+  {
+    "slug": "wolf-fang",
+    "rarity": 4,
+    "type": "Sword"
+  },
+  {
+    "slug": "wolf-s-gravestone",
+    "rarity": 5,
+    "type": "Claymore"
+  },
+  {
+    "slug": "xiphos-moonlight",
+    "rarity": 4,
+    "type": "Sword"
+  }
+]

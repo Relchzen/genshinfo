@@ -1,0 +1,214 @@
+[
+  {
+    "slug": "adventurer",
+    "max_rarity": 3
+  },
+  {
+    "slug": "archaic-petra",
+    "max_rarity": 5
+  },
+  {
+    "slug": "berserker",
+    "max_rarity": 4
+  },
+  {
+    "slug": "blizzard-strayer",
+    "max_rarity": 5
+  },
+  {
+    "slug": "bloodstained-chivalry",
+    "max_rarity": 5
+  },
+  {
+    "slug": "brave-heart",
+    "max_rarity": 4
+  },
+  {
+    "slug": "crimson-witch-of-flames",
+    "max_rarity": 5
+  },
+  {
+    "slug": "deepwood-memories",
+    "max_rarity": 5
+  },
+  {
+    "slug": "defender-s-will",
+    "max_rarity": 4
+  },
+  {
+    "slug": "desert-pavilion-chronicle",
+    "max_rarity": 5
+  },
+  {
+    "slug": "echoes-of-an-offering",
+    "max_rarity": 5
+  },
+  {
+    "slug": "emblem-of-severed-fate",
+    "max_rarity": 5
+  },
+  {
+    "slug": "flower-of-paradise-lost",
+    "max_rarity": 5
+  },
+  {
+    "slug": "fragment-of-harmonic-whimsy",
+    "max_rarity": 5
+  },
+  {
+    "slug": "gambler",
+    "max_rarity": 4
+  },
+  {
+    "slug": "gilded-dreams",
+    "max_rarity": 5
+  },
+  {
+    "slug": "glacier-and-snowfield",
+    "max_rarity": 5
+  },
+  {
+    "slug": "gladiator-s-finale",
+    "max_rarity": 5
+  },
+  {
+    "slug": "golden-troupe",
+    "max_rarity": 5
+  },
+  {
+    "slug": "heart-of-depth",
+    "max_rarity": 5
+  },
+  {
+    "slug": "husk-of-opulent-dreams",
+    "max_rarity": 5
+  },
+  {
+    "slug": "instructor",
+    "max_rarity": 4
+  },
+  {
+    "slug": "lavawalker",
+    "max_rarity": 5
+  },
+  {
+    "slug": "lucky-dog",
+    "max_rarity": 3
+  },
+  {
+    "slug": "maiden-beloved",
+    "max_rarity": 5
+  },
+  {
+    "slug": "marechaussee-hunter",
+    "max_rarity": 5
+  },
+  {
+    "slug": "martial-artist",
+    "max_rarity": 4
+  },
+  {
+    "slug": "nighttime-whispers-in-the-echoing-woods",
+    "max_rarity": 5
+  },
+  {
+    "slug": "noblesse-oblige",
+    "max_rarity": 5
+  },
+  {
+    "slug": "nymph-s-dream",
+    "max_rarity": 5
+  },
+  {
+    "slug": "ocean-hued-clam",
+    "max_rarity": 5
+  },
+  {
+    "slug": "pale-flame",
+    "max_rarity": 5
+  },
+  {
+    "slug": "prayers-for-destiny",
+    "max_rarity": 4
+  },
+  {
+    "slug": "prayers-for-illumination",
+    "max_rarity": 4
+  },
+  {
+    "slug": "prayers-for-wisdom",
+    "max_rarity": 4
+  },
+  {
+    "slug": "prayers-to-springtime",
+    "max_rarity": 4
+  },
+  {
+    "slug": "prayers-to-the-firmament",
+    "max_rarity": 4
+  },
+  {
+    "slug": "resolution-of-sojourner",
+    "max_rarity": 4
+  },
+  {
+    "slug": "retracing-bolide",
+    "max_rarity": 5
+  },
+  {
+    "slug": "scholar",
+    "max_rarity": 4
+  },
+  {
+    "slug": "shimenawa-s-reminiscence",
+    "max_rarity": 5
+  },
+  {
+    "slug": "song-of-days-past",
+    "max_rarity": 5
+  },
+  {
+    "slug": "tenacity-of-the-millelith",
+    "max_rarity": 5
+  },
+  {
+    "slug": "the-exile",
+    "max_rarity": 4
+  },
+  {
+    "slug": "thundering-fury",
+    "max_rarity": 5
+  },
+  {
+    "slug": "thundersoother",
+    "max_rarity": 5
+  },
+  {
+    "slug": "tiny-miracle",
+    "max_rarity": 4
+  },
+  {
+    "slug": "traveling-doctor",
+    "max_rarity": 3
+  },
+  {
+    "slug": "unfinished-reverie",
+    "max_rarity": 5
+  },
+  {
+    "slug": "vermillion-hereafter",
+    "max_rarity": 5
+  },
+  {
+    "slug": "viridescent-venerer",
+    "max_rarity": 5
+  },
+  {
+    "slug": "vourukasha-s-glow",
+    "max_rarity": 5
+  },
+  {
+    "slug": "wanderer-s-troupe",
+    "max_rarity": 5
+  }
+]
