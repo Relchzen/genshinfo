@@ -37,10 +37,16 @@ Electro `#AF8EC1`, Dendro `#A5C83B`, Hydro `#4CC2F1`, Pyro `#EF7938`, Cryo `#9FD
 - Border 1px `--line`; bayangan lembut hitam; glow hanya untuk cahaya emas cakrawala hero.
 
 ### Hero
-- Latar festival malam terlihat jelas (opacity 0.9), bukan gelap total.
-- Cahaya emas radial dari tengah cakrawala + ladang bintang dua lapis berkedip.
-- Empat kartu splash art (Hu Tao, Ayaka, Raiden, Zhongli) melayang di empat sudut,
-  animasi naik-turun pelan; hanya tampil di layar ≥ lg agar judul tetap lega di mobile.
+- **Intro "Panggilan Gacha & Zoom-In Primogem"**: layar pembuka menampilkan
+  model 3D kristal Primogem asli yang megah di tengah angkasa bertabur bintang
+  (cosmic starfield) dan koridor debu partikel berkilau (warp speed stardust).
+- Saat digulir: kamera melakukan gerakan *zoom in* imersif meluncur menembus
+  awan bintang dan partikel debu kecepatan (warp dust lines) mengikuti posisi
+  Primogem, memberikan sensasi berada tepat di tengah-tengah perjalanan semesta
+  (ala arsitektur portofolio).
+- Damping eksponensial halus pada kamera dan rotasi idle Primogem dengan pencahayaan
+  cyan kristal berkilau.
+- Semua motion dinonaktifkan secara anggun saat `prefers-reduced-motion: reduce`.
 
 ### Motion
 - Parallax scroll: 3 kedalaman (jauh 0.15x, tengah 0.35x, dekat 0.6x), via transform saja.

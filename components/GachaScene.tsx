@@ -1,392 +1,335 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { FASE_LEPAS, FASE_TIBA } from "./gacha-fase";
-
-// ===== Koreografi intro (satuan: tinggi viewport yang sudah digulir) =====
-// p 0          : Primogem diam di tengah, intinya berdenyut pelan
-// p FASE_LEPAS : melesat ke kanan-atas sambil berputar (ala kartu gacha)
-// p FASE_TIBA  : menukik sebagai bintang jatuh; impak: kilatan cyan + cincin +
-//                cahaya menerangi dunia
-// p > FASE_TIBA: Primogem melayang naik ke sepertiga atas, judul & CTA bangun
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Primogem3D } from "./PrimogemModel";
 
 type Progres = { current: number };
 
-function clamp01(x: number) {
-  return x < 0 ? 0 : x > 1 ? 1 : x;
-}
-function lerp(a: number, b: number, t: number) {
-  return a + (b - a) * t;
-}
+const smoothstep = (t: number) => t * t * (3 - 2 * t);
 
-// PRNG berbibit supaya ladang bintang identik di setiap muat
 function buatAcak(seed: number) {
   let s = seed >>> 0;
   return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296);
 }
 
-function LadangBintang() {
-  const posisi = useMemo(() => {
-    const acak = buatAcak(20260826);
-    const arr = new Float32Array(320 * 3);
-    for (let i = 0; i < 320; i++) {
-      arr[i * 3] = (acak() - 0.5) * 26;
-      arr[i * 3 + 1] = (acak() - 0.4) * 16;
-      arr[i * 3 + 2] = -1.5 - acak() * 5.5;
+// 1. Ladang Bintang Semesta (Cosmic Starfield) di sekeliling dunia 3D
+function CosmicStarfield({ count = 1200 }: { count?: number }) {
+  const { positions, colors } = useMemo(() => {
+    const acak = buatAcak(777);
+    const pos = new Float32Array(count * 3);
+    const col = new Float32Array(count * 3);
+    const c = new THREE.Color();
+
+    for (let i = 0; i < count; i++) {
+      // Distribusi bola luas
+      const theta = acak() * Math.PI * 2;
+      const phi = Math.acos(2 * acak() - 1);
+      const r = 20 + acak() * 90;
+
+      pos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+      pos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+      pos[i * 3 + 2] = r * Math.cos(phi);
+
+      const palet = acak();
+      if (palet < 0.45) {
+        c.set("#72dbf8"); // Cyan / Anemo / Primogem blue
+      } else if (palet < 0.75) {
+        c.set("#e9c46a"); // Emas bintang
+      } else if (palet < 0.9) {
+        c.set("#c084fc"); // Ungu wish 4-star
+      } else {
+        c.set("#ffffff"); // Putih murni
+      }
+
+      col[i * 3] = c.r;
+      col[i * 3 + 1] = c.g;
+      col[i * 3 + 2] = c.b;
     }
-    return arr;
-  }, []);
+    return { positions: pos, colors: col };
+  }, [count]);
 
   return (
     <points frustumCulled={false}>
       <bufferGeometry>
-        <bufferAttribute attach="attributes-position" args={[posisi, 3]} />
+        <bufferAttribute attach="attributes-position" args={[positions, 3]} />
+        <bufferAttribute attach="attributes-color" args={[colors, 3]} />
       </bufferGeometry>
       <pointsMaterial
-        size={0.032}
-        color="#cfe4ff"
+        size={0.15}
+        vertexColors
         transparent
-        opacity={0.5}
+        opacity={0.85}
         sizeAttenuation
         depthWrite={false}
+        blending={THREE.AdditiveBlending}
       />
     </points>
   );
 }
 
-// Profil putar Primogem: gemuk di ekuator, ujung membulat atas-bawah,
-// dilathe 7 sisi agar muncul faset datar kristal saat flat shading.
-function profilPrimogem() {
-  const kunci = [
-    { y: -1.0, r: 0.02 },
-    { y: -0.85, r: 0.3 },
-    { y: -0.5, r: 0.68 },
-    { y: -0.16, r: 0.82 },
-    { y: 0.2, r: 0.7 },
-    { y: 0.52, r: 0.5 },
-    { y: 0.76, r: 0.28 },
-    { y: 0.92, r: 0.11 },
-    { y: 1.0, r: 0.02 },
-  ];
-  const kurva = new THREE.CatmullRomCurve3(
-    kunci.map((t) => new THREE.Vector3(t.r, t.y, 0)),
-  );
-  return kurva
-    .getPoints(44)
-    .map((v) => new THREE.Vector2(Math.max(0.002, v.x), v.y));
-}
+// 2. Debu Kecepatan & Partikel Bintang yang Mengelilingi Kita (seperti portofolio)
+// Saat kamera meluncur maju (zoom in), partikel memanjang searah gerak (warp streak effect)
+function WarpSpeedDust({ count = 650 }: { count?: number }) {
+  const ref = useRef<THREE.Group>(null);
+  const { camera } = useThree();
 
-// Tekstur pijat radial untuk kilatan & inti bintang
-function teksturPijat(inside: string, outside: string) {
-  const c = document.createElement("canvas");
-  c.width = c.height = 256;
-  const ctx = c.getContext("2d")!;
-  const g = ctx.createRadialGradient(128, 128, 0, 128, 128, 128);
-  g.addColorStop(0, inside);
-  g.addColorStop(0.3, outside);
-  g.addColorStop(1, "rgba(120,220,255,0)");
-  ctx.fillStyle = g;
-  ctx.fillRect(0, 0, 256, 256);
-  const t = new THREE.CanvasTexture(c);
-  t.colorSpace = THREE.SRGBColorSpace;
-  return t;
-}
+  // Partikel tersebar di sepanjang lorong sumbu Z dari depan kamera hingga melampaui Primogem
+  const positions = useMemo(() => {
+    const acak = buatAcak(333);
+    const arr = new Float32Array(count * 3);
+    for (let i = 0; i < count; i++) {
+      // Menyebar di silinder koridor di sekitar sumbu Z
+      const radius = 0.8 + Math.sqrt(acak()) * 7.5;
+      const angle = acak() * Math.PI * 2;
+      arr[i * 3] = Math.cos(angle) * radius;
+      arr[i * 3 + 1] = Math.sin(angle) * radius;
+      arr[i * 3 + 2] = 12 - acak() * 38; // dari Z=12 sampai Z=-26
+    }
+    return arr;
+  }, [count]);
 
-function Meteor({ progres }: { progres: Progres }) {
-  // Kristal Primogem: lathe 7 sisi, faset datar
-  const geometriPermata = useMemo(() => {
-    const g = new THREE.LatheGeometry(profilPrimogem(), 7);
-    g.scale(1.18, 1.18, 1.18);
-    g.computeVertexNormals();
-    return g;
-  }, []);
+  const tailScale = useMemo(() => {
+    const acak = buatAcak(555);
+    return Float32Array.from({ length: count }, () => 0.6 + acak() * 1.0);
+  }, [count]);
 
-  const materiPermata = useMemo(
-    () =>
-      new THREE.MeshPhysicalMaterial({
-        color: "#b9edff",
-        metalness: 0.15,
-        roughness: 0.17,
-        clearcoat: 1,
-        clearcoatRoughness: 0.14,
-        flatShading: true,
-        emissive: new THREE.Color("#33bfe4"),
-        emissiveIntensity: 0.12,
-      }),
-    [],
-  );
+  const linePositions = useMemo(() => new Float32Array(count * 2 * 3), [count]);
+  const sim = useRef<{ prev: THREE.Vector3 | null; vel: number }>({
+    prev: null,
+    vel: 0,
+  });
 
-  const grup = useRef<THREE.Group>(null);
-  const inti = useRef<THREE.Sprite>(null);
-  const lampu = useRef<THREE.PointLight>(null);
-  const ekor = useRef<THREE.Mesh>(null);
-  const kilat = useRef<THREE.Sprite>(null);
-  const gelombang = useRef<THREE.Mesh>(null);
-
-  const materiInti = useMemo(
-    () =>
-      new THREE.SpriteMaterial({
-        map: teksturPijat("rgba(240,255,255,1)", "rgba(110,225,255,0.55)"),
-        transparent: true,
-        depthWrite: false,
-        blending: THREE.AdditiveBlending,
-      }),
-    [],
-  );
-  const teksturKilat = useMemo(
-    () => teksturPijat("rgba(235,252,255,1)", "rgba(140,230,255,0.6)"),
-    [],
-  );
-
-  const [kurangiMotion] = useState(
-    () =>
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-  );
-
-  // Ekor: silinder terbuka, kepala di origin memanjang ke +Y
-  const geometriEkor = useMemo(() => {
-    const g = new THREE.CylinderGeometry(0.07, 0.58, 1, 24, 1, true);
-    g.translate(0, 0.5, 0);
-    return g;
-  }, []);
-
-  const materiEkor = useMemo(
-    () =>
-      new THREE.ShaderMaterial({
-        transparent: true,
-        depthWrite: false,
-        blending: THREE.AdditiveBlending,
-        side: THREE.DoubleSide,
-        uniforms: { kuat: { value: 0 } },
-        vertexShader: /* glsl */ `
-          varying vec2 vUv;
-          varying vec3 vN;
-          varying vec3 vV;
-          void main() {
-            vUv = uv;
-            vN = normalMatrix * normal;
-            vec4 mv = modelViewMatrix * vec4(position, 1.0);
-            vV = -mv.xyz;
-            gl_Position = projectionMatrix * mv;
-          }
-        `,
-        fragmentShader: /* glsl */ `
-          varying vec2 vUv;
-          varying vec3 vN;
-          varying vec3 vV;
-          uniform float kuat;
-          void main() {
-            float sepanjang = 1.0 - vUv.y;
-            float tepi = pow(abs(dot(normalize(vN), normalize(vV))), 0.55);
-            vec3 warna = mix(vec3(0.55, 0.92, 1.0), vec3(0.92, 1.0, 1.0), sepanjang * sepanjang);
-            float a = sepanjang * sepanjang * (0.30 + 0.70 * tepi) * kuat;
-            gl_FragColor = vec4(warna * a, a);
-          }
-        `,
-      }),
-    [],
-  );
-
-  const tmp = useMemo(
-    () => ({
-      A: new THREE.Vector3(),
-      B: new THREE.Vector3(),
-      C: new THREE.Vector3(),
-      D: new THREE.Vector3(),
-      pos: new THREE.Vector3(),
-      arah: new THREE.Vector3(),
-      lalu: new THREE.Vector3(),
-      sumbuY: new THREE.Vector3(0, 1, 0),
-      qTarget: new THREE.Quaternion(),
-      init: false,
-    }),
-    [],
-  );
-
-  useFrame((state, delta) => {
-    if (!grup.current) return;
-    const vp = state.viewport;
-    const d = Math.min(delta, 0.05);
-    const waktu = state.clock.elapsedTime;
-
-    const p = kurangiMotion ? FASE_TIBA + 0.32 : progres.current;
-
-    tmp.A.set(0, 0.05, 0);
-    tmp.B.set(vp.width * 0.3, vp.height * 0.34, 0);
-    tmp.C.set(0, -0.08, 0);
-    tmp.D.set(0, vp.height * 0.19, 0);
-
-    const eLepas = 1 - Math.pow(1 - clamp01(p / FASE_LEPAS), 3);
-    const mentah = clamp01((p - FASE_LEPAS) / (FASE_TIBA - FASE_LEPAS));
-    const eJatuh = mentah * mentah * mentah;
-
-    tmp.pos.lerpVectors(tmp.A, tmp.B, eLepas);
-    tmp.pos.lerpVectors(tmp.pos, tmp.C, eJatuh);
-
-    if (!tmp.init) {
-      tmp.lalu.copy(tmp.pos);
-      tmp.init = true;
+  useFrame((state, rawDelta) => {
+    const delta = Math.min(rawDelta, 0.05);
+    if (ref.current) {
+      ref.current.rotation.z = Math.sin(state.clock.elapsedTime * 0.1) * 0.04;
     }
 
-    // Setelah impak: melayang naik ke sepertiga atas, menyusut lembut
-    const eSetel = 1 - Math.pow(1 - clamp01((p - FASE_TIBA) / 0.32), 3);
-    tmp.pos.lerpVectors(tmp.pos, tmp.D, eSetel);
+    const s = sim.current;
+    const p = camera.position;
+    if (!s.prev) s.prev = p.clone();
+    const dt = Math.max(delta, 1e-4);
+    const dx = p.x - s.prev.x;
+    const dy = p.y - s.prev.y;
+    const dz = p.z - s.prev.z;
+    const inst = Math.hypot(dx / dt, dy / dt, dz / dt);
+    s.prev.copy(p);
+    s.vel += (inst - s.vel) * Math.min(1, dt * 8);
 
-    const skala =
-      lerp(Math.min(vp.width * 0.05 + 1.0, 1.6), 1.05, clamp01((p - FASE_TIBA) / 0.2)) *
-      (1 + Math.sin(waktu * 1.6) * 0.015);
-    grup.current.position.copy(tmp.pos);
-    grup.current.scale.setScalar(skala);
+    // Kecepatan di atas ambang batas memicu ekor streak (warp effect)
+    const v = Math.max(0, s.vel - 0.2);
+    const len = Math.min(3.2, v * 0.18);
+    const lineMesh = ref.current?.children?.[1] as THREE.LineSegments | undefined;
+    const mat = lineMesh?.material as THREE.LineBasicMaterial | undefined;
+    if (mat) {
+      mat.opacity = Math.min(0.75, v * 0.08);
+    }
 
-    // Orientasi: goyang -> berputar saat lepas -> menghadap arah jatuh ->
-    // menetap miring santai dengan goyangan idup
-    if (p > FASE_TIBA + 0.05) {
-      tmp.qTarget.setFromAxisAngle(tmp.sumbuY, waktu * 0.35);
-      grup.current.quaternion.slerp(tmp.qTarget, 0.06);
-      grup.current.rotation.z = Math.sin(waktu * 0.9) * 0.08;
-    } else if (eJatuh > 0.03 && p <= FASE_TIBA + 0.02) {
-      tmp.arah.subVectors(tmp.lalu, tmp.pos);
-      if (tmp.arah.lengthSq() > 1e-7) {
-        tmp.arah.normalize();
-        tmp.qTarget.setFromUnitVectors(tmp.sumbuY, tmp.arah);
-        grup.current.quaternion.slerp(tmp.qTarget, clamp01(eJatuh * 1.4));
+    // Arah pergerakan garis
+    const mag = Math.hypot(dx, dy, dz) || 1;
+    const ux = -dx / mag;
+    const uy = -dy / mag;
+    const uz = -dz / mag;
+
+    const attr = lineMesh?.geometry?.attributes?.position as THREE.BufferAttribute | undefined;
+    if (attr) {
+      for (let i = 0; i < count; i++) {
+        const x = positions[i * 3];
+        const y = positions[i * 3 + 1];
+        const z = positions[i * 3 + 2];
+        const l = len * tailScale[i];
+
+        linePositions[i * 6] = x;
+        linePositions[i * 6 + 1] = y;
+        linePositions[i * 6 + 2] = z;
+        linePositions[i * 6 + 3] = x + ux * l;
+        linePositions[i * 6 + 4] = y + uy * l;
+        linePositions[i * 6 + 5] = z + uz * l;
       }
-    } else {
-      grup.current.rotation.y = Math.sin(waktu * 0.5) * 0.4 + eLepas * waktu * 6 * (1 - eJatuh);
-      grup.current.rotation.z = Math.sin(waktu * 0.7) * 0.06;
-    }
-
-    // Kecepatan -> ekor komet
-    tmp.arah.subVectors(tmp.lalu, tmp.pos);
-    const laju = tmp.arah.length() / Math.max(d, 1e-4);
-    tmp.lalu.copy(tmp.pos);
-
-    const redam =
-      clamp01(1 - (p - FASE_TIBA) / 0.07) * (eJatuh * 0.9 + eLepas * 0.4);
-    const kuat = clamp01(laju * 0.17) * redam;
-    materiEkor.uniforms.kuat.value = kuat;
-
-    if (ekor.current) {
-      if (kuat < 0.02) {
-        ekor.current.scale.set(0, 0, 0);
-      } else {
-        tmp.arah.normalize();
-        ekor.current.position.copy(grup.current.position);
-        ekor.current.quaternion.setFromUnitVectors(tmp.sumbuY, tmp.arah);
-        const panjang = Math.min(laju * 0.11, 3.4) * skala;
-        ekor.current.scale.set(skala * 0.85, panjang, skala * 0.85);
-      }
-    }
-
-    // Inti bintang di dalam permata: denyut naik saat menukik, stabil sesudahnya
-    if (inti.current) {
-      const denyut =
-        0.55 +
-        Math.sin(waktu * 2.1) * 0.08 +
-        eJatuh * 0.5 * clamp01(1 - (p - FASE_TIBA) / 0.12);
-      inti.current.scale.setScalar(denyut * skala);
-      materiInti.opacity = p >= FASE_TIBA ? 0.95 : 0.8;
-    }
-    materiPermata.emissiveIntensity =
-      0.06 + eJatuh * 0.5 * clamp01(1 - (p - FASE_TIBA) / 0.14) + (p >= FASE_TIBA ? 0.05 : 0);
-
-    // Kilatan impak
-    if (kilat.current) {
-      const mat = kilat.current.material as THREE.SpriteMaterial;
-      const f = clamp01((p - FASE_TIBA) / 0.4);
-      const nyala = p >= FASE_TIBA && f < 1;
-      kilat.current.visible = nyala;
-      if (nyala) {
-        kilat.current.position.copy(tmp.C);
-        kilat.current.scale.setScalar((0.8 + f * f * 10) * skala);
-        mat.opacity = Math.pow(1 - f, 1.7);
-      }
-    }
-
-    // Cincin gelombang kejut
-    if (gelombang.current) {
-      const mat = gelombang.current.material as THREE.MeshBasicMaterial;
-      const f = clamp01((p - FASE_TIBA) / 0.55);
-      const aktif = p >= FASE_TIBA && f < 1;
-      gelombang.current.visible = aktif;
-      if (aktif) {
-        gelombang.current.position.copy(tmp.C);
-        gelombang.current.scale.setScalar((0.4 + f * 7.5) * skala);
-        mat.opacity = Math.pow(1 - f, 2) * 0.6;
-      }
-    }
-
-    // Cahaya Primogem: ikut posisinya; ledakan saat impak, menetap hangat-dingin
-    if (lampu.current) {
-      const menukik = 18 * eJatuh;
-      const ledakan = 150 * Math.exp(-Math.max(0, p - FASE_TIBA) * 6);
-      const menetap = 26 * clamp01((p - FASE_TIBA) / 0.1);
-      lampu.current.intensity = kurangiMotion ? 24 : menukik + ledakan + menetap;
+      attr.array.set(linePositions);
+      attr.needsUpdate = true;
     }
   });
 
   return (
-    <>
-      {/* Ekor dirender sebelum permata agar urutan transparansi benar */}
-      <mesh ref={ekor} geometry={geometriEkor} material={materiEkor} frustumCulled={false} renderOrder={2} />
-
-      <group ref={grup}>
-        <mesh geometry={geometriPermata} material={materiPermata} renderOrder={3} />
-        {/* Inti bintang sang Primogem */}
-        <sprite ref={inti} material={materiInti} renderOrder={4} scale={0.55} />
-        {/* Cahaya permata mengikuti wherever ia pergi */}
-        <pointLight ref={lampu} color="#8ee6ff" distance={0} decay={2} intensity={0} />
-      </group>
-
-      <sprite ref={kilat} visible={false} renderOrder={4}>
-        <spriteMaterial
-          map={teksturKilat}
+    <group ref={ref}>
+      <points frustumCulled={false}>
+        <bufferGeometry>
+          <bufferAttribute attach="attributes-position" args={[positions, 3]} />
+        </bufferGeometry>
+        <pointsMaterial
+          size={0.065}
+          color="#9ee7ff"
           transparent
+          opacity={0.7}
+          sizeAttenuation
           depthWrite={false}
           blending={THREE.AdditiveBlending}
         />
-      </sprite>
-
-      {/* Cincin gelombang kejut, menghadap kamera */}
-      <mesh ref={gelombang} visible={false} renderOrder={4}>
-        <ringGeometry args={[0.92, 1, 64]} />
-        <meshBasicMaterial
-          color="#9fe8ff"
+      </points>
+      <lineSegments frustumCulled={false}>
+        <bufferGeometry>
+          <bufferAttribute attach="attributes-position" args={[linePositions, 3]} />
+        </bufferGeometry>
+        <lineBasicMaterial
+          color="#64d8ff"
           transparent
           opacity={0}
-          side={THREE.DoubleSide}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
         />
-      </mesh>
+      </lineSegments>
+    </group>
+  );
+}
 
-      {/* Pemantul cahaya: dunia di belakang yang ikut tersinari */}
-      <mesh position={[0, 0, -7]}>
-        <planeGeometry args={[70, 44]} />
-        <meshStandardMaterial color="#0e1830" roughness={0.95} metalness={0} />
-      </mesh>
-    </>
+// 3. Inti Nebula & Halo Bersinar di sekitar Primogem
+function PrimogemHalo() {
+  const ref = useRef<THREE.Mesh>(null);
+  useFrame((state) => {
+    if (!ref.current) return;
+    const t = state.clock.elapsedTime;
+    const s = 1.0 + Math.sin(t * 2.0) * 0.08;
+    ref.current.scale.set(s, s, s);
+  });
+
+  return (
+    <mesh ref={ref}>
+      <sphereGeometry args={[1.1, 32, 32]} />
+      <meshBasicMaterial
+        color="#00e5ff"
+        transparent
+        opacity={0.12}
+        blending={THREE.AdditiveBlending}
+        side={THREE.BackSide}
+      />
+    </mesh>
+  );
+}
+
+// 4. Rig Kamera & Primogem dengan Zoom-In Imersif ala Portofolio
+function ImmersiveRig({ progres, children }: { progres: Progres; children: React.ReactNode }) {
+  const group = useRef<THREE.Group>(null);
+  const primoGroup = useRef<THREE.Group>(null);
+  const lightRef = useRef<THREE.PointLight>(null);
+  const mouse = useRef(new THREE.Vector2());
+  const cur = useRef({
+    pos: new THREE.Vector3(0, 0, 8.5),
+    tgt: new THREE.Vector3(0, 0, 0),
+  });
+  const { camera } = useThree();
+
+  useEffect(() => {
+    const onMove = (e: MouseEvent) => {
+      mouse.current.set(
+        (e.clientX / window.innerWidth) * 2 - 1,
+        -(e.clientY / window.innerHeight) * 2 + 1
+      );
+    };
+    window.addEventListener("mousemove", onMove, { passive: true });
+    return () => window.removeEventListener("mousemove", onMove);
+  }, []);
+
+  useFrame((state, delta) => {
+    const rawProgress = progres.current; // ~ 0 to 2.2
+    // Normalisasi progres scroll (0 sampai 1 pada zoom penuh)
+    const tZoom = smoothstep(Math.min(1, Math.max(0, rawProgress / 1.35)));
+
+    // Stasiun Kamera:
+    // Awal (p=0): Kamera di [0, 0.4, 8.5], melihat ke Primogem di [0, 0, 0]
+    // Zoom In (p=1+): Kamera meluncur masuk menembus awan bintang hingga mendekati [0, 0.1, -5.5],
+    // Primogem sendiri meluncur perlahan ke Z=-8 dan membesar megah
+    const primoZ = -8 * tZoom;
+    const primoScale = 1.0 + tZoom * 1.6;
+
+    if (primoGroup.current) {
+      primoGroup.current.position.set(0, 0, primoZ);
+      primoGroup.current.scale.set(primoScale, primoScale, primoScale);
+
+      // Rotasi lembut Primogem
+      const waktu = state.clock.elapsedTime;
+      primoGroup.current.rotation.y = waktu * 0.45;
+      primoGroup.current.rotation.x = Math.sin(waktu * 0.3) * 0.15;
+      primoGroup.current.rotation.z = Math.cos(waktu * 0.2) * 0.08;
+    }
+
+    if (lightRef.current) {
+      lightRef.current.intensity = 25 + tZoom * 55;
+    }
+
+    // Kamera mengikuti jalur zoom in tepat ke arah Primogem
+    const startCam = { x: 0, y: 0.3, z: 8.5 };
+    const endCam = { x: 0, y: 0.0, z: -4.8 };
+
+    const desiredCamPos = {
+      x: startCam.x + (endCam.x - startCam.x) * tZoom + mouse.current.x * 0.45,
+      y: startCam.y + (endCam.y - startCam.y) * tZoom + mouse.current.y * 0.3 + Math.sin(state.clock.elapsedTime * 0.6) * 0.04,
+      z: startCam.z + (endCam.z - startCam.z) * tZoom,
+    };
+
+    const desiredTarget = {
+      x: mouse.current.x * 0.15,
+      y: mouse.current.y * 0.1,
+      z: primoZ,
+    };
+
+    // Exponential smoothing (damping) seperti di portofolio
+    const k = 1 - Math.exp(-4.2 * delta);
+    const c = cur.current;
+
+    c.pos.set(
+      c.pos.x + (desiredCamPos.x - c.pos.x) * k,
+      c.pos.y + (desiredCamPos.y - c.pos.y) * k,
+      c.pos.z + (desiredCamPos.z - c.pos.z) * k
+    );
+
+    c.tgt.set(
+      c.tgt.x + (desiredTarget.x - c.tgt.x) * k,
+      c.tgt.y + (desiredTarget.y - c.tgt.y) * k,
+      c.tgt.z + (desiredTarget.z - c.tgt.z) * k
+    );
+
+    camera.position.copy(c.pos);
+    camera.lookAt(c.tgt);
+  });
+
+  return (
+    <group ref={group}>
+      <group ref={primoGroup}>
+        <Primogem3D />
+        <PrimogemHalo />
+        <pointLight ref={lightRef} color="#45d0ff" distance={30} decay={2} intensity={35} />
+      </group>
+      {children}
+    </group>
   );
 }
 
 export default function GachaScene({ progres }: { progres: Progres }) {
   return (
     <Canvas
-      camera={{ position: [0, 0, 6], fov: 42 }}
-      dpr={[1, 1.8]}
+      camera={{ position: [0, 0.3, 8.5], fov: 46, near: 0.1, far: 180 }}
+      dpr={[1, 2]}
       gl={{ antialias: true, alpha: true }}
-      style={{ pointerEvents: "none" }}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        pointerEvents: "none",
+        zIndex: 10,
+      }}
     >
-      <ambientLight intensity={0.25} />
-      {/* Cahaya panggung dingin dari kiri; kontra bagi cahaya cyan permata */}
-      <directionalLight position={[-6, 3, 4]} intensity={0.8} color="#bcd8ff" />
-      {/* Isian lembut dari kanan-belakang untuk garis tepi kristal */}
-      <directionalLight position={[5, -2, -3]} intensity={0.5} color="#7fd8ff" />
-      <LadangBintang />
-      <Meteor progres={progres} />
+      <ambientLight intensity={0.8} />
+      <directionalLight position={[8, 12, 10]} intensity={2.2} color="#e6f7ff" />
+      <directionalLight position={[-8, -8, -10]} intensity={1.5} color="#0088ff" />
+      <CosmicStarfield />
+      <ImmersiveRig progres={progres}>
+        <WarpSpeedDust count={750} />
+      </ImmersiveRig>
     </Canvas>
   );
 }
