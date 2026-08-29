@@ -1,6 +1,7 @@
 import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
+import type { Metadata } from "next";
 
 const TEAM = [
   {
@@ -20,6 +21,7 @@ const TEAM = [
     peran: "Lead Developer",
     foto: "/Fidel.jpg",
     ig: "f.blayen",
+    url: "https://fidel-portofolio.vercel.app",
   },
   {
     nama: "Marthin Riyaldo",
@@ -29,13 +31,77 @@ const TEAM = [
   },
 ];
 
-export const metadata = {
-  title: "About",
+export const metadata: Metadata = {
+  title: "About the Creators",
+  description:
+    "Meet the creators of GenshInfo: Fidel Brian Dava (Lead Developer), Aurelius Abuthan (Project Manager), Farhan Hakim (IT Support), and Marthin Riyaldo (Graphic Designer).",
+  keywords: [
+    "Fidel Brian Dava",
+    "Aurelius Abuthan",
+    "Farhan Hakim",
+    "Marthin Riyaldo",
+    "GenshInfo Creators",
+    "GenshInfo Team",
+    "Genshin Impact Encyclopedia Creators",
+  ],
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About the Creators · GenshInfo",
+    description:
+      "Meet the creators of GenshInfo: Fidel Brian Dava, Aurelius Abuthan, Farhan Hakim, and Marthin Riyaldo.",
+    url: "/about",
+    images: [
+      {
+        url: "/tim.jpg",
+        width: 1200,
+        height: 675,
+        alt: "GenshInfo Development Team",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About the Creators · GenshInfo",
+    description:
+      "Meet the creators of GenshInfo: Fidel Brian Dava, Aurelius Abuthan, Farhan Hakim, and Marthin Riyaldo.",
+    images: ["/tim.jpg"],
+  },
 };
 
 export default function AboutPage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://genshinfo.vercel.app";
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About GenshInfo and the Team",
+    description:
+      "Reimagined Genshin Impact encyclopedia project created by Fidel Brian Dava, Aurelius Abuthan, Farhan Hakim, and Marthin Riyaldo.",
+    url: `${siteUrl}/about`,
+    mainEntity: {
+      "@type": "Organization",
+      name: "GenshInfo Team",
+      member: TEAM.map((t) => ({
+        "@type": "Person",
+        name: t.nama,
+        jobTitle: t.peran,
+        image: `${siteUrl}${t.foto}`,
+        sameAs: [
+          `https://instagram.com/${t.ig}`,
+          ...(t.url ? [t.url] : []),
+        ],
+      })),
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <PageHeader kicker="Four people, one final project" judul="About" jumlah={TEAM.length} />
 
       {/* Original v1 team photo */}
@@ -49,62 +115,58 @@ export default function AboutPage() {
               sizes="(max-width: 896px) 100vw, 896px"
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent" />
-            <p className="absolute bottom-4 left-5 right-5 text-sm text-mute">
-              The original GenshInfo team, long before this version existed.
-            </p>
           </div>
-        </Reveal>
-
-        <Reveal delay={0.08}>
-          <p className="mx-auto mt-10 max-w-2xl text-center text-base leading-relaxed text-mute">
-            GenshInfo was born as a college assignment: a Genshin Impact encyclopedia
-            built during late nights while learning Next.js from scratch.
-            In 2026 the legacy code was archived in the{" "}
-            <code className="rounded bg-raised px-1.5 py-0.5 text-xs">genshinfo_old</code>{" "}
-            folder and this version was rewritten with standards as high as
-            the original ambition.
-          </p>
         </Reveal>
       </section>
 
-      {/* Team cards */}
+      {/* Team grid */}
       <section className="mx-auto max-w-4xl px-5 py-16">
-        <div className="grid gap-4 sm:grid-cols-2">
-          {TEAM.map((t, i) => (
-            <Reveal key={t.nama} delay={i * 0.06}>
-              <div className="flex items-center gap-4 rounded-2xl border garis bg-raised/50 p-4">
-                <Image
-                  src={t.foto}
-                  alt={`Photo of ${t.nama}`}
-                  width={64}
-                  height={64}
-                  className="h-16 w-16 rounded-full border border-white/10 object-cover"
-                />
-                <div className="min-w-0">
-                  <p className="truncate font-bold">{t.nama}</p>
-                  <p className="label-kecil mt-0.5">{t.peran}</p>
+        <Reveal>
+          <h2 className="judul-display text-2xl md:text-3xl">The Builders</h2>
+          <p className="mt-2 text-sm text-mute">
+            Crafted with passion by the original team.
+          </p>
+        </Reveal>
+
+        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {TEAM.map((t, idx) => (
+            <Reveal key={t.nama} delay={idx * 0.05}>
+              <div className="group flex flex-col items-center rounded-3xl border garis bg-raised/40 p-5 text-center transition-all hover:bg-raised/70">
+                <div className="relative h-24 w-24 overflow-hidden rounded-full border garis">
+                  <Image
+                    src={t.foto}
+                    alt={t.nama}
+                    fill
+                    sizes="96px"
+                    className="object-cover"
+                  />
+                </div>
+                <h3 className="mt-4 font-bold text-sm">{t.nama}</h3>
+                <p className="text-xs text-mute">{t.peran}</p>
+                <div className="mt-3 flex flex-col gap-1">
                   <a
-                    href={`https://www.instagram.com/${t.ig}/`}
+                    href={`https://instagram.com/${t.ig}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-xs text-gold transition-opacity hover:opacity-80"
+                    className="text-xs text-gold hover:underline"
                   >
                     @{t.ig}
                   </a>
+                  {t.url && (
+                    <a
+                      href={t.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-[11px] text-mute hover:text-ink hover:underline"
+                    >
+                      Portfolio ↗
+                    </a>
+                  )}
                 </div>
               </div>
             </Reveal>
           ))}
         </div>
-
-        <Reveal delay={0.1}>
-          <p className="mt-12 text-center text-xs leading-relaxed text-mute/70">
-            The legacy version ran on Next.js 13 and Chakra UI; this version uses
-            Next.js App Router, TypeScript, and Tailwind CSS. Data sourced
-            from genshin.jmp.blue.
-          </p>
-        </Reveal>
       </section>
     </>
   );
